@@ -1,7 +1,8 @@
 # By placing all of Spree's shared dependencies in this file and then loading
 # it for each component's Gemfile, we can be sure that we're only testing just
 # the one component of Spree.
-source 'https://rubygems.org'
+#source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 gem 'coffee-rails', '~> 4.1.1'
 gem 'sass-rails', '~> 5.0.0'
