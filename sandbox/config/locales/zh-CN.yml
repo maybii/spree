@@ -1196,6 +1196,7 @@ zh-CN:
     show_only_complete_orders: "只显示完整的订单"
     show_only_considered_risky:
     show_rate_in_label:
+    signup: "注册"
     sku: "条形码"
     skus:
     slug:
