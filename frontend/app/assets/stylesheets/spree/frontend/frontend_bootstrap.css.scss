@@ -6,12 +6,12 @@
 
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
-  background: $brand-primary asset-url('spree_header.jpg') center center;
+  // background: $brand-primary asset-url('spree_header.jpg') center center;
   background-size: cover;
   margin-bottom: $line-height-computed;
 
   #header {
-    background: rgba($gray-darker, 0.4);
+    // background: rgba($gray-darker, 0.4);
     padding: $line-height-computed 0;
   }
 
@@ -24,7 +24,8 @@
   }
 
   .nav a {
-    color: white;
+    color: #999999;
+    // color: #fff;
 
     &:hover, &:focus {
       background: rgba($gray-darker, 0.4);
