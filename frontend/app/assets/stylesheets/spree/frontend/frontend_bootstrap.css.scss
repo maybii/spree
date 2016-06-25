@@ -5,6 +5,18 @@
 @import "bootstrap";
 
 // -- Spree Custom Header and Footer ---------------------
+#spree-main-header {
+  .nav a {
+    color: #444444;
+    // color: #fff;
+
+    &:hover, &:focus {
+      // background: rgba($gray-darker, 0.4);
+      background-color: transparent;
+      color: $brand-primary;
+    }
+  }
+}
 #spree-header {
   // background: $brand-primary asset-url('spree_header.jpg') center center;
   background-size: cover;

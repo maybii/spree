@@ -1,5 +1,11 @@
-#main-nav-bar {
+#spree-main-header {
   background-color: #fafafa;
+  * {
+    font-size: 12px;
+  }
+  #main-nav-bar {
+    margin-bottom: 0;
+  }
 }
 
 #link-to-login {
