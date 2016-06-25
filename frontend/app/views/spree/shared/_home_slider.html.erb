@@ -1,0 +1,48 @@
+<div class="home-slider">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <a class="item active" href='/'>
+        <%= image_tag 'home/slider/slider1.png' %>
+        <div class="carousel-caption">
+        </div>
+      </a>
+      <a class="item">
+        <%= image_tag 'home/slider/slider1.png' %>
+        <div class="carousel-caption">
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+  </div>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 5,
+        paginationClickable: true,
+        spaceBetween: 30
+    });
+  </script>
+</div>
