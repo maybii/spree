@@ -24,11 +24,13 @@
   }
 
   .nav a {
-    color: #999999;
+    color: #444444;
     // color: #fff;
 
     &:hover, &:focus {
-      background: rgba($gray-darker, 0.4);
+      // background: rgba($gray-darker, 0.4);
+      background-color: transparent;
+      color: $brand-primary;
     }
   }
 
