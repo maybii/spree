@@ -23,7 +23,7 @@
 
 <div id="spree-third-header">
     <div class="container">
-        <div class="dropdown open">
+        <div class="dropdown open pull-left">
             <!-- data-toggle="dropdown"  -->
             <button class="btn btn-default dropdown-toggle open" type="button" id="all-category-menu" aria-haspopup="true" aria-expanded="true">
                 全部商品分类
@@ -43,6 +43,13 @@
                     <% end  %>
                 <% end  %>
             </ul>
+        </div>
+        <div class="profile-in-header pull-right"></div>
+        <div class="slider-content">
+            <div class="title-above-slider"></div>
+            <div class="home-slider">
+                <%= render :partial => "spree/shared/home_slider" %>
+            </div>
         </div>
     </div>
 </div>

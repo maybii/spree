@@ -1,5 +1,3 @@
-<%= render :partial => "spree/shared/home_slider" %>
-
 <% content_for :sidebar do %>
   <div data-hook="homepage_sidebar_navigation">
     <%= render :partial => 'spree/shared/taxonomies' %>
@@ -11,4 +9,3 @@
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
   <% end %>
 </div>
-
