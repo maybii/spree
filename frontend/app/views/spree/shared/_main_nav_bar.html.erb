@@ -12,13 +12,25 @@
 
     </ul>
     <ul class="nav navbar-nav navbar-right" data-hook>
-      <li id="link-to-cart" data-hook>
+        <li id="link-to-cart" data-hook> <!-- 购物车 -->
         <noscript>
           <%= link_to Spree.t(:cart), '/cart' %>
         </noscript>
         &nbsp;
       </li>
       <script>Spree.fetch_cart()</script>
+      <li id="link-to-account">
+          <%= link_to '我的订单', '/account' %>
+      </li>
+      <li id="link-to-kefu">
+          <%= link_to '客服中心', '/kefu_center' %>
+      </li>
+      <li id="link-to-help-center">
+          <%= link_to '帮助中心', '/help_center' %>
+      </li>
+      <li id="link-to-pricing-list">
+          <%= link_to '报价单', '/pricing-list' %>
+      </li>
     </ul>
   </div>
 </nav>
