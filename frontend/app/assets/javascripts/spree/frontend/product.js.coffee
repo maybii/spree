@@ -52,4 +52,3 @@ Spree.ready ($) ->
       Spree.disableCartForm ($ this)
 
   Spree.addImageHandlers()
-  console.log(124)

@@ -1,31 +1,5 @@
 /*
 * This is a manifest file that includes stylesheets for spree_frontend
- *= require spree/frontend/core
-
- *= require spree/frontend/frontend_bootstrap
- *= require spree/frontend/zhendi
- *= require spree/frontend/icon
- *= require spree/frontend/component
-
-*******************************************************************************
-
- *= require spree/frontend/home_page/header
- *= require spree/frontend/home_page/footer
- *= require spree/frontend/home_page/others
- *= require spree/frontend/home_page/content
-
-*******************************************************************************
-
- *= require spree/frontend/list_page/content
- *= require spree/frontend/list_page/header
-
-*******************************************************************************
- *= require spree/frontend/detail_page/detail
- *= require spree/frontend/detail_page/summary
-
-*******************************************************************************
-
- *= require spree/frontend/shared/product_item
-
+ *= require spree/frontend/main
  *= require_self
 */
