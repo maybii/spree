@@ -1,6 +1,6 @@
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
 
-<%= form_tag spree.products_path, :method => :get, class: "navbar-form" do %>
+<%= form_tag spree.products_path, :method => :get, class: "navbar-form-search" do %>
   <!-- <div class="form-group">
     <% cache(cache_key_for_taxons) do %>
       <%= select_tag :taxon,
@@ -10,9 +10,9 @@
     <% end %>
   </div> -->
   <div class="input-group">
-    <%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control" %>
-    <span class="input-group-btn">
-      <%= submit_tag Spree.t(:search), :name => nil, class: "btn btn-primary" %>
+    <%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control form-control-zhendi-default" %>
+    <span class="input-group-btn input-group-btn-zhendi">
+      <%= submit_tag Spree.t(:search), :name => nil, class: "btn btn-primary btn-zhendi-primary" %>
     </span>
   </div>
 <% end %>

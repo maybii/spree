@@ -31,10 +31,14 @@
     margin-bottom: 10px;
 
     img {
-      width: 100%;
+      // width: 80%;
+      height: 70px;
     }
   }
 
+  #top-nav-bar {
+    padding-top: 15px;
+  }
   .nav a {
     color: #444444;
     // color: #fff;

@@ -1,11 +1,21 @@
-.btn-zhendi-default{
+.btn-zhendi-default {
     background-color: #f8f8f8;
     border: solid 1px #dddddd;
     color: #444444;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 18px;
     padding: 10px 22px;;
     i{
         margin-right: 10px;
     }
+}
+.btn-zhendi-primary {
+    line-height: 18px;
+    padding: 10px 22px;;
+}
+
+.form-control-zhendi-default {
+  height: 40px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
