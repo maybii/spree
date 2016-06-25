@@ -58,7 +58,8 @@
 
 #spree-footer {
   background: $gray-dark;
-  padding-top: $padding-base-horizontal;
+  // padding-top: $padding-base-horizontal;
+  padding-top: 50px;
   margin-top: $line-height-computed;
   color: white;
 }
