@@ -5,12 +5,11 @@
     </li>
   </ul>
   <div id="nav-bar-buttons-right" class="navbar-right">
-      <div>
-          <%= link_to "个人中心", "/account", class: "btn btn-default btn-zhendi-default"%>
+      <div class="inline nav-btn-my-profile">
+          <%= link_to ("<i class='left-icon icon-profile'></i>个人中心").html_safe, "/account", class: "btn btn-default btn-zhendi-default"%>
       </div>
-      <div>
-          <%= link_to "去购物车", "/cart", class: "btn btn-default btn-zhendi-default"%>
-          <i class="icon-star"> </i>
+      <div class="inline go-to-cart">
+          <%= link_to ("<i class='left-icon icon-cart'></i>去购物车结算").html_safe, "/cart", class: "btn btn-default btn-zhendi-default"%>
       </div>
   </div>
 </nav>
