@@ -1,6 +1,42 @@
+#home-carousel {
+  .carousel-indicators {
+    bottom: 0;
+    margin-bottom: 0;
+    &>li {
+      width: 8px;
+      height: 8px;
+      margin: 2px;
+      border: 1px solid #444444;
+      background-color: transparent;
+    }
+    &>li.active {
+      width: 8px;
+      height: 8px;
+      background-color: #444444;
+      margin: 2px;
+    }
+  }
+}
+
+.home-swiper {
+  position: relative;
+  .swiper-button-prev, .swiper-button-next {
+    // width: 15px;
+    // height: 28px;
+    color: #888888;
+  }
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+}
+
 .swiper-container {
-    width: 100%;
+    width: 90%;
     height: 100%;
+    margin: 0 5%;
 }
 .swiper-slide {
     text-align: center;

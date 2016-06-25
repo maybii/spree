@@ -1,10 +1,10 @@
 <div class="home-slider">
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div id="home-carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#home-carousel" data-slide-to="1"></li>
+      <li data-target="#home-carousel" data-slide-to="2"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -21,29 +21,36 @@
       </a>
     </div>
   </div>
-  <div class="swiper-container">
-      <div class="swiper-wrapper">
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-          <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-      </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
+  <div class="home-swiper">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
   <script>
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
         slidesPerView: 5,
         autoplay: 2500,
-        paginationClickable: true,
-        spaceBetween: 30
+        spaceBetween: 10,
+        loop: true
     });
   </script>
 </div>
