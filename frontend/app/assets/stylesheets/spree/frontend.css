@@ -1,5 +1,7 @@
 /*
 * This is a manifest file that includes stylesheets for spree_frontend
+ *= require spree/frontend/core
+
  *= require spree/frontend/frontend_bootstrap
  *= require spree/frontend/zhendi
  *= require spree/frontend/icon
