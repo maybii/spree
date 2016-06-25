@@ -12,6 +12,14 @@
   #main-nav-bar {
     margin-bottom: 0;
   }
+  li.navbar-devider {
+    line-height: 20px;
+    padding: 15px 0;
+    color: #c8c8c8;
+    &:hover {
+      color: #c8c8c8;
+    }
+  }
 }
 
 .navbar-form-search {
