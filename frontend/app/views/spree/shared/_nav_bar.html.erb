@@ -1,8 +1,17 @@
 <nav class="navbar col-md-10 col-sm-10" id="top-nav-bar">
-  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+  <ul id="nav-bar" class="nav navbar-nav" data-hook>
     <li id="search-bar-1" data-hook>
       <i class="icon-star"></i>
       <%= render :partial => 'spree/shared/search' %>
     </li>
   </ul>
+  <div id="nav-bar-buttons-right" class="navbar-right">
+      <div>
+          <%= link_to "个人中心", "/account", class: "btn btn-default btn-zhendi-default"%>
+      </div>
+      <div>
+          <%= link_to "去购物车", "/cart", class: "btn btn-default btn-zhendi-default"%>
+          <i class="icon-star"> </i>
+      </div>
+  </div>
 </nav>
