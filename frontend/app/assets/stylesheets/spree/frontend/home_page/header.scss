@@ -39,6 +39,12 @@
 #spree-third-header{
   background-color: white;
   padding-bottom: 32px;
+  .icon-double-arrow-down{
+    font-size: 10px;
+    float: right;
+    padding-top: 6px;
+    @include transform(scale(0.8));
+  }
   /* center */
   .slider-content{
     .title-above-slider{
@@ -211,6 +217,9 @@
   }
 
   /* left-menu */
+  .left-menu-dropdown.for_absolute{
+    position: absolute;
+  }
   .left-menu-dropdown{
     position: relative;
     float: none;

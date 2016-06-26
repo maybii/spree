@@ -1,4 +1,5 @@
 <% @taxonomies = Spree::Taxonomy.includes(root: :children) %>
+<% @header_show_all ||= false %>
 
 <!------------------ Top Header --------------------->
 
@@ -28,12 +29,13 @@
 
     <!------------ Left ------------>
 
-    <div class="dropdown open pull-left">
+    <div class="dropdown pull-left <%= 'open' if @header_show_all  %>">
       <!-- data-toggle="dropdown"  -->
-      <button class="btn btn-default dropdown-toggle open" type="button" id="all-category-menu" aria-haspopup="true" aria-expanded="true">
+      <button class="btn btn-default dropdown-toggle" type="button" id="all-category-menu" aria-haspopup="true" aria-expanded="true" data-toggle="<%= 'dropdown' if not @header_show_all %>">
         全部商品分类
+        <i class="icon-double-arrow-down <%= 'hidden' if @header_show_all %>"></i>
       </button>
-      <ul class="dropdown-menu left-menu-dropdown">
+      <ul class="dropdown-menu left-menu-dropdown <%= 'for_absolute' if not @header_show_all %> ">
         <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
         <% @taxonomies.each do |taxonomy| %>
           <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
@@ -49,7 +51,7 @@
       </ul>
     </div>
 
-    <div class="slider-content">
+    <div class="slider-content" >
 
       <!------------ Title ------------>
 
@@ -63,7 +65,7 @@
         <%= link_to "买家须知", "/privacy", class: "item" %>
         <%= link_to "关于真谛", "/about", class: "item" %>
       </div>
-      <div>
+      <div class="<%= 'hidden' if not @header_show_all %>">
         <!------------ Right ------------>
 
         <div class="profile-in-header pull-right">
@@ -82,27 +84,22 @@
             </div>
           </div>
           <div class="notice">
-            <div>
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#notice" aria-controls="home" role="tab" data-toggle="tab">公告</a></li>
-                <li role="presentation"><a href="#introduction" aria-controls="profile" role="tab" data-toggle="tab">买家入门</a></li>
-              </ul>
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#notice" aria-controls="home" role="tab" data-toggle="tab">公告</a></li>
+              <li role="presentation"><a href="#introduction" aria-controls="profile" role="tab" data-toggle="tab">买家入门</a></li>
+            </ul>
 
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="notice">
-                  <div>  [公告]物流信息通知 </div>
-                  <div> [公告]巧克力产品保存须知</div>
-                  <div>[公告]五一春节放假通知</div>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="introduction">
-                  <div>  [公告]物流信息通知 </div>
-                  <div> [公告]巧克力产品保存须知</div>
-                  <div>[公告]五一春节放假通知</div>
-                </div>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="notice">
+                <div>  [公告]物流信息通知 </div>
+                <div> [公告]巧克力产品保存须知</div>
+                <div>[公告]五一春节放假通知</div>
               </div>
-
+              <div role="tabpanel" class="tab-pane fade" id="introduction">
+                <div>  [公告]物流信息通知 </div>
+                <div> [公告]巧克力产品保存须知</div>
+                <div>[公告]五一春节放假通知</div>
+              </div>
             </div>
           </div>
           <div class="notice-content"></div>
