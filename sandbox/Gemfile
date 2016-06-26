@@ -41,16 +41,18 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+gem 'tinymce-rails-langs'
 
 gem 'spree', path: '..'
 gem 'spree_auth_devise' #, github: 'spree/spree_auth_devise', branch: 'master'
 gem 'spree_gateway'
 
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
-
+gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: '3-1-stable'
+gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-1-stable'
 
 group :test, :development do
   gem 'bullet'
