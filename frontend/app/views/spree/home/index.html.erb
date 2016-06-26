@@ -1,36 +1,28 @@
-<div id='home-feature-tabs'>
+<div id='home-feature-tabs' class="content-section">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    <li role="presentation" class="active"><a href="#new-in-store" aria-controls="new" role="tab" data-toggle="tab">新品上市</a></li>
+    <li role="presentation"><a href="#on-sale" aria-controls="on-sale" role="tab" data-toggle="tab">促销专区</a></li>
+    <li role="presentation"><a href="#hot" aria-controls="hot" role="tab" data-toggle="tab">热卖商品</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
+    <div role="tabpanel" class="tab-pane fade in active" id="new-in-store">
       <div data-hook="homepage_products">
         <% cache(cache_key_for_products) do %>
           <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
         <% end %>
       </div>
     </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
+    <div role="tabpanel" class="tab-pane fade" id="on-sale">
       <div data-hook="homepage_products">
         <% cache(cache_key_for_products) do %>
           <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
         <% end %>
       </div>
     </div>
-    <div role="tabpanel" class="tab-pane" id="messages">
-      <div data-hook="homepage_products">
-        <% cache(cache_key_for_products) do %>
-          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
-        <% end %>
-      </div>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="settings">
+    <div role="tabpanel" class="tab-pane fade" id="hot">
       <div data-hook="homepage_products">
         <% cache(cache_key_for_products) do %>
           <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
