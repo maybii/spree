@@ -1,5 +1,7 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
-
+a {
+  color: #444444;
+}
 // -- Spree Custom Header and Footer ---------------------
 #spree-main-header {
   .nav a {
@@ -97,6 +99,15 @@ table {
       }
     }
   }
+}
+.nav-tabs > li > a {
+  border-bottom: 2px solid transparent;
+  border-radius: 4px 4px 0 0;
+  @include transition(all .35s ease-in-out);
+}
+.nav-tabs > li.active > a {
+  color: $brand-primary;
+  border-bottom: 2px solid $brand-primary;
 }
 
 // Footer links

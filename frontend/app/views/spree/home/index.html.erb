@@ -1,11 +1,47 @@
-<% content_for :sidebar do %>
-  <div data-hook="homepage_sidebar_navigation">
-    <%= render :partial => 'spree/shared/taxonomies' %>
-  </div>
-<% end %>
+<div id='home-feature-tabs'>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
 
-<div data-hook="homepage_products">
-  <% cache(cache_key_for_products) do %>
-    <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
-  <% end %>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <div data-hook="homepage_products">
+        <% cache(cache_key_for_products) do %>
+          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+        <% end %>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <div data-hook="homepage_products">
+        <% cache(cache_key_for_products) do %>
+          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+        <% end %>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <div data-hook="homepage_products">
+        <% cache(cache_key_for_products) do %>
+          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+        <% end %>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+      <div data-hook="homepage_products">
+        <% cache(cache_key_for_products) do %>
+          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('#home-feature-tabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+  </script>
 </div>
