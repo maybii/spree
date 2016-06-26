@@ -108,7 +108,9 @@ module Spree
       content_tag :div, class: 'list-group-in-left-menu' do
         taxons = root_taxon.children.map do |taxon|
           css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'list-group-item-in-right-menu active' : 'list-group-item-in-right-menu'
-          link_to(taxon.name, seo_url(taxon), class: css_class) + taxons_tree(taxon, current_taxon, max_level - 1)
+          sub = taxons_tree(taxon, current_taxon, max_level - 1)
+          sub = "<div class='list-group'></div>".html_safe if sub.empty?
+          link_to(taxon.name, seo_url(taxon), class: css_class) + sub
         end
         safe_join(taxons, "\n")
       end

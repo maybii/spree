@@ -63,9 +63,96 @@
   /* right */
 
   .profile-in-header{
+    $padding_size: 14px;
     width: 210px;
     height: 425px;
-    background-color: red;
+    border: 1px solid #dddddd;
+
+    .hi-section{
+      height: 74px;
+      text-align: center;
+      .hi{
+        padding-top: 19px;
+        margin-bottom: 5px;
+      }
+      .welcome{
+        color: #888888;
+        font-size: 12px;
+      }
+    }
+    .login-btns{
+      height: 46px;
+      background-color: #fafafa;
+      border-top: solid 1px #dddddd;
+      border-bottom: solid 1px #dddddd;
+      a{
+        line-height: 46px;
+        vertical-align: middle;
+      }
+      .login-btn-item{
+        text-align: center;
+        &:first-child{
+          border-right: 1px solid #dddddd;
+        }
+      }
+      i{
+        vertical-align: middle;
+        color: #fa5930;
+        font-size: 15px;
+        margin-right: 7px;
+      }
+    }
+    .notice{
+      .nav-tabs{
+        height: 35px;
+        margin-bottom: 13px;
+        padding-left: $padding_size;
+        a{
+          height: 35px;
+          font-size: 12px;
+          border-bottom-width: 1px;
+        }
+      }
+      .tab-content{
+        height: 90px;
+        overflow: hidden;
+      }
+      .tab-pane{
+        font-size: 12px;
+        padding-left: $padding_size;
+        line-height: 26px;
+      }
+    }
+    .safe-guards{
+      height: 46px;
+      border-top: solid 1px #dddddd;
+      border-bottom: solid 1px #dddddd;
+      i{
+        line-height: 46px;
+        font-size: 18px;
+        color: #fa5930;
+      }
+    }
+    .phone-title{
+      height: 40px;
+      line-height: 40px;
+      border-bottom: solid 1px #dddddd;
+      padding-left: $padding_size;
+      pading-top: 12px;
+    }
+    .phone-number{
+      padding-top: 12px;
+      padding-left: $padding_size;
+      .number{
+        color: #fa5930;
+        font-size: 20px;
+        padding-bottom: 5px;
+      }
+      .serve-time{
+        color: #888888;
+        font-size: 12px;
+      }
+    }
   }
   .slider-content{
     padding-left: 180px;
@@ -115,6 +202,7 @@
       }
     }
     .list-group{
+      min-height: 30px;
       padding-bottom: 5px;
       border-bottom: dashed 1px #dddddd;
       margin-left: 100px;

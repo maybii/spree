@@ -64,7 +64,57 @@
       <div>
         <!------------ Right ------------>
 
-        <div class="profile-in-header pull-right"></div>
+        <div class="profile-in-header pull-right">
+          <div class="hi-section">
+            <div class="hi"> Hi! 你好</div>
+            <div class="welcome"> 欢迎来到zhendi.com</div>
+          </div>
+          <div class="login-btns">
+            <div class="login-btn-item col-xs-6">
+              <i class="icon-lock"></i>
+              <%=link_to "登录", '/login', class: "" %>
+            </div>
+            <div class="login-btn-item col-xs-6">
+              <i class="icon-edit"></i>
+              <%=link_to "注册", '/sign_up', class: ""  %>
+            </div>
+          </div>
+          <div class="notice">
+            <div>
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#notice" aria-controls="home" role="tab" data-toggle="tab">公告</a></li>
+                <li role="presentation"><a href="#introduction" aria-controls="profile" role="tab" data-toggle="tab">买家入门</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="notice">
+                  <div>  [公告]物流信息通知 </div>
+                  <div> [公告]巧克力产品保存须知</div>
+                  <div>[公告]五一春节放假通知</div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="introduction">
+                  <div>  [公告]物流信息通知 </div>
+                  <div> [公告]巧克力产品保存须知</div>
+                  <div>[公告]五一春节放假通知</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="notice-content"></div>
+          <div class="safe-guards">
+            <span class='col-xs-4 text-right'> <i class="icon-shield"></i></span>
+            <span class='col-xs-4 text-center'> <i class="icon-calendar"></i></span>
+            <span class='col-xs-4 text-left'> <i class="icon-heart"></i></span>
+          </div>
+          <div class="phone-title">客服热线</div>
+          <div class="phone-number">
+            <div class="number">0479-83317151</div>
+            <div class="serve-time">服务时间: 周一到周六 9:00-18:00</div>
+          </div>
+        </div>
 
         <!------------ Center ------------>
 
