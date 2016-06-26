@@ -46,8 +46,6 @@
   text-align: center;
   font-size: 18px;
   background: #dbdbdb;
-  // height: 0;
-  // padding-top: 100%;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -65,7 +63,91 @@
 }
 .swiper-item {
   width: 100%;
-  // padding-top: 100%;
   background-color: #fff;
   padding: 5px 0;
+}
+
+.float-kefu{
+  @media (max-width: 1379px){
+    display: none;
+  }
+  position: absolute;
+  top: 200px;
+  right: 0px;
+  text-align: center;
+  border-radius: 2px;
+  border: solid 1px #efefef;
+  width: 170px;
+  height: 428px;
+
+  &.affix{
+    top: 20px;
+  }
+  .title{
+    font-size: 16px;
+    background-color: #efefef;
+    border-radius: 2px;
+    height: 36px;
+    line-height: 36px;
+  }
+  .kefu-body{
+    background-color: white;
+    padding: 0px 25px;
+  }
+  .section{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  .content{
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .social-link-icon{
+    margin-top: 20px;
+    li{
+      display: inline-block;
+      a{
+        padding: 0px;
+        &:first-child{
+          margin-right: 9px;
+        }
+      }
+    }
+  }
+  .icon-wechat, .icon-qq{
+    font-size: 16px;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    background-repeat: no-repeat;
+  }
+  .icon-wechat{
+    background-color: #4dd865;
+  }
+  .icon-qq{
+    background-color: #5ebdf6;
+  }
+  .active .triangle{
+    display: block;
+  }
+  .triangle{
+    display: none;
+    margin-top: 8px;
+    border: 5px solid transparent;
+    width: 0px;
+    height: 0px;
+    border-bottom-color: #efefef;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tab-content{
+    border: 5px solid #efefef;
+  }
+  .tab-pane{
+    .qrcode{
+      width: 106px;
+      height: 106px;
+    }
+  }
 }

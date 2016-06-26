@@ -1,0 +1,45 @@
+<% @is_home ||= false %>
+
+
+<div id="float-kefu" data-spy="affix" data-offset-top="180" class="float-kefu <%= 'hidden' if @is_home %>">
+  <!-- just show when width > 1380px -->
+  <div class="title">
+    订购咨询与服务
+  </div>
+  <div class="kefu-body">
+    <div class="section">工作时间 </div>
+    <div class="content"> 9:00 ~ 20:00 </div>
+
+    <div class="section">联系电话 </div>
+    <div class="content"> 0479-928370000 </div>
+    <div class="content"> +86 130 5255 0085 </div>
+
+    <div class="section">添加QQ和微信</div>
+    <!-- Nav tabs -->
+    <ul class="nav social-link-icon" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#float-kefu-wechat" aria-controls="home" role="tab" data-toggle="tab">
+          <i class="footer-icon icon-wechat"></i>
+          <div class="triangle"></div>
+        </a>
+      </li>
+      <li role="presentation" >
+        <a href="#float-kefu-qq" aria-controls="profile" role="tab" data-toggle="tab">
+          <i class="footer-icon icon-qq"></i>
+          <div class="triangle"></div>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="float-kefu-wechat">
+        <img class="qrcode" src="http://up.img.heidian.co/qr-mammypie-wechat.jpg" >
+
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="float-kefu-qq">
+        <img class="qrcode" src="http://up.img.heidian.co/qr-mammypie-wechat.jpg" >
+      </div>
+    </div>
+  </div>
+</div>
