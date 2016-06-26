@@ -1,12 +1,16 @@
 ////////////////////////////  Text ///////////////////////////////
 
 a{
-    &:hover{
+    &:hover, &:focus{
         text-decoration: none;
     }
 }
 
 ///////////////////////////// Button ///////////////////////////
+
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus{
+    outline: none;
+}
 
 .btn-zhendi-default {
     background-color: #f8f8f8;

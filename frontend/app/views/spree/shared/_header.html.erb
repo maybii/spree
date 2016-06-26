@@ -1,55 +1,75 @@
 <!------------------ Top Header --------------------->
 
 <div id="spree-main-header">
-    <div class="container">
-        <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
-    </div>
+  <div class="container">
+    <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+  </div>
 </div>
 
 <!------------------ Logo Header -------------------->
 
 <div id="spree-header">
-    <header id="header" data-hook>
-        <div class="container">
-            <div class="row">
-                <figure id="logo" class="col-md-2 col-sm-2" data-hook>
-                    <%= logo %>
-                </figure>
-                <%= render :partial => 'spree/shared/nav_bar' %>
-            </div>
-        </div>
-    </header>
+  <header id="header" data-hook>
+    <div class="container">
+      <div class="row">
+        <figure id="logo" class="col-md-2 col-sm-2" data-hook>
+          <%= logo %>
+        </figure>
+        <%= render :partial => 'spree/shared/nav_bar' %>
+      </div>
+    </div>
+  </header>
 </div>
 
 <div id="spree-third-header">
-    <div class="container">
-        <div class="dropdown open pull-left">
-            <!-- data-toggle="dropdown"  -->
-            <button class="btn btn-default dropdown-toggle open" type="button" id="all-category-menu" aria-haspopup="true" aria-expanded="true">
-                全部商品分类
-            </button>
-            <ul class="dropdown-menu left-menu-dropdown">
-                <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
-                <% @taxonomies.each do |taxonomy| %>
-                    <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-                        <li class="dropdown-submenu dropdown-menu-left">
-                            <a class="left-menu-title" href="#"> <%=taxonomy.name %> </a>
-                            <%= taxons_tree_in_left_menu(taxonomy.root, @taxon, max_level) %>
-                            <ul class="dropdown-menu right-menu-dropdown">
-                                <%=taxonomy.name %>
-                                <%= taxons_tree_in_right_menu(taxonomy.root, @taxon, max_level) %>
-                            </ul>
-                        </li>
-                    <% end  %>
-                <% end  %>
-            </ul>
-        </div>
-        <div class="profile-in-header pull-right"></div>
-        <div class="slider-content">
-            <div class="title-above-slider"></div>
-            <div class="home-slider">
-                <%= render :partial => "spree/shared/home_slider" %>
-            </div>
-        </div>
+  <div class="container">
+
+    <!------------ Left ------------>
+
+    <div class="dropdown open pull-left">
+      <!-- data-toggle="dropdown"  -->
+      <button class="btn btn-default dropdown-toggle open" type="button" id="all-category-menu" aria-haspopup="true" aria-expanded="true">
+        全部商品分类
+      </button>
+      <ul class="dropdown-menu left-menu-dropdown">
+        <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+        <% @taxonomies.each do |taxonomy| %>
+          <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+            <li class="dropdown-submenu dropdown-menu-left">
+              <a class="left-menu-title" href="#"> <%=taxonomy.name %> </a>
+              <%= taxons_tree_in_left_menu(taxonomy.root, @taxon, max_level) %>
+              <ul class="dropdown-menu right-menu-dropdown">
+                <%= taxons_tree_in_right_menu(taxonomy.root, @taxon, 2) %>
+              </ul>
+            </li>
+          <% end  %>
+        <% end  %>
+      </ul>
     </div>
+
+    <div class="slider-content">
+
+      <!------------ Title ------------>
+
+      <div class="title-above-slider">
+        <%= link_to "首页", "/", class: "item" %>
+        <%= link_to "新品上市", "/new_products", class: "item" %>
+        <%= link_to "促销专区", "/on_sale", class: "item section" %>
+        <%= link_to "代理加盟", "/agency", class: "item" %>
+        <%= link_to "企业采购", "/caigou", class: "item section" %>
+        <%= link_to "资讯公告", "/news", class: "item" %>
+        <%= link_to "买家须知", "/privacy", class: "item" %>
+        <%= link_to "关于真谛", "/about", class: "item" %>
+      </div>
+      <div>
+        <!------------ Right ------------>
+
+        <div class="profile-in-header pull-right"></div>
+
+        <!------------ Center ------------>
+
+        <%= render :partial => "spree/shared/home_slider" %>
+      </div>
+    </div>
+  </div>
 </div>

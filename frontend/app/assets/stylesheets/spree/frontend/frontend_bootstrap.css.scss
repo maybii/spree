@@ -18,11 +18,11 @@ a {
 #spree-header {
   // background: $brand-primary asset-url('spree_header.jpg') center center;
   background-size: cover;
-  margin-bottom: $line-height-computed;
+  //margin-bottom: $line-height-computed;
 
   #header {
     // background: rgba($gray-darker, 0.4);
-    padding: $line-height-computed 0;
+    padding: 20px 0;
   }
 
   #logo {

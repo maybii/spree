@@ -1,4 +1,8 @@
 #home-carousel {
+  margin-bottom: 12px;
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img{
+    height: 280px;
+  }
   .carousel-indicators {
     bottom: 0;
     margin-bottom: 0;
@@ -34,30 +38,30 @@
 }
 
 .swiper-container {
-    width: 90%;
-    height: 100%;
-    margin: 0 5%;
+  width: 90%;
+  height: 100%;
+  margin: 0 5%;
 }
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #dbdbdb;
-    // height: 0;
-    // padding-top: 100%;
+  text-align: center;
+  font-size: 18px;
+  background: #dbdbdb;
+  // height: 0;
+  // padding-top: 100%;
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .swiper-item {
   width: 100%;
