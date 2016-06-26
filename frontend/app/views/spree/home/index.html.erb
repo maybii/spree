@@ -5,35 +5,37 @@
     <li role="presentation"><a href="#on-sale" aria-controls="on-sale" role="tab" data-toggle="tab">促销专区</a></li>
     <li role="presentation"><a href="#hot" aria-controls="hot" role="tab" data-toggle="tab">热卖商品</a></li>
   </ul>
-
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="new-in-store">
       <div data-hook="homepage_products">
         <% cache(cache_key_for_products) do %>
-          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+          <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
         <% end %>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="on-sale">
       <div data-hook="homepage_products">
         <% cache(cache_key_for_products) do %>
-          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+          <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
         <% end %>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="hot">
       <div data-hook="homepage_products">
         <% cache(cache_key_for_products) do %>
-          <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+          <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
         <% end %>
       </div>
     </div>
   </div>
-  <script>
-    $('#home-feature-tabs a').click(function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    })
-  </script>
+</div>
+
+<!-- feature-categories -->
+<div id="home-feature-categories">
+  <div data-hook="homepage_features">
+    <% cache(cache_key_for_products) do %>
+      <%= render :partial => 'spree/home/homepage_feature_categories', :locals => { :products => @products, :taxon => @taxon } %>
+    <% end %>
+  </div>
 </div>

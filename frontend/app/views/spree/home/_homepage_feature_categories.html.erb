@@ -1,0 +1,33 @@
+
+<% if products.any? %>
+  <div id="home-content-feature-categories" class="" data-hook>
+    <div class="category-wrapper">
+      <div class="category-list-item first"></div>
+      <% products.each do |product| %>
+        <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+        <div id="product_<%= product.id %>" class="category-list-item" data-hook="category_list_item" itemscope itemtype="https://schema.org/Product">
+          <div class="panel panel-default">
+            <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+              <div class="panel-body text-center product-body">
+                <%= link_to url, itemprop: "url" do %>
+                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title") %>
+                <% end %>
+                <br/>
+              </div>
+              <div class="panel-footer text-center">
+                <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+                </span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% reset_cycle("classes") %>
+    </div>
+    <div class="category-ranking">
+        ranking
+    </div>
+  </div>
+<% end %>
