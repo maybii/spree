@@ -27,7 +27,12 @@
   .swiper-button-prev, .swiper-button-next {
     // width: 15px;
     // height: 28px;
+    background-image: none !important;
     color: #888888;
+    > i {
+      font-size: 36px;
+      color: #888888;
+    }
   }
   .swiper-button-prev {
     left: 0;

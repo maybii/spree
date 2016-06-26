@@ -7,15 +7,22 @@
           <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
             <div class="panel-body text-center product-body">
               <%= link_to url, itemprop: "url" do %>
-                <%= small_image(product, itemprop: "image") %><br/>
-                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+                <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                <%= content_tag(:div, truncate(product.name, length: 50), class: 'info text-left', itemprop: "name", title: product.name) %>
               <% end %>
-              <br/>
             </div>
-            <div class="panel-footer text-center">
-              <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
-              </span>
+            <div class="panel-footer">
+              <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <div class="product-price selling" itemprop="price">批发价：<span class="price"><%= display_price(product) %></span></div>
+                <div class="other-info clearfix">
+                  <div class="product-price-origin pull-left">
+                    零售价：<span>￥28.00</span>
+                  </div>
+                  <div class="sale-vol pull-right">
+                    销量：90
+                  </div>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>

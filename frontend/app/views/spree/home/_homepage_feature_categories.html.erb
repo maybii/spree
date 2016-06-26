@@ -1,6 +1,24 @@
-
+<div id="home-content-feature-categories">
 <% if products.any? %>
-  <div id="home-content-feature-categories" class="" data-hook>
+  <div class="home-content-feature-category" class="" data-hook>
+    <div class="category-head clearfix">
+      <div class="category-title pull-left">
+        <span class="title-index">1F</span>
+        <span class="title-text">进口饼干</span>
+        <span class="divider">|</span>
+        <span class="title-text">糕点</span>
+      </div>
+      <div class="category-recommend pull-right">
+        <ul class='nav navbar nav-pills'>
+          <li><a href="/">曲奇</a></li>
+          <li><a href="/">威化饼</a></li>
+          <li><a href="/">苏打饼干</a></li>
+          <li><a href="/">夹心饼干</a></li>
+          <li><a href="/">蛋卷</a></li>
+          <li><a href="/">曲奇礼盒</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="category-wrapper">
       <div class="category-list-item first"></div>
       <% products.each do |product| %>
@@ -11,14 +29,16 @@
               <div class="panel-body text-center product-body">
                 <%= link_to url, itemprop: "url" do %>
                   <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
-                  <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title") %>
+                  <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
                 <% end %>
                 <br/>
               </div>
-              <div class="panel-footer text-center">
-                <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
-                </span>
+              <div class="panel-footer">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <div class="product-price selling" itemprop="price">
+                    <span>批发：</span><span class="price"><%= display_price(product) %></span>
+                  </div>
+                </div>
               </div>
             <% end %>
           </div>
@@ -27,7 +47,51 @@
       <% reset_cycle("classes") %>
     </div>
     <div class="category-ranking">
-        ranking
+        <h4>热销排行榜</h4>
+        <div class="ranking-items">
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+
+        </div>
     </div>
   </div>
 <% end %>
+</div>
