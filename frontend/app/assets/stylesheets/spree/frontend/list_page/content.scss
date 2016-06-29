@@ -35,17 +35,8 @@
       height: auto;
       .info {
         display: block !important;
-        margin-top: 0px;
+        margin-top: 10px;
         @include ellipsis(100%);
-      }
-    }
-    .product-price {
-      text-align: left;
-      font-size: 14px;
-      color: #444444;
-      span.price {
-        color: $brand-primary;
-        font-size: 18px;
       }
     }
     .panel-footer {
@@ -53,15 +44,32 @@
       background-color: transparent;
       border: none;
       .other-info {
-        line-height: 34px;
+        line-height: 30px;
         color: #888888;
         font-size: 12px;
       }
       .btn-add-to-cart {
         background-color: #f13c3c;
+        font-size: 12px;
         color: #fff;
         &:hover {
           background-color: #f36d6d;
+        }
+      }
+      .product-price {
+        line-height: 1.4;
+        text-align: left;
+        font-size: 14px;
+        color: #444444;
+        span.price {
+          color: $brand-primary;
+          // font-size: 18px;
+        }
+      }
+      .product-price-origin {
+        line-height: 1.4;
+        > span {
+          line-height: 1.4;
         }
       }
     }
