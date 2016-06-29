@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh-CN:
+  address_book:
+    save: "保存"
   spree:
     returns: "asdfasdf"
   activerecord:
