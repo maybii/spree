@@ -59,6 +59,8 @@ gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', ref: '831a2108b7ab
 gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', ref: 'a4092bee14dae36af21db1c4a325de4710bbf582'
 gem "spree_product_zoom", github: "spree-contrib/spree_product_zoom", ref: '11fcfdb4c4b53ffba5dee3912530cc2ed925ea5d'
 gem 'spree_multi_currency', github: 'spree-contrib/spree_multi_currency', branch: '3-1-stable'
+gem 'spree_alipay', :github => "RuanShan/spree_alipay", ref: "b3bc76bc56e2dbd5211f6aa506766b4de8de494b"
+
 
 
 group :test, :development do
