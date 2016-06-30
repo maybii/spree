@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629131309) do
+ActiveRecord::Schema.define(version: 20160629133557) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -1083,6 +1083,17 @@ ActiveRecord::Schema.define(version: 20160629131309) do
   add_index "spree_variants", ["sku"], name: "index_spree_variants_on_sku", using: :btree
   add_index "spree_variants", ["tax_category_id"], name: "index_spree_variants_on_tax_category_id", using: :btree
   add_index "spree_variants", ["track_inventory"], name: "index_spree_variants_on_track_inventory", using: :btree
+
+  create_table "spree_volume_prices", force: :cascade do |t|
+    t.integer  "variant_id",    limit: 4
+    t.string   "name",          limit: 255
+    t.string   "range",         limit: 255
+    t.decimal  "amount",                    precision: 8, scale: 2
+    t.integer  "position",      limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "discount_type", limit: 255
+  end
 
   create_table "spree_wished_products", force: :cascade do |t|
     t.integer  "variant_id",  limit: 4
