@@ -22,10 +22,22 @@
 zh-CN:
   address_book:
     save: "保存"
-  spree:
-    returns: "asdfasdf"
   activerecord:
     attributes:
+      spree/page:
+        body: Body
+        foreign_link: "链接 (URL)"
+        layout: Layout
+        meta_description: "Meta Description"
+        meta_keywords: "Meta Keywords"
+        meta_title: "Meta Title"
+        position: Position
+        render_layout_as_partial: "Render layout as partial"
+        show_in_header: "Show in header"
+        show_in_sidebar: "Show in sidebar"
+        slug: Slug
+        title: Title
+        visible: Visible
       spree/address:
         address1: "地址"
         address2: "地址（继续）"
@@ -360,6 +372,9 @@ zh-CN:
       not_locked: "未冻结"
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
+    static_content:
+      link: "链接"
+      new_page: "新建静态页面"
     abbreviation: "缩写"
     accept:
     acceptance_errors:
@@ -1117,7 +1132,7 @@ zh-CN:
     return_number:
     return_quantity: "退货数量"
     returned: "已退回"
-    returns: "Returns"
+    returns: "退货"
     review: Review
     risk:
     risk_analysis:
@@ -1335,7 +1350,7 @@ zh-CN:
     update: "更新"
     updating: "更新中"
     usage_limit: "使用限制"
-    use_app_default:
+    use_app_default: "使用默认设置"
     use_billing_address: "使用账单地址"
     use_new_cc: "使用一张新卡"
     use_s3: "使用Amazon S3存储图片"
