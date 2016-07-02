@@ -106,6 +106,14 @@ module Spree
       inventory_units.with_state('backordered').size
     end
 
+    def sorted_options
+      values = self.option_values.sort do |a, b|
+        a.option_type.position <=> b.option_type.position
+      end
+
+      values
+    end
+
     def options_text
       values = self.option_values.sort do |a, b|
         a.option_type.position <=> b.option_type.position

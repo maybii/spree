@@ -1,4 +1,9 @@
 #cart-container{
+  #continue_shopping{
+    margin-right: 40px;
+    font-size: 12px;
+    color: #333333;
+  }
   #cart-detail{
     td{
       height: 120px;
@@ -67,11 +72,33 @@
       .item-desc{
         @include ellipsis(100%);
       }
-      .cart-total{
-        .total-price-title{
-          font-size: 16px;
-          margin-right: 30px;
-          color: #666666;
+    }
+    .cart-total{
+      td{
+        height: 100px;
+        background-color: #f1f1f1;
+      }
+      .total-price-title{
+        line-height: 83px;
+        font-size: 16px;
+        margin-top: 40px;
+        margin-right: 30px;
+        color: #666666;
+      }
+      .total-price{
+        line-height: 83px;
+        font-size: 16px;
+        color: #f13c3c;
+        margin-right: 40px;
+      }
+      .btn-check{
+        height: 32px;
+        width: 110px;
+        background-color: #c2c2c2;
+        border: none;
+        margin-right: 30px;
+        &.active{
+          background-color: #f13c3c;
         }
       }
     }

@@ -81,6 +81,11 @@ module Spree
     end
 
     # human readable list of variant options
+    def sorted_options(v, options={})
+      v.sorted_options
+    end
+
+    # human readable list of variant options
     def variant_options(v, options={})
       v.options_text
     end
