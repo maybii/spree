@@ -30,9 +30,9 @@
         <div id="product-description" data-hook="product_description">
           <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
 
-          <div class="well" itemprop="description" data-hook="description">
+          <!-- <div class="well" itemprop="description" data-hook="description">
             <%= product_description(@product) %>
-          </div>
+          </div> -->
 
           <div id="cart-form" data-hook="cart_form">
             <%= render :partial => 'cart_form' %>
@@ -41,6 +41,39 @@
 
         <div id="taxon-crumbs" class=" five " data-hook="product_taxons">
           <%= render :partial => 'taxons' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="product-detail-tab-menu">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#new-in-store" aria-controls="new" role="tab" data-toggle="tab">新品上市</a></li>
+          <li role="presentation"><a href="#on-sale" aria-controls="on-sale" role="tab" data-toggle="tab">促销专区</a></li>
+          <li role="presentation"><a href="#hot" aria-controls="hot" role="tab" data-toggle="tab">热卖商品</a></li>
+        </ul>
+      </div>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="new-in-store">
+          <div data-hook="homepage_products">
+            <% cache(cache_key_for_products) do %>
+              <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
+            <% end %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="on-sale">
+          <div data-hook="homepage_products">
+            <% cache(cache_key_for_products) do %>
+              <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
+            <% end %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="hot">
+          <div data-hook="homepage_products">
+            <% cache(cache_key_for_products) do %>
+              <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

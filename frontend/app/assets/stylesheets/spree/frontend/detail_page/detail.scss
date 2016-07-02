@@ -1,3 +1,50 @@
-#homepage #header{
+#content {
+  #main-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 0;
+    .panel-body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 4px;
+      > img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  #thumbnails {
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 0;
+      border: solid 1px #dddddd;
+    }
+  }
+  h1.product-title {
+    font-size: 16px;
+    color: #444444;
+  }
 
+  .product-detail-tab-menu {
+    position: relative;
+    ul.nav.nav-tabs > li > a {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .nav.nav-tabs.affix-top {
+      // top:
+    }
+    .nav.nav-tabs.affix {
+      z-index: 99;
+      width: 100%;
+      background-color: #fff;
+      top: 0;
+      left: 0;
+    }
+  }
 }
