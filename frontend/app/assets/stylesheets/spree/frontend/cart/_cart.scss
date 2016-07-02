@@ -25,13 +25,34 @@
       }
     }
     .cart-item-price{
+      width: 150px;
+      max-width: 150px;
+      min-width: 150px;
       font-size: 12px;
       color: #333333;
     }
     .cart-item-quantity{
-      width: 100px;
-      max-width: 100px;
-      min-width: 100px;
+      width: 150px;
+      max-width: 150px;
+      min-width: 150px;
+      text-align: center;
+      .input-group-number-field{
+        width: 105px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .cart-item-total{
+      width: 200px;
+      text-align: center;
+      font-size: 12px;
+      color: #f13c3c;
+    }
+    .cart-item-delete{
+      text-align: center;
+      span{
+        color: #dddddd;
+      }
     }
     .cart-item-description{
       font-size: 12px;
@@ -45,6 +66,13 @@
       }
       .item-desc{
         @include ellipsis(100%);
+      }
+      .cart-total{
+        .total-price-title{
+          font-size: 16px;
+          margin-right: 30px;
+          color: #666666;
+        }
       }
     }
   }

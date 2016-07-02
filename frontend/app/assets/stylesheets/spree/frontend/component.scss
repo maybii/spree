@@ -1,11 +1,20 @@
 ////////////////////////////  Text ///////////////////////////////
 
-input::-webkit-outer-spin-button{
-  margin:20px;
+.input-group-number-field{
+  .input-group-btn button{
+    width: 28px;
+    height: 28px;
+    padding: 0px;
+  }
+  input{
+    height: 28px;
+    padding: 0px;
+    font-size: 12px;
+  }
+  .input-down{}
+  .input-up{}
 }
-input::-webkit-inner-spin-button {
-  margin:20px;
-}
+
 
 ////////////////////////////  Text ///////////////////////////////
 
