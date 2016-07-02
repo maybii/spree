@@ -990,7 +990,7 @@ zh-CN:
     presentation: "描述"
     previous: "上一页"
     previous_state_missing: "状态未知"
-    price: "价格"
+    price: "单价(元)"
     price_range: "价格范围"
     price_sack: "袋价格"
     process: "处理"
@@ -1324,7 +1324,7 @@ zh-CN:
     tiers:
     time: "时间"
     to_add_variants_you_must_first_define: "要添加具体型号，您需要先定义"
-    total: "总计"
+    total: "金额"
     total_per_item:
     total_pre_tax_refund:
     total_price:

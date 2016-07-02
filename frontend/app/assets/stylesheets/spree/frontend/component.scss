@@ -1,31 +1,40 @@
 ////////////////////////////  Text ///////////////////////////////
 
+input::-webkit-outer-spin-button{
+  margin:20px;
+}
+input::-webkit-inner-spin-button {
+  margin:20px;
+}
+
+////////////////////////////  Text ///////////////////////////////
+
 a{
-    &:hover, &:focus{
-        text-decoration: none;
-    }
+  &:hover, &:focus{
+    text-decoration: none;
+  }
 }
 
 ///////////////////////////// Button ///////////////////////////
 
 .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus{
-    outline: none;
+  outline: none;
 }
 
 .btn-zhendi-default {
-    background-color: #f8f8f8;
-    border: solid 1px #dddddd;
-    color: #444444;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 10px 22px;;
-    i{
-        margin-right: 10px;
-    }
+  background-color: #f8f8f8;
+  border: solid 1px #dddddd;
+  color: #444444;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px 22px;;
+  i{
+    margin-right: 10px;
+  }
 }
 .btn-zhendi-primary {
-    line-height: 18px;
-    padding: 10px 22px;
+  line-height: 18px;
+  padding: 10px 22px;
 }
 
 .form-control-zhendi-default {
