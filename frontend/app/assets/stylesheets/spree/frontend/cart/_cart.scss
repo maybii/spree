@@ -20,6 +20,18 @@
         background-color: transparent;
       }
     }
+    .cart-item-check-all {
+      .radio-inline, .checkbox-inline {
+        padding-left: 50px;
+        > input {
+          top: 50%;
+          margin-top: -7px;
+        }
+      }
+    }
+    .line-item label {
+      padding-left: 50px;
+    }
     .cart-item-image{
       width: 220px;
       text-align: center;
@@ -77,6 +89,17 @@
       td{
         height: 100px;
         background-color: #f1f1f1;
+      }
+      label.checkbox-inline, .delete-all {
+        line-height: 50px;
+        font-size: 12px;
+      }
+      label.checkbox-inline {
+        padding-left: 50px;
+        > input {
+          top: 50%;
+          margin-top: -7px;
+        }
       }
       .total-price-title{
         line-height: 83px;

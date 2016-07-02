@@ -2,6 +2,12 @@
 <table class="table" id="cart-detail" data-hook>
   <thead>
     <tr class="active cart_items_headers" data-hook="cart_items_headers">
+      <td class="cart-item-check-all">
+        <label class="checkbox-inline btn-select-all">
+          <input type="checkbox" name="cartCheckAll">
+          <span>全选</span>
+        </label>
+      </td>
       <td class="cart-item-image-header"></td>
       <td class="cart-item-description-header"><%= Spree.t(:item) %></td>
       <td class="cart-item-price-header"><%= Spree.t(:price) %></td>
@@ -22,12 +28,21 @@
     <%= render "spree/orders/adjustments" %>
   <% end %>
   <tr class="warning cart-total">
-    <td colspan="6">
+    <td colspan="1">
+      <label class="checkbox-inline btn-select-all">
+        <input type="checkbox" name="cartCheckAll">
+        <span>全选</span>
+      </label>
+    </td>
+    <td colspan="1" class="text-center">
+      <a href="" class="delete-all">删除选中商品</a>
+    </td>
+    <td colspan="5">
       <div class="pull-right">
         <span class="total-price-title">总价（不含运费）：</span>
         <span class="total-price"><%= order_form.object.display_total %></span>
         <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
-          <%= button_tag class: 'btn btn-success btn-check', id: 'checkout-link', name: 'checkout' do %>
+          <%= button_tag class: 'btn btn-success btn-check', disabled: 'true', id: 'checkout-link', name: 'checkout' do %>
             <%= Spree.t(:checkout) %>
           <% end %>
         <% end %>

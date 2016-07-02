@@ -13,9 +13,7 @@
               %>
               <%= label_tag "variant_id_#{ variant.id }" do %>
                 <span class="variant-description">
-                  <%= (sorted_options variant) do |option| %>
 
-                  <% end %>
                 </span>
                 <% if variant_price variant %>
                   <span class="price diff"><%= variant_price variant %></span>

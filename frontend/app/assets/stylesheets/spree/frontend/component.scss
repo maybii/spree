@@ -50,6 +50,11 @@ a{
   height: 40px;
   padding-top: 9px;
   padding-bottom: 9px;
+  border: 2px solid $brand-primary;
+  border-right-width: 0;
+  &:focus {
+    border-color: $brand-primary;
+  }
 }
 
 ///////////////////////////// Others ///////////////////////////

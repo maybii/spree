@@ -54,13 +54,13 @@
       a{
         color: white;
         font-size: 16px;
-        padding-right: 35px;
+        padding: 9px 18px 10px;
         &:hover, .active{
-          color: black; /*TODO change color*/
+          background-color: #f04013;
         }
       }
       .section{
-        margin-right: 30px;
+        // margin-right: 30px;
         border-right: solid 1px #df421a;
       }
     }

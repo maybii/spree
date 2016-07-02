@@ -6,6 +6,7 @@
 //= require spree
 //= require spree/frontend/components
 //= require spree/frontend/cart
+//= require spree/frontend/cart-details
 //= require spree/frontend/checkout
 //= require spree/frontend/checkout/address
 //= require spree/frontend/checkout/payment
