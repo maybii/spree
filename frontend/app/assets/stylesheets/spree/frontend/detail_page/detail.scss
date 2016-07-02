@@ -30,6 +30,23 @@
     color: #444444;
   }
 
+  .property-item {
+    @include clearfix;
+    .property-title {
+      width: 20%;
+      display: inline-block;
+      float: left;
+      text-align: justify;
+      color: #999999;
+      padding: 0 5px;
+
+    }
+    .property-value {
+      width: 80%;
+      display: inline-block;
+      float: left;
+    }
+  }
   .product-detail-tab-menu {
     position: relative;
     ul.nav.nav-tabs > li > a {
