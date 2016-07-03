@@ -6,6 +6,7 @@
 //= require swiper/swiper.jquery.min
 
 //= require spree
+//= require spree/frontend/loader
 //= require spree/frontend/components
 //= require spree/frontend/cart
 //= require spree/frontend/cart-details
