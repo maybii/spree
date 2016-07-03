@@ -1,7 +1,7 @@
 <% variant = line_item.variant %>
 
 <%= order_form.fields_for :line_items, line_item do |item_form| %>
-  <tr class="line-item">
+  <tr class="line-item" key='<%= item_form.index %>'>
     <td class="cart-item-checkbox">
       <div class="checkbox">
           <label>

@@ -9,6 +9,10 @@ $(document).ready(function(){
       $('#cart-detail .cart-item-checkbox input').prop('checked', true).closest('.line-item').addClass('active');
       $('#checkout-link').removeAttr('disabled').addClass('active');
     }
+    var activeItems = _.map($('#cart-detail .line-item.active'), function(item) {
+      return $(item).attr('key')
+    })
+    $('#active_line_id').val(activeItems)
   })
 
 
@@ -25,5 +29,9 @@ $(document).ready(function(){
     }else {
       $('#checkout-link').attr('disabled', 'true').removeClass('active');
     }
+    var activeItems = _.map($('#cart-detail .line-item.active'), function(item) {
+      return $(item).attr('key')
+    })
+    $('#active_line_id').val(activeItems)
   })
 })
