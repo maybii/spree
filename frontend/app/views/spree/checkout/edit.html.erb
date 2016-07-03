@@ -26,12 +26,18 @@
               </div>
             </div>
           </div>
-          <%= render "delivery", form: form %>
         <% end %>
         <%= form.hidden_field :state_lock_version %>
         <%= render @order.state, form: form %>
       <% end %>
+
+      <% if @order.state == 'address'%>
+        <%= form_for @order, url: update_checkout_path('delivery'), html: { id: "checkout_form_delivery" } do |form| %>
+          <%= render "delivery", form: form %>
+        <% end %>
+      <% end %>
     </div>
+
     <% if @order.state != 'confirm' %>
       <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-3">
         <%= render partial: 'summary', locals: { order: @order } %>
@@ -41,8 +47,8 @@
 </div>
 
 <script>
-  Spree.current_order_id = "<%= @order.number %>"
-  Spree.current_order_token = "<%= @order.guest_token %>"
+ Spree.current_order_id = "<%= @order.number %>"
+ Spree.current_order_token = "<%= @order.guest_token %>"
 </script>
 
 <% if I18n.locale != :en %>
