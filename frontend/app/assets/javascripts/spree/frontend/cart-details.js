@@ -1,20 +1,26 @@
 $(document).ready(function(){
   $('.btn-select-all input[name=cartCheckAll]').on('click', function() {
     if($('.btn-select-all input[name=cartCheckAll]').prop('checked')) {
-      console.log(222);
       $('.btn-select-all input[name=cartCheckAll]').prop('checked', false);
-      $('#cart-detail .cart-item-checkbox input').prop('checked', false);
+      $('#cart-detail .cart-item-checkbox input').prop('checked', false).closest('.line-item').removeClass('active');;
       $('#checkout-link').attr('disabled', 'true').removeClass('active');
     }else {
       $('.btn-select-all input[name=cartCheckAll]').prop('checked', true);
-      $('#cart-detail .cart-item-checkbox input').prop('checked', true);
+      $('#cart-detail .cart-item-checkbox input').prop('checked', true).closest('.line-item').addClass('active');
       $('#checkout-link').removeAttr('disabled').addClass('active');
     }
   })
 
+
+
   $('.cart-item-checkbox input').on('click', function() {
-    console.log(33)
-    if($('#cart-detail .cart-item-checkbox input').checked) {
+    if($(this).prop('checked') || $(this).attr('checked')) {
+      $(this).closest('.line-item').addClass('active')
+    }else {
+      $(this).closest('.line-item').removeClass('active')
+    }
+    var hasCheckedInput = _.some(_.map($('#cart-detail .cart-item-checkbox input'), function(input) {return $(input).prop('checked')}))
+    if(hasCheckedInput) {
       $('#checkout-link').removeAttr('disabled').addClass('active');
     }else {
       $('#checkout-link').attr('disabled', 'true').removeClass('active');

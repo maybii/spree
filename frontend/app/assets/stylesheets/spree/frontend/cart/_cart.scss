@@ -70,6 +70,9 @@
       span{
         color: #dddddd;
       }
+      a.delete:hover span {
+        color: #333333;
+      }
     }
     .cart-item-description{
       font-size: 12px;
