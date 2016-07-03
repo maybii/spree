@@ -525,7 +525,7 @@ zh-CN:
     category: "分类"
     charged:
     check_for_spree_alerts: "查收Spree的通知"
-    checkout: "结账"
+    checkout: "去结算"
     choose_a_customer: "选择用户"
     choose_a_taxon_to_sort_products_for:
     choose_currency: "选择货币"
@@ -548,7 +548,7 @@ zh-CN:
     confirm_delete: "确认删除"
     confirm_password: "确认密码"
     continue: "继续"
-    continue_shopping: "继续购物"
+    continue_shopping: "< 返回继续购物"
     cost_currency: "成本币种"
     cost_price: "进货价"
     could_not_connect_to_jirafe: "无法连接Jirafe。稍后将会自动重新连接。"
