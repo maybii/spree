@@ -31,11 +31,11 @@
         <%= render @order.state, form: form %>
       <% end %>
 
-      <% if @order.state == 'address'%>
-        <%= form_for @order, url: update_checkout_path('delivery'), html: { id: "checkout_form_delivery" } do |form| %>
-          <%= render "delivery", form: form %>
-        <% end %>
-      <% end %>
+      <%# if @order.state == 'address'%>
+      <%#= form_for @order, url: update_checkout_path('delivery'), html: { id: "checkout_form_delivery" } do |form| %>
+      <%#= render "delivery", form: form %>
+      <%# end %>
+      <%# end %>
     </div>
 
     <% if @order.state != 'confirm' %>

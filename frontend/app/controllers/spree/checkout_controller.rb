@@ -141,8 +141,9 @@ module Spree
       # that; but if he doesn't, we need to build an empty one here
       @order.bill_address ||= Address.build_default
       @order.ship_address ||= Address.build_default if @order.checkout_steps.include?('delivery')
-      @order.create_proposed_shipments()
-      @order.set_shipments_cost()
+      # @order.create_proposed_shipments()
+      # @order.ensure_available_shipping_rates()
+      # @order.set_shipments_cost()
     end
 
     def before_delivery
