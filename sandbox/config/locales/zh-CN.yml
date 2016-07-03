@@ -622,7 +622,7 @@ zh-CN:
     default_tax_zone: "默认缴税区域"
     delete: "删除"
     deleted_variants_present:
-    delivery: "配送"
+    delivery: "选择配送方式"
     depth: "长"
     description: "描述"
     destination: "目的地"

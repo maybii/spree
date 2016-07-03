@@ -42,9 +42,9 @@ module Spree
         # No more joined classes. IE6 is not a target browser.
         # Hack: Stops <a> being wrapped round previous items twice.
         if state_index < current_index
-          content_tag('li', text, class: css_classes.join(' '))
+          content_tag('li', text, class: css_classes.join(' ') + " index-#{i}")
         else
-          content_tag('li', content_tag('a', text), class: css_classes.join(' '))
+          content_tag('li', content_tag('a', text), class: css_classes.join(' ') + " index-#{i}")
         end
       end
       content_tag('ul', raw(items.join("\n")), class: 'progress-steps nav nav-pills nav-justified', id: "checkout-step-#{@order.state}")
