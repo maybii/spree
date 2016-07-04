@@ -15,7 +15,7 @@
   </div>
 
   <div class="row" data-hook="checkout_content">
-    <div class="<%= if @order.state != 'confirm' then 'col-md-9' else 'col-md-12' end %>" data-hook="checkout_form_wrapper">
+    <div class="<%= if @order.state != 'confirm' then 'col-md-12' else 'col-md-12' end %>" data-hook="checkout_form_wrapper">
       <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
         <%# if @order.state == 'address' || !@order.email? %>
         <!-- <div class="panel panel-default">
@@ -39,10 +39,13 @@
     </div>
 
     <% if @order.state != 'confirm' %>
-      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-3">
+      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-12">
         <%= render partial: 'summary', locals: { order: @order } %>
       </div>
     <% end %>
+    <div class="text-right form-buttons" data-hook="buttons">
+      <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-red' %>
+    </div>
   </div>
 </div>
 

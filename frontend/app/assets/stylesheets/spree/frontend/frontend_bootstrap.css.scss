@@ -24,6 +24,18 @@ a {
   border-radius: $default-radius;
 }
 
+.btn-red {
+  // font-size: 12px;
+  text-align: center;
+  min-width: 110px;
+  color: #fff;
+  background-color: #f13c3c;
+  &:hover {
+    color: #fff;
+    background-color: #ff3c3c
+  }
+}
+
 // -- Spree Custom Header and Footer ---------------------
 #spree-main-header {
   .nav a {

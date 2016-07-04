@@ -759,7 +759,7 @@ zh-CN:
     iso_name: ISO名称
     item: "商品项"
     item_description: "商品项描述"
-    item_total: "项目总计"
+    item_total: "商品总计"
     item_total_rule:
       operators:
         gt: "大于"

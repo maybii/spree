@@ -1,12 +1,9 @@
 <div class="panel panel-default" id='shipping_method' data-hook>
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= Spree.t(:delivery) %></h3>
-  </div>
   <div class="panel-body" data-hook="shipping_method_inner">
+    <h3 class="panel-title"><%= Spree.t(:delivery) %></h3>
     <div id="methods">
       <%= form.fields_for :shipments do |ship_form| %>
         <div class="shipment">
-
           <h4 class="stock-shipping-method-title hidden"><%= Spree.t(:shipping_method) %></h4>
           <div class="main-delivery">
             <p>物流/快递</p>
@@ -33,8 +30,16 @@
               <% end %>
             <% end %>
           </div>
+        </div>
+      <% end %>
+    </div>
 
-          <h4 class="stock-location" data-hook="stock-location">
+    <h3 class="panel-title cart-products-title">确认商品信息</h3>
+    <div id="cart-table">
+      <%= form.fields_for :shipments do |ship_form| %>
+        <div class="shipment">
+
+          <h4 class="stock-location hidden" data-hook="stock-location">
             <%= Spree.t(:package_from) %>
             <strong class="stock-location-name" data-hook="stock-location-name"><%= ship_form.object.stock_location.name %></strong>
           </h4>
@@ -42,16 +47,18 @@
           <table class="table stock-contents" data-hook="stock-contents">
             <colgroup>
               <col style="width: 10%;" />
-              <col style="width: 60%;" />
-              <col style="width: 10%;" />
+              <col style="width: 50%;" />
               <col style="width: 20%;" />
+              <col style="width: 10%;" />
+              <col style="width: 10%;" />
             </colgroup>
             <thead>
               <tr class="active">
                 <th></th>
                 <th align='left'><%= Spree.t(:item) %></th>
-                <th><%= Spree.t(:qty) %></th>
                 <th><%= Spree.t(:price) %></th>
+                <th><%= Spree.t(:qty) %></th>
+                <th>金额</th>
               </tr>
             </thead>
             <tbody>
@@ -59,8 +66,9 @@
                 <tr class="stock-item">
                   <td class="item-image"><%= mini_image(item.variant) %></td>
                   <td class="item-name"><%= item.variant.name %></td>
-                  <td class="item-qty"><%= item.quantity %></td>
                   <td class="item-price"><%= display_price(item.variant) %></td>
+                  <td class="item-qty"><%= item.quantity %></td>
+                  <td class="item-total-price"><%= display_price(item.variant) %></td>
                 </tr>
               <% end %>
             </tbody>
@@ -76,23 +84,28 @@
           <table class="table stock-contents" data-hook="stock-missing">
             <colgroup>
               <col style="width: 10%;" />
-              <col style="width: 60%;" />
-              <col style="width: 10%;" />
+              <col style="width: 50%;" />
               <col style="width: 20%;" />
+              <col style="width: 10%;" />
+              <col style="width: 10%;" />
             </colgroup>
             <thead>
-              <th></th>
-              <th align='left'><%= Spree.t(:item) %></th>
-              <th><%= Spree.t(:qty) %></th>
-              <th><%= Spree.t(:price) %></th>
+              <tr>
+                <th></th>
+                <th align='left'><%= Spree.t(:item) %></th>
+                <th><%= Spree.t(:price) %></th>
+                <th><%= Spree.t(:qty) %></th>
+                <th>金额</th>
+              </tr>
             </thead>
             <tbody>
               <% @differentiator.missing.each do |variant, quantity| %>
                 <tr class="stock-item">
-                  <td class="item-image"><%= mini_image(variant) %></td>
-                  <td class="item-name"><%= variant.name %></td>
-                  <td class="item-qty"><%= quantity %></td>
-                  <td class="item-price"><%= display_price(variant) %></td>
+                  <td class="item-image"><%= mini_image(item.variant) %></td>
+                  <td class="item-name"><%= item.variant.name %></td>
+                  <td class="item-price"><%= display_price(item.variant) %></td>
+                  <td class="item-qty"><%= item.quantity %></td>
+                  <td class="item-total-price"><%= display_price(item.variant) %></td>
                 </tr>
               <% end %>
             </tbody>
@@ -109,8 +122,6 @@
   </div>
 </div>
 
-<br />
-
-<div class="well text-right form-buttons" data-hook="buttons">
+<div class="well text-right form-buttons hidden" data-hook="buttons">
   <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-lg btn-success' %>
 </div>

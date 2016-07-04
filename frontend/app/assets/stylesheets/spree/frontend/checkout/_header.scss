@@ -2,6 +2,13 @@
   .panel {
     border: none;
     background-color: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+  .panel-body {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
   }
   .panel-heading {
     padding: 30px 0 0;
@@ -30,12 +37,53 @@
     padding-left: 0;
     padding-right: 20px;
   }
-  .main-delivery, .bus-delivery {
+  .main-delivery {
     margin-bottom: 30px;
   }
   .title-note {
     // font-size: 12px;
     color: #bbb;
+  }
+  #cart-table {
+
+  }
+  .stock-contents thead {
+    background-color: #464646;
+    color: #fff;
+    th {
+      background-color: transparent;
+    }
+  }
+  .table.stock-contents {
+    margin-top: 30px;
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+  .item-total-price {
+    color: $brand-primary;
+  }
+  .panel-title {
+    padding: 1em 0;
+    margin: 20px 0;
+  }
+  #checkout-summary > * {
+    color: #666666;
+    background-color: #f1f1f1;
+  }
+  #checkout-summary td {
+    border: none;
+  }
+  .table > tbody + tbody {
+    border: none;
+  }
+  .table > tbody > tr > td {
+    vertical-align: middle;
+  }
+  #summary-order-total {
+    font-weight: 500;
+  }
+  .form-buttons {
+    padding-right: 15px;
   }
 }
 
