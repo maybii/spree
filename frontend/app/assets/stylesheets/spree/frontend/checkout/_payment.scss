@@ -1,0 +1,76 @@
+#payment {
+  .order-info {
+    > h4 {
+      margin-top: 80px;
+      font-size: 20px;
+      color: #262626;
+    }
+    > p {
+      margin-top: 15px;
+      color: #999999;
+      span {
+        color: red;
+      }
+    }
+    .order-info-diveder {
+      display: inline-block;
+      margin: 15px auto;
+      position: relative;
+      color: #999999;
+      font-size: 12px;
+      line-height: 13px;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 1px;
+        background-color: #dddddd;
+        top: 6px;
+      }
+      &::before {
+        left: -225px;
+      }
+      &::after {
+        right: -225px;
+      }
+    }
+    .order-info-list {
+      font-size: 12px;
+      width: 400px;
+      margin: 0 auto;
+      .list-label {
+        margin: 4px 0;
+        color: #dddddd;
+      }
+      .list-content {
+        margin: 4px 0;
+        color: #999999;
+      }
+    }
+  }
+  .payment-methods {
+    margin: 70px 0;
+    background-color: #fff;
+    border: solid 1px #dddddd;
+    .payment-method-head {
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .payment-method-body {
+      padding: 20px;
+    }
+    .alipay-img-wrapper {
+      padding: 15px 20px 30px;
+      img {
+        padding: 5px;
+        border: 1px solid #ddd;
+      }
+    }
+    .transfer-list {
+      padding: 15px 20px 30px;
+      > div {
+        margin-top: 5px;
+      }
+    }
+  }
+}

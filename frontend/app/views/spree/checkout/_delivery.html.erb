@@ -121,7 +121,11 @@
     <% end %>
   </div>
 </div>
-
-<div class="well text-right form-buttons hidden" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-lg btn-success' %>
+    <% if @order.state != 'confirm' %>
+      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-12">
+        <%= render partial: 'summary', locals: { order: @order } %>
+      </div>
+    <% end %>
+<div class="well text-right form-buttons" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-red' %>
 </div>

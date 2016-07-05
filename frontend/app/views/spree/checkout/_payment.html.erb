@@ -1,8 +1,72 @@
 <div class="panel panel-default" id="payment" data-hook>
-  <div class="panel-heading">
+  <!-- <div class="panel-heading">
     <h3 class="panel-title"><%= Spree.t(:payment_information) %></h3>
-  </div>
+  </div> -->
   <div class="panel-body" data-hook="checkout_payment_step">
+    <!-- 订单提交成功提示，订单号信息 -->
+
+    <div class="order-info text-center">
+      <h4><i class="icon-check color-green" aria-hidden="true"></i><span>订单提交成功</span></h4>
+      <p>请您在提交订单后<span>2小时</span>内完成支付，否则订单会自动取消！</p>
+      <div class="text-center">
+        <div class="order-info-diveder">订单详情</div>
+      </div>
+      <div class="order-info-list">
+        <div class="row">
+          <div class="col-md-4 list-label text-right">订单编号：</div>
+          <div class="col-md-8 list-content text-left">3201606302309074926</div>
+          <div class="col-md-4 list-label text-right">下单时间：</div>
+          <div class="col-md-8 list-content text-left">2016-07-03 22:41:12</div>
+          <div class="col-md-4 list-label text-right">商品名称：</div>
+          <div class="col-md-8 list-content text-left">
+            <div class="order-info-product-item">
+              <span class="item-title">思贝奇梳打饼干 240g</span>*<span class="item-quantity">3</span>
+            </div>
+            <div class="order-info-product-item">
+              <span class="item-title">莱家威化饼巧克力味 240g</span>*<span class="item-quantity">3</span>
+            </div>
+          </div>
+          <div class="col-md-4 list-label text-right">收货信息：</div>
+          <div class="col-md-8 list-content text-left">
+            <span>包伟娜</span>
+            <span>15921743761</span>
+            <span>泰兴路89号裸心社</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-methods">
+      <div class="payment-method-head">
+        <span>应付金额：￥</span><span class="total-price">805.00</span>
+      </div>
+      <div class="payment-method-body">
+        <div class="payment-method-body-title">选择支付方式</div>
+        <div class="payment-method-options">
+          <!-- <%= radio_button_tag 'use_alipay', 'yes', true %> -->
+          <div class="radio">
+            <label>
+              <input type="radio" name="payment-method-option" value="alipay" checked="checked">
+              支付宝<span>（推荐支付方式）</span>
+            </label>
+            <div class="alipay-img-wrapper">
+              <%= image_tag 'payment/alipay-logo.svg', :class => 'payment-alipay' %>
+            </div>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="payment-method-option" value="transfer">
+              账户转账
+            </label>
+            <div class="transfer-list">
+              <div>农业银行卡号： 6214 6888 3928 0000      户名：李四</div>
+              <div>农业银行卡号： 6214 6888 3928 0000      户名：李四</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <% if @payment_sources.present? %>
       <div class="card_options">
         <%= radio_button_tag 'use_existing_card', 'yes', true %>
@@ -66,6 +130,6 @@
 </div>
 
 <div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
+  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-red primary' %>
   <script>Spree.disableSaveOnClick();</script>
 </div>

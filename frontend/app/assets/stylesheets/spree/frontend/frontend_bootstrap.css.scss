@@ -27,13 +27,17 @@ a {
 .btn-red {
   // font-size: 12px;
   text-align: center;
-  min-width: 110px;
+  min-width: 80px;
   color: #fff;
   background-color: #f13c3c;
-  &:hover {
+  &:hover, &:active, &.active, &:visited {
     color: #fff;
     background-color: #ff3c3c
   }
+}
+
+.color-green {
+  color: #48d670;
 }
 
 // -- Spree Custom Header and Footer ---------------------
