@@ -489,7 +489,7 @@ zh-CN:
     back_to_payment:
     back_to_resource_list:
     back_to_rma_reason_list:
-    back_to_store: "回到商店"
+    back_to_store: "继续购物"
     back_to_users_list: "回到用户列表"
     backorderable: "可预订"
     backorderable_default:
@@ -919,7 +919,7 @@ zh-CN:
         thanks: "谢谢您的购买。"
         total:
     order_not_found: "我们无法找到您的订单。请重新尝试。"
-    order_number: "订单号 %{number}"
+    order_number: "%{number}"
     order_processed_successfully: "您的订单已经被成功处理了"
     order_resumed:
     order_state:

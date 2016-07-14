@@ -5,22 +5,44 @@
 <% end %>
 
 <fieldset id="order_summary" data-hook>
-  <legend><%= Spree.t(:order_number, number: @order.number) %></legend>
-  <h1><%= accurate_title %></h1>
-  <% if order_just_completed?(@order) %>
-    <strong><%= Spree.t(:thank_you_for_your_order) %></strong>
-  <% end %>
+
+  <div class="order-info text-center">
+    <h4><i class="icon-check color-green" aria-hidden="true"></i><span>支付成功！我们将第一时间发货！</span></h4>
+    <p>支付金额： <span class="text-color"><%= @order.display_total.to_html %></span></p>
+    <div class="text-center">
+      <div class="order-info-diveder">订单详情</div>
+    </div>
+    <div class="order-info-list">
+      <div class="row">
+        <div class="col-md-4 list-label text-right">订单编号：</div>
+        <div class="col-md-8 list-content text-left"><%= Spree.t(:order_number, number: @order.number) %></div>
+        <div class="col-md-4 list-label text-right">下单时间：</div>
+        <div class="col-md-8 list-content text-left">2016-07-03 22:41:12</div>
+        <div class="col-md-4 list-label text-right">商品名称：</div>
+        <div class="col-md-8 list-content text-left">
+          <% @order.line_items.each do |item| %>
+            <div class="order-info-product-item">
+              <span class="item-title"><%= item.variant.product.name %></span> * <span class="item-quantity"><%= item.quantity %></span>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-md-4 list-label text-right">收货信息：</div>
+        <div class="col-md-8 list-content text-left">
+          <div><%= @order.ship_address.full_name %></div>
+          <div><%= @order.ship_address.phone %></div>
+          <div><%= @order.ship_address.city %> <%= @order.ship_address.address2 %> <%= @order.ship_address.address1 %></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="order" data-hook>
-    <%= render partial: 'spree/shared/order_details', locals: { order: @order } %>
 
-    <br class="clear" />
-
-    <p data-hook="links">
-      <%= link_to Spree.t(:back_to_store), spree.root_path, class: "button" %>
+    <p data-hook="links" class="text-center" style="margin-top: 30px; margin-bottom: 30px;">
+      <%= link_to Spree.t(:back_to_store), spree.root_path, class: "btn btn-red btn-130" %>
       <% unless order_just_completed?(@order) %>
         <% if try_spree_current_user && respond_to?(:account_path) %>
-          <%= link_to Spree.t(:my_account), account_path, class: "button" %>
+          <%= link_to Spree.t(:my_account), account_path, class: "btn btn-default btn-130" %>
         <% end %>
       <% end %>
     </p>

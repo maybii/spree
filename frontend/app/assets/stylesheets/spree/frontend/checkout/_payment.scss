@@ -1,4 +1,7 @@
-#payment {
+#payment, #order_summary {
+  .text-color {
+    color: #fa5930;
+  }
   .order-info {
     > h4 {
       margin-top: 80px;
@@ -9,7 +12,7 @@
       margin-top: 15px;
       color: #999999;
       span {
-        color: red;
+        color: #fa5930;
       }
     }
     .order-info-diveder {
@@ -59,18 +62,26 @@
     .payment-method-body {
       padding: 20px;
     }
-    .alipay-img-wrapper {
-      padding: 15px 20px 30px;
-      img {
-        padding: 5px;
-        border: 1px solid #ddd;
-      }
+  }
+  .list-group-item {
+    border-radius: 0 !important;
+    border: none;
+    padding: 20px 0 0;
+  }
+
+  .alipay-img-wrapper {
+    padding: 15px 20px 30px;
+    fieldset > img {
+      width: 108px;
+      height: 44px;
+      padding: 5px;
+      border: 1px solid #ddd;
     }
-    .transfer-list {
-      padding: 15px 20px 30px;
-      > div {
-        margin-top: 5px;
-      }
+  }
+  .transfer-list {
+    padding: 15px 20px 30px;
+    > div {
+      margin-top: 5px;
     }
   }
 }

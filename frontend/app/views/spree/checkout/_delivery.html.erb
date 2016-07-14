@@ -122,10 +122,10 @@
   </div>
 </div>
     <% if @order.state != 'confirm' %>
-      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-12">
+      <div id="checkout-summary" data-hook="checkout_summary_box" class="">
         <%= render partial: 'summary', locals: { order: @order } %>
       </div>
     <% end %>
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-red' %>
+<div class="text-right form-buttons" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-red btn-130' %>
 </div>
