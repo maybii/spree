@@ -47,7 +47,8 @@ end
 gem 'tinymce-rails-langs'
 
 gem 'spree', path: '..'
-gem 'spree_auth_devise' #, github: 'spree/spree_auth_devise', branch: 'master'
+gem 'spree_auth_devise', github: 'maybii/spree_auth_devise', branch: 'master'
+#gem 'spree_auth_devise', path: '../../spree_auth_devise'
 gem 'spree_gateway'
 
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
@@ -61,6 +62,9 @@ gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', ref:
 gem 'spree_multi_currency', github: 'spree-contrib/spree_multi_currency', branch: '3-1-stable'
 gem 'spree_alipay', github: "RuanShan/spree_alipay", ref: "b3bc76bc56e2dbd5211f6aa506766b4de8de494b"
 
+#### import excel
+gem 'roo', '~> 2.4.0'
+gem 'ruby-pinyin'
 
 group :test, :development do
   gem 'bullet'
