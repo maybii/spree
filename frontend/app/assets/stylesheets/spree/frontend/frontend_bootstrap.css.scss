@@ -1,5 +1,5 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
-$default-radius: 2px;
+$default-radius: 0px;
 
 a {
   color: #444444;
@@ -21,7 +21,7 @@ a {
   border-radius: $default-radius;
 }
 .form-control {
-  border-radius: $default-radius;
+  border-radius: 1px;
 }
 
 .btn-red {
