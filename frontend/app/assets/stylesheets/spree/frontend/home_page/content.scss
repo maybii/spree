@@ -248,3 +248,17 @@
     }
   }
 }
+
+#home-brands {
+  .brands-table {
+    background-color: #fff;
+    border: solid 1px #dddddd;
+  }
+
+  td {
+    padding: 5px 28px;
+  }
+  .brand-logo-item {
+    width: 106px;
+  }
+}

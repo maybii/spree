@@ -15,3 +15,4 @@
 //= require spree/frontend/checkout/payment
 //= require spree/frontend/product
 //= require spree/frontend/product-details
+//= require spree/frontend/vendor/bootstrap-table.min.js
