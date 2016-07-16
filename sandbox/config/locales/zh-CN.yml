@@ -375,6 +375,7 @@ zh-CN:
     static_content:
       link: "链接"
       new_page: "新建静态页面"
+    recently_viewed_products: "最近浏览"
     abbreviation: "缩写"
     accept:
     acceptance_errors:
@@ -520,7 +521,7 @@ zh-CN:
     card_type:
     card_type_is: "卡的类型是"
     cart: "购物车"
-    cart_subtotal:
+    cart_subtotal: "金额"
     categories: "分类"
     category: "分类"
     charged:

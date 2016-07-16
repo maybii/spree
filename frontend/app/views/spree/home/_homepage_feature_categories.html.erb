@@ -20,7 +20,301 @@
       </div>
     </div>
     <div class="category-wrapper">
-      <div class="category-list-item first"></div>
+      <div class="category-list-item first">
+        <div class="title">吃货集结令</div>
+        <div class="content">环球美食 尽收眼底</div>
+      </div>
+      <% products.each do |product| %>
+        <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+        <div id="product_<%= product.id %>" class="category-list-item" data-hook="category_list_item" itemscope itemtype="https://schema.org/Product">
+          <div class="panel panel-default">
+            <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+              <div class="panel-body text-center product-body">
+                <%= link_to url, itemprop: "url" do %>
+                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
+                <% end %>
+                <br/>
+              </div>
+              <div class="panel-footer">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <div class="product-price selling" itemprop="price">
+                    <span>批发：</span><span class="price"><%= display_price(product) %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% reset_cycle("classes") %>
+    </div>
+    <div class="category-ranking">
+        <h4>热销排行榜</h4>
+        <div class="ranking-items">
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <div class="home-content-feature-category" class="" data-hook>
+    <div class="category-head clearfix">
+      <div class="category-title pull-left">
+        <span class="title-index">2F</span>
+        <span class="title-text">进口糖果</span>
+        <span class="divider">|</span>
+        <span class="title-text">巧克力</span>
+      </div>
+      <div class="category-recommend pull-right">
+        <ul class='nav navbar nav-pills'>
+          <li><a href="/">坚果巧克力</a></li>
+          <li><a href="/">白巧克力</a></li>
+          <li><a href="/">黑巧克力</a></li>
+          <li><a href="/">夹心巧克力</a></li>
+          <li><a href="/">水果软糖</a></li>
+          <li><a href="/">糖果礼盒</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="category-wrapper">
+      <div class="category-list-item first">
+        <div class="title">吃货集结令</div>
+        <div class="content">环球美食 尽收眼底</div>
+      </div>
+      <% products.each do |product| %>
+        <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+        <div id="product_<%= product.id %>" class="category-list-item" data-hook="category_list_item" itemscope itemtype="https://schema.org/Product">
+          <div class="panel panel-default">
+            <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+              <div class="panel-body text-center product-body">
+                <%= link_to url, itemprop: "url" do %>
+                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
+                <% end %>
+                <br/>
+              </div>
+              <div class="panel-footer">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <div class="product-price selling" itemprop="price">
+                    <span>批发：</span><span class="price"><%= display_price(product) %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% reset_cycle("classes") %>
+    </div>
+    <div class="category-ranking">
+        <h4>热销排行榜</h4>
+        <div class="ranking-items">
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <div class="home-content-feature-category" class="" data-hook>
+    <div class="category-head clearfix">
+      <div class="category-title pull-left">
+        <span class="title-index">3F</span>
+        <span class="title-text">进口酒水</span>
+        <span class="divider">|</span>
+        <span class="title-text">饮料</span>
+      </div>
+      <div class="category-recommend pull-right">
+        <ul class='nav navbar nav-pills'>
+          <li><a href="/">红酒</a></li>
+          <li><a href="/">烈酒</a></li>
+          <li><a href="/">苏打水</a></li>
+          <li><a href="/">牛奶</a></li>
+          <li><a href="/">汽水</a></li>
+          <li><a href="/">果汁</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="category-wrapper">
+      <div class="category-list-item first">
+        <div class="title">吃货集结令</div>
+        <div class="content">环球美食 尽收眼底</div>
+      </div>
+      <% products.each do |product| %>
+        <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+        <div id="product_<%= product.id %>" class="category-list-item" data-hook="category_list_item" itemscope itemtype="https://schema.org/Product">
+          <div class="panel panel-default">
+            <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+              <div class="panel-body text-center product-body">
+                <%= link_to url, itemprop: "url" do %>
+                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
+                <% end %>
+                <br/>
+              </div>
+              <div class="panel-footer">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <div class="product-price selling" itemprop="price">
+                    <span>批发：</span><span class="price"><%= display_price(product) %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% reset_cycle("classes") %>
+    </div>
+    <div class="category-ranking">
+        <h4>热销排行榜</h4>
+        <div class="ranking-items">
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+          <div class="ranking-item clearfix">
+            <div class="ranking-image pull-left"></div>
+            <div class="ranking-info pull-right">
+              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+              <div class="ranking-sale-vol">销量：1202</div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <div class="home-content-feature-category" class="" data-hook>
+    <div class="category-head clearfix">
+      <div class="category-title pull-left">
+        <span class="title-index">4F</span>
+        <span class="title-text">进口日化</span>
+        <span class="divider">|</span>
+        <span class="title-text">美妆</span>
+      </div>
+      <div class="category-recommend pull-right">
+        <ul class='nav navbar nav-pills'>
+          <li><a href="/">肥皂</a></li>
+          <li><a href="/">洗面奶</a></li>
+          <li><a href="/">洗发露</a></li>
+          <li><a href="/">卫生巾</a></li>
+          <li><a href="/">纸尿裤</a></li>
+          <li><a href="/">牙膏牙刷</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="category-wrapper">
+      <div class="category-list-item first">
+        <div class="title">吃货集结令</div>
+        <div class="content">环球美食 尽收眼底</div>
+      </div>
       <% products.each do |product| %>
         <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
         <div id="product_<%= product.id %>" class="category-list-item" data-hook="category_list_item" itemscope itemtype="https://schema.org/Product">
