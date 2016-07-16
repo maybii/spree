@@ -575,8 +575,9 @@ zh-CN:
     coupon_code_not_eligible: "您的订单号码无法在您的订单上生效。"
     coupon_code_not_found: "您所输入的优惠券号码不存在。请重新输入。"
     coupon_code_unknown_error:
-    create: "创建"
-    create_a_new_account: "创建一个新帐号"
+    create: "同意协议并注册"
+    already_exist_account: "已有账号？"
+    create_a_new_account: "不是会员？<span class='go_register'>去注册</span>"
     create_new_order:
     create_reimbursement:
     created_at: "创建日期"
@@ -789,7 +790,7 @@ zh-CN:
     logged_in_succesfully: "登录成功"
     logged_out: "您已经登出系统"
     login: "登录"
-    login_as_existing: "作为一个已有客户登录"
+    login_as_existing: "登录"
     login_failed: "登录认证失败。"
     login_name: "用户名"
     logout: "退出"
@@ -823,7 +824,7 @@ zh-CN:
     new: "新建"
     new_adjustment: "新建调整"
     new_country:
-    new_customer: "新建客户"
+    new_customer: "注册"
     new_customer_return:
     new_image: "新建图片"
     new_option_type: "新建选项类型"

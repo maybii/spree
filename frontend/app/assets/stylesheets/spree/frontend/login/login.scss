@@ -1,0 +1,77 @@
+#user-login-form{
+  input[name='commit']{
+    height: 40px;
+    background-color: #fa5930;
+    border: none;
+    border-radius: 0px;
+    font-size: 14px;
+    color: white;
+    margin-top: 30px;
+  }
+  .create_new_account{
+    margin-left: 16px;
+    font-size: 12px;
+    a{
+      color: #878787;
+      &:hover{
+        color: #878787;
+      }
+    }
+    .go_register{
+      color: #fa5930 !important;
+    }
+    .forgot_password{
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#spree_user_email, #spree_user_password, #spree_user_password_confirmation{
+  height: 52px;
+  margin-bottom: 20px;
+}
+
+#user-login-form, #user-register-form, #forgot-password{
+  .panel{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 43px;
+  }
+  .panel-heading{
+    background-color: white;
+    border: none;
+    text-align: center;
+    padding-top: 45px;
+  }
+  .panel-title{
+    display: inline-block;
+    color: #fa5930;
+    font-size: 16px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #fa5930;
+  }
+  input[name='commit']{
+    min-width: 160px;
+    height: 40px;
+    background-color: #fa5930;
+    border: none;
+    border-radius: 0px;
+    font-size: 14px;
+    color: white;
+    margin-top: 30px;
+  }
+  .forgot_password, .go_to_login{
+    margin-top: 30px;
+    line-height: 40px;
+    font-size: 12px;
+    a{
+      color: #878787;
+      &:hover{
+        color: #fa5930;
+      }
+    }
+  }
+
+}
