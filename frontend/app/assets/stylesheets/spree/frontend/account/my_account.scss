@@ -1,0 +1,17 @@
+#my-account{
+  min-height: 853px;
+  border: 1px solid #dddddd;
+
+  .my-account-left{
+    width: 200px;
+    float: left;
+    min-height: 853px;
+    height: 100%;
+    border-right: 1px solid #dddddd;
+  }
+
+  .my-account-right{
+    float: left;
+    width: calc(100% - 200px)
+  }
+}

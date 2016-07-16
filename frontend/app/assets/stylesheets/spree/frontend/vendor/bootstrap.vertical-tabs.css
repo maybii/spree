@@ -10,15 +10,14 @@
   padding-top: 2px;
 }
 .tabs-left {
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+  //border-top: 1px solid #ddd;
+  //border-left: 1px solid #ddd;
+  //border-right: 1px solid #ddd;
   border-bottom: none !important;
 }
 .tabs-left>li {
-  min-height: 40px;
   float: none;
-  //margin-right: -1px;
+  text-align: center;
 }
 .tabs-left>li.active>a,
 .tabs-left>li.active>a:hover,
@@ -28,6 +27,8 @@
   border-width: 1px !important;
 }
 .tabs-left>li>a {
+  min-height: 40px;
+  line-height: 40px;
   border-radius: 0px 0 0 0px;
   margin-right: 0;
   display:block;

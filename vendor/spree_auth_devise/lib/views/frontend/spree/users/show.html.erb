@@ -1,7 +1,5 @@
-<h1><%= accurate_title %></h1>
-
-<div class="row">
-  <div class="col-xs-3"> <!-- required for floating -->
+<div id="my-account">
+  <div class="my-account-left"> <!-- required for floating -->
     <!-- Nav tabs -->
     <ul class="nav nav-tabs tabs-left">
       <li class="active"><a href="#account-my-orders" data-toggle="tab"><%= Spree.t(:my_orders) %></a></li>
@@ -11,7 +9,7 @@
     </ul>
   </div>
 
-  <div class="col-xs-9">
+  <div class="my-account-right">
     <div class="tab-content">
       <!------------------------- Order ---------------------------------->
       <div class="tab-pane fade in active" id="account-my-orders">
