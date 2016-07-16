@@ -4,3 +4,27 @@
 .product-description-banner {
   width: 100%;
 }
+
+#recently_viewed {
+  margin: 50px 0;
+}
+.recently-viewed-product-body {
+  background-color: #fff;
+  @include clearfix;
+  padding: 10px;
+  border: solid 1px #dddddd;
+  .recented-viewed-product-image {
+    float: left;
+  }
+  .recented-viewed-product-info {
+    float: right;
+    width: 140px;
+    p {
+      display: block !important;
+      @include ellipsis(100%);
+    }
+    span.price {
+      color: $zhendi-red;
+    }
+  }
+}
