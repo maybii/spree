@@ -1,0 +1,10 @@
+spec/dummy
+spec/test_app
+Gemfile.lock
+*.swp
+/nbproject/private/
+.DS_Store
+/coverage
+.rvmrc
+.ruby-version
+.ruby-gemset

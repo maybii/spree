@@ -47,18 +47,16 @@ end
 gem 'tinymce-rails-langs'
 
 gem 'spree', path: '..'
-#gem 'spree_auth_devise', github: 'maybii/spree_auth_devise', branch: 'master'
-gem 'spree_auth_devise', path: '../../spree_auth_devise'
+gem 'spree_auth_devise', path: '../vendor/spree_auth_devise'
 gem 'spree_gateway'
 
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: '3-1-stable'
 gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-1-stable'
-gem 'spree_recently_viewed', github: 'maybii/spree_recently_viewed', branch: '3-1-stable'
-#gem 'spree_recently_viewed', path: '../../spree_recently_viewed',
+gem 'spree_recently_viewed', path: '../vendor/spree_recently_viewed'
 gem 'spree_address_book', github: 'spree-contrib/spree_address_book', branch: '3-1-stable'
+gem 'spree_wishlist', path: '../vendor/spree_wishlist'
 #gem 'spree_address_book', path: '../../spree_address_book'
-gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', ref: '831a2108b7ab5b66df504bc90d66d3f1bac88338'
 gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', ref: 'a4092bee14dae36af21db1c4a325de4710bbf582'
 gem 'spree_multi_currency', github: 'spree-contrib/spree_multi_currency', branch: '3-1-stable'
 gem 'spree_alipay', github: "RuanShan/spree_alipay", ref: "b3bc76bc56e2dbd5211f6aa506766b4de8de494b"

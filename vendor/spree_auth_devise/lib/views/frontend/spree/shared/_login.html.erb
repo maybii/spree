@@ -1,0 +1,28 @@
+<%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path do |f| %>
+  <div id="password-credentials">
+    <div>
+      <%#= f.label :email, Spree.t(:email) %>
+      <%= f.email_field :email, :class => 'form-control', :tabindex => 1, autofocus: true, placeholder: Spree.t(:email) %>
+    </div>
+    <div>
+      <%#= f.label :password, Spree.t(:password) %>
+      <%= f.password_field :password, :class => 'form-control', :tabindex => 2, placeholder: Spree.t(:password) %>
+    </div>
+  </div>
+  <!-- <div> -->
+    <%#= f.check_box :remember_me, :tabindex => 3 %>
+    <%#= f.label :remember_me, Spree.t(:remember_me) %>
+  <!-- </div> -->
+
+  <div class="login-footer'">
+    <div class="pull-right forgot_password">
+      <%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
+    </div>
+    <div class="inline">
+      <%= f.submit Spree.t(:login), :class => 'btn btn-lg btn-success btn-block', :tabindex => 4 %>
+    </div>
+    <div class="inline create_new_account">
+      <%= link_to Spree.t(:create_a_new_account).html_safe, spree.signup_path %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<% if cached_recently_viewed_products.any? %>
+  <div id="recently_viewed" data-hook>
+    <p class="product-section-title" style="font-size: 16px; color: #444444;"><%= Spree.t(:recently_viewed_products) %></p>
+
+    <div id="recently_viewed_products" class="row">
+      <% cached_recently_viewed_products.each do |product| %>
+        <div class="col-md-3 col-xs-6">
+            <%= link_to product do %>
+                <div id="product_<%= product.id %>" class="category-list-item" data-hook="category_list_item" itemscope itemtype="https://schema.org/Product">
+                    <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+                        <div class="recently-viewed-product-body">
+                            <%= small_image(product, itemprop: "image", class: 'recented-viewed-product-image') %><br/>
+                            <div class="recented-viewed-product-info">
+                                <p><%= product.name %></p>
+                                <p>价格：<span class="price"><%= display_price(product) %></span></p>
+                            </div>
+                            <br/>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
