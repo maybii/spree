@@ -1,8 +1,19 @@
-<h3><%= Spree.t(:my_wishlists) %></h3>
-<ul>
-<% @user.wishlists.each do |wl| %>
-  <% if !wl.is_private? || @user == spree_current_user %>
-  <li><%= link_to wl.name, wl %></li>
-  <% end -%>
-<% end -%>
-</ul>
+<div class="wishlist-wrapper">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#wishlist-in-account" aria-controls="home" role="tab" data-toggle="tab">全部 <span><%= @user.wishlist.wished_products.size %> </span>
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="wishlist-in-account">
+        <% @user.wishlists.each do |wl| %>
+          <% @wishlist = wl %>
+          <% if !wl.is_private? || @user == spree_current_user %>
+          <%= render :partial => "spree/wishlists/show"%>
+          <% end -%>
+        <% end -%>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,32 @@
+
+<div id="line_items" class="clearfix">
+  <% if @wishlist.wished_products.size > 0 %>
+    <% @wishlist.wished_products.each do |wish|
+      variant = wish.variant
+      product = variant.product %>
+      <div class="wishlist-item">
+        <%= link_to product, class: "hello" do %>
+          <div class="content">
+            <div class="product-image text-center">
+              <% if variant.images.length == 0 %>
+                <%= small_image(variant.product) %>
+              <% else %>
+                <%= image_tag variant.images.first.attachment.url(:small) %>
+              <% end %>
+            </div>
+
+            <div class="product-name"><%= product.name %></div>
+            <div class="footer clearfix">
+              <div class="product-price pull-left">价格：<span><%= display_price(variant) %></span></div>
+              <%= link_to Spree.t(:add_to_cart), '#', onclick: '$(this).parent().submit(); return false;', class: 'btn btn-red btn-add-to-cart-wishlist pull-right' %>
+            </div>
+            <%= link_to '', wish, method: :delete, class: 'btn-delete' %>
+          </div>
+        <% end %>
+      </div>
+
+    <% end -%>
+  <% else -%>
+      <div><%= Spree.t(:your_wishlist_is_empty) %></div>
+  <% end -%>
+</div>

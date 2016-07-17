@@ -965,7 +965,7 @@ zh-CN:
     payment_processor_choose_link: "我们的支付页面"
     payment_state: "支付状态"
     payment_states:
-      balance_due: "欠款"
+      balance_due: "等待买家付款"
       checkout: "支付"
       completed: "完成"
       credit_owed: credit owed
@@ -1186,7 +1186,7 @@ zh-CN:
     shipment_state: "配送状态"
     shipment_states:
       backorder: "延期未交定货"
-      canceled:
+      canceled: "已取消"
       partial: "部分"
       pending: "等待中"
       ready: "就绪"

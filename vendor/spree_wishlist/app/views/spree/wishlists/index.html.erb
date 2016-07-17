@@ -1,8 +1,16 @@
-<h1 class="row"><%= Spree.t(:wishlists) %></h1>
-<%= content_tag :ul do %>
-  <% @wishlists.each do |wishlist| %>
-    <%= content_tag :li do %>
-      <%= link_to(wishlist.name, wishlist) %> - <%= wishlist.is_private ? Spree.t(:private) : Spree.t(:public) %>
-    <% end %>
-  <% end %>
-<% end %>
+<div class="wishlist-wrapper">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#account-tab" aria-controls="account-tab" role="tab" data-toggle="tab"><%= Spree.t(:wishlists) %></a></li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="account-tab">
+        <%= content_tag :ul do %>
+          <% @wishlists.each do |wishlist| %>
+            <%= content_tag :li do %>
+              <%= link_to(wishlist.name, wishlist) %> - <%= wishlist.is_private ? Spree.t(:private) : Spree.t(:public) %>
+            <% end %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
