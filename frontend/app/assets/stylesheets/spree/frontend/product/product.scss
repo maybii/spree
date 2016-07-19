@@ -1,0 +1,37 @@
+#product-description{
+  .product-title-section{
+    color: #444444;
+  }
+  .product-title{
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .product-title-subdescription{
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  .product-country, .product-brand{
+    font-size: 14px;
+    margin-right: 5px;
+  }
+}
+#product-properties{
+  .property-item{
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .property-title{
+    width: 75px !important;
+    color: #999999;
+    text-align: justify;
+    text-align-last: justify;
+    -ms-text-align-last: justify;
+    padding: 0px 10px 0px 0px !important;
+    &::after {
+      content: ":";
+    }
+  }
+  .property-value{
+    color: #444444;
+  }
+}

@@ -1,16 +1,21 @@
 # coding: utf-8
 require 'roo'
 
+##################################### Read File ###########################################
+
 path = '/local/code/zhendi/data/products/'
 
 all_files = Dir.entries(path)
 
 all_xls_files = all_files.select{ |f| f.include?('xlsx') and f.first != '.'}
 
-category = ['property', '']
+##################################### Init Data ###########################################
 
+category = ['property', '']
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: "快递")
 available_on = Time.now
+
+###########################################################################################
 
 all_xls_files.each do |file_name|
   product = nil
@@ -47,6 +52,7 @@ all_xls_files.each do |file_name|
         product.price = 0
         product.shipping_category = shipping_category
         product.available_on = available_on;
+        product.description = nil;
       elsif first_column_name == "条形码"
         product.sku = second_column_name.to_s
       elsif first_column_name == "类别"
@@ -58,8 +64,9 @@ all_xls_files.each do |file_name|
         end
         product.taxons.push current_taxon unless product.taxons.include? current_taxon
       else
-        #product.properties.find_or_initialize_by(name: first_column_name, presentation: first_column_name)
-        # #product.option_types.find_or_create_by(name: first_column_name, presentation: first_column_name)
+        first_column_name = "产品品牌" if(first_column_name.include? "品牌")
+        first_column_name = "保质期" if(first_column_name.include? "保质期")
+        first_column_name = "生产商" if(first_column_name.include? "生产商")
         product.set_property(first_column_name, second_column_name)
       end
     ###########################################################################################
@@ -81,6 +88,8 @@ all_xls_files.each do |file_name|
     end
 
     unless product.save
+      p category
+      p first_column_name
       p product.errors.full_messages
       raise
     end

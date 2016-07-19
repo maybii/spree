@@ -14,19 +14,16 @@
 <div id="spree-header">
   <header id="header" data-hook>
     <div class="container">
-      <div class="row">
-        <figure id="logo" class="col-md-2 col-sm-2" data-hook>
-          <%= logo %>
-        </figure>
-        <%= render :partial => 'spree/shared/nav_bar' %>
-      </div>
+      <figure id="logo" class="col-md-2 col-sm-2" data-hook>
+        <%= logo %>
+      </figure>
+      <%= render :partial => 'spree/shared/nav_bar' %>
     </div>
   </header>
 </div>
 
 <div id="spree-third-header">
   <div class="container">
-
     <!------------ Left ------------>
 
     <div class="dropdown pull-left <%= 'open' if @header_show_all  %>">

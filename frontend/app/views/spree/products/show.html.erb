@@ -24,8 +24,13 @@
     <div class="col-md-8 col-sm-7" data-hook="product_right_part">
       <div data-hook="product_right_part_wrap">
         <div id="product-description" data-hook="product_description">
-          <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
-
+          <div class="product-title-section">
+            <div class="product-title" itemprop="name"><%= @product.name %></div>
+            <div class="product-title-subdescription"">
+              <span class="product-country"> <%= @product_country.value if (@product_country and not @product_country.value.include? "见包装") %> </span>
+              <span class="product-brand"> <%= @product_brand.value if (@product_brand and not @product_brand.value.include? "见包装") %> </span>
+            </div>
+          </div>
           <!-- <div class="well" itemprop="description" data-hook="description">
             <%= product_description(@product) %>
           </div> -->

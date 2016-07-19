@@ -1,3 +1,4 @@
+# coding: utf-8
 module Spree
   class ProductsController < Spree::StoreController
     before_action :load_product, only: :show
@@ -15,11 +16,14 @@ module Spree
     end
 
     def show
+      @useful_category = ["产品品牌", "生产商", "保质期"]
       @variants = @product.variants_including_master.
                            spree_base_scopes.
                            active(current_currency).
                            includes([:option_values, :images])
       @product_properties = @product.product_properties.includes(:property)
+      @product_country = @product_properties.joins(:property).find_by("spree_properties.name" => "原产国")
+      @product_brand = @product_properties.joins(:property).find_by("spree_properties.name" => "产品品牌")
       @taxon = params[:taxon_id].present? ? Spree::Taxon.find(params[:taxon_id]) : @product.taxons.first
       redirect_if_legacy_path
     end

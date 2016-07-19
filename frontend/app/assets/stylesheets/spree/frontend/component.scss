@@ -1,10 +1,29 @@
+////////////////////////// Breadcrumbs ///////////////////////////
+#breadcrumbs{
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  .breadcrumb{
+    background: transparent;
+    padding-left: 0px;
+    margin: 0px;
+  }
+  .breadcrumb > li + li:before{
+    content: "> "
+  }
+}
+
 //////////////////////////// Panel ///////////////////////////////
 
 .panel{
   border-radius: 0px;
 }
 
-////////////////////////////  Text ///////////////////////////////
+//////////////////////////// Input ///////////////////////////////
+
+.input-group .form-control{
+  box-shadow: none !important;
+}
 
 .input-group-number-field{
   .input-group-btn button{

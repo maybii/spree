@@ -3,6 +3,13 @@
 }
 
 #nav-bar-buttons-right{
+  .btn-zhendi-default{
+    &:hover{
+      background-color: #f8f8f8;
+      border-color: #dddddd;
+      color: #888888;
+    }
+  }
   .nav-btn-my-profile{
     margin-right: 20px;
   }
@@ -38,7 +45,7 @@
 
 #spree-third-header{
   background-color: white;
-  padding-bottom: 32px;
+  //padding-bottom: 32px;
   .icon-double-arrow-down{
     font-size: 10px;
     float: right;
@@ -165,10 +172,9 @@
     .title-above-slider{
       height: 40px;
       background-color: #fa5930;
-      margin-bottom: 15px;
     }
     .home-slider{
-      margin: 0px 12px;
+      margin: 15px 12px 0px 12px;
       padding-right: 210px;
     }
   }

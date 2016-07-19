@@ -1,10 +1,20 @@
 <% unless @product_properties.empty? %>
   <div id="product-properties" class="table table-striped" data-hook>
     <% @product_properties.each do |product_property| %>
+      <% presentation = product_property.property.presentation %>
+      <% next unless @useful_category.include? presentation %>
       <div class="property-item">
-        <span class="property-title"><%= product_property.property.presentation %>: </span>
+        <span class="property-title"><%= presentation %></span>
         <span class="property-value"><%= product_property.value %></span>
       </div>
     <% end %>
+    <div class="property-item">
+      <span class="property-title">配送范围</span>
+      <span class="property-value">全国</span>
+    </div>
+    <div class="property-item">
+      <span class="property-title">配送时间</span>
+      <span class="property-value">4-7天</span>
+    </div>
   </div>
 <% end %>
