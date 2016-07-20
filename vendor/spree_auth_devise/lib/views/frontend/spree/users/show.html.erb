@@ -2,17 +2,17 @@
   <div class="my-account-left"> <!-- required for floating -->
     <!-- Nav tabs -->
     <ul class="nav nav-tabs tabs-left">
-      <li class="active"><a href="#account-my-orders" data-toggle="tab"><%= Spree.t(:my_orders) %></a></li>
-      <li><a href="#account_summary" data-toggle="tab">账户管理</a></li>
-      <li><a href="#wishlist" data-toggle="tab">我的收藏</a></li>
-      <li><a href="#address" data-toggle="tab">地址管理</a></li>
+      <li class="<%= 'active' if params[:tab] == 'account_my_orders' or params[:tab] == nil %>"><a href="#account_my_orders" data-toggle="tab"><%= Spree.t(:my_orders) %></a></li>
+      <li class="<%= 'active' if params[:tab] == 'account_summary' %>"><a href="#account_summary" data-toggle="tab">账户管理</a></li>
+      <li class="<%= 'active' if params[:tab] == 'wishlist' %>"><a href="#wishlist" data-toggle="tab">我的收藏</a></li>
+      <li class="<%= 'active' if params[:tab] == 'address' %>"><a href="#address" data-toggle="tab">地址管理</a></li>
     </ul>
   </div>
 
   <div class="my-account-right">
     <div class="tab-content">
       <!------------------------- Order ---------------------------------->
-      <div class="tab-pane fade in active" id="account-my-orders">
+      <div class="tab-pane fade <%= 'active in' if params[:tab] == 'account_my_orders' or params[:tab] == nil %>" id="account_my_orders">
         <div class="account-order-list-wrapper">
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#order-tab-all" aria-controls="order-tab-all" role="tab" data-toggle="tab">所有订单</a></li>
@@ -23,7 +23,7 @@
           <div class="tab-content">
             <!-------------------------- 全部订单 -------------------------->
             <div role="tabpanel" class="tab-pane fade in active" id="order-tab-all">
-              <div data-hook="account_my_orders" class="account-my-orders">
+              <div data-hook="account_my_orders" class="account_my_orders">
                 <% if @orders.present? %>
                   <table class="table table-bordered account-order-table">
                     <thead class="active">
@@ -98,7 +98,7 @@
 
             <!-------------------------- 待付款 -------------------------->
             <div role="tabpanel" class="tab-pane fade" id="order-tab-unpaied">
-              <div data-hook="account_my_orders" class="account-my-orders">
+              <div data-hook="account_my_orders" class="account_my_orders">
                 <% if @orders.present? %>
                   <table class="table table-bordered account-order-table">
                     <thead class="active">
@@ -164,7 +164,7 @@
 
             <!-------------------------- 待收货 -------------------------->
             <div role="tabpanel" class="tab-pane fade" id="order-tab-shipping">
-              <div data-hook="account_my_orders" class="account-my-orders">
+              <div data-hook="account_my_orders" class="account_my_orders">
                 <% if @orders.present? %>
                   <table class="table table-bordered account-order-table">
                     <thead class="active">
@@ -230,7 +230,7 @@
 
             <!-------------------------- 待发货 -------------------------->
             <div role="tabpanel" class="tab-pane fade" id="order-tab-unshipped">
-              <div data-hook="account_my_orders" class="account-my-orders">
+              <div data-hook="account_my_orders" class="account_my_orders">
                 <% if @orders.present? %>
                   <table class="table table-bordered account-order-table">
                     <thead class="active">
@@ -300,19 +300,14 @@
 
       <!------------------------- Account ---------------------------------->
 
-      <div class="tab-pane fade" id="account_summary">
-        <div data-hook="account_summary" class="account-summary well">
-          <dl id="user-info">
-            <dt><%= Spree.t(:email) %></dt>
-            <dd><%= @user.email %> (<%= link_to Spree.t(:edit), spree.edit_account_path %>)</dd>
-          </dl>
-        </div>
+      <div class="tab-pane fade <%= 'active in' if params[:tab] == 'account_summary' %>" id="account_summary">
+        <%= render partial: "account_summary" %>
       </div>
 
-      <div class="tab-pane fade" id="wishlist">
+      <div class="tab-pane fade <%= 'active in' if params[:tab] == 'wishlist' %>" id="wishlist">
         <div data-hook="account_my_wishlist" class="account-my-wishlist"></div>
       </div>
-      <div class="tab-pane fade" id="address">
+      <div class="tab-pane fade <%= 'active in' if params[:tab] == 'address' %>" id="address">
         <div data-hook="account_my_address" class="account-my-address"></div>
       </div>
     </div>
