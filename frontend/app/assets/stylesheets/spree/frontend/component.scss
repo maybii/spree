@@ -21,8 +21,12 @@
 
 //////////////////////////// Input ///////////////////////////////
 
-.input-group .form-control{
+.input-group .form-control,
+.form-control {
   box-shadow: none !important;
+  &:focus {
+    border-color: $brand-primary !important;
+  }
 }
 
 .input-group-number-field{

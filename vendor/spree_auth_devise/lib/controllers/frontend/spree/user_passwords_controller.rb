@@ -28,6 +28,7 @@ class Spree::UserPasswordsController < Devise::PasswordsController
   # Silly Devise::PasswordsController!
   # Fixes spree/spree#2190.
   def update
+    return render :edit
     if params[:spree_user][:password].blank?
       self.resource = resource_class.new
       resource.reset_password_token = params[:spree_user][:reset_password_token]

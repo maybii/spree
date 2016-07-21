@@ -29,15 +29,18 @@ a {
   text-align: center;
   min-width: 80px;
   color: #fff;
-  background-color: #f13c3c;
+  background-color: #f13c3c !important;
   &:hover, &:active, &.active, &:visited {
     color: #fff;
-    background-color: #ff3c3c
+    background-color: #ff3c3c !important;
   }
 }
 .btn-130 {
   font-size: 12px;
   width: 130px;
+}
+.btn-180 {
+  width: 180px;
 }
 
 .color-green {
