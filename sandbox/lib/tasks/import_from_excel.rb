@@ -63,7 +63,10 @@ all_xls_files.each do |file_name|
           current_taxon = Spree::Taxon.find_by(parent: current_taxon, name: c)
         end
         product.taxons.push current_taxon unless product.taxons.include? current_taxon
-      else
+        else
+        if first_column_name == "净含量"
+          product.weight = second_column_name.match(/\d+/)[0].to_i rescue 0
+        end
         first_column_name = "产品品牌" if(first_column_name.include? "品牌")
         first_column_name = "保质期" if(first_column_name.include? "保质期")
         first_column_name = "生产商" if(first_column_name.include? "生产商")
@@ -84,7 +87,28 @@ all_xls_files.each do |file_name|
 
     #########################################################################################
     elsif category == "价格规格"
+      product.variants.destroy_all if first_column_name == "价格规格"
+      next unless second_column_name
+      print("jiage #{first_column_name}  #{second_column_name}")
+      property_count = product.option_types.count
+      option_values =(1..property_count).map do |property_index|
+        Spree::OptionValue.find_by(name: row[property_index-1])
+      end
+      variant = product.variants.new(option_values: option_values)
+      variant.price = row[property_count]
+      variant.save
+    else
+      # property
+      next if first_column_name == nil
+      if second_column_name != nil
+        option_type = Spree::OptionType.find_or_create_by(name: first_column_name, presentation: first_column_name)
+        for option_value in row.compact[1..-1]
+          option_type.option_values.find_or_create_by(name: option_value, presentation: option_value)
+        end
+        option_type.save()
 
+        product.option_types.push(option_type) unless (product.option_type_ids.include? option_type.id)
+      end
     end
 
     unless product.save
@@ -93,6 +117,10 @@ all_xls_files.each do |file_name|
       p product.errors.full_messages
       raise
     end
-
   end
+
+  ######################################### Add Image ############################################
+  product.images.destroy_all
+  product.images.create(attachment: File.open("/home/zheng/Pictures/iloveu.png"))
+
 end

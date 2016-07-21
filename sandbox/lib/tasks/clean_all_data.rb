@@ -8,3 +8,6 @@ Spree::ShippingCategory.destroy_all
 Spree::Taxonomy.destroy_all
 Spree::Taxon.destroy_all
 Spree::Variant.destroy_all
+Spree::OptionType.destroy_all
+Spree::OptionValueVariant.destroy_all
+Spree::Variant.destroy_all
