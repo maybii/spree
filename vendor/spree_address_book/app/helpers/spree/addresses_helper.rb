@@ -16,7 +16,7 @@ module Spree::AddressesHelper
     country ||= Spree::Country.find(Spree::Config[:default_country_id])
     have_states = !country.states.empty?
     state_elements = [
-      form.collection_select(:state_id, country.states.order(:name),
+      form.collection_select(:state_id, country.states.order(:id),
                             :id, :name,
                             {:include_blank => true},
                             {:class => have_states ? "required form-control" : "hidden",
