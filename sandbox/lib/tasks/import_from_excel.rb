@@ -105,6 +105,7 @@ all_xls_files.each do |file_path|
       variant = product.variants.new(option_values: option_values)
       variant.price = row[property_count]
       variant.save
+      product.price = variant.price
     else
       # property
       next if first_column_name == nil
