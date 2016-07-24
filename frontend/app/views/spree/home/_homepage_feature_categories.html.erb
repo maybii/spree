@@ -52,47 +52,23 @@
     <div class="category-ranking">
         <h4>热销排行榜</h4>
         <div class="ranking-items">
-          <div class="ranking-item clearfix">
-            <div class="ranking-image pull-left"></div>
-            <div class="ranking-info pull-right">
-              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
-              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
-              <div class="ranking-sale-vol">销量：1202</div>
+          <% products[0..4].each do |product| %>
+            <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+            <div class="ranking-item clearfix">
+              <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+              <div class="ranking-image pull-left">
+                <%= link_to url, itemprop: "url" do %>
+                  <%= small_image(product, itemprop: "image", class: 'ranking-product-image') %>
+                <% end %>
+              </div>
+              <div class="ranking-info pull-right">
+                <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
+                <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
+                <div class="ranking-sale-vol">销量：1202</div>
+              </div>
+              <% end %>
             </div>
-          </div>
-          <div class="ranking-item clearfix">
-            <div class="ranking-image pull-left"></div>
-            <div class="ranking-info pull-right">
-              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
-              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
-              <div class="ranking-sale-vol">销量：1202</div>
-            </div>
-          </div>
-          <div class="ranking-item clearfix">
-            <div class="ranking-image pull-left"></div>
-            <div class="ranking-info pull-right">
-              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
-              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
-              <div class="ranking-sale-vol">销量：1202</div>
-            </div>
-          </div>
-          <div class="ranking-item clearfix">
-            <div class="ranking-image pull-left"></div>
-            <div class="ranking-info pull-right">
-              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
-              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
-              <div class="ranking-sale-vol">销量：1202</div>
-            </div>
-          </div>
-          <div class="ranking-item clearfix">
-            <div class="ranking-image pull-left"></div>
-            <div class="ranking-info pull-right">
-              <div class="ranking-title">白葡萄汁橘子杯 6排/件</div>
-              <div class="ranking-price">批发：<span>¥</span><span class="price">5.5</span></div>
-              <div class="ranking-sale-vol">销量：1202</div>
-            </div>
-          </div>
-
+          <% end %>
         </div>
     </div>
   </div>

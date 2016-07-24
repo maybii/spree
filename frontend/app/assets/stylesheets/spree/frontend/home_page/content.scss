@@ -222,8 +222,12 @@
     .ranking-image {
       display: inline-block;
       width: 70px;
-      padding-top: 70px;
+      height: 70px;
       background-color: #b4b4b4;
+    }
+    .ranking-product-image {
+      height: 100%;
+      width: 100%;
     }
     .ranking-info {
       padding: 0 10px;
