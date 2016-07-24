@@ -31,7 +31,7 @@
             <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
               <div class="panel-body text-center product-body">
                 <%= link_to url, itemprop: "url" do %>
-                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= large_image(product, itemprop: "image", class: 'product-image') %><br/>
                   <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
                 <% end %>
                 <br/>
@@ -128,7 +128,7 @@
             <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
               <div class="panel-body text-center product-body">
                 <%= link_to url, itemprop: "url" do %>
-                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= large_image(product, itemprop: "image", class: 'product-image') %><br/>
                   <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
                 <% end %>
                 <br/>
@@ -225,7 +225,7 @@
             <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
               <div class="panel-body text-center product-body">
                 <%= link_to url, itemprop: "url" do %>
-                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= large_image(product, itemprop: "image", class: 'product-image') %><br/>
                   <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
                 <% end %>
                 <br/>
@@ -322,7 +322,7 @@
             <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
               <div class="panel-body text-center product-body">
                 <%= link_to url, itemprop: "url" do %>
-                  <%= small_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= large_image(product, itemprop: "image", class: 'product-image') %><br/>
                   <%= content_tag(:div, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name, class: "product-title text-left") %>
                 <% end %>
                 <br/>

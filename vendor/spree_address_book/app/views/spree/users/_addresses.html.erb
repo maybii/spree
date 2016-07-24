@@ -1,25 +1,56 @@
-<div id='new_address_link'>
-  <%= link_to t(:add_new_shipping_address, scope: :address_book), controller: :addresses, action: :new %>
+<div class="address-wrapper">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#address_book_in_account" aria-controls="home" role="tab" data-toggle="tab">收货地址</a>
+    </li>
+  </ul>
 </div>
 
-<%= render partial: "new_address_in_user" %>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="address_book_in_account">
+    <div id='new_address_link' class="hidden">
+      <%= link_to t(:add_new_shipping_address, scope: :address_book), controller: :addresses, action: :new %>
+    </div>
 
-<% if spree_current_user.addresses.present? %>
-<table id='user_addresses' class="table table-striped">
-  <tbody>
-    <% spree_current_user.addresses.each do |address| %>
-    <tr>
-      <td><%= address.to_s.gsub("<br/>", ", ") %></td>
-      <td>
-        <%= link_to Spree.t(:edit), edit_address_path(address) %>&nbsp;
-        <%= link_to Spree.t(:remove), address_path(address), method: :delete, confirm: Spree.t(:are_you_sure) %>
-      </td>
-    </tr>
+    <%= render partial: "new_address_in_user" %>
+
+    <% if spree_current_user.addresses.present? %>
+    <table id='user_addresses' class="table table-hover table-header-grey">
+      <thead>
+        <tr>
+          <th>收货人</th>
+          <th>所在地区</th>
+          <th>详细地址</th>
+          <th>邮编</th>
+          <th>电话/手机</th>
+          <th>操作</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% spree_current_user.addresses.each do |address| %>
+        <tr>
+          <td><%= address.firstname %></td>
+          <td><%= address.state %> <%= address.city %></td>
+          <td><%= address.address1 %></td>
+          <td><%= address.zipcode %></td>
+          <td><%= address.phone %></td>
+          <td>
+            <%= link_to Spree.t(:edit), edit_address_path(address), class: 'text-href-blue' %>
+            |
+            <%= link_to Spree.t(:remove), address_path(address), method: :delete, confirm: Spree.t(:are_you_sure), class: 'text-href-blue' %>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% else %>
+    <div id='users-address-list-empty'>
+      <%= t(:no_shipping_addresses_on_file, scope: :address_book) %>
+    </div>
     <% end %>
-  </tbody>
-</table>
-<% else %>
-<div id='users-address-list-empty'>
-  <%= t(:no_shipping_addresses_on_file, scope: :address_book) %>
+  </div>
 </div>
-<% end %>

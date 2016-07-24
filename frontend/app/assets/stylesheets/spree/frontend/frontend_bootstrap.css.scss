@@ -46,6 +46,21 @@ a {
 .color-green {
   color: #48d670;
 }
+.table {
+  font-size: 12px;
+  // tr:last-child {
+  //   border-bottom: 1px solid #ddd;
+  // }
+}
+.table-header-grey > thead {
+  background-color: #dddddd;
+}
+.table-hover>tbody>tr:hover {
+  background-color: #f7f7f7;
+}
+.text-href-blue {
+  color: #278aec;
+}
 
 // -- Spree Custom Header and Footer ---------------------
 #spree-main-header {
