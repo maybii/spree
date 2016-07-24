@@ -99,7 +99,7 @@ all_xls_files.each do |file_path|
         name = row[property_index-1]
         name = name.gsub('批发50', '批发51') if(name.include? '批发50')
         name = name.gsub('批发10', '批发11') if(name.include? '批发10')
-        name = name.gsub('500', '300') if(name.include? '-500')
+        name = name.gsub('200', '500') if(name.include? '-200')
         Spree::OptionValue.find_by(name: name)
       end
       variant = product.variants.new(option_values: option_values)
@@ -116,7 +116,7 @@ all_xls_files.each do |file_path|
         for option_value in row.compact[1..-1]
           option_value.gsub!('批发50', '批发51') if(option_value.include? '批发50')
           option_value.gsub!('批发10', '批发11') if(option_value.include? '批发10')
-          option_value.gsub!('500', '300') if(option_value.include? '-500')
+          option_value.gsub!('200', '500') if(option_value.include? '-200')
           option_type.option_values.find_or_create_by(name: option_value, presentation: option_value)
         end
         option_type.save()
@@ -152,3 +152,5 @@ all_xls_files.each do |file_path|
 
   raise "no pic found for #{file_name}" if product.images.empty?
 end
+
+Spree::StockItem.all.each{|item| item.count_on_hand = 1000; item.save;}
