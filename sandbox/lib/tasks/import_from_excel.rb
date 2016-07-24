@@ -3,7 +3,7 @@ require 'roo'
 
 ##################################### Read File ###########################################
 
-path = '/local/code/zhendi/data/products'
+path = '../../zhendi-data/products'
 
 all_xls_files = Dir[ path + "/**/*.xlsx"]
 

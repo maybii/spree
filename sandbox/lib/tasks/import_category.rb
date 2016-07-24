@@ -1,6 +1,6 @@
 require 'roo'
 
-path = '/local/code/zhendi/data/others/category.xlsx'
+path = '../../zhendi-data/others/category.xlsx'
 
 xlsx = Roo::Excelx.new(path)
 
