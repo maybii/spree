@@ -33,6 +33,7 @@ public/attachments
 public/blank_iframe.html
 public/ckeditora
 #sandbox/*
+sandbox/public/spree/products/*
 spree_dev
 spree_test
 testapp
