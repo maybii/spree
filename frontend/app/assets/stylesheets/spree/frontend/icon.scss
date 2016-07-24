@@ -25,6 +25,15 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-food:before {
+    content: "\e91a";
+}
+.icon-coffee:before {
+    content: "\e91b";
+}
+.icon-cake:before {
+    content: "\e90a";
+}
 .icon-angle-left:before {
     content: "\e918";
 }
@@ -60,9 +69,6 @@
 }
 .icon-bottle:before {
     content: "\e909";
-}
-.icon-cake:before {
-    content: "\e90a";
 }
 .icon-calendar:before {
     content: "\e90b";
@@ -102,5 +108,14 @@
 }
 .icon-qq:before {
     content: "\e917";
+}
+.icon-trash:before {
+    content: "\e91c";
+}
+.icon-alert:before {
+    content: "\e91d";
+}
+.icon-check-circle:before {
+    content: "\e91e";
 }
 
