@@ -3,11 +3,11 @@ require 'roo'
 
 ##################################### Read File ###########################################
 
-path = '/local/code/zhendi/data/products/'
+path = '/local/code/zhendi/data/products'
 
-all_files = Dir.entries(path)
+all_xls_files = Dir[ path + "/**/*.xlsx"]
 
-all_xls_files = all_files.select{ |f| f.include?('xlsx') and f.first != '.'}
+all_jpg_files = Dir[ path + "/**/*.jpg"]
 
 ##################################### Init Data ###########################################
 
@@ -17,10 +17,10 @@ available_on = Time.now
 
 ###########################################################################################
 
-all_xls_files.each do |file_name|
+all_xls_files.each do |file_path|
   product = nil
 
-  sheet = Roo::Spreadsheet.open(path + file_name).sheet(0)
+  sheet = Roo::Spreadsheet.open(file_path).sheet(0)
   #read from one file
 
   #####Step1: Get Category first
@@ -54,13 +54,18 @@ all_xls_files.each do |file_name|
         product.available_on = available_on;
         product.description = nil;
       elsif first_column_name == "条形码"
+        next if Spree::Variant.find_by(sku: second_column_name.to_s)
         product.sku = second_column_name.to_s
       elsif first_column_name == "类别"
         taxon = nil
         taxons = second_column_name.split('/')
+        if taxons.last == '矿物质水' and taxons[-2] == "纯净"
+          taxons = taxons[0..-3].push("纯净/矿物质水")
+        end
         current_taxon = nil
         taxons.each do |c|
-          current_taxon = Spree::Taxon.find_by(parent: current_taxon, name: c)
+          c = "茶叶" if c == "茶"
+          current_taxon = Spree::Taxon.find_or_create_by(parent: current_taxon, name: c)
         end
         product.taxons.push current_taxon unless product.taxons.include? current_taxon
         else
@@ -73,7 +78,7 @@ all_xls_files.each do |file_name|
         product.set_property(first_column_name, second_column_name)
       end
     ###########################################################################################
-    elsif category == "营养成分表"
+    elsif category == "营养成分表" or category == "矿物质含量（毫克/升）"
       if product.description == nil or product.description.empty?
         product.description = "<table class='nutrient'></table>"
       else
@@ -89,10 +94,13 @@ all_xls_files.each do |file_name|
     elsif category == "价格规格"
       product.variants.destroy_all if first_column_name == "价格规格"
       next unless second_column_name
-      print("jiage #{first_column_name}  #{second_column_name}")
       property_count = product.option_types.count
       option_values =(1..property_count).map do |property_index|
-        Spree::OptionValue.find_by(name: row[property_index-1])
+        name = row[property_index-1]
+        name = name.gsub('批发50', '批发51') if(name.include? '批发50')
+        name = name.gsub('批发10', '批发11') if(name.include? '批发10')
+        name = name.gsub('500', '300') if(name.include? '-500')
+        Spree::OptionValue.find_by(name: name)
       end
       variant = product.variants.new(option_values: option_values)
       variant.price = row[property_count]
@@ -100,9 +108,14 @@ all_xls_files.each do |file_name|
     else
       # property
       next if first_column_name == nil
+      next if first_column_name.include? "口味"
+      first_column_name.strip!
       if second_column_name != nil
         option_type = Spree::OptionType.find_or_create_by(name: first_column_name, presentation: first_column_name)
         for option_value in row.compact[1..-1]
+          option_value.gsub!('批发50', '批发51') if(option_value.include? '批发50')
+          option_value.gsub!('批发10', '批发11') if(option_value.include? '批发10')
+          option_value.gsub!('500', '300') if(option_value.include? '-500')
           option_type.option_values.find_or_create_by(name: option_value, presentation: option_value)
         end
         option_type.save()
@@ -111,6 +124,9 @@ all_xls_files.each do |file_name|
       end
     end
 
+    p product.name
+    p file_path
+    p product.id
     unless product.save
       p category
       p first_column_name
@@ -121,6 +137,17 @@ all_xls_files.each do |file_name|
 
   ######################################### Add Image ############################################
   product.images.destroy_all
-  product.images.create(attachment: File.open("/home/zheng/Pictures/iloveu.png"))
+  file_name = file_path[file_path.rindex('/')+1..file_path.rindex('.')-1]
+  file_name_back = file_name.gsub(' ', '-')
+  file_name = file_name[0..-2] if file_name.last.to_i != 0
 
+  all_jpg_files.each do |image_path|
+    image_name = image_path[(image_path.rindex('/') + 1 )..-5]
+    image_name = image_name[0..-2] if(image_name[-1].to_i != 0)
+    if image_name == file_name or image_name == file_name_back
+      product.images.create(attachment: File.open(image_path))
+    end
+  end
+
+  raise "no pic found for #{file_name}" if product.images.empty?
 end
