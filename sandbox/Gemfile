@@ -51,9 +51,10 @@ gem 'spree_auth_devise', path: '../vendor/spree_auth_devise'
 gem 'spree_recently_viewed', path: '../vendor/spree_recently_viewed'
 gem 'spree_address_book', path: '../vendor/spree_address_book'
 gem 'spree_wishlist', path: '../vendor/spree_wishlist'
+gem 'spree_variant_options', path: '../vendor/spree_variant_options'
+
 
 gem 'spree_gateway'
-
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: '3-1-stable'
 gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-1-stable'

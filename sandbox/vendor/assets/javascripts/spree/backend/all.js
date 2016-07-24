@@ -12,3 +12,4 @@
 //= require spree/backend/spree_i18n
 //= require spree/backend/spree_multi_currency
 //= require spree/backend/spree_alipay
+//= require spree/backend/spree_variant_options

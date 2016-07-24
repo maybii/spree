@@ -56,3 +56,4 @@ test_app
 .localeapp
 .ruby-gemset
 sandbox/config/database.yml
+.byebug_history

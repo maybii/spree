@@ -16,3 +16,4 @@
 //= require spree/frontend/spree_wishlist
 //= require spree/frontend/spree_multi_currency
 //= require spree/frontend/spree_alipay
+//= require spree/frontend/spree_variant_options
