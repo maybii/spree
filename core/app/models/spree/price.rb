@@ -39,6 +39,11 @@ module Spree
       Spree::Money.new(price_including_vat_for(price_options), currency: currency)
     end
 
+    def display_only_price_including_vat_for(price_options)
+      price_including_vat_for(price_options)
+    end
+
+
     # Remove variant default_scope `deleted_at: nil`
     def variant
       Spree::Variant.unscoped { super }

@@ -24,6 +24,14 @@ module Spree
         to_html
     end
 
+    def display_only_price(product_or_variant)
+      product_or_variant.
+        price_in(current_currency).
+        display_only_price_including_vat_for(current_price_options).
+        to_i
+    end
+
+
     def link_to_tracking(shipment, options = {})
       return unless shipment.tracking && shipment.shipping_method
 

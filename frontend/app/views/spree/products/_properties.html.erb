@@ -1,5 +1,21 @@
 <% unless @product_properties.empty? %>
   <div id="product-properties" class="table table-striped" data-hook>
+    <div id="product-price">
+      <span class="product-section-title">价格：</span>
+      <span class="lead-currency">￥</span>
+      <span class="lead price selling" itemprop="price">
+        <span><%= display_only_price(@product) %></span>
+      </span>
+      <!-- <span itemprop="priceCurrency" content="<%= @product.currency %>"></span> -->
+
+      <% if @product.master.can_supply? %>
+        <link itemprop="availability" href="https://schema.org/InStock" />
+      <% elsif @product.variants.empty? %>
+        <br />
+        <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+      <% end %>
+    </div>
+
     <% @product_properties.each do |product_property| %>
       <% presentation = product_property.property.presentation %>
       <% next unless @useful_category.include? presentation %>
