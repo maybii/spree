@@ -60,8 +60,12 @@ module Spree
         flash[:error] = error
         redirect_back_or_default(spree.root_path)
       else
-        respond_with(order) do |format|
-          format.html { redirect_to cart_path }
+        if(params[:way] == 'directly')
+          render :js => "window.location = '/cart'"
+        else
+          respond_with(order) do |format|
+            format.html { redirect_to cart_path }
+          end
         end
       end
     end

@@ -1,3 +1,11 @@
+/////////////////////////// Layout ///////////////////////////////
+
+.flex-center{
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
 ////////////////////////// Breadcrumbs ///////////////////////////
 #breadcrumbs{
   font-size: 12px;

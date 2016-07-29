@@ -12,4 +12,5 @@
  *= require spree/frontend/spree_wishlist
  *= require spree/frontend/spree_alipay
  *= require spree/frontend/spree_variant_options
+ *= require spree/product_zoom
 */
