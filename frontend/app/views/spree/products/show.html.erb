@@ -62,7 +62,11 @@
         <div role="tabpanel" class="tab-pane fade in active" id="description">
           <%= image_tag 'product/product-banner.png', class: 'product-description-banner' %>
           <!-- <%= image_path('') %> -->
-          <h1>不可描述</h1>
+          <div class="product-description-content">
+          <% if  @product.description %>
+            <%= @product.description.html_safe %>
+          <% end %>
+          </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="shipment">
           配送
