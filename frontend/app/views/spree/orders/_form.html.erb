@@ -2,13 +2,13 @@
 <table class="table" id="cart-detail" data-hook>
   <thead>
     <tr class="active cart_items_headers" data-hook="cart_items_headers">
-      <td class="cart-item-check-all">
+      <td width='100' class="cart-item-check-all">
         <label class="checkbox-inline btn-select-all hidden">
           <input type="checkbox" name="cartCheckAll">
           <span>全选</span>
         </label>
       </td>
-      <td class="cart-item-image-header"></td>
+      <td width='150' class="cart-item-image-header text-left"></td>
       <td class="cart-item-description-header"><%= Spree.t(:item) %></td>
       <td class="cart-item-price-header"><%= Spree.t(:price) %></td>
       <td class="cart-item-quantity-header text-center"><%= Spree.t(:qty) %></td>
@@ -34,7 +34,7 @@
         <span>全选</span>
       </label>
     </td>
-    <td colspan="1" class="text-center">
+    <td colspan="1">
       <a href="" class="delete-all">删除选中商品</a>
     </td>
     <td colspan="5">
