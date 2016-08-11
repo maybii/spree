@@ -14,7 +14,7 @@
 
       <div data-hook="admin_product_form_slug">
         <%= f.field_container :slug, class: ['form-group'] do %>
-          <%= f.label :slug, raw(Spree.t(:slug) + content_tag(:span, ' *', class: "required")) %>
+          <%= f.label :slug, raw('产品链接' + content_tag(:span, ' *', class: "required")) %>
           <%= f.text_field :slug, class: 'form-control title' %>
           <%= f.error_message_on :slug %>
         <% end %>
@@ -63,7 +63,7 @@
 
       <div data-hook="admin_product_form_discontinue_on">
         <%= f.field_container :discontinue_on, class: ['form-group'] do %>
-          <%= f.label :discontinue_on, Spree.t(:discontinue_on) %>
+          <%= f.label :discontinue_on, '下架日期(可不填)' %>
           <%= f.error_message_on :discontinue_on %>
           <%= f.text_field :discontinue_on, value: datepicker_field_value(@product.discontinue_on), class: 'datepicker form-control' %>
         <% end %>
@@ -199,21 +199,21 @@
   <div data-hook="admin_product_form_meta">
     <div data-hook="admin_product_form_meta_title">
       <%= f.field_container :meta_title, class: ['form-group'] do %>
-        <%= f.label :meta_title, Spree.t(:meta_title) %>
+        <%= f.label :meta_title, '搜索产品名称(请填写产品名称,可不填)' %>
         <%= f.text_field :meta_title, class: 'form-control' %>
       <% end %>
     </div>
 
     <div data-hook="admin_product_form_meta_keywords">
       <%= f.field_container :meta_keywords, class: ['form-group'] do %>
-        <%= f.label :meta_keywords, Spree.t(:meta_keywords) %>
+        <%= f.label :meta_keywords, '搜索关键字(请填写分类,可不填)' %>
         <%= f.text_field :meta_keywords, class: 'form-control' %>
       <% end %>
     </div>
 
     <div data-hook="admin_product_form_meta_description">
       <%= f.field_container :meta_description, class: ['form-group'] do %>
-        <%= f.label :meta_description, Spree.t(:meta_description) %>
+        <%= f.label :meta_description, '搜索描述(建议不填写)' %>
         <%= f.text_field :meta_description, class: 'form-control' %>
       <% end %>
     </div>
