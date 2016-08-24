@@ -769,7 +769,7 @@ zh-CN:
         gte: "大于或等于"
         lt:
         lte:
-    items_cannot_be_shipped:
+    items_cannot_be_shipped: "商品无法被送达"
     items_in_rmas:
     items_reimbursed:
     items_to_be_reimbursed:
