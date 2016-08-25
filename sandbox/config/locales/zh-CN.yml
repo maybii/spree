@@ -819,6 +819,7 @@ zh-CN:
     move_stock_between_locations:
     my_account: "我的帐户"
     my_orders: "我的订单"
+    show_my_orders: "查看我的订单"
     name: "名称"
     name_on_card:
     name_or_sku: "名称或条形码（输入产品名称中的至少4个字母）"

@@ -6,7 +6,7 @@
 <fieldset id="order_summary" data-hook="order_summary">
 
   <div class="order-info text-center">
-    <h4><i class="icon-check color-green" aria-hidden="true"></i><span>支付成功！我们将第一时间发货！</span></h4>
+    <h4><i class="icon-check-circle color-green" aria-hidden="true"></i> <span>支付成功！我们将第一时间发货！</span></h4>
     <p>支付金额： <span class="text-color"><%= @order.display_total.to_html %></span></p>
     <div class="text-center">
       <div class="order-info-diveder">订单详情</div>
@@ -41,7 +41,7 @@
       <%= link_to Spree.t(:back_to_store), spree.root_path, class: "btn btn-red btn-130" %>
       <% unless order_just_completed?(@order) %>
         <% if try_spree_current_user && respond_to?(:account_path) %>
-          <%= link_to Spree.t(:my_account), account_path, class: "btn btn-default btn-130" %>
+          <%= link_to Spree.t(:show_my_orders), account_path, class: "btn btn-default btn-130" %>
         <% end %>
       <% end %>
     </p>
