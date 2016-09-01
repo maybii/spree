@@ -457,7 +457,7 @@ ActiveRecord::Schema.define(version: 20160901063807) do
     t.datetime "updated_at",                                        null: false
     t.boolean  "promotionable",                      default: true
     t.string   "meta_title",           limit: 255
-    t.integer  "sales_amount",         limit: 4
+    t.integer  "sales_amount",         limit: 4,     default: 0
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree
