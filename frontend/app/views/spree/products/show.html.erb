@@ -39,16 +39,18 @@
             <%= render :partial => 'properties' %>
           </div>
 
-          <div id="cart-form" data-hook="cart_form">
+          <div id="cart-form" data-hook="cart_form" class="relative">
             <%= render :partial => 'cart_form' %>
           </div>
         </div>
-
-        <div id="taxon-crumbs" class=" five " data-hook="product_taxons">
-          <%= render :partial => 'taxons' %>
-        </div>
       </div>
     </div>
+    <div class="col-md-12">
+      <div id="taxon-crumbs" class="similar-product-section" data-hook="product_taxons">
+        <%= render :partial => 'taxons' %>
+      </div>
+    </div>
+
     <div class="col-md-12">
       <div class="product-detail-tab-menu">
         <ul class="nav nav-tabs" role="tablist">

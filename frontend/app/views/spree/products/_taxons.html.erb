@@ -1,8 +1,33 @@
 <% if @product.taxons.present? %>
-  <h3 class="product-section-title"><%= Spree.t(:look_for_similar_items) %></h3>
+  <div class="product-section-title"><%= Spree.t(:look_for_similar_items) %></div>
   <ul class="list-group" id="similar_items_by_taxon" data-hook>
-    <% @product.taxons.each do |taxon| %>
-      <li class="list-group-item"><%= link_to taxon.name, seo_url(taxon) %></li>
-    <% end %>
+    <% random_ids = @product.taxons.map{ |t| t.product_ids.sort_by{rand}}.flatten.slice(0..3) %>
+    <div class="row gutter-20">
+      <% Spree::Product.where(:id => random_ids).each do |product| %>
+        <div class="col-xs-12 col-sm-3">
+          <div class="similar-group-item">
+            <%= link_to product_url(product) do %>
+              <div class="pull-left">
+                <%= small_image(product, itemprop: "image", class: 'product-image') %>
+              </div>
+              <div class="similar-product">
+                <div class="similar-product-name">
+                  <%= product.name %>
+                </div>
+                <div>
+                  <span> 批发价：</span>
+                  <span class="similar-product-price"> <%= display_price(product) %> </span>
+                  <span>
+                </div>
+                <div class="similar-product-amount">
+                  <span> 销量：</span>
+                  <span> <%= display_price(product) %> </span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </ul>
 <% end %>

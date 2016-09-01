@@ -1,6 +1,6 @@
 <% if cached_recently_viewed_products.any? %>
   <div id="recently_viewed" data-hook>
-    <p class="product-section-title" style="font-size: 16px; color: #444444;"><%= Spree.t(:recently_viewed_products) %></p>
+    <p class="product-section-title"><%= Spree.t(:recently_viewed_products) %></p>
 
     <div id="recently_viewed_products" class="row">
       <% cached_recently_viewed_products.each do |product| %>
