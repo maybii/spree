@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724105901) do
+ActiveRecord::Schema.define(version: 20160901063807) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -457,6 +457,7 @@ ActiveRecord::Schema.define(version: 20160724105901) do
     t.datetime "updated_at",                                        null: false
     t.boolean  "promotionable",                      default: true
     t.string   "meta_title",           limit: 255
+    t.integer  "sales_amount",         limit: 4
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree

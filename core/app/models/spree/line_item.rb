@@ -30,6 +30,7 @@ module Spree
     after_save :update_adjustments
 
     after_create :update_tax_charge
+    after_create :increase_amount_of_product
 
     delegate :name, :description, :sku, :should_track_inventory?, :product, to: :variant
     delegate :tax_zone, to: :order
@@ -154,5 +155,11 @@ module Spree
         errors.add(:currency, :must_match_order_currency)
       end
     end
+
+    def increase_amount_of_product
+      amount = Spree::LineItem.joins(:variant).where('spree_variants.product_id'=> self.product.id).sum(:quantity)
+      self.product.update_attributes(sales_amount: amount)
+    end
+
   end
 end
