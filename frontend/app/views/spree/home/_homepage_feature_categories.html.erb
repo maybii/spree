@@ -16,9 +16,8 @@
         </div>
       </div>
       <div class="category-wrapper">
-        <div class="category-list-item first">
-          <div class="title">吃货集结令</div>
-          <div class="content">环球美食 尽收眼底</div>
+        <div class="category-list-item first" style="padding: 0px">
+          <%= image_tag "#{index+2}f", height: "330", width: '456' %>
         </div>
         <% all_category_products = Spree::Product.joins(:taxons).where('spree_taxons.id' => children_taxonomy.map(&:id))%>
         <% all_category_products.sample(6).each do |product| %>
@@ -63,7 +62,7 @@
                     <%= product.name %>
                   </div>
                   <div class="ranking-price">
-                    批发：<span>¥</span><span class="price"><%= display_price(product) %></span>
+                    批发：<span class="price"><%= display_price(product) %></span>
                   </div>
                   <div class="ranking-sale-vol">
                     销量： <%= product.sales_amount %>

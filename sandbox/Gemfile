@@ -65,7 +65,7 @@ gem 'spree_alipay', github: "RuanShan/spree_alipay", ref: "b3bc76bc56e2dbd5211f6
 
 
 #### import excel
-gem 'roo', '~> 2.4.0'
+gem 'roo', '~> 2.5.1'
 gem 'ruby-pinyin'
 
 group :test, :development do

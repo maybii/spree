@@ -17,10 +17,18 @@ available_on = Time.now
 
 ###########################################################################################
 
-all_xls_files.each do |file_path|
-  product = nil
+#all_xls_files = ['../../zhendi-data/products/冲调饮品/洋酒/红酒/费尔南多.xlsx']
 
-  sheet = Roo::Spreadsheet.open(file_path).sheet(0)
+all_xls_files[556..-1].each_with_index do |file_path, index|
+#all_xls_files.each_with_index do |file_path, index|
+  p "file_path index #{index} #{file_path}---------------------------------"
+  product = nil
+  begin
+    sheet = Roo::Spreadsheet.open(file_path, extension: :xlsx).sheet(0)
+  rescue Zip::Error #fix open xlsx via xls
+    byebug
+    #sheet = Roo::Spreadsheet.open(file_path)
+  end
   #read from one file
 
   #####Step1: Get Category first
@@ -32,7 +40,15 @@ all_xls_files.each do |file_path|
     second_column_name = row[1]
 
     if first_column_name == nil
-      category = sheet.row(row_index + 1)[0] rescue next
+      (1..sheet.count).each do |next_row_index|
+        row = sheet.row(row_index + next_row_index)
+        if not row.compact.empty?
+          category = row[0]
+          byebug if category == nil or category.empty?
+          break
+        end
+      end
+
     else
       first_column_name.strip!
       if(first_column_name.last == "：" or first_column_name.last == ":")
@@ -40,6 +56,7 @@ all_xls_files.each do |file_path|
       end
     end
 
+    p category
     ############################################################################################
     if category == "属性"
       second_column_name ||= "见包装瓶盖所示"
@@ -78,7 +95,7 @@ all_xls_files.each do |file_path|
         product.set_property(first_column_name, second_column_name)
       end
     ###########################################################################################
-    elsif category == "营养成分表" or category == "矿物质含量（毫克/升）"
+    elsif category == "营养成分表" or category == "矿物质含量（毫克/升）" or category == "项目"
       if product.description == nil or product.description.empty?
         product.description = "<table class='nutrient'></table>"
       else
@@ -93,17 +110,20 @@ all_xls_files.each do |file_path|
     #########################################################################################
     elsif category == "价格规格"
       product.variants.destroy_all if first_column_name == "价格规格"
-      next unless second_column_name
+      next if second_column_name == nil && row[2] == nil
+      second_column_name ? skip_second = false : skip_second = true
       property_count = product.option_types.count
       option_values =(1..property_count).map do |property_index|
         name = row[property_index-1]
+        name = row[property_index] unless name
         name = name.gsub('批发50', '批发51') if(name.include? '批发50')
         name = name.gsub('批发10', '批发11') if(name.include? '批发10')
         name = name.gsub('200', '500') if(name.include? '-200')
         Spree::OptionValue.find_by(name: name)
       end
+
       variant = product.variants.new(option_values: option_values)
-      variant.price = row[property_count]
+      skip_second ? variant.price = row[property_count + 1] : variant.price = row[property_count]
       variant.save
       product.price = variant.price
     else
@@ -124,16 +144,13 @@ all_xls_files.each do |file_path|
         product.option_types.push(option_type) unless (product.option_type_ids.include? option_type.id)
       end
     end
-
-    p product.name
-    p file_path
-    p product.id
     unless product.save
       p category
       p first_column_name
       p product.errors.full_messages
       raise
     end
+    p "file_path index #{index} #{file_path}---------------------------------"
   end
 
   ######################################### Add Image ############################################
@@ -151,6 +168,11 @@ all_xls_files.each do |file_path|
   end
 
   raise "no pic found for #{file_name}" if product.images.empty?
+
+  sheet.close()
+
+  p product.name
+
 end
 
 Spree::StockItem.all.each{|item| item.count_on_hand = 1000; item.save;}
