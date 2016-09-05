@@ -23,36 +23,32 @@
   </div>
   <div class="home-swiper">
     <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-            <div class="swiper-slide"><%= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %></div>
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+      <div class="swiper-wrapper">
+        <% Spree::Product.order("sales_amount DESC").limit(10).each do |product| %>
+          <div class="swiper-slide">
+            <%= large_image(product, itemprop: "image", class: 'swiper-item') %>
+            <%#= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %>
+          </div>
+        <% end %>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
     </div>
     <div class="swiper-button-next"><i class="icon-angle-right"></i></div>
     <div class="swiper-button-prev"><i class="icon-angle-left"></i></div>
   </div>
   <script>
-    var swiper = new Swiper('.swiper-container', {
-        // pagination: '.swiper-pagination',
-        // paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        slidesPerView: 5,
-        autoplay: 5000,
-        spaceBetween: 10,
-        loop: true,
-        speed: 800,
-        slidesPerGroup: 2
-    });
+   var swiper = new Swiper('.swiper-container', {
+     // pagination: '.swiper-pagination',
+     // paginationClickable: true,
+     nextButton: '.swiper-button-next',
+     prevButton: '.swiper-button-prev',
+     slidesPerView: 5,
+     autoplay: 5000,
+     spaceBetween: 10,
+     loop: true,
+     speed: 800,
+     slidesPerGroup: 2
+   });
   </script>
 </div>
