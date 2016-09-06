@@ -73,3 +73,6 @@ group :test, :development do
   gem 'pry-byebug'
   gem 'rack-mini-profiler'
 end
+
+#####
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
