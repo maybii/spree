@@ -19,7 +19,7 @@ available_on = Time.now
 
 #all_xls_files = ['../../zhendi-data/products/冲调饮品/洋酒/红酒/费尔南多.xlsx']
 
-all_xls_files[556..-1].each_with_index do |file_path, index|
+all_xls_files[0..-1].each_with_index do |file_path, index|
 #all_xls_files.each_with_index do |file_path, index|
   p "file_path index #{index} #{file_path}---------------------------------"
   product = nil
