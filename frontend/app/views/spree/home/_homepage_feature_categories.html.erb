@@ -1,15 +1,20 @@
 <div id="home-content-feature-categories">
-  <% c_taxon.each_with_index do |taxonomy, index| %>
-    <% children_taxonomy = taxonomy.root.children %>
+  <% ['饼干糕点', '巧克力', '饮料', '粮油调味品'].each_with_index do |taxon_name, index| %>
+    <% taxonomy = Spree::Taxon.find_by(name: taxon_name) %>
+    <% taxonomy_children = taxonomy.descendants %>
     <div class="home-content-feature-category" class="" data-hook>
       <div class="category-head clearfix">
         <div class="category-title pull-left">
           <span class="title-index"><%= index + 1 %>F</span>
-          <span class="title-text"><%= taxonomy.name %></span>
+          <% if taxonomy.parent %>
+            <span class="title-text"><%= "#{taxonomy.parent.name}  |  #{taxonomy.name}" %></span>
+          <% else %>
+            <span class="title-text"><%= "#{taxonomy.name}" %></span>
+          <% end %>
         </div>
         <div class="category-recommend pull-right">
           <ul class='nav navbar nav-pills'>
-            <% children_taxonomy.first(5).each do |sub_category| %>
+            <% taxonomy_children.first(6).each do |sub_category| %>
               <li><%= link_to sub_category.name, seo_url(sub_category) %></li>
             <% end %>
           </ul>
@@ -17,10 +22,10 @@
       </div>
       <div class="category-wrapper">
         <div class="category-list-item first" style="padding: 0px">
-          <%= image_tag "#{index+2}f", height: "330", width: '456' %>
+          <%= image_tag "#{index + 1}f", height: "330", width: '456' %>
         </div>
-        <% all_category_products = Spree::Product.joins(:taxons).where('spree_taxons.id' => children_taxonomy.map(&:id))%>
-        <% all_category_products.sample(6).each do |product| %>
+        <% all_category_products = Spree::Product.joins(:taxons).where('spree_taxons.id' => [taxonomy.id] + taxonomy_children.map(&:id)).uniq%>
+        <% all_category_products.limit(6).each do |product| %>
           <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
           <div id="product_<%= product.id %>" class="category-list-item" data-hook="category_list_item" itemscope itemtype="https://schema.org/Product">
             <div class="panel panel-default">

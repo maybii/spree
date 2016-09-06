@@ -35,7 +35,7 @@
 <div id="home-feature-categories">
   <div data-hook="homepage_features">
     <% cache(cache_key_for_products) do %>
-      <%= render :partial => 'spree/home/homepage_feature_categories', :locals => {:c_taxon => @c_taxon } %>
+      <%= render :partial => 'spree/home/homepage_feature_categories' %>
     <% end %>
   </div>
 </div>
