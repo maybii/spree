@@ -47,7 +47,7 @@
         border-top: 1px solid #ddd;
       }
     }
-    &:nth-child(5n+1) > .panel {
+    &:nth-child(4n) > .panel {
       border-left: 1px solid #ddd;
     }
     &:nth-child(n+11) {

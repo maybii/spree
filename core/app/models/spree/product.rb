@@ -65,7 +65,7 @@ module Spree
       class_name: 'Spree::Variant',
       dependent: :destroy
 
-    has_many :prices, -> { order('spree_variants.position, spree_variants.id, currency') }, through: :variants
+    has_many :prices, -> { order('spree_prices.amount, spree_variants.position, spree_variants.id, currency') }, through: :variants
 
     has_many :stock_items, through: :variants_including_master
 
@@ -114,6 +114,15 @@ module Spree
 
     self.whitelisted_ransackable_associations = %w[stores variants_including_master master variants]
     self.whitelisted_ransackable_attributes = %w[description name slug]
+
+
+    def smallest_price
+      format('%.2f', self.prices.first.amount) rescue 0
+    end
+
+    def largest_price
+      format('%.2f', self.prices.last.amount) rescue 0
+    end
 
     # the master variant is not a member of the variants array
     def has_variants?

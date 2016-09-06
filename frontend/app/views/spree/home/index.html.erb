@@ -24,7 +24,7 @@
     <div role="tabpanel" class="tab-pane fade" id="hot">
       <div data-hook="homepage_products">
         <% cache(cache_key_for_products) do %>
-          <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
+          <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @best_products } %>
         <% end %>
       </div>
     </div>
@@ -41,8 +41,8 @@
 </div>
 
 <!-- brands  -->
-<div id="home-brands">
-  <h4>知名合作品牌</h4>
+<div id="home-brands" style="margin-bottom: 80px;">
+  <div style="line-height: 40px; font-weight: bold; font-size: 18px">知名合作品牌</div>
   <table class="brands-table">
     <tbody>
       <tr>
@@ -74,4 +74,5 @@
       </tr>
     </tbody>
   </table>
+  <br />
 </div>

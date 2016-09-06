@@ -16,7 +16,7 @@
                 <div class="product-price selling" itemprop="price">批发价：<span class="price"><%= display_price(product) %></span></div>
                 <div class="other-info clearfix">
                   <div class="product-price-origin pull-left">
-                    零售价：<span>￥28.00</span>
+                    零售价：<span>￥<%= product.largest_price %></span>
                   </div>
                   <div class="sale-vol pull-right">
                     销量：<%= product.sales_amount %>
