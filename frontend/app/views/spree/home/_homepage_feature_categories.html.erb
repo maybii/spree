@@ -22,7 +22,7 @@
       </div>
       <div class="category-wrapper">
         <div class="category-list-item first" style="padding: 0px">
-          <%= image_tag "#{index + 1}f", height: "330", width: '456' %>
+          <%= image_tag "#{index + 1}f.jpg", height: "330", width: '456' %>
         </div>
         <% all_category_products = Spree::Product.joins(:taxons).where('spree_taxons.id' => [taxonomy.id] + taxonomy_children.map(&:id)).uniq%>
         <% all_category_products.limit(6).each do |product| %>
@@ -56,24 +56,22 @@
           <% all_category_products.order("sales_amount DESC").limit(5).each do |product| %>
             <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
             <div class="ranking-item clearfix">
-              <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-                <div class="ranking-image pull-left">
-                  <%= link_to url, itemprop: "url" do %>
-                    <%= small_image(product, itemprop: "image", class: 'ranking-product-image') %>
-                  <% end %>
+              <div class="ranking-image pull-left">
+                <%= link_to url, itemprop: "url" do %>
+                  <%= small_image(product, itemprop: "image", class: 'ranking-product-image') %>
+                <% end %>
+              </div>
+              <div class="ranking-info pull-right">
+                <div class="ranking-title">
+                  <%= product.name %>
                 </div>
-                <div class="ranking-info pull-right">
-                  <div class="ranking-title">
-                    <%= product.name %>
-                  </div>
-                  <div class="ranking-price">
-                    批发：<span class="price"><%= display_price(product) %></span>
-                  </div>
-                  <div class="ranking-sale-vol">
-                    销量： <%= product.sales_amount %>
-                  </div>
+                <div class="ranking-price">
+                  批发：<span class="price"><%= display_price(product) %></span>
                 </div>
-              <% end %>
+                <div class="ranking-sale-vol">
+                  销量： <%= product.sales_amount %>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
