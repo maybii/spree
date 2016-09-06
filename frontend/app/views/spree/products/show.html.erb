@@ -39,7 +39,7 @@
             <%= render :partial => 'properties' %>
           </div>
 
-          <div id="cart-form" data-hook="cart_form" class="relative">
+          <div id="cart-form" data-hook="cart_form" style="position:relative">
             <%= render :partial => 'cart_form' %>
           </div>
         </div>
@@ -64,10 +64,39 @@
         <div role="tabpanel" class="tab-pane fade in active" id="description">
           <%= image_tag 'product/product-banner.png', class: 'product-description-banner' %>
           <!-- <%= image_path('') %> -->
-          <div class="product-description-content">
-          <% if  @product.description %>
-            <%= @product.description.html_safe %>
-          <% end %>
+          <div class="product-details-wrapper">
+            <div class="product-details-data">
+              <div class="product-data-title clearfix">
+                <div class="title-content text-center"> 产品参数 </div>
+                <div class="deco-left pull-left"></div>
+                <div class="deco-right pull-right"></div>
+              </div>
+            </div>
+            <div class="product-description-content clearfix">
+              <div class="pull-left product-description-image">
+                <%= large_image(@product, itemprop: "image", style: 'max-width:100%;height: auto;') %>
+              </div>
+              <div class="pull-right product-description-attr">
+                <table>
+                  <thead><tr><th width="25%"></th><th class="75%"></th></tr></thead>
+                  <tbody>
+                    <tr><td  class="text-right table-title">配 料 表：</td><td>植脂末【葡萄糖浆，清华棕榈油，乳化剂（酪蛋白酸钠，单.双甘油脂肪酸酯），稳定剂（磷酸氢二钾）】全脂奶粉，食盐，速溶绿茶粉。</td></tr>
+                    <tr><td  class="text-right table-title">净 含 量：</td><td>360克</td></tr>
+                    <tr><td  class="text-right table-title">生产日期：</td><td>详见实物包装标识处</td></tr>
+                    <tr><td  class="text-right table-title">储存方法：</td><td>请置于阴凉干燥处保存</td></tr>
+                    <tr><td  class="text-right table-title">保 质 期：</td><td>12个月</td></tr>
+                    <tr><td  class="text-right table-title">适合人群：</td><td>非婴幼儿</td></tr>
+                    <tr><td  class="text-right table-title">退货政策：</td><td>不支持7天无理由退货</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="clearfix"></div>
+              <% if  @product.description %>
+                <div class="description-html">
+                  <%= @product.description.html_safe %>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="shipment">
