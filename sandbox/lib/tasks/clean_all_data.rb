@@ -1,3 +1,4 @@
+# coding: utf-8
 #rake db:drop:all
 #rake db:create:all
 #rake db:migrate
@@ -17,3 +18,10 @@ Spree::OptionValueVariant.destroy_all
 Spree::Variant.destroy_all
 Spree::StockItem.destroy_all
 Spree::LineItem.destroy_all
+
+
+Spree::Config[:currency] = "CNY"
+store = Spree::Store.first
+store.name = "塞外宝岛"
+store.default_currency = "CNY"
+store.save

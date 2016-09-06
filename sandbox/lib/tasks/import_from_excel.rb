@@ -169,6 +169,9 @@ all_xls_files[556..-1].each_with_index do |file_path, index|
 
   raise "no pic found for #{file_name}" if product.images.empty?
 
+  product.sales_amount = rand(300)
+  product.save
+
   sheet.close()
 
   p product.name
