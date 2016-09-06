@@ -19,8 +19,57 @@ available_on = Time.now
 
 #all_xls_files = ['../../zhendi-data/products/冲调饮品/洋酒/红酒/费尔南多.xlsx']
 
+remove_files = [
+  "施多客乐飞飞榛子太妃巧克力",
+  "施多客蜜思榛子太妃巧克力",
+  "瑞士莲香橙慕斯巧克力",
+  "瑞士莲樱桃辣椒慕斯巧克力",
+  "瑞士三角蜂蜜奶油杏仁牛奶巧克力",
+  "瑞士莲蔓越莓慕斯巧克力",
+  "瑞士三角蜂蜜奶油杏仁黑巧克力",
+  "瑞士莲薰衣草蓝莓慕斯巧克力",
+  "施格特草莓酸奶夹心巧克力",
+  "施格特阿尔卑斯牛奶巧克力",
+  "施格特榛子酱夹心巧克力",
+  "施格特杏仁浆夹心巧克力",
+  "施格特阿尔卑斯牛奶榛子夹心巧克力",
+  "施格特曲奇碎黑白夹心夹心巧克力",
+  "秒卡白巧克力",
+  "黑山奶味三角巧克力",
+  "三色果干",
+  "蔓越莓干",
+  "葡萄干",
+  "加州西梅",
+  "红酒樱桃果",
+  "榴的华水仙芒果干",
+  "榴的华香蕉干",
+  "维米最爱苹果玫瑰果果汁",
+  "维米最爱多种水果果汁",
+  "维米最爱小草莓果汁",
+  "维米最爱石榴果汁",
+  "维米最爱黄杏果汁",
+  "维米最爱草莓果汁",
+  "维米最爱菠萝果汁",
+  "维米最爱番茄汁饮料",
+  "维米最爱葡萄果汁",
+  "维米最爱樱桃汁",
+  "酷卡未加味天然苏打水",
+  "溢彩菠萝味芦荟饮料",
+  "美乐津苹果味果汁软糖",
+  "美乐津草莓味果汁软糖",
+  "美乐津水蜜桃味果汁软糖",
+  "经典100%多种水果果汁"
+]
+
+
 all_xls_files[0..-1].each_with_index do |file_path, index|
-#all_xls_files.each_with_index do |file_path, index|
+  #all_xls_files.each_with_index do |file_path, index|
+  remove = false
+  remove_files.each do |remove_file_name|
+    remove = true if (file_path.include? remove_file_name + ".xlsx")
+  end
+  next if remove
+
   p "file_path index #{index} #{file_path}---------------------------------"
   product = nil
   begin
