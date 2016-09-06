@@ -4,27 +4,25 @@
       <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
       <div id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
         <div class="panel panel-default">
-          <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-            <div class="panel-body text-center product-body">
-              <%= link_to url, itemprop: "url" do %>
-                <%= large_image(product, itemprop: "image", class: 'product-image') %><br/>
-                <%= content_tag(:div, truncate(product.name, length: 50), class: 'info text-left', itemprop: "name", title: product.name) %>
-              <% end %>
-            </div>
-            <div class="panel-footer">
-              <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <div class="product-price selling" itemprop="price">批发价：<span class="price"><%= display_price(product) %></span></div>
-                <div class="other-info clearfix">
-                  <div class="product-price-origin pull-left">
-                    零售价：<span>￥<%= product.largest_price %></span>
-                  </div>
-                  <div class="sale-vol pull-right">
-                    销量：<%= product.sales_amount %>
-                  </div>
+          <div class="panel-body text-center product-body">
+            <%= link_to url, itemprop: "url" do %>
+              <%= large_image(product, itemprop: "image", class: 'product-image') %><br/>
+              <%= content_tag(:div, truncate(product.name, length: 50), class: 'info text-left', itemprop: "name", title: product.name) %>
+            <% end %>
+          </div>
+          <div class="panel-footer">
+            <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <div class="product-price selling" itemprop="price">批发价：<span class="price"><%= display_price(product) %></span></div>
+              <div class="other-info clearfix">
+                <div class="product-price-origin pull-left">
+                  零售价：<span>￥<%= product.largest_price %></span>
+                </div>
+                <div class="sale-vol pull-right">
+                  销量：<%= product.sales_amount %>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         </div>
       </div>
     <% end %>
