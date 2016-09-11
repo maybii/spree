@@ -24,8 +24,12 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <% Spree::Product.order("sales_amount DESC").limit(10).each do |product| %>
+          <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
           <div class="swiper-slide">
-            <%= large_image(product, itemprop: "image", class: 'swiper-item') %>
+            <%= link_to url, itemprop: "url" do %>
+              <%= large_image(product, itemprop: "image", class: 'swiper-item') %>
+            <% end %>
+            <%#= large_image(product, itemprop: "image", class: 'swiper-item') %>
             <%#= image_tag 'home/swiper/food1.jpg', :class => 'swiper-item' %>
           </div>
         <% end %>
