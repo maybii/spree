@@ -54,9 +54,13 @@ module Spree
       ignore_types = ["order_completed"].concat(Array(opts[:ignore_types]).map(&:to_s) || [])
 
       flash.each do |msg_type, text|
-        unless ignore_types.include?(msg_type)
-          concat(content_tag :div, text, class: "alert alert-#{msg_type}")
-        end
+        next if ignore_types.include?(msg_type)
+        concat(
+          content_tag(:div, text, class: "alert alert-#{msg_type} flash-message-animation") do
+            content_tag(:div, text) +
+            content_tag(:a, 'x', class: "close-flash-button")
+          end
+        )
       end
       nil
     end

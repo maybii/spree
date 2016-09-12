@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  
+
   // hide spinner
   $(".spinner").delay(300).hide();
 
@@ -13,6 +13,9 @@ $( document ).ready(function() {
    $(".spinner").hide();
   });
 
+  $(".close-flash-button").on("click", function(){
+    $('.flash-message-animation').fadeOut();
+  });
 });
 
 $(document).on("page:fetch", function(){

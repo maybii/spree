@@ -20,10 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh-CN:
-  devise:
-    registrations:
-      spree_user:
-        signed_up: "恭喜, 注册成功"
   address_book:
     save: "保存"
   activerecord:
@@ -332,6 +328,12 @@ zh-CN:
         one: "区域"
         other: "区域"
   devise:
+    sessions:
+      spree_user:
+        signed_out: "已登出"
+    registrations:
+      spree_user:
+        signed_up: "恭喜, 注册成功"
     confirmations:
       confirmed: "您已成功确认您的帐户信息。您现在已登录。"
       send_instructions: "您将在几分钟后收到一封说明如何确认帐号的邮件。"
