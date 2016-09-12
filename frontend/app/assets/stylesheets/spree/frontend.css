@@ -4,3 +4,9 @@
  *= require vendor/swiper/swiper.min
  *= require_self
 */
+
+
+.btn-whitd {
+  background-color: #fff;
+  color: #333333;
+}

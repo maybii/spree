@@ -62,6 +62,27 @@ a {
 .text-href-blue {
   color: #278aec;
 }
+.btn-white {
+  background-color: #fff;
+  color: #333333;
+}
+
+.btn-defualt-size {
+  font-size: 14px;
+}
+
+.about-btns {
+  // .btn ~ .btn {
+  //   margin-left:
+  // }
+  display: inline-block;
+  @include clearfix;
+  margin: 0 auto 24px;
+  > .btn {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}
 
 // -- Spree Custom Header and Footer ---------------------
 #spree-main-header {
@@ -220,4 +241,45 @@ table {
 .gutter-0 > [class^="col-"], .gutter-0 > [class^=" col-"]{
   padding-right: 0;
   padding-left: 0;
+}
+
+
+/// about us
+#about {
+  h3 {
+    margin: 100px 0 50px;
+  }
+  p {
+    line-height: 2;
+  }
+
+  .about-images-wrapper {
+    .img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .img-about-01 {
+      background-image: url('http://up.img.heidian.co/zd-about-us-image-1.png');
+      width: 39%;
+      height: 430px;
+    }
+    .img-about-02 {
+      background-image: url('http://up.img.heidian.co/zd-about-us-image-2.png');
+      width: 39%;
+      height: 430px;
+    }
+    .img-about-03 {
+      background-image: url('http://up.img.heidian.co/zd-about-us-image-3.png');
+      width: 22%;
+      height: 430px;
+    }
+  }
+  section {
+    margin-bottom: 50px;
+  }
+  .about-us-qrcode {
+    max-width: 200px;
+    max-height: 200px;
+  }
 }
