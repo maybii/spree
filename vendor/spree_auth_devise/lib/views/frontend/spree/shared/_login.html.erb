@@ -8,7 +8,9 @@
     </div>
   </div>
 
-  <div class="form-error"><%= t('devise.failure.invalid') %></div>
+  <% if flash[:login_error] %>
+    <div class="form-error"><%= t('devise.failure.invalid') %></div>
+  <% end %>
 
   <div class="login-footer'">
     <div class="pull-right forgot_password">

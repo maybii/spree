@@ -51,7 +51,7 @@ module Spree
     end
 
     def flash_messages(opts = {})
-      ignore_types = ["order_completed"].concat(Array(opts[:ignore_types]).map(&:to_s) || [])
+      ignore_types = ["order_completed", "login_error"].concat(Array(opts[:ignore_types]).map(&:to_s) || [])
 
       flash.each do |msg_type, text|
         next if ignore_types.include?(msg_type)
