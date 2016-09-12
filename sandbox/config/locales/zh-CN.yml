@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh-CN:
+  devise:
+    registrations:
+      spree_user:
+        signed_up: "恭喜, 注册成功"
   address_book:
     save: "保存"
   activerecord:

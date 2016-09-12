@@ -84,8 +84,18 @@
     .hi-section{
       height: 74px;
       text-align: center;
+      .default-avatar{
+        width: 50px;
+        height: 50px;
+        background: url('http://up.img.heidian.co/zhendi-default-avatar.png');
+        margin-top: 15px;
+        vertical-align: middle;
+      }
+      .default-name{
+        vertical-align: middle;
+      }
       .hi{
-        padding-top: 19px;
+        padding-top: 15px;
         margin-bottom: 5px;
       }
       .welcome{

@@ -67,17 +67,34 @@
 
         <div class="profile-in-header pull-right">
           <div class="hi-section">
-            <div class="hi"> Hi! 你好</div>
-            <div class="welcome"> 欢迎来到zhendi.com</div>
+            <div class="default-avatar inline"></div>
+            <div class="inline default-name">
+              <% if spree_current_user %>
+                <% name = spree_current_user.login[0..spree_current_user.login.index('@')-1] %>
+                <div class="hi"> Hi, <%= name || spree_current_user.email%></div>
+                <div class="welcome"> 欢迎来到zhendi.com </div>
+              <% else %>
+                <div class="hi"> Hi! 你好</div>
+                <div class="welcome"> 欢迎来到zhendi.com</div>
+              <% end %>
+            </div>
           </div>
           <div class="login-btns">
             <div class="login-btn-item col-xs-6">
-              <i class="icon-lock"></i>
-              <%=link_to "登录", '/login', class: "" %>
+              <% if spree_current_user %>
+                待发货 0
+              <% else %>
+                <i class="icon-lock"></i>
+                <%=link_to "登录", '/login', class: "" %>
+              <% end %>
             </div>
             <div class="login-btn-item col-xs-6">
-              <i class="icon-edit"></i>
-              <%=link_to "注册", '/sign_up', class: ""  %>
+              <% if spree_current_user %>
+                待收货 2
+              <% else %>
+                <i class="icon-edit"></i>
+                <%=link_to "注册", '/sign_up', class: ""  %>
+              <% end %>
             </div>
           </div>
           <div class="notice">

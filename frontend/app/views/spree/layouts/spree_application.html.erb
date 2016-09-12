@@ -10,6 +10,7 @@
   <body class="<%= body_class %>" id="zhendi-home" data-hook="body">
     <%= render partial: 'spree/shared/loading' %>
     <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= flash_messages %>
     <%= render partial: 'spree/shared/header' %>
 
     <div class="container">
@@ -19,7 +20,7 @@
         <!-- <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %> -->
 
         <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12 col-md-12" %>" data-hook>
-          <%= flash_messages %>
+          <%#= flash_messages %>
           <%= yield %>
         </div>
 
