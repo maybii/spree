@@ -41,7 +41,28 @@
 #link-to-login {
   display: none !important;
 }
+.search-navbar {
+  .search-words-item {
+    padding: 5px 10px;
+    display: inline-block;
+    position: relative;
+    color: $brand-primary !important;
 
+    &::after {
+      position: absolute;
+      content: '|';
+      right: 0;
+      top: 5px;
+      color: #ddd;
+    }
+    &:first-child {
+      margin-left: -10px;
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
 
 #spree-third-header{
   background-color: white;
@@ -114,6 +135,10 @@
       }
       .login-btn-item{
         text-align: center;
+        line-height: 46px;
+        > a {
+          color: $brand-primary !important;
+        }
         &:first-child{
           border-right: 1px solid #dddddd;
         }

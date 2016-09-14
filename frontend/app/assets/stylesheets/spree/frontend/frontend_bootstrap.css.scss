@@ -97,7 +97,11 @@ a {
     padding-bottom: 9px;
   }
 }
-
+.btn-primary {
+  &:hover {
+    border-color: transparent !important;
+  }
+}
 // -- Spree Custom Header and Footer ---------------------
 #spree-main-header {
   .nav a {
@@ -267,6 +271,12 @@ table {
     line-height: 2;
   }
 
+  .img-about-map {
+    background: url('http://up.img.heidian.co/zd-about-map.png') no-repeat center;
+    background-size: contain;
+    width: 100%;
+    padding-top: 46.36%;
+  }
   .about-images-wrapper {
     .img {
       background-size: cover;
@@ -290,10 +300,11 @@ table {
     }
   }
   section {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
+
   .about-us-qrcode {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 180px;
+    max-height: 180px;
   }
 }

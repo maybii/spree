@@ -82,7 +82,7 @@
           <div class="login-btns">
             <div class="login-btn-item col-xs-6">
               <% if spree_current_user %>
-                待发货 0
+                待发货 <a href="/account">0</a>
               <% else %>
                 <i class="icon-lock"></i>
                 <%=link_to "登录", '/login', class: "" %>
@@ -90,7 +90,7 @@
             </div>
             <div class="login-btn-item col-xs-6">
               <% if spree_current_user %>
-                待收货 2
+                待收货 <a href="/account">2</a>
               <% else %>
                 <i class="icon-edit"></i>
                 <%=link_to "注册", '/sign_up', class: ""  %>

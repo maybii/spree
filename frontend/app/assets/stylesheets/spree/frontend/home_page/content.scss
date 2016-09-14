@@ -26,10 +26,11 @@
     float: left;
     display: inline-block;
     > .panel {
-      border-top: 0;
-      border-left: 0;
-      border-right: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
+      // border-top: 0;
+      // border-left: 0;
+      // border-right: 1px solid #ddd;
+      // border-bottom: 1px solid #ddd;
+      border: 1px solid #ddd;
       box-shadow: none;
       margin: 0;
       border-radius: 0;
@@ -40,16 +41,17 @@
         height: 178px;
       }
     }
-    &:nth-child(1), &:nth-child(2),
-    &:nth-child(3), &:nth-child(4),
-    &:nth-child(5) {
-      > .panel {
-        border-top: 1px solid #ddd;
-      }
-    }
-    &:nth-child(4n) > .panel {
-      border-left: 1px solid #ddd;
-    }
+
+    // &:nth-child(1), &:nth-child(2),
+    // &:nth-child(3), &:nth-child(4),
+    // &:nth-child(5) {
+    //   > .panel {
+    //     border-top: 1px solid #ddd;
+    //   }
+    // }
+    // &:nth-child(4n) > .panel {
+    //   border-left: 1px solid #ddd;
+    // }
     &:nth-child(n+11) {
       display: none;
     }
@@ -85,6 +87,16 @@
   }
 }
 
+.category-list-item, .product-list-item {
+  // > .panel {
+  //   border-left-width: 0;
+  // }
+  // & ~ & {
+  //   > .panel {
+  //     border-left-width: 1px;
+  //   }
+  // }
+}
 
 #home-content-feature-categories {
   .home-content-feature-category {
@@ -131,25 +143,26 @@
       display: none;
     }
     > .panel {
-      border-top: 0;
-      border-left: 0;
-      border-right: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
+      // border-top: 0;
+      // border-left: 0;
+      // border-right: 1px solid #ddd;
+      // border-bottom: 1px solid #ddd;
+      border: 1px solid #ddd;
       box-shadow: none;
       margin: 0;
       border-radius: 0;
       height: 100%;
     }
 
-    &:nth-child(2),
-    &:nth-child(3) {
-      > .panel {
-        border-top: 1px solid #ddd;
-      }
-    }
-    &:nth-child(4n+1) > .panel {
-      border-left: 1px solid #ddd;
-    }
+    // &:nth-child(2),
+    // &:nth-child(3) {
+    //   > .panel {
+    //     border-top: 1px solid #ddd;
+    //   }
+    // }
+    // &:nth-child(4n+1) > .panel {
+    //   border-left: 1px solid #ddd;
+    // }
     .panel-footer {
       background-color: transparent;
       border: none;
