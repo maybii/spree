@@ -1,5 +1,5 @@
-<!-- replace '#products' -->
-<div id="products" class="row" data-hook>
+<!-- replace '#products2' -->
+<div id="products" class="" data-hook>
     <% products.each do |product| %>
       <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
       <div id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
@@ -35,4 +35,3 @@
     <% end %>
     <% reset_cycle("classes") %>
   </div>
-

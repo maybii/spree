@@ -43,7 +43,7 @@ module Spree
     preference :max_level_in_taxons_menu, :integer, default: 1 # maximum nesting level in taxons menu
     preference :orders_per_page, :integer, default: 15
     preference :properties_per_page, :integer, default: 15
-    preference :products_per_page, :integer, default: 12
+    preference :products_per_page, :integer, default: 15
     preference :promotions_per_page, :integer, default: 15
     preference :customer_returns_per_page, :integer, default: 15
     preference :require_master_price, :boolean, default: true
