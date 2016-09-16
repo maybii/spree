@@ -2,49 +2,52 @@
 
 <% cache cache_key_for_product do %>
   <div data-hook="product_show" class="row" itemscope itemtype="https://schema.org/Product">
-    <div class="col-md-4 col-sm-5" data-hook="product_left_part">
-      <div data-hook="product_left_part_wrap">
-        <div id="product-images" data-hook="product_images">
-          <div id="main-image" class="panel panel-default" data-hook>
-            <div class="panel-body text-center">
-              <%= render :partial => 'image' %>
+    <div class="col-md-12">
+      <div class="pull-left product-left-part" data-hook="product_left_part">
+        <div data-hook="product_left_part_wrap">
+          <div id="product-images" data-hook="product_images">
+            <div id="main-image" class="panel panel-default" data-hook>
+              <div class="panel-body text-center">
+                <%= render :partial => 'image' %>
+              </div>
+            </div>
+            <div id="thumbnails" data-hook>
+              <%= render :partial => 'thumbnails' %>
             </div>
           </div>
-          <div id="thumbnails" data-hook>
-            <%= render :partial => 'thumbnails' %>
+
+          <!-- <div data-hook="promotions">
+               <%= render :partial => 'promotions' %>
+               </div> -->
+        </div>
+      </div>
+
+      <div class="inline product-right-part" data-hook="product_right_part">
+        <div data-hook="product_right_part_wrap">
+          <div id="product-description" data-hook="product_description">
+            <div class="product-title-section">
+              <div class="product-title" itemprop="name"><%= @product.name %></div>
+              <div class="product-title-subdescription"">
+                <span class="product-country"> <%= @product_country.value if (@product_country and not @product_country.value.include? "见包装") %> </span>
+                <span class="product-brand"> <%= @product_brand.value if (@product_brand and not @product_brand.value.include? "见包装") %> </span>
+              </div>
+            </div>
+            <!-- <div class="well" itemprop="description" data-hook="description">
+                 <%= product_description(@product) %>
+                 </div> -->
+
+            <div data-hook="product_properties">
+              <%= render :partial => 'properties' %>
+            </div>
+
+            <div id="cart-form" data-hook="cart_form" style="position:relative">
+              <%= render :partial => 'cart_form' %>
+            </div>
           </div>
         </div>
-
-        <!-- <div data-hook="promotions">
-          <%= render :partial => 'promotions' %>
-        </div> -->
       </div>
     </div>
 
-    <div class="col-md-8 col-sm-7" data-hook="product_right_part">
-      <div data-hook="product_right_part_wrap">
-        <div id="product-description" data-hook="product_description">
-          <div class="product-title-section">
-            <div class="product-title" itemprop="name"><%= @product.name %></div>
-            <div class="product-title-subdescription"">
-              <span class="product-country"> <%= @product_country.value if (@product_country and not @product_country.value.include? "见包装") %> </span>
-              <span class="product-brand"> <%= @product_brand.value if (@product_brand and not @product_brand.value.include? "见包装") %> </span>
-            </div>
-          </div>
-          <!-- <div class="well" itemprop="description" data-hook="description">
-            <%= product_description(@product) %>
-          </div> -->
-
-          <div data-hook="product_properties">
-            <%= render :partial => 'properties' %>
-          </div>
-
-          <div id="cart-form" data-hook="cart_form" style="position:relative">
-            <%= render :partial => 'cart_form' %>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="col-md-12">
       <div id="taxon-crumbs" class="similar-product-section" data-hook="product_taxons">
         <%= render :partial => 'taxons' %>
