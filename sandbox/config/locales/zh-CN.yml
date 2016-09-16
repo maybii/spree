@@ -378,6 +378,7 @@ zh-CN:
       not_locked: "未冻结"
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
+    selected_quantity_not_available: "不够, 请联系客服"
     default_country_cannot_be_deleted: "默认国家无法被删除"
     static_content:
       link: "链接"
