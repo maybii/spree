@@ -13,7 +13,6 @@ all_jpg_files = Dir[ path + "/**/*.jpg"]
 
 category = ['property', '']
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: "快递")
-available_on = Time.now
 
 ###########################################################################################
 
@@ -119,7 +118,7 @@ all_xls_files[0..-1].each_with_index do |file_path, index|
         product.name = second_column_name
         product.price = 0
         product.shipping_category = shipping_category
-        product.available_on = available_on;
+        product.available_on = Time.now;
         product.description = nil;
       elsif first_column_name == "条形码"
         next if Spree::Variant.find_by(sku: second_column_name.to_s)
