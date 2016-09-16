@@ -11,7 +11,14 @@ module Spree
 
     def index
       @searcher = build_searcher(params.merge(include_images: true))
-      @products = @searcher.retrieve_products.includes(:possible_promotions)
+      all_products = @searcher.all_products
+
+      all_properties = Spree::ProductProperty.joins(:property).where("product_id": all_products.map(&:id))
+      @all_locations = all_properties.where("spree_properties.name" => "原产国").map(&:value).uniq - ['见包装瓶盖所示']
+      @all_brands = all_properties.where("spree_properties.name" => "产品品牌").map(&:value).uniq - ['见包装瓶盖所示']
+      @all_categries = all_products.joins(:taxons).where("").pluck("spree_taxons.name").uniq - ['见包装瓶盖所示']
+
+      @products = @searcher.retrieve_products(all_products).includes(:possible_promotions)
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
 

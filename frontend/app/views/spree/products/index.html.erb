@@ -5,6 +5,24 @@
 <% end %>
 
 
+<% @all_brands.each do |brand| %>
+  <%= link_to brand, params.merge({ brand: brand}), class: "brand-class" %>
+<% end %>
+
+<hr />
+
+<% @all_locations.each do |location| %>
+  <%= link_to location, params.merge({ location: location}), class: "location-class" %>
+<% end %>
+
+<hr />
+
+<% @all_categries.each do |category| %>
+  <%= link_to category, params.merge({ category: category}), class: "category-class" %>
+<% end %>
+
+<hr />
+
 <% if params[:keywords] %>
   <div data-hook="search_results">
     <% if not @products.empty? %>

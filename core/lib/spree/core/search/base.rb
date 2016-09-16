@@ -12,14 +12,19 @@ module Spree
           prepare(params)
         end
 
-        def retrieve_products
-          @products = get_base_scope
-          curr_page = page || 1
-
+        def all_products()
+          products = get_base_scope
           unless Spree::Config.show_products_without_price
-            @products = @products.where("spree_prices.amount IS NOT NULL").
-                                  where("spree_prices.currency" => current_currency)
+            products = products
+                       .where("spree_prices.amount IS NOT NULL")
+                       .where("spree_prices.currency" => current_currency)
           end
+          products
+        end
+
+        def retrieve_products(products=nil)
+          curr_page = page || 1
+          @products = products  || self.all_products()
           @products = @products.page(curr_page).per(per_page)
         end
 
