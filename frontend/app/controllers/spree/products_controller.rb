@@ -25,9 +25,10 @@ module Spree
                   .includes(:possible_promotions)
                   .joins(:product_properties).where("spree_product_properties.value"=> property_filters)
                   .order( order_filters )
-      if(params[:price])
-        @products = @product.ascend_by_master_price if params[:sort].upcase == 'ASC'
-        @products = @product.descend_by_master_price if params[:sort].upcase == 'DESC'
+
+      if(params[:order] == 'price')
+        @products = @products.ascend_by_master_price if params[:sort].upcase == 'ASC'
+        @products = @products.descend_by_master_price if params[:sort].upcase == 'DESC'
       end
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
