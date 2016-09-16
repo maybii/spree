@@ -34,16 +34,12 @@
               <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                 <div class="other-info clearfix">
                   <div class="product-prices pull-left">
-                    <div class="product-price selling text-left" itemprop="price">批发价：<span class="price"><%= display_price(product) %></span></div>
-                    <div class="product-price-origin text-left">零售价：<span>￥28.00</span>
+                    <div class="product-price selling text-left" itemprop="price">批发价：<span class="price">￥<%= product.smallest_price %></span></div>
+                    <div class="product-price-origin text-left">零售价：<span>￥<%= product.largest_price %></span>
                     </div>
                   </div>
-                  <div class="btn btn-red btn-add-to-cart pull-right hidden">
-                    加入购物车
-                  </div>
-                  <%= link_to Spree.t(:add_to_cart), '#', onclick: '$(this).parent().submit(); return false;', class: 'btn btn-red btn-add-to-cart pull-right' %>
-
-
+                  <%= link_to "立即购买", product_url(product), class: "btn btn-red btn-add-to-cart pull-right"%>
+                  <%#= link_to Spree.t(:add_to_cart), '#', onclick: '$(this).parent().submit(); return false;', class: 'btn btn-red btn-add-to-cart pull-right' %>
                 </div>
               </span>
             </div>
