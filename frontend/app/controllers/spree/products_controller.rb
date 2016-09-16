@@ -10,7 +10,7 @@ module Spree
     respond_to :html
 
     def index
-      property_filters = [params[:brand], params[:location], params[:category]].compact.uniq
+      property_filters = [params[:brand], params[:location], params[:category]].delete_if(&:blank?).uniq
       order_filters = "#{params[:order]} #{(params[:sort] || 'ASC')}" if params[:order] and params[:order] != 'price'
 
       @searcher = build_searcher(params.merge(include_images: true))
@@ -23,8 +23,11 @@ module Spree
 
       @products = @searcher.retrieve_products(all_products)
                   .includes(:possible_promotions)
-                  .joins(:product_properties).where("spree_product_properties.value"=> property_filters)
                   .order( order_filters )
+
+      if(property_filters.present?)
+        @products = @products.joins(:product_properties).where("spree_product_properties.value"=> property_filters)
+      end
 
       if(params[:order] == 'price')
         @products = @products.ascend_by_master_price if params[:sort].upcase == 'ASC'

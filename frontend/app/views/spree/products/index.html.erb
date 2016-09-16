@@ -10,7 +10,7 @@
 <div class="select-brand filter-wrapper clearfix filter-item">
   <div class="filter-title pull-left text-left">人气品牌：</div>
   <div class="filter-body pull-left">
-    <% activeAllBrand = "active" if params["brand"]=='' %>
+    <% activeAllBrand = "active" if params["brand"] == nil or params["brand"].empty? %>
     <%= link_to '全部', params.merge({ brand: ''}), class: "filter-name-item brand-class #{activeAllBrand}" %>
     <% @all_brands.each do |brand| %>
       <% activeBrand = "active" if brand == params["brand"] %>
@@ -29,7 +29,7 @@
 <div class="select-location filter-wrapper clearfix filter-item">
   <div class="filter-title pull-left text-left">产地货源：</div>
   <div class="filter-body pull-left">
-    <% activeAllLocation = "active" if params["location"]=='' %>
+    <% activeAllLocation = "active" if params["location"] == nil or params["location"].empty? %>
     <%= link_to '全部', params.merge({ location: ''}), class: "filter-name-item location-class #{activeAllLocation}" %>
     <% @all_locations.each do |location| %>
       <% activeLocation = "active" if location == params["location"] %>
@@ -48,7 +48,7 @@
 <div class="select-category filter-wrapper clearfix filter-item">
   <div class="filter-title pull-left text-left">选购热点：</div>
   <div class="filter-body pull-left">
-    <% activeAllCategory = "active" if params["category"]=='' %>
+    <% activeAllCategory = "active" if params["category"] == nil or params["category"].empty? %>
     <%= link_to '全部', params.merge({ category: ''}), class: "filter-name-item category-class #{activeAllCategory}" %>
     <% @all_categries.each do |category| %>
       <% activeCategory = "active" if category == params["category"] %>

@@ -20,7 +20,7 @@ Spree::StockItem.destroy_all
 Spree::LineItem.destroy_all
 Spree::Zone.destroy_all
 Spree::ShippingMethod.destroy_all
-Spree::Ca
+Spree::Calculator.destroy_all
 
 Spree::Config.currency = "CNY"
 
@@ -37,10 +37,11 @@ z.zone = zone
 z.save
 
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: "快递")
-shipping_method = Spree::ShippingMethod.new(name: '快递')
+shipping_method = Spree::ShippingMethod.find_or_create_by(name: '快递')
 shipping_method.shipping_categories.push shipping_category
 
-shipping_rate = Spree::Calculator::Shipping::FlatRate.new
+shipping_rate = Spree::Calculator::Shipping::FlatRate
+shipping_rate.preferences[:amount] = 5
 shipping_rate.calculable = shipping_method
 shipping_rate.save
 
