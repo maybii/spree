@@ -228,4 +228,8 @@ all_xls_files[0..-1].each_with_index do |file_path, index|
 
 end
 
-Spree::StockItem.all.each{|item| item.count_on_hand = 1000; item.save;}
+Spree::StockItem.all.each do |item|
+  item.count_on_hand = 1000;
+  item.backorderable = true;
+  item.save;
+end
