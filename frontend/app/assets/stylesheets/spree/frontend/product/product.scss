@@ -140,6 +140,21 @@
                       border-color: #fa5930;
                       background-color: transparent;
                       color: #444444;
+                      position: relative;
+                      &::after {
+                        content: "\e906";
+                        font-family: 'icomoon';
+                        position: absolute;
+                        width: 18px;
+                        height: 18px;
+                        right: 0;
+                        bottom: 0;
+                        color: #fff;
+                        padding: 2px;
+                        background-color: $brand-primary;
+                        @include transform(scale(0.5));
+                        @include transform-origin(right bottom);
+                      }
                     }
       }
     }

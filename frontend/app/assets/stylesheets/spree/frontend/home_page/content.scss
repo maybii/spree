@@ -21,16 +21,21 @@
 
 #home-content-products {
   @include clearfix;
+  border: 1px solid #ddd;
+  border-width: 0 0 1px 1px;
   .product-list-item {
     width: 20%;
     float: left;
     display: inline-block;
+    // margin-right: -1px;
+    // margin-top: -1px;
     > .panel {
       // border-top: 0;
       // border-left: 0;
       // border-right: 1px solid #ddd;
       // border-bottom: 1px solid #ddd;
       border: 1px solid #ddd;
+      border-width: 1px 1px 0 0;
       box-shadow: none;
       margin: 0;
       border-radius: 0;
@@ -117,6 +122,7 @@
   .category-wrapper {
     width: 80%;
     float: left;
+    border: 1px solid #ddd;
   }
   .category-ranking {
     width: 20%;
@@ -127,6 +133,9 @@
     float: left;
     width: 25%;
     height: 330px;
+    // margin-right: -1px;
+    // margin-top: -1px;
+    // border: 1px solid #ddd;
     &.first {
       width: 50%;
       color: #fff;
@@ -160,9 +169,19 @@
     //     border-top: 1px solid #ddd;
     //   }
     // }
-    // &:nth-child(4n+1) > .panel {
-    //   border-left: 1px solid #ddd;
-    // }
+    &:nth-child(2) > .panel {
+      border-width: 0 1px 1px 0;
+    }
+    &:nth-child(3) > .panel {
+      border-width: 0 0 1px 0;
+    }
+    &:nth-child(n+4) > .panel {
+      border-width: 0 1px 0 0;
+    }
+    &:nth-child(n+7) > .panel {
+      border-width: 0 0 0 0;
+    }
+
     .panel-footer {
       background-color: transparent;
       border: none;
@@ -200,6 +219,7 @@
 
   .home-content-feature-category {
     margin-bottom: 30px;
+    // margin-right: 4px;
     &:nth-child(1) {
       .category-head .category-title .title-index { color: #ff5801;}
       .category-list-item.first {
@@ -227,7 +247,7 @@
   }
 
   .category-ranking {
-    padding: 2px 15px 3px;
+    padding: 4px 15px 3px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-left: none;
