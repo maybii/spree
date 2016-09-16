@@ -10,15 +10,25 @@ module Spree
     respond_to :html
 
     def index
+      property_filters = [params[:brand], params[:location], params[:category]].compact.uniq
+      order_filters = "#{params[:order]} #{(params[:sort] || 'ASC')}" if params[:order] and params[:order] != 'price'
+
       @searcher = build_searcher(params.merge(include_images: true))
       all_products = @searcher.all_products
 
       all_properties = Spree::ProductProperty.joins(:property).where("product_id": all_products.map(&:id))
-      @all_locations = all_properties.where("spree_properties.name" => "原产国").map(&:value).uniq - ['见包装瓶盖所示']
-      @all_brands = all_properties.where("spree_properties.name" => "产品品牌").map(&:value).uniq - ['见包装瓶盖所示']
+      @all_locations = all_properties.where("spree_properties.name" => "原产国").map(&:value).compact.uniq.sort - ['见包装瓶盖所示']
+      @all_brands = all_properties.where("spree_properties.name" => "产品品牌").map(&:value).compact.uniq.sort - ['见包装瓶盖所示']
       @all_categries = all_products.joins(:taxons).where("").pluck("spree_taxons.name").uniq - ['见包装瓶盖所示']
 
-      @products = @searcher.retrieve_products(all_products).includes(:possible_promotions)
+      @products = @searcher.retrieve_products(all_products)
+                  .includes(:possible_promotions)
+                  .joins(:product_properties).where("spree_product_properties.value"=> property_filters)
+                  .order( order_filters )
+      if(params[:price])
+        @products = @product.ascend_by_master_price if params[:sort].upcase == 'ASC'
+        @products = @product.descend_by_master_price if params[:sort].upcase == 'DESC'
+      end
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
 

@@ -1,3 +1,4 @@
+# coding: utf-8
 <% if @products.empty? %>
   <%= Spree.t(:no_products_found) %>
 <% else %>
@@ -22,6 +23,15 @@
 <% end %>
 
 <hr />
+
+
+<%= link_to "销量 up", params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class" %>
+<%= link_to "销量 down", params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class" %>
+<%= link_to "Price up", params.merge({ order: "price", sort: "ASC"}), class: "order-class" %>
+<%= link_to "Price down", params.merge({ order: "price", sort: "DESC"}), class: "order-class" %>
+<%= link_to "上新时间 up", params.merge({ order: "available_on", sort: "ASC"}), class: "order-class" %>
+<%= link_to "上新时间 down", params.merge({ order: "available_on", sort: "DESC"}), class: "order-class" %>
+
 
 <% if params[:keywords] %>
   <div data-hook="search_results">
