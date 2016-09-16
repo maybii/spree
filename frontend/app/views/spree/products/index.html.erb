@@ -64,13 +64,58 @@
 </div>
 
 
+<div class="filter-orders clearfix">
+  <% arrow_up = '<small><i class="icon-arrow-up"></i></small>'  %>
+  <% arrow_down = '<small><i class="icon-arrow-down"></i></small>'  %>
 
-<%= link_to "销量 up", params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class" %>
-<%= link_to "销量 down", params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class" %>
-<%= link_to "Price up", params.merge({ order: "price", sort: "ASC"}), class: "order-class" %>
-<%= link_to "Price down", params.merge({ order: "price", sort: "DESC"}), class: "order-class" %>
-<%= link_to "上新时间 up", params.merge({ order: "available_on", sort: "ASC"}), class: "order-class" %>
-<%= link_to "上新时间 down", params.merge({ order: "available_on", sort: "DESC"}), class: "order-class" %>
+  <!-- <% sort = params["sort"] %> -->
+  <div class="filter-orders__title pull-left">排序：</div>
+  <div class="filter-orders__content pull-left">
+    <% if params["order"] == 'sales_amount' %>
+      <% if params["sort"] == 'ASC' %>
+        <div class="btn--orders btn--order-sale-vol active up">
+      <% else %>
+        <div class="btn--orders btn--order-sale-vol active down">
+      <% end %>
+    <% else %>
+      <div class="btn--orders btn--order-sale-vol">
+    <% end %>
+        <%= link_to "销量 #{arrow_up}".html_safe, params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class up" %>
+        <%= link_to "销量 #{arrow_down}".html_safe, params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class down" %>
+      </div>
+
+
+    <% if params["order"] == 'price' %>
+      <% if params["sort"] == 'ASC' %>
+        <div class="btn--orders btn--sale-price active up">
+      <% else %>
+        <div class="btn--orders btn--sale-price active down">
+      <% end %>
+    <% else %>
+      <div class="btn--orders btn--sale-price">
+    <% end %>
+      <%= link_to "Price #{arrow_up}".html_safe, params.merge({ order: "price", sort: "DESC"}), class: "order-class up" %>
+      <%= link_to "Price #{arrow_down}".html_safe, params.merge({ order: "price", sort: "ASC"}), class: "order-class down" %>
+    </div>
+
+
+    <% if params["order"] == 'available_on' %>
+      <% if params["sort"] == 'ASC' %>
+        <div class="btn--orders btn--sale-available active up">
+      <% else %>
+        <div class="btn--orders btn--sale-available active down">
+      <% end %>
+    <% else %>
+      <div class="btn--orders btn--sale-available">
+    <% end %>
+      <%= link_to "上新时间 #{arrow_up}".html_safe, params.merge({ order: "available_on", sort: "DESC"}), class: "order-class up" %>
+      <%= link_to "上新时间 #{arrow_down}".html_safe, params.merge({ order: "available_on", sort: "ASC"}), class: "order-class down" %>
+    </div>
+  </div>
+
+</div>
+
+
 
 
 <% if params[:keywords] %>

@@ -387,3 +387,40 @@ table {
 .collapse-btn {
   width: 10%;
 }
+
+.filter-orders {
+  color: #262626;
+  .filter-orders__title {
+    line-height: 40px;
+  }
+  .filter-orders__content {
+    border: 1px solid #ddd;
+  }
+
+  .btn--orders {
+    display: inline-block;
+    float: left;
+    padding: 10px 30px;
+    .up {
+      display: block;
+    }
+    .down {
+      display: none;
+    }
+
+    &.active {
+      background-color: #fff;
+    }
+    &.down {
+      .up {
+        display: none;
+      }
+      .down {
+        display: block;
+      }
+    }
+  }
+  .btn--orders  ~ .btn--orders  {
+    border-left: 1px solid #ddd;
+  }
+}
