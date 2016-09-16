@@ -62,7 +62,7 @@
         <%= link_to "买家须知", "/privacy", class: "item" %>
         <%= link_to "关于真谛", "/about", class: "item" %>
       </div>
-      <div class="<%= 'hidden' if not @header_show_all %>">
+      <% if @header_show_all %>
         <!------------ Right ------------>
 
         <div class="profile-in-header pull-right">
@@ -132,7 +132,7 @@
         <!------------ Center ------------>
 
         <%= render :partial => "spree/shared/home_slider" %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
