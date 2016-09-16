@@ -4,9 +4,9 @@
   <%= link_to image_tag('zoom.gif'), image.attachment.url(:original), :class => 'fancybox zoom-image' %>
 <% else %>
   <% if @product.images.empty? %>
-    <%= product_image(@product, :itemprop => "large") %>
+    <%= large_image(@product, :itemprop => "large") %>
   <% else %>
-    <%= link_to product_image(@product, :itemprop => "image", :class => 'zoom-click'), @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style), :class => 'zoom-image large-image zoom-click', :rel => 'gallery' %>
+    <%= link_to large_image(@product, :class => 'zoom-click'), @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style), :class => 'zoom-image large-image zoom-click' %>
     <br />
     <%#= link_to image_tag('zoom.gif', :class => 'click-to-zoom'), @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style), :class => 'zoom-image click-to-zoom', :rel => 'gallery' %>
 

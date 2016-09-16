@@ -31,7 +31,7 @@
             <div class="panel panel-default">
               <div class="panel-body text-center product-body">
                 <%= link_to url, itemprop: "url" do %>
-                  <%= large_image(product, itemprop: "image", class: 'product-image') %><br/>
+                  <%= product_image(product, itemprop: "image", class: 'product-image') %><br/>
                   <%= content_tag(:div, truncate(product.name, length: 50), itemprop: "name", title: product.name, class: "product-title text-left") %>
                 <% end %>
                 <br/>
