@@ -127,18 +127,15 @@
       }
     }
     .login-btns{
-      height: 46px;
+      height: 47px;
       background-color: #fafafa;
       border-top: solid 1px #dddddd;
       border-bottom: solid 1px #dddddd;
-      a{
-        line-height: 46px;
-        vertical-align: middle;
-      }
       .login-btn-item{
         text-align: center;
-        line-height: 46px;
         > a {
+          line-height: 46px;
+          vertical-align: middle;
           color: $brand-primary !important;
         }
         &:first-child{
@@ -158,7 +155,7 @@
         margin-bottom: 13px;
         padding-left: $padding_size;
         a{
-          height: 33px;
+          height: 35px;
           font-size: 12px;
           border-bottom-width: 1px;
         }
