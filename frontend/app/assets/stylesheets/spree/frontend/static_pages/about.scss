@@ -1,0 +1,49 @@
+/// about us
+#about {
+  h3 {
+    margin: 100px 0 50px;
+  }
+  p {
+    line-height: 2;
+  }
+
+  .img-about-map {
+    background: url('http://up.img.heidian.co/zd-about-map.png') no-repeat center;
+    background-size: contain;
+    width: 100%;
+    padding-top: 46.36%;
+  }
+  .about-images-wrapper {
+    .img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .img-about-01 {
+      background-image: url('http://up.img.heidian.co/zd-about-us-image-1.png');
+      width: 39%;
+      height: 430px;
+    }
+    .img-about-02 {
+      background-image: url('http://up.img.heidian.co/zd-about-us-image-2.png');
+      width: 39%;
+      height: 430px;
+    }
+    .img-about-03 {
+      background-image: url('http://up.img.heidian.co/zd-about-us-image-3.png');
+      width: 22%;
+      height: 430px;
+    }
+  }
+  section {
+    margin-bottom: 100px;
+  }
+
+  .about-us-qrcode {
+    max-width: 180px;
+    max-height: 180px;
+  }
+  #about-us{
+    padding: 0 120px;
+  }
+}

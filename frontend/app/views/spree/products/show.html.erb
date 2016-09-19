@@ -32,9 +32,6 @@
                 <span class="product-brand"> <%= @product_brand.value if (@product_brand and not @product_brand.value.include? "见包装") %> </span>
               </div>
             </div>
-            <!-- <div class="well" itemprop="description" data-hook="description">
-                 <%= product_description(@product) %>
-                 </div> -->
 
             <div data-hook="product_properties">
               <%= render :partial => 'properties' %>

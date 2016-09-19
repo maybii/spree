@@ -1,68 +1,70 @@
-# coding: utf-8
-<div id="search-and-filter" style="background-color: #fff;">
-  <% if @products.empty? %>
-    <%= Spree.t(:no_products_found) %>
-  <% else %>
-    <div class="result-count filter-item"> 有<span class="search-result-count"><%= @products.total_count %></span>条相关产品</div>
-  <% end %>
-
-  <div class="select-brand filter-wrapper clearfix filter-item">
-    <div class="filter-title pull-left text-left">人气品牌：</div>
-    <div class="filter-body pull-left">
-      <% activeAllBrand = "active" if params["brand"] == nil or params["brand"].empty? %>
-      <%= link_to '全部', params.merge({ brand: ''}), class: "filter-name-item brand-class #{activeAllBrand}" %>
-      <% @all_brands.each do |brand| %>
-        <% activeBrand = "active" if brand == params["brand"] %>
-        <%= link_to brand, params.merge({ brand: brand}), class: "filter-name-item brand-class #{activeBrand}"  %>
+<%= content_for :another_header do %>
+  <div id="search-and-filter" style="background-color: #fff;">
+    <div class="container">
+      <% if @products.empty? %>
+        <%= Spree.t(:no_products_found) %>
+      <% else %>
+        <div class="result-count filter-item"> 有<span class="search-result-count"><%= @products.total_count %></span>条相关产品</div>
       <% end %>
-    </div>
-    <% if @all_brands.length > 20 %>
-      <div class="collapse-btn pull-left text-right">
-        <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
-        <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+
+      <div class="select-brand filter-wrapper clearfix filter-item">
+        <div class="filter-title pull-left text-left">人气品牌：</div>
+        <div class="filter-body pull-left">
+          <% activeAllBrand = "active" if params["brand"] == nil or params["brand"].empty? %>
+          <%= link_to '全部', params.merge({ brand: ''}), class: "filter-name-item brand-class #{activeAllBrand}" %>
+          <% @all_brands.each do |brand| %>
+            <% activeBrand = "active" if brand == params["brand"] %>
+            <%= link_to brand, params.merge({ brand: brand}), class: "filter-name-item brand-class #{activeBrand}"  %>
+          <% end %>
+        </div>
+        <% if @all_brands.length > 20 %>
+          <div class="collapse-btn pull-left text-right">
+            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
+            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+
+
+      <div class="select-location filter-wrapper clearfix filter-item">
+        <div class="filter-title pull-left text-left">产地货源：</div>
+        <div class="filter-body pull-left">
+          <% activeAllLocation = "active" if params["location"] == nil or params["location"].empty? %>
+          <%= link_to '全部', params.merge({ location: ''}), class: "filter-name-item location-class #{activeAllLocation}" %>
+          <% @all_locations.each do |location| %>
+            <% activeLocation = "active" if location == params["location"] %>
+            <%= link_to location, params.merge({ location: location}), class: "filter-name-item location-class #{activeLocation}" %>
+          <% end %>
+        </div>
+        <% if @all_locations.length > 20 %>
+          <div class="collapse-btn pull-left text-right">
+            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
+            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+          </div>
+        <% end %>
+      </div>
+
+
+      <div class="select-category filter-wrapper clearfix filter-item">
+        <div class="filter-title pull-left text-left">选购热点：</div>
+        <div class="filter-body pull-left">
+          <% activeAllCategory = "active" if params["category"] == nil or params["category"].empty? %>
+          <%= link_to '全部', params.merge({ category: ''}), class: "filter-name-item category-class #{activeAllCategory}" %>
+          <% @all_categries.each do |category| %>
+            <% activeCategory = "active" if category == params["category"] %>
+            <%= link_to category, params.merge({ category: category}), class: "filter-name-item category-class #{activeCategory}" %>
+          <% end %>
+        </div>
+        <% if @all_categries.length > 20 %>
+          <div class="collapse-btn pull-left text-right">
+            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
+            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-
-  <div class="select-location filter-wrapper clearfix filter-item">
-    <div class="filter-title pull-left text-left">产地货源：</div>
-    <div class="filter-body pull-left">
-      <% activeAllLocation = "active" if params["location"] == nil or params["location"].empty? %>
-      <%= link_to '全部', params.merge({ location: ''}), class: "filter-name-item location-class #{activeAllLocation}" %>
-      <% @all_locations.each do |location| %>
-        <% activeLocation = "active" if location == params["location"] %>
-        <%= link_to location, params.merge({ location: location}), class: "filter-name-item location-class #{activeLocation}" %>
-      <% end %>
-    </div>
-    <% if @all_locations.length > 20 %>
-    <div class="collapse-btn pull-left text-right">
-      <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
-        <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
-    </div>
-    <% end %>
-  </div>
-
-
-  <div class="select-category filter-wrapper clearfix filter-item">
-    <div class="filter-title pull-left text-left">选购热点：</div>
-    <div class="filter-body pull-left">
-      <% activeAllCategory = "active" if params["category"] == nil or params["category"].empty? %>
-      <%= link_to '全部', params.merge({ category: ''}), class: "filter-name-item category-class #{activeAllCategory}" %>
-      <% @all_categries.each do |category| %>
-        <% activeCategory = "active" if category == params["category"] %>
-        <%= link_to category, params.merge({ category: category}), class: "filter-name-item category-class #{activeCategory}" %>
-      <% end %>
-    </div>
-    <% if @all_categries.length > 20 %>
-    <div class="collapse-btn pull-left text-right">
-      <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
-      <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
-    </div>
-    <% end %>
-  </div>
-</div>
-
+<% end %>
 
 <div class="filter-orders clearfix">
   <% arrow_up = '<small><i class="icon-arrow-up"></i></small>'  %>
@@ -75,60 +77,60 @@
       <% if params["sort"] == 'ASC' %>
         <div class="btn--orders btn--order-sale-vol active up">
       <% else %>
-        <div class="btn--orders btn--order-sale-vol active down">
+          <div class="btn--orders btn--order-sale-vol active down">
       <% end %>
     <% else %>
       <div class="btn--orders btn--order-sale-vol">
     <% end %>
-        <%= link_to "销量 #{arrow_up}".html_safe, params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class up" %>
-        <%= link_to "销量 #{arrow_down}".html_safe, params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class down" %>
+    <%= link_to "销量 #{arrow_up}".html_safe, params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class up" %>
+    <%= link_to "销量 #{arrow_down}".html_safe, params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class down" %>
       </div>
 
 
-    <% if params["order"] == 'price' %>
-      <% if params["sort"] == 'ASC' %>
-        <div class="btn--orders btn--sale-price active up">
+      <% if params["order"] == 'price' %>
+        <% if params["sort"] == 'ASC' %>
+          <div class="btn--orders btn--sale-price active up">
+        <% else %>
+            <div class="btn--orders btn--sale-price active down">
+        <% end %>
       <% else %>
-        <div class="btn--orders btn--sale-price active down">
+        <div class="btn--orders btn--sale-price">
       <% end %>
-    <% else %>
-      <div class="btn--orders btn--sale-price">
-    <% end %>
       <%= link_to "价格 #{arrow_up}".html_safe, params.merge({ order: "price", sort: "DESC"}), class: "order-class up" %>
       <%= link_to "价格 #{arrow_down}".html_safe, params.merge({ order: "price", sort: "ASC"}), class: "order-class down" %>
-    </div>
+        </div>
 
 
-    <% if params["order"] == 'available_on' %>
-      <% if params["sort"] == 'ASC' %>
-        <div class="btn--orders btn--sale-available active up">
-      <% else %>
-        <div class="btn--orders btn--sale-available active down">
-      <% end %>
-    <% else %>
-      <div class="btn--orders btn--sale-available">
-    <% end %>
-      <%= link_to "上新时间 #{arrow_up}".html_safe, params.merge({ order: "available_on", sort: "DESC"}), class: "order-class up" %>
-      <%= link_to "上新时间 #{arrow_down}".html_safe, params.merge({ order: "available_on", sort: "ASC"}), class: "order-class down" %>
-    </div>
-  </div>
+        <% if params["order"] == 'available_on' %>
+          <% if params["sort"] == 'ASC' %>
+            <div class="btn--orders btn--sale-available active up">
+          <% else %>
+              <div class="btn--orders btn--sale-available active down">
+          <% end %>
+        <% else %>
+          <div class="btn--orders btn--sale-available">
+        <% end %>
+        <%= link_to "上新时间 #{arrow_up}".html_safe, params.merge({ order: "available_on", sort: "DESC"}), class: "order-class up" %>
+        <%= link_to "上新时间 #{arrow_down}".html_safe, params.merge({ order: "available_on", sort: "ASC"}), class: "order-class down" %>
+          </div>
+              </div>
 
-  </div>
-
-
+            </div>
 
 
 
-<% if params[:keywords] %>
-  <div data-hook="search_results">
-    <% if not @products.empty? %>
-      <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
-    <% end %>
-  </div>
-<% else %>
-  <div data-hook="homepage_products">
-    <% cache(cache_key_for_products) do %>
-      <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
-    <% end %>
-  </div>
-<% end %>
+
+
+            <% if params[:keywords] %>
+              <div data-hook="search_results">
+                <% if not @products.empty? %>
+                  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+                <% end %>
+              </div>
+            <% else %>
+              <div data-hook="homepage_products">
+                <% cache(cache_key_for_products) do %>
+                  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+                <% end %>
+              </div>
+            <% end %>
