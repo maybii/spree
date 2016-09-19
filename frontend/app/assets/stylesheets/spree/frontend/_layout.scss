@@ -5,9 +5,21 @@
 }
 
 .flash-message-animation{
-  @include animation(fadeIn 1.0s ease);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   text-align: center;
+  @include animation(fadeIn 2.0s ease);
+  z-index: 1000;
 }
+
+.flash-message-animation.alert-notice, .flash-message-animation.alert-success{
+  @include animation(fadeOut 1.0s ease);
+  @include animation-delay(2s);
+  @include animation-fill-mode(forwards);
+}
+
 .close-flash-button{
   position: absolute;
   right: 20px;
@@ -20,11 +32,28 @@
 @include keyframes(fadeIn) {
   from {
     opacity: 0;
+    z-index: 0;
   }
   to {
     opacity: 1;
+    display: block;
+    z-index: 1000;
   }
 }
+
+@include keyframes(fadeOut) {
+  from {
+    opacity: 1;
+    display: block;
+    z-index: 1000;
+  }
+  to {
+    opacity: 0;
+    display: none;
+    z-index: 0;
+  }
+}
+
 
 .spinner{
   position: fixed;
