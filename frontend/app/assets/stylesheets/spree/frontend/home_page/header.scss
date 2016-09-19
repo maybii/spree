@@ -270,11 +270,14 @@
     padding-top: 10px;
     .left-menu-title{
       border-bottom: solid 1px #dddddd;
-      padding: 0px 10px 7px 30px;
+      padding: 0px 10px 7px 15px;
       font-weight: 500;
       &:hover{
         background-color: #f8f8f8;
         color: #fa5930;
+        i {
+          color: #333;
+        }
       }
     }
     .list-group-in-left-menu{
@@ -295,6 +298,9 @@
     &:hover{
       .left-menu-title {
         color: #fa5930;
+        i {
+          color: #333;
+        }
       }
     }
   }

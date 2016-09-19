@@ -37,7 +37,16 @@
         <% @taxonomies.each do |taxonomy| %>
           <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
             <li class="dropdown-submenu dropdown-menu-left">
-              <a class="left-menu-title" href="#"> <%=taxonomy.name %> </a>
+              <a class="left-menu-title" href="#">
+                <% if taxonomy.name == '休闲食品' %>
+                  <i class="icon-cake"></i>
+                <% elsif taxonomy.name == '冲调饮品' %>
+                  <i class="icon-coffee"></i>
+                <% elsif taxonomy.name == '粮油调味品' %>
+                  <i class="icon-pot"></i>
+                <% end %>
+                <%=taxonomy.name %>
+              </a>
               <%= taxons_tree_in_left_menu(taxonomy.root, @taxon, max_level) %>
               <ul class="dropdown-menu right-menu-dropdown">
                 <%= taxons_tree_in_right_menu(taxonomy.root, @taxon, 2) %>
