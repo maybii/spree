@@ -85,18 +85,6 @@ a {
   font-size: 14px;
 }
 
-.about-btns {
-  // .btn ~ .btn {
-  //   margin-left:
-  // }
-  display: inline-block;
-  @include clearfix;
-  margin: 0 auto 24px;
-  > .btn {
-    padding-top: 9px;
-    padding-bottom: 9px;
-  }
-}
 .btn-primary {
   &:hover {
     border-color: transparent !important;

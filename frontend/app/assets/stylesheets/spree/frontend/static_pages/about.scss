@@ -14,26 +14,30 @@
     padding-top: 46.36%;
   }
   .about-images-wrapper {
-    .img {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .img-about-01 {
-      background-image: url('http://up.img.heidian.co/zd-about-us-image-1.png');
-      width: 39%;
-      height: 430px;
-    }
-    .img-about-02 {
-      background-image: url('http://up.img.heidian.co/zd-about-us-image-2.png');
-      width: 39%;
-      height: 430px;
-    }
-    .img-about-03 {
-      background-image: url('http://up.img.heidian.co/zd-about-us-image-3.png');
-      width: 22%;
-      height: 430px;
-    }
+    background: url('http://up.img.heidian.co/zd-about-pic-001.jpg') no-repeat center;
+    background-size: contain;
+    width: 100%;
+    padding-top: 35.83%;
+    // .img {
+    //   background-size: cover;
+    //   background-position: center;
+    //   background-repeat: no-repeat;
+    // }
+    // .img-about-01 {
+    //   background-image: url('http://up.img.heidian.co/zd-about-us-image-1.png');
+    //   width: 39%;
+    //   height: 430px;
+    // }
+    // .img-about-02 {
+    //   background-image: url('http://up.img.heidian.co/zd-about-us-image-2.png');
+    //   width: 39%;
+    //   height: 430px;
+    // }
+    // .img-about-03 {
+    //   background-image: url('http://up.img.heidian.co/zd-about-us-image-3.png');
+    //   width: 22%;
+    //   height: 430px;
+    // }
   }
   section {
     margin-bottom: 100px;
@@ -45,5 +49,27 @@
   }
   #about-us{
     padding: 0 120px;
+  }
+  .about-btns-wrapper {
+    position: relative;
+    .about-btns {
+      // .btn ~ .btn {
+      //   margin-left:
+      // }
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      margin-left: -130px;
+      display: inline-block;
+      @include clearfix;
+      // margin: 0 auto 24px;
+      > .btn {
+        padding-top: 9px;
+        padding-bottom: 9px;
+      }
+    }
+  }
+  #contact-us  h3 {
+    margin-top: 0;
   }
 }
