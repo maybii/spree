@@ -79,7 +79,7 @@ zh-CN:
       spree/order:
         checkout_complete: "完成结账"
         completed_at: "结账日期"
-        considered_risky:
+        considered_risky: ""
         coupon_code: "优惠券号码"
         created_at: "下单日期"
         email: "电子邮件"
@@ -409,7 +409,7 @@ zh-CN:
     add: "添加"
     add_action_of_type: "添加激活方式"
     add_country: "添加国家"
-    add_coupon_code:
+    add_coupon_code: "添加优惠券"
     add_new_header: "添加新的头部"
     add_new_style: "添加新的样式"
     add_one: "新建"
@@ -1297,7 +1297,7 @@ zh-CN:
     successfully_removed: "%{resource} 已被成功删除!"
     successfully_signed_up_for_analytics:
     successfully_updated: "%{resource} 已被成功更新!"
-    summary:
+    summary: "汇总"
     tax: "税"
     tax_categories: "缴税分类"
     tax_category: "缴税分类"

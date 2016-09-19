@@ -1,22 +1,31 @@
 <% error_fields = @user.errors.messages.keys if @user && @user.errors%>
 <fieldset id="password-credentials">
   <div class="form-group">
-    <%= f.email_field :email, :class => 'form-control', :placeholder => Spree.t(:email) %>
-    <% if @user and @user.errors and error_fields.index(:email) %>
-      <div class="form-error"><%= @user.errors.full_messages[error_fields.index(:email)] %></div>
-    <% end %>
+    <label for="account__email" class="col-sm-4 control-label">用户邮箱:</label>
+    <div class="col-sm-8">
+      <%= f.email_field :email, id: 'account__email', :class => 'form-control',:disabled => 'disabled', :placeholder => Spree.t(:email) %>
+      <% if @user and @user.errors and error_fields.index(:email) %>
+        <div class="form-error"><%= @user.errors.full_messages[error_fields.index(:email)] %></div>
+      <% end %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.password_field :password, :class => 'form-control', :placeholder => Spree.t(:password) %>
-    <% if @user and @user.errors and error_fields.index(:password) %>
-      <div class="form-error"><%= @user.errors.full_messages[error_fields.index(:password)] %></div>
-    <% end %>
+    <label for="account__password" class="col-sm-4 control-label">输入新密码:</label>
+    <div class="col-sm-8">
+      <%= f.password_field :password, id: 'account__password', :class => 'form-control', :placeholder => Spree.t(:password) %>
+      <% if @user and @user.errors and error_fields.index(:password) %>
+        <div class="form-error"><%= @user.errors.full_messages[error_fields.index(:password)] %></div>
+      <% end %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => Spree.t(:confirm_password) %>
-    <% if @user and @user.errors and error_fields.index(:password_confirmation) %>
-      <div class="form-error"><%= @user.errors.full_messages[error_fields.index(:password_confirmation)] %></div>
-    <% end %>
+    <label for="account__password_confirmation" class="col-sm-4 control-label">确认新密码:</label>
+    <div class="col-sm-8">
+      <%= f.password_field :password_confirmation, id: 'account__password_confirmation', :class => 'form-control', :placeholder => Spree.t(:confirm_password) %>
+      <% if @user and @user.errors and error_fields.index(:password_confirmation) %>
+        <div class="form-error"><%= @user.errors.full_messages[error_fields.index(:password_confirmation)] %></div>
+      <% end %>
+    </div>
   </div>
 </fieldset>
 <div data-hook="signup_below_password_fields"></div>

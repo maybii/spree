@@ -19,7 +19,23 @@
       <!------------------------- Account ---------------------------------->
 
       <div class="tab-pane fade <%= 'active in' if params[:tab] == 'account_summary' %>" id="account_summary">
-        <%= render partial: "account_summary" %>
+        <div class="account-summary-wrapper">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#account-summer__change-pw" aria-controls="order-tab-all" role="tab" data-toggle="tab">修改密码</a></li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="account-summer__change-pw">
+              <%= form_for Spree::User.new, html: {class: 'form-horizontal'}, :as => @user, :url => spree.user_path(@user), :method => :put do |f| %>
+                <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+                <div class="row">
+                  <div class="col-sm-4"></div>
+
+                  <%= f.submit Spree.t(:update), :class => 'col-sm-8 btn btn-red btn-180 btn--update-password' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="tab-pane fade <%= 'active in' if params[:tab] == 'wishlist' %>" id="wishlist">

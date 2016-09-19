@@ -15,3 +15,32 @@
     width: calc(100% - 200px)
   }
 }
+
+.account-summary-wrapper {
+  padding: 30px;
+  background-color: #fff;
+  form.form-horizontal {
+    width: 600px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-control {
+    height: 52px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    // width: 60%;
+  }
+  .form-horizontal .control-label {
+    padding-top: 15px;
+    font-weight: 200;
+    color: #333;
+    // text-align: right;
+    // width: 40%;
+  }
+  .btn--update-password {
+    margin-left: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}
