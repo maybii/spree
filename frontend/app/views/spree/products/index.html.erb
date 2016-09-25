@@ -19,8 +19,8 @@
         </div>
         <% if @all_brands.length > 20 %>
           <div class="collapse-btn pull-left text-right">
-            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
-            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
           </div>
         <% end %>
       </div>
@@ -38,8 +38,8 @@
         </div>
         <% if @all_locations.length > 20 %>
           <div class="collapse-btn pull-left text-right">
-            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
-            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
           </div>
         <% end %>
       </div>
@@ -57,8 +57,8 @@
         </div>
         <% if @all_categries.length > 20 %>
           <div class="collapse-btn pull-left text-right">
-            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
-            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+            <div class="btn open-btn">展开 <small><span class="glyphicon glyphicon-chevron-down"></span></small></div>
+            <div class="btn close-btn">收起 <small><span class="glyphicon glyphicon-chevron-up"></span></small></div>
           </div>
         <% end %>
       </div>
@@ -73,11 +73,15 @@
   <!-- <% sort = params["sort"] %> -->
   <div class="filter-orders__title pull-left">排序：</div>
   <div class="filter-orders__content pull-left">
+    <div class="btn--orders btn--order-default">
+      <%= link_to "综合".html_safe, params.merge({ order: "", sort: ""}), class: "order-class" %>
+    </div>
+
     <% if params["order"] == 'sales_amount' %>
       <% if params["sort"] == 'ASC' %>
         <div class="btn--orders btn--order-sale-vol active up">
       <% else %>
-          <div class="btn--orders btn--order-sale-vol active down">
+        <div class="btn--orders btn--order-sale-vol active down">
       <% end %>
     <% else %>
       <div class="btn--orders btn--order-sale-vol">
@@ -91,7 +95,7 @@
         <% if params["sort"] == 'ASC' %>
           <div class="btn--orders btn--sale-price active up">
         <% else %>
-            <div class="btn--orders btn--sale-price active down">
+          <div class="btn--orders btn--sale-price active down">
         <% end %>
       <% else %>
         <div class="btn--orders btn--sale-price">
@@ -105,7 +109,7 @@
           <% if params["sort"] == 'ASC' %>
             <div class="btn--orders btn--sale-available active up">
           <% else %>
-              <div class="btn--orders btn--sale-available active down">
+            <div class="btn--orders btn--sale-available active down">
           <% end %>
         <% else %>
           <div class="btn--orders btn--sale-available">
