@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901063807) do
+ActiveRecord::Schema.define(version: 20160927093225) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -800,10 +800,11 @@ ActiveRecord::Schema.define(version: 20160901063807) do
   add_index "spree_state_changes", ["stateful_id", "stateful_type"], name: "index_spree_state_changes_on_stateful_id_and_stateful_type", using: :btree
 
   create_table "spree_states", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "abbr",       limit: 255
-    t.integer  "country_id", limit: 4
+    t.string   "name",        limit: 255
+    t.string   "abbr",        limit: 255
+    t.integer  "country_id",  limit: 4
     t.datetime "updated_at"
+    t.string   "pinyin_name", limit: 255
   end
 
   add_index "spree_states", ["country_id"], name: "index_spree_states_on_country_id", using: :btree

@@ -36,6 +36,8 @@ z.zoneable =Spree::Country.find_by(iso_name: "CHINA")
 z.zone = zone
 z.save
 
+Spree::Config.address_requires_state = false
+
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: "快递")
 shipping_method = Spree::ShippingMethod.find_or_create_by(name: '快递')
 shipping_method.shipping_categories.push shipping_category

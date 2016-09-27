@@ -18,3 +18,4 @@
 //= require spree/frontend/spree_alipay
 //= require spree/frontend/spree_variant_options
 //= require spree/product_zoom
+//= require spree/frontend/spree_one_page_checkout

@@ -44,6 +44,7 @@ gem 'spree_wishlist', path: '../vendor/spree_wishlist'
 gem 'spree_variant_options', path: '../vendor/spree_variant_options'
 gem 'spree_ajax_add_to_cart', path: '../vendor/spree_ajax_add_to_cart'
 gem 'spree_product_zoom', path: '../vendor/spree_product_zoom'
+gem 'spree_one_page_checkout', path: '../vendor/spree_one_page_checkout'
 
 gem 'spree_gateway'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
