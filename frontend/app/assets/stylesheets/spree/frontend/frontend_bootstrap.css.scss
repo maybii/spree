@@ -146,14 +146,6 @@ a {
   }
 }
 
-#spree-footer {
-  background: $gray-dark;
-  // padding-top: $padding-base-horizontal;
-  padding-top: 50px;
-  margin-top: $line-height-computed;
-  color: white;
-}
-
 // -- Spree Layout Custom Rules -------------------------
 
 .alert-notice { @extend .alert-success; }
@@ -247,4 +239,28 @@ table {
 .gutter-0 > [class^="col-"], .gutter-0 > [class^=" col-"]{
   padding-right: 0;
   padding-left: 0;
+}
+
+
+////////////////////////////////////////////////////////////////////////
+.pagination {
+  @include display(flex);
+  @include justify-content(center);
+  margin-top: 48px;
+  > li > a, > li > span{
+    color: #27292b;
+    border-radius: 3px;
+    border: solid 1px #e7e7e7;
+    margin-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  > .active > a{
+    color: #cccccc;
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+  }
+  >.first, >.last{
+    display: none;
+  }
 }
