@@ -25,29 +25,40 @@
           <div class="select_address">
             <div class="form-group">
               <% @addresses.each_with_index do |address, id| %>
-                <div class="address-block " id="<%= [address_type, dom_id(address)].join('_') %>">
-                  <%= form.radio_button "#{address_name}_id", address.id, :checked => (address.id == spree_current_user["#{address_name}_id"] || id == 0)%>
+                <div class="address-block <%= 'selected' if address.id == spree_current_user['#{address_name}_id'] %>" id="<%= [address_type, dom_id(address)].join('_') %>">
+                  <%= form.radio_button "#{address_name}_id", address.id, :checked => (address.id == spree_current_user["#{address_name}_id"] || id == 0), class: 'hidden' %>
                   <label for='<%= "order_#{address_name}_id_#{address.id}" %>'>
-                    <div>
+                    <div class="address__item">
                       <%= address.lastname %>  <%= address.firstname %>
                     </div>
-                    <hr>
-                    <div>
+                    <div class="address__item">
                       <%= address.phone %>
                     </div>
-                    <hr>
-                    <div>
+                    <div class="address__item">
                       <%= address.address1 %> <%= address.address2 %>
                     </div>
+                    <div class="selected-triangle">
+                      <i class="icon-check"></i>
+                    </div>
                   </label>
-                  <a href="<%= edit_address_path(address) %>" data-hook="edit_address"><%= Spree.t(:edit) %></a>
+                  <a class='hidden' href="<%= edit_address_path(address) %>" data-hook="edit_address"><%= Spree.t(:edit) %></a>
                   <br />
                 </div>
               <% end %>
               <div class="address-block address-block-new">
-                <%= form.radio_button "#{address_name}_id", 0 %>
+                <%= form.radio_button "#{address_name}_id", 0, class: 'hidden' %>
                 <label for='<%= "order_#{address_name}_id_0" %>'>
-                  <%= Spree.t('other_address') %>
+                  <div class="text-center address-block-new__content-wrapper">
+                    <div class="address--new__btn">
+                      <i class="glyphicon glyphicon-plus"></i>
+                    </div>
+                    <p class="text-center">
+                      <%= Spree.t('other_address') %>
+                    </p>
+                  </div>
+                  <div class="selected-triangle">
+                    <i class="icon-check"></i>
+                  </div>
                 </label>
               </div>
             </div>
