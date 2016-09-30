@@ -1,5 +1,6 @@
 <% @taxonomies = Spree::Taxonomy.includes(root: :children) %>
 <% @header_show_all ||= false %>
+<% @need_third_header = params['controller'] == 'spree/checkout' ? false : true%>
 
 <!------------------ Top Header --------------------->
 
@@ -22,127 +23,130 @@
   </header>
 </div>
 
-<div id="spree-third-header" class="<%= 'open' if @header_show_all %>">
-  <div class="container">
-    <!------------ Left ------------>
+<% if @need_third_header %>
+  <div id="spree-third-header" class="<%= 'open' if @header_show_all %>">
+    <div class="container">
+      <!------------ Left ------------>
 
-    <div class="dropdown pull-left <%= 'open' if @header_show_all  %>">
-      <!-- data-toggle="dropdown"  -->
-      <button class="btn btn-default dropdown-toggle" type="button" id="all-category-menu" aria-haspopup="true" aria-expanded="true" data-toggle="<%= 'dropdown' if not @header_show_all %>">
-        全部商品分类
-        <i class="icon-double-arrow-down <%= 'hidden' if @header_show_all %>"></i>
-      </button>
-      <ul class="dropdown-menu left-menu-dropdown <%= 'for_absolute' if not @header_show_all %> ">
-        <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
-        <% @taxonomies.each do |taxonomy| %>
-          <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-            <li class="dropdown-submenu dropdown-menu-left">
-              <a class="left-menu-title" href="#">
-                <% if taxonomy.name == '休闲食品' %>
-                  <i class="icon-cake"></i>
-                <% elsif taxonomy.name == '冲调饮品' %>
-                  <i class="icon-coffee"></i>
-                <% elsif taxonomy.name == '粮油调味品' %>
-                  <i class="icon-pot"></i>
-                <% end %>
-                <%=taxonomy.name %>
-              </a>
-              <%= taxons_tree_in_left_menu(taxonomy.root, @taxon, max_level) %>
-              <ul class="dropdown-menu right-menu-dropdown">
-                <%= taxons_tree_in_right_menu(taxonomy.root, @taxon, 2) %>
-              </ul>
-            </li>
+      <div class="dropdown pull-left <%= 'open' if @header_show_all  %>">
+        <!-- data-toggle="dropdown"  -->
+        <button class="btn btn-default dropdown-toggle" type="button" id="all-category-menu" aria-haspopup="true" aria-expanded="true" data-toggle="<%= 'dropdown' if not @header_show_all %>">
+          全部商品分类
+          <i class="icon-double-arrow-down <%= 'hidden' if @header_show_all %>"></i>
+        </button>
+        <ul class="dropdown-menu left-menu-dropdown <%= 'for_absolute' if not @header_show_all %> ">
+          <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+          <% @taxonomies.each do |taxonomy| %>
+            <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+              <li class="dropdown-submenu dropdown-menu-left">
+                <a class="left-menu-title" href="#">
+                  <% if taxonomy.name == '休闲食品' %>
+                    <i class="icon-cake"></i>
+                  <% elsif taxonomy.name == '冲调饮品' %>
+                    <i class="icon-coffee"></i>
+                  <% elsif taxonomy.name == '粮油调味品' %>
+                    <i class="icon-pot"></i>
+                  <% end %>
+                  <%=taxonomy.name %>
+                </a>
+                <%= taxons_tree_in_left_menu(taxonomy.root, @taxon, max_level) %>
+                <ul class="dropdown-menu right-menu-dropdown">
+                  <%= taxons_tree_in_right_menu(taxonomy.root, @taxon, 2) %>
+                </ul>
+              </li>
+            <% end  %>
           <% end  %>
-        <% end  %>
-      </ul>
-    </div>
-
-    <div class="slider-content" >
-
-      <!------------ Title ------------>
-
-      <div class="title-above-slider">
-        <%= link_to "首页", "/", class: "item" %>
-        <%= link_to "新品上市", "/new_products", class: "item" %>
-        <%= link_to "促销专区", "/on_sale", class: "item section" %>
-        <%= link_to "代理加盟", "/agency", class: "item" %>
-        <%= link_to "企业采购", "/caigou", class: "item section" %>
-        <%= link_to "资讯公告", "/news", class: "item" %>
-        <%= link_to "买家须知", "/privacy", class: "item" %>
-        <%= link_to "关于真谛", "/about", class: "item" %>
+        </ul>
       </div>
-      <% if @header_show_all %>
-        <!------------ Right ------------>
 
-        <div class="profile-in-header pull-right">
-          <div class="hi-section">
-            <div class="default-avatar inline"></div>
-            <div class="inline default-name">
-              <% if spree_current_user %>
-                <% name = spree_current_user.login[0..spree_current_user.login.index('@')-1] %>
-                <div class="hi"> Hi, <%= name || spree_current_user.email%></div>
-                <div class="welcome"> 欢迎来到zhendi.com </div>
-              <% else %>
-                <div class="hi"> Hi! 你好</div>
-                <div class="welcome"> 欢迎来到zhendi.com</div>
-              <% end %>
-            </div>
-          </div>
-          <div class="login-btns">
-            <div class="login-btn-item col-xs-6">
-              <% if spree_current_user %>
-                待发货 <a href="/account">0</a>
-              <% else %>
-                <i class="icon-lock"></i>
-                <%=link_to "登录", '/login', class: "" %>
-              <% end %>
-            </div>
-            <div class="login-btn-item col-xs-6">
-              <% if spree_current_user %>
-                待收货 <a href="/account">2</a>
-              <% else %>
-                <i class="icon-edit"></i>
-                <%=link_to "注册", '/signup', class: ""  %>
-              <% end %>
-            </div>
-          </div>
-          <div class="notice">
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#notice" aria-controls="home" role="tab" data-toggle="tab">公告</a></li>
-              <li role="presentation"><a href="#introduction" aria-controls="profile" role="tab" data-toggle="tab">买家入门</a></li>
-            </ul>
+      <div class="slider-content" >
 
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane fade in active" id="notice">
-                <div>  [公告]物流信息通知 </div>
-                <div> [公告]巧克力产品保存须知</div>
-                <div>[公告]五一春节放假通知</div>
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="introduction">
-                <div>  [公告]物流信息通知 </div>
-                <div> [公告]巧克力产品保存须知</div>
-                <div>[公告]五一春节放假通知</div>
-              </div>
-            </div>
-          </div>
-          <div class="notice-content"></div>
-          <div class="safe-guards">
-            <span class='col-xs-4 text-right'> <i class="icon-shield" data-toggle="tooltip" data-placement="top" title="正品保证"></i></span>
-            <span class='col-xs-4 text-center'> <i class="icon-calendar" data-toggle="tooltip" data-placement="top" title="三包日期"></i></span>
-            <span class='col-xs-4 text-left'> <i class="icon-heart" data-toggle="tooltip" data-placement="top" title="无忧售后"></i></span>
-          </div>
-          <div class="phone-title">客服热线</div>
-          <div class="phone-number">
-            <div class="number">0479-83317151</div>
-            <div class="serve-time">服务时间: 周一到周六 9:00-18:00</div>
-          </div>
+        <!------------ Title ------------>
+
+        <div class="title-above-slider">
+          <%= link_to "首页", "/", class: "item" %>
+          <%= link_to "新品上市", "/new_products", class: "item" %>
+          <%= link_to "促销专区", "/on_sale", class: "item section" %>
+          <%= link_to "代理加盟", "/agency", class: "item" %>
+          <%= link_to "企业采购", "/caigou", class: "item section" %>
+          <%= link_to "资讯公告", "/news", class: "item" %>
+          <%= link_to "买家须知", "/privacy", class: "item" %>
+          <%= link_to "关于真谛", "/about", class: "item" %>
         </div>
+        <% if @header_show_all %>
+          <!------------ Right ------------>
 
-        <!------------ Center ------------>
+          <div class="profile-in-header pull-right">
+            <div class="hi-section">
+              <div class="default-avatar inline"></div>
+              <div class="inline default-name">
+                <% if spree_current_user %>
+                  <% name = spree_current_user.login[0..spree_current_user.login.index('@')-1] %>
+                  <div class="hi"> Hi, <%= name || spree_current_user.email%></div>
+                  <div class="welcome"> 欢迎来到zhendi.com </div>
+                <% else %>
+                  <div class="hi"> Hi! 你好</div>
+                  <div class="welcome"> 欢迎来到zhendi.com</div>
+                <% end %>
+              </div>
+            </div>
+            <div class="login-btns">
+              <div class="login-btn-item col-xs-6">
+                <% if spree_current_user %>
+                  待发货 <a href="/account">0</a>
+                <% else %>
+                  <i class="icon-lock"></i>
+                  <%=link_to "登录", '/login', class: "" %>
+                <% end %>
+              </div>
+              <div class="login-btn-item col-xs-6">
+                <% if spree_current_user %>
+                  待收货 <a href="/account">2</a>
+                <% else %>
+                  <i class="icon-edit"></i>
+                  <%=link_to "注册", '/signup', class: ""  %>
+                <% end %>
+              </div>
+            </div>
+            <div class="notice">
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#notice" aria-controls="home" role="tab" data-toggle="tab">公告</a></li>
+                <li role="presentation"><a href="#introduction" aria-controls="profile" role="tab" data-toggle="tab">买家入门</a></li>
+              </ul>
 
-        <%= render :partial => "spree/shared/home_slider" %>
-      <% end %>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="notice">
+                  <div>  [公告]物流信息通知 </div>
+                  <div> [公告]巧克力产品保存须知</div>
+                  <div>[公告]五一春节放假通知</div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="introduction">
+                  <div>  [公告]物流信息通知 </div>
+                  <div> [公告]巧克力产品保存须知</div>
+                  <div>[公告]五一春节放假通知</div>
+                </div>
+              </div>
+            </div>
+            <div class="notice-content"></div>
+            <div class="safe-guards">
+              <span class='col-xs-4 text-right'> <i class="icon-shield" data-toggle="tooltip" data-placement="top" title="正品保证"></i></span>
+              <span class='col-xs-4 text-center'> <i class="icon-calendar" data-toggle="tooltip" data-placement="top" title="三包日期"></i></span>
+              <span class='col-xs-4 text-left'> <i class="icon-heart" data-toggle="tooltip" data-placement="top" title="无忧售后"></i></span>
+            </div>
+            <div class="phone-title">客服热线</div>
+            <div class="phone-number">
+              <div class="number">0479-83317151</div>
+              <div class="serve-time">服务时间: 周一到周六 9:00-18:00</div>
+            </div>
+          </div>
+
+          <!------------ Center ------------>
+
+          <%= render :partial => "spree/shared/home_slider" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+
 <%= yield :another_header %>

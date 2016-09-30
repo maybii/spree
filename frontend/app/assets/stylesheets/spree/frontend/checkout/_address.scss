@@ -1,0 +1,18 @@
+#checkout_address{
+  .address-block{
+    display: inline-block;
+    width: 280px;
+    height: 158px;
+    border-radius: 1px;
+    background-color: #ffffff;
+    border: solid 1px #fa5930;
+    margin-right: 20px;
+    overflow: hidden;
+    input {
+      //visibility:hidden;
+    }
+  }
+  .new-address-form{
+
+  }
+}

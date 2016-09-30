@@ -378,6 +378,7 @@ zh-CN:
       not_locked: "未冻结"
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
+    other_address: "添加收货地址"
     selected_quantity_not_available: "不够, 请联系客服"
     default_country_cannot_be_deleted: "默认国家无法被删除"
     static_content:
@@ -935,6 +936,10 @@ zh-CN:
     order_processed_successfully: "您的订单已经被成功处理了"
     order_resumed:
     order_state:
+      checkout_address: "填写并核对订单信息"
+      checkout_delivery: "填写并核对订单信息"
+      checkout_payment: "选择支付方式"
+      checkout_complete: "订单支付成功"
       address: "地址"
       awaiting_return: "等待退货"
       canceled: "取消"

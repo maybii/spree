@@ -6,7 +6,7 @@
         <div class="shipment">
           <h4 class="stock-shipping-method-title hidden"><%= Spree.t(:shipping_method) %></h4>
           <div class="main-delivery">
-            <p>物流/快递</p>
+            <p>物流/快递 <span class="title-note">(仅收首重费用，超过首重将另外计费) </span></p>
             <% ship_form.object.shipping_rates.each do |rate| %>
               <% if rate.name != '客运捎件' %>
                 <label class="checkbox-inline">
