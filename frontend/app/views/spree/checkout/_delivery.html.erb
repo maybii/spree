@@ -10,7 +10,7 @@
             <% ship_form.object.shipping_rates.each do |rate| %>
               <% if rate.name != '客运捎件' %>
                 <label class="checkbox-inline">
-                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id %>
+                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, ship_cost: rate.cost %>
                   <span class="rate-name"><%= rate.name %></span>
                   <span class="rate-cost"> <%= rate.display_cost %></span>
                 </label>
@@ -23,7 +23,7 @@
             <% ship_form.object.shipping_rates.each do |rate| %>
               <% if rate.name == '客运捎件' %>
                 <label class="checkbox-inline">
-                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id %>
+                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, ship_cost: rate.cost %>
                   <span class="rate-name"><%= rate.name %></span>
                   <span class="rate-cost"> <%= rate.display_cost %></span>
                 </label>
@@ -113,6 +113,7 @@
         </div>
       <% end %>
     </div>
+
     <% if Spree::Config[:shipping_instructions] %>
       <p id="minstrs" data-hook>
         <h4><%= Spree.t(:shipping_instructions) %></h4>
@@ -121,11 +122,31 @@
     <% end %>
   </div>
 </div>
-    <% if @order.state != 'confirm' %>
-      <div id="checkout-summary" data-hook="checkout_summary_box" class="">
-        <%= render partial: 'summary', locals: { order: @order } %>
-      </div>
-    <% end %>
+<% if @order.state != 'confirm' %>
+  <div id="checkout-summary" data-hook="checkout_summary_box" class="">
+    <%= render partial: 'summary', locals: { order: @order} %>
+  </div>
+<% end %>
 <div class="text-right form-buttons" data-hook="buttons">
   <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-red btn-130' %>
 </div>
+
+<script>
+ $('.shipment input').change( function(e) {
+   e.preventDefault();
+   $shipment_price = parseFloat(e.target.attributes['ship_cost'].value)
+   $.ajax({
+     url: $('#checkout_form_delivery').attr('action'),
+     data: $('#checkout_form_delivery').serialize(),
+     type: $('#checkout_form_delivery').attr('method'),
+     success: function(result){
+
+     },
+     error: function(result){
+       $(".shipment_total_cost").html("￥" + $shipment_price.toFixed(2))
+       var orderItemTotalPrice = parseFloat($('#order-item-total')[0].attributes['itemTotal'].value)
+       $("#summary-order-total").html("￥" + ($shipment_price + orderItemTotalPrice).toFixed(2))
+     }
+   });
+ });
+</script>

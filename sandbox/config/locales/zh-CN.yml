@@ -1221,7 +1221,7 @@ zh-CN:
     shipping_method: "配送方式"
     shipping_methods: "配送方式"
     shipping_price_sack:
-    shipping_total:
+    shipping_total: "运费"
     shop_by_taxonomy: "根据%{taxonomy}购物"
     shopping_cart: "购物车"
     show: "显示"

@@ -18,6 +18,7 @@ Spree::AddressBook::Config[:disable_bill_address] = true
 
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: "快递")
 shipping_method = Spree::ShippingMethod.find_or_create_by(name: '快递')
+shipping_method.shipping_categories.destroy_all
 shipping_method.shipping_categories.push shipping_category
 
 shipping_rate = Spree::Calculator::Shipping::FlatRate.new
