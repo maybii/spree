@@ -54,6 +54,7 @@ gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-1-stable'
 gem 'spree_multi_currency', github: 'spree-contrib/spree_multi_currency', branch: '3-1-stable'
 #gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', ref: 'a4092bee14dae36af21db1c4a325de4710bbf582'
 
+gem 'normalize-rails'
 
 #### import excel
 gem 'roo', '~> 2.5.1'
