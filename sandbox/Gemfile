@@ -37,6 +37,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'tinymce-rails-langs'
 
 gem 'spree', path: '..'
+gem 'spree_alipay', path: '../vendor/spree_alipay'
 gem 'spree_auth_devise', path: '../vendor/spree_auth_devise'
 gem 'spree_recently_viewed', path: '../vendor/spree_recently_viewed'
 gem 'spree_address_book', path: '../vendor/spree_address_book'
@@ -51,7 +52,6 @@ gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: '3-1-stable'
 gem 'spree_editor', github: 'spree-contrib/spree_editor', branch: '3-1-stable'
 gem 'spree_multi_currency', github: 'spree-contrib/spree_multi_currency', branch: '3-1-stable'
-gem 'spree_alipay', github: "RuanShan/spree_alipay", ref: "b3bc76bc56e2dbd5211f6aa506766b4de8de494b"
 #gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', ref: 'a4092bee14dae36af21db1c4a325de4710bbf582'
 
 
@@ -69,6 +69,6 @@ group :test, :development do
 end
 
 #####
-group :production do 
+group :production do
   gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 end
