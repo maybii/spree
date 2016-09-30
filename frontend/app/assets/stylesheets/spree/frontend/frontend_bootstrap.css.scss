@@ -1,6 +1,10 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
 $default-radius: 0px;
 
+body{
+  font-family: "Montserrat Light,PingFang SC,Hiragino Sans GB,Hiragino Sans GB W3,Source Han Sans Light,Source Han Sans SC Light,Noto Sans CJK Sc Thin,Microsoft YaHei Light,Microsoft YaHei,Microsoft Jhenghei,Avenir,Helvetica Neue,Arial,sans-serif"
+}
+
 a {
   color: #444444;
   &:hover, &:active {
