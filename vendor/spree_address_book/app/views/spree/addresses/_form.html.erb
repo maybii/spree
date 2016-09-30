@@ -1,18 +1,52 @@
 <% address_id = address_type.chars.first %>
+<div class="form-horizontal" style="padding: 0 15px 0 0;">
+  <div class="form-group form--address__area">
+    <label class="col-sm-2 control-label" style='max-width: 100px;'>选择地区：</label>
+    <div class="col-sm-7">
+      <div class="clearfix" style="margin-left: -15px;margin-right: -15px;">
+        <% ADDRESS_FIELDS_1.each do |field| %>
+          <% if field == "country" %>
+            <div class="form-group" id="<%= '#{address_id}country' %>">
+              <span id="<%= "#{address_id}country-selection" %>">
+                <%= address_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required form-control'} %>
+              </span>
+            </div>
+          <% elsif field == "state" %>
+            <%= address_field(address_form, :state, address_id) { address_state(address_form, address.country, address_id) } if Spree::Config[:address_requires_state] %>
+          <% else %>
+            <%= address_field(address_form, field.to_sym, address_id) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-<% ADDRESS_FIELDS.each do |field| %>
-  <% if field == "country" %>
-    <p class="form-group" id="<%= "#{address_id}country" %>">
-      <%= address_form.label :country_id, Spree.t(:country) %><span class="required">*</span><br />
-      <span id="<%= "#{address_id}country-selection" %>">
-        <%= address_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required form-control'} %>
-      </span>
-    </p>
-  <% elsif field == "state" %>
-    <%= address_field(address_form, :state, address_id) { address_state(address_form, address.country, address_id) } if Spree::Config[:address_requires_state] %>
-  <% else %>
-    <% next if field == "company" && !Spree::Config[:company] %>
-    <% next if field == "alternative_#{address_id}_phone" && !Spree::Config["alternative_#{address_id}_phone"] %>
-    <%= address_field(address_form, field.to_sym, address_id) %>
+  <% ADDRESS_FIELDS_2.each do |field| %>
+    <% if field == 'address1' %>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" style='max-width: 100px;'>收货地址：</label>
+        <div class="col-sm-7">
+          <%= address_field(address_form, field.to_sym, address_id) %>
+        </div>
+      </div>
+    <% elsif field == 'firstname' %>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" style='max-width: 100px;'>收货人：</label>
+        <div class="col-sm-7">
+          <%= address_field(address_form, field.to_sym, address_id) %>
+          <div class="form__input-tips"></div>
+        </div>
+      </div>
+
+
+    <% elsif field == 'phone' %>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" style='max-width: 100px;'>手机号码：</label>
+        <div class="col-sm-7">
+          <%= address_field(address_form, field.to_sym, address_id) %>
+        </div>
+      </div>
+
+    <% end %>
   <% end %>
-<% end %>
+</div>
