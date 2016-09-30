@@ -13,7 +13,7 @@ z.zoneable =Spree::Country.find_by(iso_name: "CHINA")
 z.zone = zone
 z.save
 
-Spree::Config.address_requires_state = false
+Spree::Config.address_requires_state = true
 Spree::AddressBook::Config[:disable_bill_address] = true
 
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: "快递")
