@@ -1,7 +1,4 @@
 <div class="panel panel-default" id="payment" data-hook>
-  <!-- <div class="panel-heading">
-    <h3 class="panel-title"><%= Spree.t(:payment_information) %></h3>
-  </div> -->
   <div class="panel-body" data-hook="checkout_payment_step">
     <!-- 订单提交成功提示，订单号信息 -->
 
@@ -37,7 +34,7 @@
 
     <div class="payment-methods">
       <div class="payment-method-head">
-        <span>应付金额：￥</span><span class="total-price">805.00</span>
+        <span>应付金额：</span><span class="total-price"> <%= @order.display_total.to_html %></span>
       </div>
       <div class="payment-method-body">
         <div class="payment-method-body-title">选择支付方式</div>
@@ -48,6 +45,9 @@
               <label>
                 <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
                 <%= Spree.t(method.name, :scope => :payment_methods, :default => method.name) %>
+                <span class="first-choice">
+                  <%= "（推荐支付方式）" if method.name == "支付宝" %>
+                </span>
               </label>
               <div class="alipay-img-wrapper">
                 <fieldset class="payment-method-wrapper">
@@ -98,29 +98,5 @@
     <% end %>
 
     <%= render partial: 'spree/checkout/payment/storecredit' %>
-
-    <!-- <div class="payment-method-body-title">选择支付方式</div> -->
-
-
-
-    <!-- <ul class="nav" id="payment-methods" data-hook>
-      <% @order.available_payment_methods.each do |method| %>
-        <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook>
-          <fieldset>
-            <%= render :partial => "spree/checkout/payment/#{method.method_type}", :locals => { :payment_method => method } %>
-          </fieldset>
-        </li>
-      <% end %>
-    </ul> -->
-
-    <!-- <p class='field' data-hook='coupon_code'>
-      <%= form.label :coupon_code %>
-      <%= form.text_field :coupon_code, :class => 'form-control' %>
-    </p> -->
   </div>
 </div>
-
-<!-- <div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-red primary' %>
-  <script>Spree.disableSaveOnClick();</script>
-</div> -->

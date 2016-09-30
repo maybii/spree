@@ -43,11 +43,11 @@
       margin: 0 auto;
       .list-label {
         margin: 4px 0;
-        color: #dddddd;
+        color: #999999;
       }
       .list-content {
         margin: 4px 0;
-        color: #999999;
+        color: #333333;
       }
     }
   }
@@ -58,15 +58,25 @@
     .payment-method-head {
       padding: 20px;
       border-bottom: 1px solid #ddd;
+      font-size: 12px;
     }
     .payment-method-body {
       padding: 20px;
+    }
+    .total-price{
+      color: #fa5930;
+      font-size: 16px;
     }
   }
   .list-group-item {
     border-radius: 0 !important;
     border: none;
     padding: 20px 0 0;
+    font-weight: normal;
+    .first-choice{
+      color: #999999;
+      font-weight: normal;
+    }
   }
 
   .alipay-img-wrapper {

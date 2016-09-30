@@ -1,10 +1,4 @@
 #checkout {
-  .checkout-progress-wrapper{
-    width:  804px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .panel {
     border: none;
     background-color: transparent;
@@ -83,6 +77,12 @@
 }
 
 //////////////////////////////// Progress Steps ///////////////////////////
+
+.checkout-progress-wrapper{
+  width:  804px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .progress-steps {
   background-color: #fff;

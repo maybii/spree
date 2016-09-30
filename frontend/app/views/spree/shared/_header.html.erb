@@ -1,6 +1,9 @@
 <% @taxonomies = Spree::Taxonomy.includes(root: :children) %>
 <% @header_show_all ||= false %>
-<% @need_third_header = params['controller'] == 'spree/checkout' ? false : true%>
+<% @need_third_header = true %>
+<% if (params['controller'] == 'spree/checkout') || (order_just_completed?(@order) ) %>
+  <% @need_third_header = false %>
+<% end %>
 
 <!------------------ Top Header --------------------->
 

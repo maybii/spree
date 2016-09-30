@@ -1,8 +1,16 @@
-<% content_for :google_analytics do %>
-  <% if order_just_completed?(@order) %>
-    <%= render partial: 'spree/shared/google_purchase.js', locals: { order: @order } %>
-  <% end %>
-<% end %>
+<%# content_for :google_analytics do %>
+<%# if order_just_completed?(@order) %>
+<%#= render partial: 'spree/shared/google_purchase.js', locals: { order: @order } %>
+<%# end %>
+<%# end %>
+
+<div class="row" data-hook="checkout_header">
+  <div class="checkout-progress-wrapper" data-hook="checkout_progress">
+    <%= checkout_progress %>
+  </div>
+</div>
+
+
 <fieldset id="order_summary" data-hook="order_summary">
 
   <div class="order-info text-center">
@@ -36,14 +44,13 @@
   </div>
 
   <div id="order" data-hook>
-
     <p data-hook="links" class="text-center" style="margin-top: 30px; margin-bottom: 30px;">
       <%= link_to Spree.t(:back_to_store), spree.root_path, class: "btn btn-red btn-130" %>
-      <% unless order_just_completed?(@order) %>
-        <% if try_spree_current_user && respond_to?(:account_path) %>
-          <%= link_to Spree.t(:show_my_orders), account_path, class: "btn btn-default btn-130" %>
-        <% end %>
+      <%# unless order_just_completed?(@order) %>
+      <% if try_spree_current_user && respond_to?(:account_path) %>
+        <%= link_to Spree.t(:show_my_orders), account_path, class: "btn btn-default btn-130" %>
       <% end %>
+      <%# end %>
     </p>
   </div>
 </fieldset>
