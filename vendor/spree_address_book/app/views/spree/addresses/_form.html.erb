@@ -1,5 +1,5 @@
 <% address_id = address_type.chars.first %>
-<div class="form-horizontal" style="padding: 0 15px 0 0;">
+<div class="form-horizontal form-address-book" style="padding: 0 15px 0 0;">
   <div class="form-group form--address__area">
     <label class="col-sm-2 control-label" style='max-width: 100px;'>选择地区：</label>
     <div class="col-sm-7">
@@ -34,7 +34,9 @@
         <label class="col-sm-2 control-label" style='max-width: 100px;'>收货人：</label>
         <div class="col-sm-7">
           <%= address_field(address_form, field.to_sym, address_id) %>
-          <div class="form__input-tips"></div>
+          <div class="form__input-tips">
+            <span class="icon-tips-has-bg">!</span> <span>收货人请使用和身份证号对应的真实姓名</span>
+          </div>
         </div>
       </div>
 

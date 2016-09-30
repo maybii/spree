@@ -21,7 +21,6 @@
           <th>收货人</th>
           <th>所在地区</th>
           <th>详细地址</th>
-          <th>邮编</th>
           <th>电话/手机</th>
           <th>操作</th>
           <th></th>
@@ -33,7 +32,6 @@
           <td><%= address.firstname %></td>
           <td><%= address.state %> <%= address.city %></td>
           <td><%= address.address1 %></td>
-          <td><%= address.zipcode %></td>
           <td><%= address.phone %></td>
           <td>
             <%= link_to Spree.t(:edit), edit_address_path(address), class: 'text-href-blue' %>

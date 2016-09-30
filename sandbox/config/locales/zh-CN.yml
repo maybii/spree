@@ -22,6 +22,7 @@
 zh-CN:
   address_book:
     save: "保存"
+    new_shipping_address: "添加收货地址"
   activerecord:
     attributes:
       spree/page:
@@ -434,6 +435,7 @@ zh-CN:
     adjustment_successfully_opened: "价格调整已被启用！"
     adjustment_total: "调整总数"
     adjustments: "其他调整"
+    new_shipping_address: "添加收货地址"
     admin:
       tab:
         configuration: "配置"
@@ -909,7 +911,7 @@ zh-CN:
     or_over_price: "%{price}或以上"
     order: "订单"
     order_adjustments: "订单调整"
-    order_already_updated: 
+    order_already_updated:
     order_approved:
     order_canceled:
     order_details: "订单详情"

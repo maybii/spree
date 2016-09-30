@@ -25,9 +25,9 @@
       content: '';
       right: 0;
       bottom: 0;
-      width: 20px;
-      height: 20px;
-      padding: 4px;
+      width: 14px;
+      height: 16px;
+      padding: 2px;
       color: #fff;
       > i {
         font-size: 12px;
@@ -40,7 +40,7 @@
         bottom: 0;
         width: 0px;
         height: 0px;
-        border: 25px solid $brand-primary;
+        border: 20px solid $brand-primary;
         display: none;
         @include transform(rotate(45deg) translateX(80%) translateY(10%));
       }
@@ -92,22 +92,28 @@
 
 }
 .new-address-form {
-  .form-horizontal {
-    margin: 20px auto;
-    font-size: 12px;
-    input, select, option {
-      font-size: 12px !important;
-    }
+
+}
+.form-group .form-group {
+  margin-bottom: 0;
+}
+
+.form-horizontal.form-address-book {
+  margin: 20px auto;
+  font-size: 12px;
+  > .form-group {
+    margin-bottom: 18px !important;
   }
-  .form-group .form-group {
-    margin-bottom: 0;
+  input, select, option {
+    font-size: 12px !important;
   }
 }
-.form-horizontal label.control-label {
+
+.form-horizontal.form-address-book label.control-label {
   font-weight: normal !important;
   text-align: left !important;
 }
-.form-horizontal .form--address__area {
+.form-horizontal.form-address-book .form--address__area {
 
   .form-group {
     margin: 0;
@@ -124,4 +130,21 @@
     margin-left: 3%;
   }
 
+}
+.form__input-tips {
+  margin: 8px auto 0 -15px;
+}
+.icon-tips-has-bg {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 14px;
+  background-color: #f13c3c;
+  color: #fff;
+}
+
+.user-address-form__btn {
+  padding-left: 15px;
 }

@@ -49,11 +49,16 @@ a {
   min-width: 80px;
   color: #fff;
   background-color: #f13c3c !important;
-  &:hover, &:active, &.active, &:visited {
-    color: #fff;
+  &:hover, &:active, &:focus, &.active, &:visited {
+    color: #fff !important;
     background-color: #f13c3c !important;
   }
 }
+.btn-110 {
+  font-size: 12px;
+  width: 110px;
+}
+
 .btn-130 {
   font-size: 12px;
   width: 130px;
