@@ -909,7 +909,7 @@ zh-CN:
     or_over_price: "%{price}或以上"
     order: "订单"
     order_adjustments: "订单调整"
-    order_already_updated:
+    order_already_updated: 
     order_approved:
     order_canceled:
     order_details: "订单详情"

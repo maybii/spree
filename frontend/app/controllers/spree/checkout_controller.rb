@@ -5,7 +5,7 @@ module Spree
   # is waranted.
   class CheckoutController < Spree::StoreController
     before_action :load_order_with_lock
-    before_action :ensure_valid_state_lock_version, only: [:update]
+    # before_action :ensure_valid_state_lock_version, only: [:update]
     before_action :set_state_if_present
 
     before_action :ensure_order_not_completed
