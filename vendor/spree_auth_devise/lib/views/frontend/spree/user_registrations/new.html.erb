@@ -9,7 +9,7 @@
       <div id="new-customer" class="panel-body" data-hook="login">
           <%= form_for resource, :as => :spree_user, :url => spree.registration_path do |f| %>
             <div data-hook="signup_inside_form">
-              <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+              <%= render :partial => 'spree/shared/signup_user_form', :locals => { :f => f } %>
               <div class="inline">
                 <%= f.submit Spree.t(:create), :class => 'btn btn-lg btn-success btn-block' %>
               </div>
