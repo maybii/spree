@@ -78,13 +78,14 @@
   /* center */
   .slider-content{
     .title-above-slider{
-      padding-top: 9px;
-      padding-bottom: 10px;
+      // padding-top: 9px;
+      // padding-bottom: 10px;
       padding-left: 80px;
       a{
         color: white;
         font-size: 16px;
-        padding: 9px 18px 10px;
+        padding: 9px 18px;
+        float: left;
         &:hover, .active{
           background-color: #f04013;
         }

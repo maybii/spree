@@ -160,8 +160,8 @@ zh-CN:
         meta_description:
         meta_keywords:
         name:
-        seo_title:
-        url:
+        seo_title: "SEO标题"
+        url: "链接"
       spree/tax_category:
         description: "描述"
         name: "名称"
@@ -454,10 +454,10 @@ zh-CN:
       user:
         account: "账户"
         addresses: "地址"
-        items:
-        items_purchased:
-        order_history:
-        order_num:
+        items: "条目"
+        items_purchased: "已购买条目"
+        order_history: "订单历史"
+        order_num: "订单号"
         orders: "订单"
         user_information:
     administration: "管理"
@@ -492,7 +492,7 @@ zh-CN:
     associated_adjustment_closed: "相关联的价格调整已被关闭，并且不会被重复计算。您需要启用它吗？"
     at_symbol: '@'
     authorization_failure: "认证失败"
-    authorized:
+    authorized: "已审核"
     auto_capture:
     available_on: "上架日期"
     average_order_value:
@@ -519,7 +519,7 @@ zh-CN:
     calculator: "计算器"
     calculator_settings_warning: "如果你正在修改计算方式，你必须在编辑计算器设置之前先保存"
     cancel: "取消"
-    canceled_at:
+    canceled_at: "取消时间"
     canceler:
     cannot_create_customer_returns:
     cannot_create_payment_without_payment_methods: "您无法在没有定义任何支付方式的情况下进行支付。"
@@ -790,7 +790,7 @@ zh-CN:
     last_name: "姓"
     last_name_begins_with: "姓的开始"
     learn_more: "更多"
-    lifetime_stats:
+    lifetime_stats: "状态"
     line_item_adjustments:
     list: "列表"
     loading: "加载"
@@ -850,9 +850,9 @@ zh-CN:
     new_promotion_category: "新建促销分类"
     new_property: "新建属性"
     new_prototype: "新建原型"
-    new_refund:
-    new_refund_reason:
-    new_return_authorization: "新建退货"
+    new_refund: "新建退货"
+    new_refund_reason: "退货原因"
+    new_return_authorization: "新建返回授权"
     new_rma_reason:
     new_shipment_at_location:
     new_shipping_category: "新建配送分类"
@@ -912,8 +912,8 @@ zh-CN:
     order: "订单"
     order_adjustments: "订单调整"
     order_already_updated:
-    order_approved:
-    order_canceled:
+    order_approved: "已通过订单"
+    order_canceled: "已取消订单"
     order_details: "订单详情"
     order_email_resent: "重新发出了订单邮件"
     order_information: "订单信息"
@@ -1101,14 +1101,14 @@ zh-CN:
     reference:
     refund: "退款"
     refund_amount_must_be_greater_than_zero:
-    refund_reasons:
-    refunded_amount:
-    refunds:
+    refund_reasons: "退货原因"
+    refunded_amount: "退货数量"
+    refunds: "退货"
     register: "注册成为新用户"
     registration: "注册"
-    reimburse:
-    reimbursed:
-    reimbursement:
+    reimburse: "退款"
+    reimbursed: "已退款"
+    reimbursement: "退款"
     reimbursement_mailer:
       reimbursement_email:
         days_to_send:
@@ -1139,7 +1139,7 @@ zh-CN:
     resumed: "已恢复"
     return: "退回"
     return_authorization: "退货审批"
-    return_authorization_reasons:
+    return_authorization_reasons: "退货审批原因"
     return_authorization_updated: "退货审批已更新"
     return_authorizations: "退货审批"
     return_item_inventory_unit_ineligible:
@@ -1153,9 +1153,9 @@ zh-CN:
     returned: "已退回"
     returns: "退货"
     review: Review
-    risk:
-    risk_analysis:
-    risky:
+    risk: "风险"
+    risk_analysis: "风险分析"
+    risky: "有风险的"
     rma_credit: RMA Credit
     rma_number: "退货单号"
     rma_value: "退货价值"
@@ -1176,8 +1176,8 @@ zh-CN:
     secure_connection_type: "安全连接类型"
     security_settings: "安全设置"
     select: "选择"
-    select_a_return_authorization_reason:
-    select_a_stock_location:
+    select_a_return_authorization_reason: "选择退货原因"
+    select_a_stock_location: "选择库存区域"
     select_from_prototype: "从原型中选择"
     select_stock:
     send_copy_of_all_mails_to: "将所有邮件的副本发送至"
@@ -1246,37 +1246,37 @@ zh-CN:
     state: "省份"
     state_based: "根据省份"
     state_machine_states:
-      accepted:
-      address:
-      authorized:
-      awaiting:
-      awaiting_return:
-      backordered:
-      canceled:
-      cart:
-      checkout:
-      closed:
-      complete:
-      completed:
-      confirm:
-      delivery:
-      errored:
-      failed:
-      given_to_customer:
-      invalid:
-      manual_intervention_required:
-      on_hand:
-      open:
-      order:
-      payment:
-      pending:
-      processing:
-      ready:
-      reimbursed:
-      resumed:
-      returned:
-      shipped:
-      void:
+      accepted: "已接受"
+      address: "地址"
+      authorized: "已批准"
+      awaiting: "等待中"
+      awaiting_return: ""
+      backordered: "已延期"
+      canceled: "已取消"
+      cart: "购物车"
+      checkout: "结算"
+      closed: "已关闭"
+      complete: "完成"
+      completed: "完成的"
+      confirm: "确认"
+      delivery: "投递"
+      errored: "出错的"
+      failed: "失败的"
+      given_to_customer: "已交付给客户"
+      invalid: "无效的"
+      manual_intervention_required: ""
+      on_hand: ""
+      open: "打开"
+      order: "订单"
+      payment: "支付"
+      pending: "待决的"
+      processing: "正在处理"
+      ready: "就绪"
+      reimbursed: ""
+      resumed: "继续"
+      returned: "已退回"
+      shipped: ""
+      void: "空"
     states: "省份"
     states_required:
     status: "状态"
@@ -1346,9 +1346,9 @@ zh-CN:
     total: "金额"
     total_per_item:
     total_pre_tax_refund:
-    total_price:
-    total_sales:
-    track_inventory:
+    total_price: "总价"
+    total_sales: "总销量"
+    track_inventory: "库存追踪"
     tracking: "追踪"
     tracking_number:
     tracking_url:
