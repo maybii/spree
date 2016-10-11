@@ -1,6 +1,9 @@
 #account_my_orders {
   padding: 30px;
   background-color: #fff;
+  .category-count{
+    color: $brand-primary;
+  }
   .account-order-table{
     border: none;
     tbody.order-item-wrapper {

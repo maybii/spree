@@ -379,6 +379,10 @@ zh-CN:
       not_locked: "未冻结"
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
+    order_category:
+      all: "所有订单"
+      unpaied: "待付款"
+      shipping: "待收货"
     other_address: "添加收货地址"
     selected_quantity_not_available: "不够, 请联系客服"
     default_country_cannot_be_deleted: "默认国家无法被删除"

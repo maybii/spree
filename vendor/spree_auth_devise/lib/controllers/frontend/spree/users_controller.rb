@@ -6,7 +6,12 @@ class Spree::UsersController < Spree::StoreController
   include Spree::Core::ControllerHelpers
 
   def show
-    @orders = @user.orders.complete.order('completed_at desc')
+    @orders = @user.orders.complete.order('created_at desc')
+    @orders_category = {
+      unpaied: @orders.where(payment_state: 'balance_due'),
+      shipping: @orders.where(shipment_state: 'shipped'),
+      all: @orders
+    }
   end
 
   def create
