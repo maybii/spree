@@ -734,7 +734,7 @@ zh-CN:
     google_analytics: Google Analytics
     google_analytics_id: Analytics ID
     guest_checkout: "匿名用户结账"
-    guest_user_account: "作为一个匿名用户结账"
+    guest_user_account: "请先登录"
     has_no_shipped_units: "没有已配送的单元"
     height: "高度"
     hide_cents: "隐藏分钱"

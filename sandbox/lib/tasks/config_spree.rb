@@ -15,6 +15,7 @@ z.save
 
 Spree::Config.address_requires_state = true
 Spree::AddressBook::Config[:disable_bill_address] = true
+Spree::Config[:allow_guest_checkout] = false
 
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: "快递")
 shipping_method = Spree::ShippingMethod.find_or_create_by(name: '快递')

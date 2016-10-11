@@ -2,7 +2,7 @@
 
 <div id="registration" class="row" data-hook>
   <div id="account">
-    <%= render template: 'spree/user_sessions/new' %>
+    <%= render template: 'spree/user_sessions/new', locals: {guest: true} %>
   </div>
   <% if Spree::Config[:allow_guest_checkout] %>
     <div class="col-sm-6">

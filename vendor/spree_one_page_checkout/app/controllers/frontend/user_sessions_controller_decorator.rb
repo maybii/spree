@@ -25,7 +25,6 @@ module Spree
               # To get addresses in one step checkout
               @order.bill_address ||= Address.build_default
               @order.ship_address ||= Address.build_default if @order.checkout_steps.include?('delivery')
-
               render 'spree/checkout/registration'
             else
               render :new
