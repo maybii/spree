@@ -1,50 +1,59 @@
 #account_my_orders {
   padding: 30px;
   background-color: #fff;
-  .account-order-table > tbody.order-item-wrapper {
-    // .order-number-wrapper {
-    //   border-width: 1px 1px 0;
-    //   border-style: solid;
-    //   border-color: #dddddd;
-    //   &:hover {
-    //     border-color: $brand-primary;
-    //   }
-    // }
-    // .order-info {
-    //   border-width: 1px 0 1px 1px;
-    // }
-    &:hover {
-      border: 2px solid $brand-primary;
+  .account-order-table{
+    border: none;
+    tbody.order-item-wrapper {
+      &:hover {
+        .order-number-wrapper{
+          border-top-color: $brand-primary !important;
+          border-left-color: $brand-primary !important;
+          border-right-color: $brand-primary !important;
+        }
+        .order-info{
+          border-bottom-color: $brand-primary !important;
+          border-left-color: $brand-primary !important;
+        }
+        .order-total, .order-status, .order-operations{
+          border-bottom-color: $brand-primary !important;
+        }
+        .order-operations{
+          border-right-color: $brand-primary !important;
+        }
+      }
     }
-  }
-  thead {
-    font-size: 12px;
-    height: 40px;
-    border-radius: 2px;
-    background-color: #f1f1f1;
-  }
-  tr.sep-row {
-    height: 20px;
-  }
-  .order-item-price,
-  .order-qty {
-    margin-top: 10px;
-    width: 100px;
-  }
-  td {
-    padding: 15px 0;
-  }
-  .order-number-wrapper {
-    padding: 8px 15px;
-  }
-  .order-product-item {
-    padding: 15px 0;
-    border-bottom: 1px solid #dddddd;
-    &:first-child {
-      padding-top: 0px;
+    thead {
+      font-size: 12px;
+      height: 40px;
+      border-radius: 2px;
+      background-color: #f1f1f1;
+      tr, th{
+        border: none;
+      }
     }
-    &:last-child {
-      border-width: 0;
+    tr.sep-row {
+      height: 20px;
+    }
+    .order-item-price,
+    .order-qty {
+      margin-top: 10px;
+      width: 100px;
+    }
+    td {
+      padding: 15px 0;
+    }
+    .order-number-wrapper {
+      padding: 8px 15px;
+    }
+    .order-product-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #dddddd;
+      &:first-child {
+        padding-top: 0px;
+      }
+      &:last-child {
+        border-width: 0;
+      }
     }
   }
 
@@ -65,7 +74,7 @@
     }
     .product-variant {
       font-size: 12px;
-      color: #444444;
+      color: #999999;
     }
   }
   .order-total, .order-status, .order-operations {

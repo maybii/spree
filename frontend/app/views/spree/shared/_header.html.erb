@@ -1,7 +1,8 @@
 <% @taxonomies = Spree::Taxonomy.includes(root: :children) %>
 <% @header_show_all ||= false %>
 <% @need_third_header = true %>
-<% if (params['controller'] == 'spree/checkout') || (order_just_completed?(@order) ) %>
+<% if (params['controller'] == 'spree/checkout') || (order_just_completed?(@order)) ||
+  (params['controller'] == 'spree/orders' && params['action'] = 'edit') %>
   <% @need_third_header = false %>
 <% end %>
 

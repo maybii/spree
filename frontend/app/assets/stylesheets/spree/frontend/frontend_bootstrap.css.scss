@@ -99,6 +99,8 @@ a {
     border-color: transparent !important;
   }
 }
+
+
 // -- Spree Custom Header and Footer ---------------------
 #spree-main-header {
   .nav a {
@@ -163,6 +165,15 @@ a {
 
 h1 {
   margin-bottom: 30px;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 1px;
+}
+
+.table > tbody + tbody {
+  border-top-width: 1px;
 }
 
 // Center cart line items
