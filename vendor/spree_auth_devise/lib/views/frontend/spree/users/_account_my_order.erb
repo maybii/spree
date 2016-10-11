@@ -23,7 +23,7 @@
                   <th class="text-center">商品信息</th>
                   <th class="text-center" width="100px">单价（元）</th>
                   <th class="text-center" width="100px">数量</th>
-                  <th class="text-center" width="80px"><%= Spree.t(:total) %></th>
+                  <th class="text-center" width="150px"><%= Spree.t(:total) %></th>
                   <th class="text-center" width="100px">交易状态</th>
                   <th class="text-center" width="100px">操作</th>
                 </tr>
@@ -58,7 +58,10 @@
                         </div>
                       <% end %>
                     </td>
-                    <td class="text-center order-total"><%= order.display_total %></td>
+                    <td class="text-center order-total">
+                      <p><%= order.display_total %></p>
+                      <p class="shipment-total">(含运费：<%= order.display_shipment_total %>)</p>
+                      </td>
                     <td class="text-center order-status">
                       <% if order.payment_state == 'paid' %>
 

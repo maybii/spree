@@ -81,6 +81,9 @@
     }
   }
   .order-total, .order-status, .order-operations {
-    padding-top: 25px;
+    padding-top: 25px !important;
   }
+  // .order-payment-state, .order-operations {
+
+  // }
 }
