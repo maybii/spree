@@ -2,13 +2,13 @@
 
 <%= order_form.fields_for :line_items, line_item do |item_form| %>
   <tr class="line-item" key='<%= item_form.index %>'>
-    <td class="cart-item-checkbox">
+    <!-- <td class="cart-item-checkbox">
       <div class="checkbox">
           <label>
             <input type="checkbox" value="">
           </label>
         </div>
-    </td>
+    </td> -->
     <td class="cart-item-image" data-hook="cart_item_image">
       <% if variant.images.length == 0 %>
         <%= link_to small_image(variant.product), variant.product %>
