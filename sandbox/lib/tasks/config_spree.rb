@@ -44,5 +44,5 @@ alipay.save
 
 check = Spree::PaymentMethod::Check.find_or_initialize_by(name: '账户转账')
 check.active = true
-check.description = "<p>开户行：中国农业银行</p><p>农业银行卡号： 62284 5505 60101 94762  户名：明干巴雅尔</p>"
+check.description = "<p>开户行：中国农业银行 内蒙古二连浩特市友谊支行</p><p>农业银行卡号： 62284 5505 60101 94762  户名：明干巴雅尔</p>"
 check.save
