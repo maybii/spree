@@ -24,8 +24,8 @@
     $.fn.bootstrapNumber = function (options) {
 
         var settings = $.extend({
-            upClass: 'default',
-            downClass: 'default',
+            upClass: 'default btn-up',
+            downClass: 'default btn-down',
             center: true
         }, options);
 

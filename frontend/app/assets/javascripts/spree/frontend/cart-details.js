@@ -55,9 +55,24 @@ $(document).ready(function(){
     $('.total-price').html("￥" + sum);
   };
 
-  $('input-up').onClick(function(e){
-    alert('asdf');
+  $('.btn-up, .btn-down').click(function(e){
+    var target = e.target.parentElement.parentElement.getElementsByClassName('line_item_quantity')[0];
+    $.ajax({
+      url: $('#update-cart').attr('action'),
+      data: $('#update-cart').serialize(),
+      type: $('#update-cart').attr('method'),
+      success: function(result){
+      },
+      error: function(result){
+        if(result.status == 200){
+          calculatePrice(target);
+        }
+      }
+    });
   });
+  //$('input-up').onClick(function(e){
+  //  alert('asdf');
+  //});
 
   $('#cart-detail .line_item_quantity').change( function(e) {
     e.preventDefault();
