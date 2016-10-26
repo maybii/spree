@@ -26,19 +26,19 @@ zh-CN:
   activerecord:
     attributes:
       spree/page:
-        body: Body
+        body: "正文"
         foreign_link: "链接 (URL)"
-        layout: Layout
-        meta_description: "Meta Description"
-        meta_keywords: "Meta Keywords"
-        meta_title: "Meta Title"
-        position: Position
-        render_layout_as_partial: "Render layout as partial"
-        show_in_header: "Show in header"
-        show_in_sidebar: "Show in sidebar"
-        slug: Slug
-        title: Title
-        visible: Visible
+        layout: "布局/框架"
+        meta_description: "元描述"
+        meta_keywords: "元关键字"
+        meta_title: "元标题"
+        position: "位置"
+        render_layout_as_partial: "渲染部分布局"
+        show_in_header: "在网站头部中显示"
+        show_in_sidebar: "在网站侧边栏显示"
+        slug: "url地址别名(Slug)"
+        title: "标题"
+        visible: "是否可见"
       spree/address:
         address1: "地址"
         address2: "地址（继续）"
@@ -156,10 +156,10 @@ zh-CN:
         updated:
         user: "用户"
       spree/store:
-        mail_from_address:
-        meta_description:
-        meta_keywords:
-        name:
+        mail_from_address: "邮件来自"
+        meta_description: "描述"
+        meta_keywords: "关键字"
+        name: "名称"
         seo_title: "SEO标题"
         url: "链接"
       spree/tax_category:
@@ -190,6 +190,8 @@ zh-CN:
         width: "宽度"
       spree/zone:
         description: "描述"
+        name: "名称"
+      spree/store_credit_category:
         name: "名称"
     errors:
       models:
@@ -248,6 +250,8 @@ zh-CN:
         one: "信用卡"
         other: "信用卡"
       spree/customer_return:
+        one: "客户退还"
+        other: "客户退还"
       spree/inventory_unit:
         one: "库存单位"
         other: "库存单位"
@@ -280,13 +284,13 @@ zh-CN:
       spree/prototype:
         one: "原型"
         other: "原型"
-      spree/refund_reason:
-      spree/reimbursement:
-      spree/reimbursement_type:
+      spree/refund_reason: "退货原因"
+      spree/reimbursement: "退款"
+      spree/reimbursement_type: "退款种类"
       spree/return_authorization:
         one: "返回授权"
         other: "返回授权"
-      spree/return_authorization_reason:
+      spree/return_authorization_reason: "退回授权原因"
       spree/role:
         one: "角色"
         other: "角色"
@@ -302,10 +306,10 @@ zh-CN:
       spree/state:
         one: "省份"
         other: "省份"
-      spree/state_change:
-      spree/stock_location:
-      spree/stock_movement:
-      spree/stock_transfer:
+      spree/state_change: "状态变更"
+      spree/stock_location: "库存区域"
+      spree/stock_movement: "库存动向"
+      spree/stock_transfer: "库存转移"
       spree/tax_category:
         one: "缴税分类"
         other: "缴税分类"
@@ -328,6 +332,12 @@ zh-CN:
       spree/zone:
         one: "区域"
         other: "区域"
+      spree/store_credit_category:
+        one: "积分分类"
+        other: "积分分类"
+      spree/stock_transfer:
+        one: "库存转移"
+        other: "库存转移"
   devise:
     sessions:
       spree_user:
@@ -439,6 +449,7 @@ zh-CN:
     adjustment_successfully_opened: "价格调整已被启用！"
     adjustment_total: "调整总数"
     adjustments: "其他调整"
+    available: "可用的"
     new_shipping_address: "添加收货地址"
     admin:
       tab:
@@ -463,8 +474,10 @@ zh-CN:
         order_history: "订单历史"
         order_num: "订单号"
         orders: "订单"
-        user_information:
+        user_information: "用户信息"
+        store_credits: "积分"
     administration: "管理"
+    add_store_credit: "添加积分"
     advertise: "推广"
     agree_to_privacy_policy: "同意隐私政策"
     agree_to_terms_of_service: "同意服务条款"
@@ -499,22 +512,22 @@ zh-CN:
     authorized: "已审核"
     auto_capture:
     available_on: "上架日期"
-    average_order_value:
+    average_order_value: "客单价"
     avs_response:
     back: "后退"
     back_end: "后端"
-    back_to_payment:
-    back_to_resource_list:
-    back_to_rma_reason_list:
+    back_to_payment: "返回支付"
+    back_to_resource_list: "返回资源列表"
+    back_to_rma_reason_list: "返回退货原因"
     back_to_store: "继续购物"
     back_to_users_list: "回到用户列表"
     backorderable: "可预订"
-    backorderable_default:
+    backorderable_default: "默认可预定"
     backordered: "待补"
-    backorders_allowed:
+    backorders_allowed: "允许预定"
     balance_due: "尚欠款"
-    base_amount:
-    base_percent:
+    base_amount: "基准量"
+    base_percent: "基准百分比"
     bill_address: "账单地址"
     billing: "账单"
     billing_address: "账单地址"
@@ -524,8 +537,8 @@ zh-CN:
     calculator_settings_warning: "如果你正在修改计算方式，你必须在编辑计算器设置之前先保存"
     cancel: "取消"
     canceled_at: "取消时间"
-    canceler:
-    cannot_create_customer_returns:
+    canceler: "取消者"
+    cannot_create_customer_returns: "无法新建顾客退还的事件"
     cannot_create_payment_without_payment_methods: "您无法在没有定义任何支付方式的情况下进行支付。"
     cannot_create_returns: "没有配送的订单不能申请退货"
     cannot_perform_operation: "无法执行请求的操作"
@@ -534,7 +547,7 @@ zh-CN:
     capture_events:
     card_code: "卡验证码"
     card_number: "卡号"
-    card_type:
+    card_type: "卡类型"
     card_type_is: "卡的类型是"
     cart: "购物车"
     cart_subtotal: "金额"
@@ -549,10 +562,10 @@ zh-CN:
     choose_dashboard_locale: "选择控制面板语言"
     choose_location:
     city: "城市"
-    clear_cache:
-    clear_cache_ok:
-    clear_cache_warning:
-    click_and_drag_on_the_products_to_sort_them:
+    clear_cache: "清除缓存"
+    clear_cache_ok: "清除缓存完毕"
+    clear_cache_warning: "清除缓存警告"
+    click_and_drag_on_the_products_to_sort_them: "点击并且拖拽商品来调整顺序"
     clone: "复制"
     close: "关闭"
     close_all_adjustments: "禁用所有价格调整"
@@ -612,8 +625,8 @@ zh-CN:
     customer: "顾客"
     customer_details: "顾客详细信息"
     customer_details_updated: "已更新客户的详细信息"
-    customer_return:
-    customer_returns:
+    customer_return: "顾客退还"
+    customer_returns: "顾客退还"
     customer_search: "顾客搜索"
     cut: "剪下"
     cvv_response:
@@ -652,8 +665,8 @@ zh-CN:
     display_currency: "显示货币符号"
     doesnt_track_inventory:
     edit: "编辑"
-    editing_resource:
-    editing_rma_reason:
+    editing_resource: "正在编辑资源"
+    editing_rma_reason: "正在编辑退货原因"
     editing_user: "编辑用户"
     eligibility_errors:
       messages:
@@ -742,7 +755,7 @@ zh-CN:
     i18n:
       available_locales: "可用的语言"
       language: "语言"
-      localization_settings:
+      localization_settings: "本地化设置"
       this_file_language: "中文(简体)"
       translations: "翻译"
     icon: "图标"
@@ -757,14 +770,14 @@ zh-CN:
     included_price_validation: "除非您设置了默认的缴税区域，否则无法选择"
     incomplete:
     info_number_of_skus_not_shown:
-    info_product_has_multiple_skus:
+    info_product_has_multiple_skus: "该商品包含%{count}个SKU:"
     instructions_to_reset_password: "请填写如下表格来重置你的密码，重置后的密码会通过电子邮件发送给您"
     insufficient_stock: "库存不足，当前还剩下%{on_hand}件库存"
     insufficient_stock_lines_present:
     intercept_email_address: "用于接收邮件的邮箱地址"
     intercept_email_instructions: "使用以下邮箱地址覆盖所有收件人邮箱"
-    internal_name:
-    invalid_credit_card:
+    internal_name: "国际名称"
+    invalid_credit_card: "无效的信用卡"
     invalid_exchange_variant:
     invalid_payment_provider: "无效的支付服务提供商。"
     invalid_promotion_action: "无效的优惠方式。"
@@ -815,18 +828,18 @@ zh-CN:
     make_refund: "进行退款??"
     make_sure_the_above_reimbursement_amount_is_correct:
     manage_promotion_categories:
-    manage_variants:
+    manage_variants: "编辑商品选项"
     manual_intervention_required:
     master_price: "默认价格"
     match_choices:
       all: "全部"
       none: "清空"
     max_items: "最大商品项??"
-    member_since:
+    member_since: "计算起始日期"
     memo:
     meta_description: "元描述"
     meta_keywords: "关键字"
-    meta_title:
+    meta_title: "标题"
     metadata: "元数据"
     minimal_amount: "少量"
     month: "月"
@@ -836,7 +849,7 @@ zh-CN:
     my_orders: "我的订单"
     show_my_orders: "查看我的订单"
     name: "名称"
-    name_on_card:
+    name_on_card: "卡上的名称"
     name_or_sku: "名称或条形码（输入产品名称中的至少4个字母）"
     new: "新建"
     new_adjustment: "新建调整"
@@ -857,40 +870,41 @@ zh-CN:
     new_refund: "新建退货"
     new_refund_reason: "退货原因"
     new_return_authorization: "新建返回授权"
-    new_rma_reason:
+    new_role: "新建角色"
+    new_rma_reason: "新建退货原因"
     new_shipment_at_location:
     new_shipping_category: "新建配送分类"
     new_shipping_method: "新建配送方式"
     new_state: "新建省份"
     new_stock_location: "添加仓库位置"
-    new_stock_movement:
-    new_stock_transfer:
+    new_stock_movement: "新建库存转移记录"
+    new_stock_transfer: "新建库存转移"
     new_tax_category: "新建缴税类型"
     new_tax_rate: "新建税率"
     new_taxon: "新建分类"
     new_taxonomy: "新建分类层级"
-    new_tracker: New Tracker
+    new_tracker: "新建追踪"
     new_user: "新建用户"
     new_variant: "新建具体型号"
     new_zone: "新建区域"
     next: "下一页"
     no_actions_added: "未添加动作"
-    no_payment_found:
-    no_pending_payments:
+    no_payment_found: "没有找到支付"
+    no_pending_payments: "没有找到等待中的支付"
     no_products_found: "找不到产品"
     no_resource_found: "找不到资源"
     no_results: "无任何结果"
-    no_returns_found:
+    no_returns_found: "无退货"
     no_rules_added: "未添加规则"
-    no_shipping_method_selected:
-    no_state_changes:
+    no_shipping_method_selected: "没有配送方式被选中"
+    no_state_changes: "无状态变更"
     no_tracking_present: "未提供跟踪细节。"
     none: "没有"
-    none_selected:
+    none_selected: "未被选中"
     normal_amount: Normal Amount
     not: false
     not_available: N/A
-    not_enough_stock:
+    not_enough_stock: "库存不足"
     not_found: "未找到%{resource}"
     note:
     notice_messages:
@@ -900,7 +914,7 @@ zh-CN:
       product_not_deleted: "产品无法被删除"
       variant_deleted: "具体型号已经被删除"
       variant_not_deleted: "具体型号不能被删除"
-    num_orders:
+    num_orders: "订单数量"
     on_hand: "库存"
     open: "打开"
     open_all_adjustments: "启用所有价格调整"
@@ -962,6 +976,7 @@ zh-CN:
     order_total: "订单总计"
     order_updated: "订单已更新"
     orders: "订单"
+    order_line_items: "订单商品条目"
     other_items_in_other:
     out_of_stock: "没有库存"
     overview: "首页"
@@ -997,7 +1012,7 @@ zh-CN:
       void: "无效"
     payment_updated: "支付已更新"
     payments: "支付"
-    pending:
+    pending: "等待中"
     percent: "百分比"
     percent_per_item: "单件百分比"
     permalink: "永久链接"
@@ -1102,9 +1117,9 @@ zh-CN:
     receive_stock:
     received: "已收到"
     reception_status:
-    reference:
+    reference: "提及"
     refund: "退款"
-    refund_amount_must_be_greater_than_zero:
+    refund_amount_must_be_greater_than_zero: "退款金额必须大于0"
     refund_reasons: "退货原因"
     refunded_amount: "退货数量"
     refunds: "退货"
@@ -1125,12 +1140,12 @@ zh-CN:
         total_refunded:
     reimbursement_perform_failed:
     reimbursement_status:
-    reimbursement_type:
-    reimbursement_type_override:
-    reimbursement_types:
-    reimbursements:
-    reject:
-    rejected:
+    reimbursement_type: "退款种类"
+    reimbursement_type_override: "退款种类覆盖"
+    reimbursement_types: "退款种类"
+    reimbursements: "退款"
+    reject: "驳回"
+    rejected: "已驳回"
     remember_me: "记住我"
     remove: "移出"
     rename: "重命名"
@@ -1144,6 +1159,9 @@ zh-CN:
     return: "退回"
     return_authorization: "退货审批"
     return_authorization_reasons: "退货审批原因"
+    return_authorization_states:
+      authorized: 已授权
+      canceled: 取消的
     return_authorization_updated: "退货审批已更新"
     return_authorizations: "退货审批"
     return_item_inventory_unit_ineligible:
@@ -1183,7 +1201,7 @@ zh-CN:
     select_a_return_authorization_reason: "选择退货原因"
     select_a_stock_location: "选择库存区域"
     select_from_prototype: "从原型中选择"
-    select_stock:
+    select_stock: "选择库存区域"
     send_copy_of_all_mails_to: "将所有邮件的副本发送至"
     send_mails_as: "发送邮件作为"
     server: "服务器"
@@ -1191,7 +1209,7 @@ zh-CN:
     settings: "设置"
     ship: "发货"
     ship_address: "配送地址"
-    ship_total:
+    ship_total: "总运费"
     shipment: "配送"
     shipment_adjustments:
     shipment_details:
@@ -1247,8 +1265,8 @@ zh-CN:
     ssl:
       change_protocol:
     start: "开始"
-    state: "省份"
-    state_based: "根据省份"
+    state: "状态"
+    state_based: "根据状态"
     state_machine_states:
       accepted: "已接受"
       address: "地址"
@@ -1288,7 +1306,7 @@ zh-CN:
     stock_location: "库存区域"
     stock_location_info: "库存区域资讯"
     stock_locations: "库存区域"
-    stock_locations_need_a_default_country:
+    stock_locations_need_a_default_country: "库存区域需要制定一个国家"
     stock_management: "库存管理"
     stock_management_requires_a_stock_location: "请先新增库存区域，才可使用库存管理"
     stock_movements: "库存动向"
@@ -1312,9 +1330,9 @@ zh-CN:
     tax: "税"
     tax_categories: "缴税分类"
     tax_category: "缴税分类"
-    tax_code:
-    tax_included:
-    tax_rate_amount_explanation:
+    tax_code: "交税代码"
+    tax_included: "包含的税"
+    tax_rate_amount_explanation: "税率数量的解释"
     tax_rates: "税率"
     taxon: "分类"
     taxon_edit: "编辑分类"
@@ -1354,13 +1372,14 @@ zh-CN:
     total_sales: "总销量"
     track_inventory: "库存追踪"
     tracking: "追踪"
-    tracking_number:
-    tracking_url:
-    tracking_url_placeholder: "比如，http://quickship.com/package?num=:tracking"
-    transaction_id:
-    transfer_from_location:
-    transfer_stock:
-    transfer_to_location:
+    tracking_number: "货运单号"
+    tracking_url: "货运查询地址"
+    tracking_url_placeholder: "比如，http://www.sf-express.com/cn/sc/dynamic_functions/waybill/"
+    transaction: "交易"
+    transaction_id: "交易号"
+    transfer_from_location: "转移起始地"
+    transfer_stock:  "转移库存"
+    transfer_to_location: "转移至"
     tree: "树"
     type: "类型"
     type_to_search: "搜索类型"
@@ -1407,3 +1426,5 @@ zh-CN:
     zipcode: "邮编"
     zone: "区域"
     zones: "区域"
+    store_credit_categories: "积分分类"
+    new_store_credit_category: "新建积分分类"

@@ -1,0 +1,27 @@
+zh-CN:
+  spree:
+    api:
+      must_specify_api_key: "你必须指定一个API key."
+      invalid_api_key: "被指定的API key (%{key}) 无效."
+      unauthorized: "你还没有被授权去执行该操作."
+      invalid_resource: "无效的资源. 请解决问题后再尝试."
+      resource_not_found: "没有找到你要找的资源."
+      gateway_error: "在该支付渠道中出现了问题: %{text}"
+      access: "API 准许"
+      key: "Key"
+      clear_key: "清除Key"
+      regenerate_key: "重新生成Key"
+      no_key: "没有key"
+      generate_key: "生成API key"
+      key_generated: "生成Key成功"
+      key_cleared: "Key已被清除"
+      order:
+        could_not_transition: "订单无法被转换. 请再解决问题后再尝试."
+        invalid_shipping_method: "无效的配送方式."
+      payment:
+        credit_over_limit: "指定支付方式最多可以有 %{limit} 种."
+        update_forbidden: "支付无法被更新因为它的状态是 %{state}."
+      shipment:
+        cannot_ready: "配送无法就绪."
+      stock_location_required: "为了取得库存的变动记录 必须要提供一个 库存区域id 参数."
+      invalid_taxonomy_id: "无效的分类id."
