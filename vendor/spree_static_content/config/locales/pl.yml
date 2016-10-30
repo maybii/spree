@@ -1,0 +1,26 @@
+---
+pl:
+  activerecord:
+    attributes:
+      spree/page:
+        body: Zawartość
+        foreign_link: Odnośnik zewnętrzny
+        layout: Układ
+        meta_description: "Skrócony opis (SEO)"
+        meta_keywords: "Słowa kluczowe (SEO)"
+        meta_title: "Tytuł (w nagłówku przeglądarki)"
+        position: Pozycja
+        render_layout_as_partial: "Render układ jako częściowe"
+        show_in_header: "Pokaż w nagłówku"
+        show_in_sidebar: "Pokaż w pasku bocznym"
+        slug: Skrót
+        title: Tytuł
+        visible: Widoczna
+    models:
+      spree/page:
+        one: Strona
+        other: "Strony statyczne"
+  spree:
+    static_content:
+      link: Odnośnik
+      new_page: "Nowa strona"

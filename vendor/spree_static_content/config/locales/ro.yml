@@ -1,0 +1,26 @@
+---
+ro:
+  activerecord:
+    attributes:
+      spree/page:
+        body: Content de bază
+        foreign_link: "Link extern (URL)"
+        layout: Machet
+        meta_description: Descriere
+        meta_keywords: "Cuvinte Cheie"
+        meta_title: Titlu meta
+        position: Poziția în meniu
+        render_layout_as_partial: "Utilizează șablonul ca un machet"
+        show_in_header: "Arată în header"
+        show_in_sidebar: "Arată în bara laterală"
+        slug: Permalink
+        title: Titlu
+        visible: Vizibilitate
+    models:
+      page:
+        one: Pagină
+        other: Pagini
+  spree:
+    static_content:
+      link: Link
+      new_page: "Pagină nouă"

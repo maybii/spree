@@ -4,7 +4,6 @@
   <thead>
     <tr data-hook="states_header">
       <th><%= Spree.t(:name) %></th>
-      <th class="text-center"><%= Spree.t(:abbreviation) %></th>
       <th class="actions"></th>
     </tr>
   </thead>
@@ -12,7 +11,6 @@
     <% @states.each do |state| %>
       <tr id="<%= spree_dom_id state %>" data-hook="states_row">
         <td><%= state.name %></td>
-        <td class="text-center"><%= state.abbr %></td>
         <td class="actions actions-2 text-right">
           <%= link_to_edit(state, :no_text => true) if can? :edit, state %>
           <%= link_to_delete(state, :no_text => true) if can? :delete, state %>

@@ -493,7 +493,7 @@ zh-CN:
     already_signed_up_for_analytics: "您已注册Spree Analytics帐号"
     alt_text: "其他文本"
     alternative_phone: "其他电话"
-    amount: "金额"
+    amount: "金额(元)"
     analytics_desc_header_1: Spree Analytics
     analytics_desc_header_2:
     analytics_desc_list_1:
@@ -534,7 +534,7 @@ zh-CN:
     billing_address: "账单地址"
     both: "全部"
     calculated_reimbursements:
-    calculator: "计算器"
+    calculator: "计算方式"
     calculator_settings_warning: "如果你正在修改计算方式，你必须在编辑计算器设置之前先保存"
     cancel: "取消"
     canceled_at: "取消时间"
@@ -735,7 +735,7 @@ zh-CN:
     first_item: "首件产品价格??"
     first_name: "姓名"
     first_name_begins_with: "姓名"
-    flat_percent: "固定费率"
+    flat_percent: "固定费率(按百分比)"
     flat_rate_per_order: "固定费率 (每订单)"
     flexible_rate: "灵活费率"
     forgot_password: "忘记密码"
@@ -1102,12 +1102,12 @@ zh-CN:
     promotion_uses: "促销使用频率"
     promotionable:
     promotions: "促销"
-    propagate_all_variants:
+    propagate_all_variants: "应用到所有子产品"
     properties: "属性"
     property: "属性"
     prototype: "原型"
     prototypes: "原型"
-    provider: "提供者"
+    provider: "支付渠道"
     provider_settings_warning: "如果您正在修改提供者类型，您需要在编辑提供者设置之前先保存。"
     qty: "数量"
     quantity: "数量"
@@ -1242,7 +1242,7 @@ zh-CN:
     shipping_categories: "配送类型"
     shipping_category: "配送分类"
     shipping_flat_rate_per_item: "以单项计固定费率"
-    shipping_flat_rate_per_order: "固定费率"
+    shipping_flat_rate_per_order: "固定费率 (每订单)"
     shipping_flexible_rate: "以每项计弹性价格"
     shipping_instructions: "配送指南"
     shipping_method: "配送方式"
@@ -1270,7 +1270,7 @@ zh-CN:
       change_protocol:
     start: "开始"
     state: "状态"
-    state_based: "根据状态"
+    state_based: "根据省份"
     state_machine_states:
       accepted: "已接受"
       address: "地址"
@@ -1429,6 +1429,6 @@ zh-CN:
     zip: "邮编"
     zipcode: "邮编"
     zone: "区域"
-    zones: "区域"
+    zones: "销售区域"
     store_credit_categories: "积分分类"
     new_store_credit_category: "新建积分分类"

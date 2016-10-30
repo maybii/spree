@@ -1,0 +1,26 @@
+---
+fr:
+  activerecord:
+    attributes:
+      spree/page:
+        body: Corps
+        foreign_link: "Lien extérieur (URL)"
+        layout: Layout
+        meta_description: "Meta Description"
+        meta_keywords: "Meta Mots-clés"
+        meta_title: "Meta Titre"
+        position: Position
+        render_layout_as_partial: "Rendu disposition partielle"
+        show_in_header: "Visible en entête"
+        show_in_sidebar: "Visible dans la sidebar"
+        slug: Slug
+        title: Titre
+        visible: Visible
+    models:
+      spree/page:
+        one: Page
+        other: Pages
+  spree:
+    static_content:
+      link: Lien
+      new_page: "Nouvelle page"

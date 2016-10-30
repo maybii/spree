@@ -17,7 +17,7 @@
           <%= zone_form.text_field :description, :class => 'form-control' %>
         <% end %>
 
-        <div data-hook="default" class="checkbox">
+        <div data-hook="default" class="checkbox hidden">
           <%= label_tag "zone[#{:default_tax}" do %>
             <%= zone_form.check_box :default_tax %>
             <%= Spree.t(:default_tax_zone) %>

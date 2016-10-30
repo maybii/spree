@@ -1,0 +1,9 @@
+---
+sv:
+  spree:
+    enable_rich_editor: Aktivera Texthanterare
+    rich_editor: Texthanterare
+    rich_editor_description: Konfigurera Texthanterare inställningar.
+    rich_editor_engine: Texthanterare motor
+    rich_editor_ids: Texthanterare identifierare
+    rich_editor_ids_description: "Lista textfältens id-taggar separerade med blanksteg"

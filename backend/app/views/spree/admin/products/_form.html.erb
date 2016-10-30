@@ -1,4 +1,3 @@
-
 <div data-hook="admin_product_form_fields">
 
   <div class="row">
@@ -14,8 +13,8 @@
 
       <div data-hook="admin_product_form_slug">
         <%= f.field_container :slug, class: ['form-group'] do %>
-          <%= f.label :slug, raw('产品链接' + content_tag(:span, ' *', class: "required") + '( 仅包含字母,数字或者- )') %>
-          <%= f.text_field :slug, class: 'form-control title' %>
+          <%= f.label :slug, raw('产品链接' + content_tag(:span, ' *', class: "required") + '( 仅包含字母,数字或者"-" )') %>
+          <%= f.text_field :slug, class: 'form-control title', placeholder: '例如: chan-ping-xxx' %>
           <%= f.error_message_on :slug %>
         <% end %>
       </div>

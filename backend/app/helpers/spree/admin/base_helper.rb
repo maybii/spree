@@ -121,6 +121,7 @@ module Spree
       def preference_fields(object, form)
         return unless object.respond_to?(:preferences)
         fields = object.preferences.keys.map { |key|
+          next if key == :currency
           if object.has_preference?(key)
             form.label("preferred_#{key}", Spree.t(key) + ": ") +
               preference_field_for(form, "preferred_#{key}", type: object.preference_type(key))

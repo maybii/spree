@@ -1,0 +1,28 @@
+---
+ru:
+  activerecord:
+    attributes:
+      spree/page:
+        body: Основной текст
+        foreign_link: "Внешняя ссылка (URL)"
+        layout: Макет
+        meta_description: Описание
+        meta_keywords: "Ключевые слова"
+        meta_title: "Мета заголовок"
+        position: Позиция в меню
+        render_layout_as_partial: Использовать макет как шаблон страниц
+        show_in_header: "Отображать в верхнем меню"
+        show_in_sidebar: "Отображать в боковом меню"
+        slug: "Постоянная ссылка"
+        title: Заголовок
+        visible: Публиковать
+    models:
+      spree/page:
+        few: Страницы
+        many: Страниц
+        one: Страница
+        other: Страницы
+  spree:
+    static_content:
+      link: Ссылка
+      new_page: "Новая страница"

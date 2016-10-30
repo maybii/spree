@@ -1,0 +1,26 @@
+---
+et:
+  activerecord:
+    attributes:
+      spree/page:
+        body: Sisu
+        foreign_link: "Väline link (URL)"
+        layout: Layout
+        meta_description: "Meta kirjeldus"
+        meta_keywords: "Meta võtmesõnad"
+        meta_title: "Meta pealkiri"
+        position: Positsioon
+        render_layout_as_partial: "Render paigutus osaliseks"
+        show_in_header: "Kuva lehekülj päises"
+        show_in_sidebar: "Kuva lehekülg küljeribal"
+        slug: Püsiviide
+        title: Pealkiri
+        visible: Nähtav
+    models:
+      spree/page:
+        one: Lehekülg
+        other: Leheküljed
+  spree:
+    static_content:
+      link: Link
+      new_page: "Uus lehekülg"

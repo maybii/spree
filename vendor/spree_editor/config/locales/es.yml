@@ -1,0 +1,9 @@
+---
+es:
+  spree:
+    enable_rich_editor: Activar editor avanzado
+    rich_editor: Editor avanzado
+    rich_editor_description: Configurar opciones del editor.
+    rich_editor_engine: Motor del editor avanzado
+    rich_editor_ids: Identificadores del editor avanzado
+    rich_editor_ids_description: "Listar aquí los ids de los textareas, separados por espacios"

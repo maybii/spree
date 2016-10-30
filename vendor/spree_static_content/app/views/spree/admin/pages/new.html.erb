@@ -1,0 +1,5 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:new_page, scope: :static_content) %>
+<% end %>
+
+<%= render 'form', resource: @page %>

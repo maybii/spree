@@ -1,0 +1,11 @@
+<%= javascript_include_tag 'ckeditor/init' %>
+
+<script>
+  $(function() {
+    <% ids.each do |id| %>
+      if ($("#<%= id %>").length > 0) {
+        CKEDITOR.replace("<%= id %>");
+      }
+    <% end %>
+  });
+</script>

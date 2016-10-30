@@ -1,0 +1,26 @@
+---
+nl:
+  activerecord:
+    attributes:
+      spree/page:
+        body: Body
+        foreign_link: "Externe link (URL)"
+        layout: Layout
+        meta_description: "Meta Description"
+        meta_keywords: "Meta Keywords"
+        meta_title: "Meta Title"
+        position: Positie
+        render_layout_as_partial: "Render layout als gedeeltelijke"
+        show_in_header: "Toon in header?"
+        show_in_sidebar: "Toon in zijbalk?"
+        slug: Slug
+        title: Titel
+        visible: Zichtbaar?
+    models:
+      spree/page:
+        one: Page
+        other: "Statische pagina's"
+  spree:
+    static_content:
+      link: Link
+      new_page: "Nieuwe pagina"
