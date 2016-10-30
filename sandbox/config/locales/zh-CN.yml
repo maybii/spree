@@ -114,6 +114,7 @@ zh-CN:
         name: "名称"
       spree/product:
         available_on: "上架日期"
+        discontinue_on: "下架日期"
         cost_currency: "成本币种"
         cost_price: "成本"
         description: "描述"
@@ -259,8 +260,8 @@ zh-CN:
         one: "单项"
         other: "单项"
       spree/option_type:
-        one: "选项类型"
-        other: "选项类型"
+        one: "商品类型属性"
+        other: "商品类型属性"
       spree/option_value:
       spree/order:
         one: "订单"
@@ -454,7 +455,7 @@ zh-CN:
     admin:
       tab:
         configuration: "配置"
-        option_types: "选项类型"
+        option_types: "商品类型属性"
         orders: "订单"
         overview: "概览"
         products: "产品"
@@ -660,6 +661,8 @@ zh-CN:
     destroy: "删除"
     details: "详情"
     discount_amount: "折扣金额"
+    discontinue_on: "下架日期"
+    discontinued: "已下架的"
     dismiss_banner: "不，谢谢！我对此不感兴趣，请不要再显示此信息。"
     display: "显示"
     display_currency: "显示货币符号"
@@ -770,7 +773,7 @@ zh-CN:
     included_price_validation: "除非您设置了默认的缴税区域，否则无法选择"
     incomplete:
     info_number_of_skus_not_shown:
-    info_product_has_multiple_skus: "该商品包含%{count}个SKU:"
+    info_product_has_multiple_skus: "该商品包含%{count}个具体型号:"
     instructions_to_reset_password: "请填写如下表格来重置你的密码，重置后的密码会通过电子邮件发送给您"
     insufficient_stock: "库存不足，当前还剩下%{on_hand}件库存"
     insufficient_stock_lines_present:
@@ -828,7 +831,7 @@ zh-CN:
     make_refund: "进行退款??"
     make_sure_the_above_reimbursement_amount_is_correct:
     manage_promotion_categories:
-    manage_variants: "编辑商品选项"
+    manage_variants: "编辑商品型号"
     manual_intervention_required:
     master_price: "默认价格"
     match_choices:
@@ -857,7 +860,7 @@ zh-CN:
     new_customer: "注册"
     new_customer_return:
     new_image: "新建图片"
-    new_option_type: "新建选项类型"
+    new_option_type: "新建商品类型属性"
     new_order: "新建订单"
     new_order_completed: "新建订单完成"
     new_payment: "新建支付"
@@ -918,9 +921,9 @@ zh-CN:
     on_hand: "库存"
     open: "打开"
     open_all_adjustments: "启用所有价格调整"
-    option_type: "选项类型"
-    option_type_placeholder: "选项类型默认值"
-    option_types: "选项类型"
+    option_type: "商品类型属性"
+    option_type_placeholder: "商品类型属性默认值"
+    option_types: "商品类型属性"
     option_value: "选项值"
     option_values: "选项值"
     optional: "可选的"
@@ -1250,14 +1253,15 @@ zh-CN:
     shopping_cart: "购物车"
     show: "显示"
     show_active: "显示激活的"
-    show_deleted: "显示删除的"
+    show_deleted: "显示已删除的"
+    show_discontinued: "显示下架的"
     show_only_complete_orders: "只显示完整的订单"
     show_only_considered_risky: "只显示有风险的"
     show_rate_in_label:
     signup: "注册"
     sku: "条形码"
-    skus:
-    slug:
+    skus: "条形码"
+    slug: ""
     source: "来源"
     special_instructions: "特别说明"
     split: "分拆"

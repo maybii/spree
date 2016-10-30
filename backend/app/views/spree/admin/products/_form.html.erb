@@ -71,7 +71,7 @@
 
       <% if @product.has_variants? %>
         <div data-hook="admin_product_form_multiple_variants" class="well">
-          <%= f.label :skus, Spree.t(:sku).pluralize %>
+          <%= f.label :skus, Spree.t(:sku) %>
           <div class="info marginb">
             <%= Spree.t(:info_product_has_multiple_skus, count: @product.variants.size) %>
             <ul class="text_list">
