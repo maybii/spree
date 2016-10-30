@@ -80,13 +80,12 @@
                 <table>
                   <thead><tr><th width="25%"></th><th class="75%"></th></tr></thead>
                   <tbody>
-                    <tr><td  class="text-right table-title">配 料 表：</td><td>植脂末【葡萄糖浆，清华棕榈油，乳化剂（酪蛋白酸钠，单.双甘油脂肪酸酯），稳定剂（磷酸氢二钾）】全脂奶粉，食盐，速溶绿茶粉。</td></tr>
-                    <tr><td  class="text-right table-title">净 含 量：</td><td>360克</td></tr>
-                    <tr><td  class="text-right table-title">生产日期：</td><td>详见实物包装标识处</td></tr>
-                    <tr><td  class="text-right table-title">储存方法：</td><td>请置于阴凉干燥处保存</td></tr>
-                    <tr><td  class="text-right table-title">保 质 期：</td><td>12个月</td></tr>
-                    <tr><td  class="text-right table-title">适合人群：</td><td>非婴幼儿</td></tr>
-                    <tr><td  class="text-right table-title">退货政策：</td><td>不支持7天无理由退货</td></tr>
+                    <% @product.properties.each do |property| %>
+                      <tr>
+                        <td  class="text-right table-title"> <%= property.name %>：</td>
+                        <td> <%= @product.property(property.name) %></td>
+                      </tr>
+                    <% end %>
                   </tbody>
                 </table>
               </div>
