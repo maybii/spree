@@ -97,8 +97,7 @@
             <div class="login-btns">
               <div class="login-btn-item col-xs-6">
                 <% if spree_current_user %>
-                  <span>待付款</span>
-                  <a href="/account"> <%= @order_unpaid_count %></a>
+                  <a href="/account"> <span>待付款</span> <%= @order_unpaid_count %></a>
                 <% else %>
                   <i class="icon-lock"></i>
                   <%=link_to "登录", '/login', class: "" %>
@@ -106,8 +105,7 @@
               </div>
               <div class="login-btn-item col-xs-6">
                 <% if spree_current_user %>
-                  <span> 待收货 </span>
-                  <a href="/account"> <%= @order_shipping_count  %> </a>
+                  <a href="/account"> <span> 待收货 </span> <%= @order_shipping_count  %> </a>
                 <% else %>
                   <i class="icon-edit"></i>
                   <%=link_to "注册", '/signup', class: ""  %>
