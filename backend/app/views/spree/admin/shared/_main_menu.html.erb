@@ -23,7 +23,7 @@
 <% end %>
 
 <% if can? :admin, Spree::Promotion %>
-  <ul class="nav nav-sidebar">
+  <ul class="nav nav-sidebar hidden">
     <%= main_menu_tree Spree.t(:promotions), icon: "gift", sub_menu: "promotion", url: "#sidebar-promotions" %>
   </ul>
 <% end %>

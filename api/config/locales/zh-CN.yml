@@ -7,7 +7,7 @@ zh-CN:
       invalid_resource: "无效的资源. 请解决问题后再尝试."
       resource_not_found: "没有找到你要找的资源."
       gateway_error: "在该支付渠道中出现了问题: %{text}"
-      access: "API 准许"
+      access: "API 访问"
       key: "Key"
       clear_key: "清除Key"
       regenerate_key: "重新生成Key"

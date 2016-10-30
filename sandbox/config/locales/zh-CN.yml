@@ -470,8 +470,8 @@ zh-CN:
       user:
         account: "账户"
         addresses: "地址"
-        items: "条目"
-        items_purchased: "已购买条目"
+        items: "购买列表"
+        items_purchased: "已购买列表"
         order_history: "订单历史"
         order_num: "订单号"
         orders: "订单"
@@ -608,7 +608,7 @@ zh-CN:
     create: "同意协议并注册"
     already_exist_account: "已有账号？"
     create_a_new_account: "不是会员？<span class='go_register'>去注册</span>"
-    create_new_order:
+    create_new_order: "创建新订单"
     create_reimbursement:
     created_at: "创建日期"
     credit: "欠款??"
