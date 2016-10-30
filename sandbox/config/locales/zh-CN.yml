@@ -148,7 +148,7 @@ zh-CN:
         abbr: "缩写"
         name: "名称"
       spree/state_change:
-        state_changes: "状态变更"
+        state_changes: "状态变更记录"
         state_from:
         state_to:
         timestamp: "时间"
@@ -442,13 +442,13 @@ zh-CN:
     additional_item: "额外项目花费"
     address1: "地址"
     address2: "地址（继续）"
-    adjustable:
+    adjustable: "调整名字"
     adjustment: "调整"
     adjustment_amount: "金额"
     adjustment_successfully_closed: "价格调整已被禁用！"
     adjustment_successfully_opened: "价格调整已被启用！"
     adjustment_total: "调整总数"
-    adjustments: "其他调整"
+    adjustments: "其他调整(如补差价)"
     available: "可用的"
     new_shipping_address: "添加收货地址"
     admin:
@@ -501,9 +501,9 @@ zh-CN:
     analytics_desc_list_4: "完全免费"
     analytics_trackers: "追踪分析"
     and: "以及"
-    approve: "核准"
-    approved_at: "核准日期"
-    approver: "核准者"
+    approve: "人工审核通过"
+    approved_at: "审核日期"
+    approver: "审核者"
     are_you_sure: "你确定么？"
     are_you_sure_delete: "你确定你要删除这条记录么?"
     associated_adjustment_closed: "相关联的价格调整已被关闭，并且不会被重复计算。您需要启用它吗？"
@@ -613,7 +613,7 @@ zh-CN:
     credit: "欠款??"
     credit_card: "信用卡"
     credit_cards: "信用卡"
-    credit_owed: "应予退款"
+    credit_owed: "信用卡欠款"
     credits:
     currency: "币种"
     currency_decimal_mark:
@@ -730,8 +730,8 @@ zh-CN:
     finalized:
     find_a_taxon: "查找一种分类"
     first_item: "首件产品价格??"
-    first_name: "名"
-    first_name_begins_with: "名的开始"
+    first_name: "姓名"
+    first_name_begins_with: "姓名"
     flat_percent: "固定费率"
     flat_rate_per_order: "固定费率 (每订单)"
     flexible_rate: "灵活费率"
@@ -964,7 +964,7 @@ zh-CN:
       awaiting_return: "等待退货"
       canceled: "取消"
       cart: "购物车"
-      complete: "完成"
+      complete: "已下单"
       confirm: "确认"
       considered_risky:
       delivery: "配送"
@@ -1004,7 +1004,7 @@ zh-CN:
       balance_due: "等待买家付款"
       checkout: "支付"
       completed: "完成"
-      credit_owed: credit owed
+      credit_owed: "信用卡欠款"
       failed: "失败"
       paid: "已支付"
       pending: "等待中"
@@ -1139,7 +1139,7 @@ zh-CN:
         subject:
         total_refunded:
     reimbursement_perform_failed:
-    reimbursement_status:
+    reimbursement_status: "退款状态"
     reimbursement_type: "退款种类"
     reimbursement_type_override: "退款种类覆盖"
     reimbursement_types: "退款种类"
@@ -1151,7 +1151,7 @@ zh-CN:
     rename: "重命名"
     report:
     reports: "报表"
-    resend: "重新发送"
+    resend: "重新发送订单状态邮件"
     reset_password: "重置密码"
     response_code: "返回代码"
     resume: "恢复"
@@ -1252,7 +1252,7 @@ zh-CN:
     show_active: "显示激活的"
     show_deleted: "显示删除的"
     show_only_complete_orders: "只显示完整的订单"
-    show_only_considered_risky:
+    show_only_considered_risky: "只显示有风险的"
     show_rate_in_label:
     signup: "注册"
     sku: "条形码"
