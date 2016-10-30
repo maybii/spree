@@ -39,7 +39,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <%= label_tag :q_number_cont, Spree.t(:order_number, :number => '') %>
-            <%= f.text_field :number_cont, class: 'form-control js-quick-search-target' %>
+            <%= f.text_field :number_cont, class: 'form-control js-quick-search-target', :placeholder => "关键字搜索" %>
           </div>
         </div>
 
@@ -47,7 +47,7 @@
 
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-4 hidden">
           <div class="form-group">
             <%= label_tag :q_state_eq, Spree.t(:status) %>
             <%= f.select :state_eq, Spree::Order.state_machines[:state].states.map {|s| [Spree.t("order_state.#{s.name}"), s.value]}, {:include_blank => true}, :class => 'select2 js-filterable' %>
@@ -79,7 +79,7 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 hidden">
           <div class="form-group">
             <%= label_tag :q_bill_address_lastname_start, Spree.t(:last_name_begins_with) %>
             <%= f.text_field :bill_address_lastname_start, class: 'form-control' %>
@@ -95,7 +95,7 @@
 
       </div>
 
-      <div class="row">
+      <div class="row hidden">
 
         <div class="col-md-4">
           <div class="form-group">

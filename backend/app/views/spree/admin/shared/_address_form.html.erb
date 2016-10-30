@@ -7,7 +7,7 @@
     <%= error_message_on f.object, :firstname %>
   <% end %>
 
-  <%= field_container f.object, :lastname, class: ["form-group", "#{type}-row"] do %>
+  <%= field_container f.object, :lastname, class: ["hidden form-group", "#{type}-row"] do %>
     <%= f.label :lastname, Spree.t(:last_name) %>
     <%= f.text_field :lastname, class: 'form-control' %>
     <%= error_message_on f.object, :lastname %>
@@ -27,7 +27,7 @@
     <%= error_message_on f.object, :address1 %>
   <% end %>
 
-  <%= field_container f.object, :address2, class: ["form-group", "#{type}-row"] do %>
+  <%= field_container f.object, :address2, class: ["hidden form-group", "#{type}-row"] do %>
     <%= f.label :address2, Spree.t(:street_address_2) %>
     <%= f.text_field :address2, class: 'form-control' %>
     <%= error_message_on f.object, :address2 %>
