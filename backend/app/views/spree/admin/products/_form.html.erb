@@ -14,7 +14,7 @@
 
       <div data-hook="admin_product_form_slug">
         <%= f.field_container :slug, class: ['form-group'] do %>
-          <%= f.label :slug, raw('产品链接' + content_tag(:span, ' *', class: "required")) %>
+          <%= f.label :slug, raw('产品链接' + content_tag(:span, ' *', class: "required") + '( 仅包含字母,数字或者- )') %>
           <%= f.text_field :slug, class: 'form-control title' %>
           <%= f.error_message_on :slug %>
         <% end %>
@@ -71,12 +71,11 @@
 
       <% if @product.has_variants? %>
         <div data-hook="admin_product_form_multiple_variants" class="well">
-          <%= f.label :skus, Spree.t(:sku) %>
           <div class="info marginb">
             <%= Spree.t(:info_product_has_multiple_skus, count: @product.variants.size) %>
             <ul class="text_list">
               <% @product.variants.first(5).each do |variant| %>
-                <li><%= variant.sku %></li>
+                <li><%= variant.option_values.map(&:name).join(' - ') %></li>
               <% end %>
             </ul>
             <% if @product.variants.size > 5 %>
@@ -196,7 +195,7 @@
   </div>
 
 
-  <div data-hook="admin_product_form_meta">
+  <div data-hook="admin_product_form_meta" class="hidden">
     <div data-hook="admin_product_form_meta_title">
       <%= f.field_container :meta_title, class: ['form-group'] do %>
         <%= f.label :meta_title, '搜索产品名称(请填写产品名称,可不填)' %>
