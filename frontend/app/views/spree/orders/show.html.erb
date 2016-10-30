@@ -4,6 +4,8 @@
 <%# end %>
 <%# end %>
 
+<% @is_payment_check = @order.payments.last.payment_method.type == Spree::PaymentMethod::Check.to_s rescue false%>
+
 <div class="row" data-hook="checkout_header">
   <div class="checkout-progress-wrapper" data-hook="checkout_progress">
     <%= checkout_progress %>
@@ -14,8 +16,21 @@
 <fieldset id="order_summary" data-hook="order_summary">
 
   <div class="order-info text-center">
-    <h4><i class="icon-check-circle color-green" aria-hidden="true"></i> <span>支付成功！我们将第一时间发货！</span></h4>
-    <p>支付金额： <span class="text-color"><%= @order.display_total.to_html %></span></p>
+    <h4><i class="icon-check-circle color-green" aria-hidden="true"></i>
+      <% if @is_payment_check %>
+        <span> 订单已生产!  客服人员将在24小时内联系您!</span>
+      <% else %>
+        <span>支付成功！我们将第一时间发货！</span>
+      <% end %>
+    </h4>
+    <p>
+      <% if @is_payment_check %>
+        应付金额：
+      <% else %>
+        支付金额：
+      <% end %>
+      <span class="text-color"><%= @order.display_total.to_html %></span>
+    </p>
     <div class="text-center">
       <div class="order-info-diveder">订单详情</div>
     </div>
