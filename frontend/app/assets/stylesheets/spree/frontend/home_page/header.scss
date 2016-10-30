@@ -135,6 +135,9 @@
       .login-btn-item{
         cursor: pointer;
         text-align: center;
+        > span{
+          vertical-align: middle;
+        }
         > a {
           line-height: 46px;
           vertical-align: middle;

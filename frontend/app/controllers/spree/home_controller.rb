@@ -10,6 +10,10 @@ module Spree
       @best_products = Spree::Product.order("sales_amount DESC").limit(12)
       @header_show_all = true
       @is_home = true
+      if spree_current_user
+        @order_unpaid_count = spree_current_user.orders.where(payment_state: 'balance_due').count
+        @order_shipping_count = spree_current_user.orders.where(shipment_state: 'shipped').count
+      end
     end
   end
 end
