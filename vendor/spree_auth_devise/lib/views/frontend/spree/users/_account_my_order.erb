@@ -92,7 +92,19 @@
                     <!-- <td class="order-operations text-center">取消订单</td> -->
                     <td class="order-operations text-center" style="vertical-align: middle">
                       <% if order.eligible_for_return_authorization? %>
-                        <%= link_to "申请退货", new_order_return_authorization_path(order) %>
+                        <% if order.return_authorizations.count == 0 %>
+                          <%= link_to "申请退货", new_order_return_authorization_path(order) %>
+                        <% else %>
+                          <%- last_return = order.return_authorizations.last %>
+                          <% if last_return.state == 'pending' %>
+                             退货审批中
+                          <% elsif last_return.state == 'canceled' %>
+                             退货审批失败
+                          <% elsif last_return.state == 'authorized' %>
+                             <p> 退货审批通过 </p>
+                             <p> 请联系客服退货 </p>
+                          <% end %>
+                        <% end %>
                       <% else %>
                         -
                       <% end %>

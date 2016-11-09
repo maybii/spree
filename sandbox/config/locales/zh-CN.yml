@@ -390,6 +390,7 @@ zh-CN:
       not_locked: "未冻结"
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
+    memo: "备忘录"
     canceled: "已取消"
     number: "号码"
     order_category:
@@ -423,6 +424,7 @@ zh-CN:
       refund:
       save: "保存"
       update: "更新"
+      authorize: "审核并通过"
     activate: "激活"
     active: "激活"
     add: "添加"
@@ -1165,8 +1167,9 @@ zh-CN:
     return_authorization: "退货审批"
     return_authorization_reasons: "退货审批原因"
     return_authorization_states:
-      authorized: 已授权
+      authorized: 已审核
       canceled: 已取消
+      pending: 等待审核
     return_authorization_updated: "退货审批已更新"
     return_authorizations: "退货审批"
     return_item_inventory_unit_ineligible:

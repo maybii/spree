@@ -46,3 +46,7 @@ check = Spree::PaymentMethod::Check.find_or_initialize_by(name: '账户转账')
 check.active = true
 check.description = "<p>开户行：中国农业银行 内蒙古二连浩特市友谊支行</p><p>农业银行卡号： 62284 5505 60101 94762  户名：明干巴雅尔</p>"
 check.save
+
+['商品需要维修', '收到的商品破损', '商品错发/漏发', '物品和描述不一致', '物品缺少部件', '商品质量问题', '其他'].each do |name|
+  Spree::ReturnAuthorizationReason.create(name: name)
+end

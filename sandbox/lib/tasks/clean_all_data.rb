@@ -22,3 +22,4 @@ Spree::Zone.destroy_all
 Spree::ShippingMethod.destroy_all
 Spree::Calculator.destroy_all
 Spree::PaymentMethod.destroy_all
+Spree::ReturnAuthorizationReason.destroy_all
