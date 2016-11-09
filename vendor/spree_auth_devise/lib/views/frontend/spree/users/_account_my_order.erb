@@ -78,8 +78,6 @@
                                 <div>物流查询：<a href="http://www.kuaidi100.com/" target="_blank">点击查询</a></div>
                               </div>
                               <% end %>
-
-
                             </div>
                           </div>
 
@@ -92,8 +90,14 @@
                       <p><%= link_to '订单详情', order_url(order) %></p>
                     </td>
                     <!-- <td class="order-operations text-center">取消订单</td> -->
-                    <td class="order-operations text-center"> - </td>
-
+                    <td class="order-operations text-center" style="vertical-align: middle">
+                      <% if order.eligible_for_return_authorization? %>
+                        <%= link_to "申请退货", new_order_return_authorization_path(order) %>
+                      <% else %>
+                        -
+                      <% end %>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               <% end %>

@@ -1,4 +1,5 @@
 <% content_for :page_actions do %>
+  <div data-hook="action-toolbar"></div>
   <% if @return_authorization.can_cancel? %>
     <%= button_link_to Spree.t('actions.cancel'), fire_admin_order_return_authorization_url(@order, @return_authorization, e: 'cancel'), method: :put, data: { confirm: Spree.t(:are_you_sure) }, icon: "delete" %>
   <% end %>

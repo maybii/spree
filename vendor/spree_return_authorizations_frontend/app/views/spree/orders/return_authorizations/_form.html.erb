@@ -1,0 +1,49 @@
+<% allow_return_item_changes = !@return_authorization.customer_returned_items? %>
+
+<div data-hook="return_authorization_form_fields">
+  <table class="index return-items-table">
+    <thead>
+      <tr data-hook="rma_header">
+        <th>
+          <% if allow_return_item_changes %>
+            <%= check_box_tag 'select-all' %>
+          <% end %>
+        </th>
+        <th><%= Spree.t(:product) %></th>
+        <th><%= Spree.t(:state) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= f.fields_for :return_items, @form_return_items do |item_fields| %>
+        <% return_item = item_fields.object %>
+        <% inventory_unit = return_item.inventory_unit %>
+        <% editable = inventory_unit.shipped? && allow_return_item_changes && return_item.reimbursement.nil? %>
+        <tr>
+          <td class="align-center" class="inventory-unit-checkbox">
+            <% if editable %>
+              <%= item_fields.hidden_field :inventory_unit_id %>
+              <%= item_fields.check_box :_destroy, {checked: return_item.persisted?, class: 'add-item', "data-price" => return_item.pre_tax_amount}, '0', '1' %>
+            <% end %>
+          </td>
+          <td>
+            <div class="variant-name"><%= inventory_unit.variant.name %></div>
+            <div class="variant-options"><%= inventory_unit.variant.options_text %></div>
+          </td>
+          <td class="align-center"><%= inventory_unit.state.humanize %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= f.field_container :reason do %>
+    <%= f.label :reason, Spree.t(:reason) %>
+    <%= f.select :return_authorization_reason_id, @reasons.collect{|r|[r.name, r.id]}, {include_blank: true}, {class: 'select2 fullwidth', "data-placeholder" => Spree.t(:select_a_return_authorization_reason)} %>
+    <%= f.error_message_on :reason %>
+  <% end %>
+
+  <%= f.field_container :memo do %>
+    <%= f.label :memo, Spree.t(:memo) %>
+    <%= f.text_area :memo, {:style => 'height:100px;', :class => 'fullwidth'} %>
+    <%= f.error_message_on :memo %>
+  <% end %>
+</div>
