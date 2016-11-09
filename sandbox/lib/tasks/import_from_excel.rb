@@ -76,7 +76,6 @@ all_xls_files[0..-1].each_with_index do |file_path, index|
   begin
     sheet = Roo::Spreadsheet.open(file_path, extension: :xlsx).sheet(0)
   rescue Zip::Error #fix open xlsx via xls
-    byebug
     #sheet = Roo::Spreadsheet.open(file_path)
   end
   #read from one file
@@ -94,7 +93,6 @@ all_xls_files[0..-1].each_with_index do |file_path, index|
         row = sheet.row(row_index + next_row_index)
         if not row.compact.empty?
           category = row[0]
-          byebug if category == nil or category.empty?
           break
         end
       end

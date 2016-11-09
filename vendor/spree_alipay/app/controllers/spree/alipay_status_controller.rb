@@ -36,7 +36,6 @@ module Spree
     def alipay_notify
       order = retrieve_order params["out_trade_no"]
       alipay_payment = get_alipay_payment( order )
-      byebug
       if alipay_payment.payment_method.provider.verify?( request.request_parameters )
         complete_order( order, request.request_parameters.merge(params) )
         render text: "success"
