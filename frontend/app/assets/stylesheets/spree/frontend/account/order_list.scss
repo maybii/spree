@@ -86,4 +86,41 @@
   // .order-payment-state, .order-operations {
 
   // }
+  .show-shipment {
+    position: relative;
+    padding-bottom: 10px;
+    cursor: pointer;
+    .shipment__info {
+      background-color: #fff;
+      padding: 15px;
+      width: 200px;
+      border: 1px solid $brand-primary;
+      border-radius: 3px;
+      position: absolute;
+      left: 50%;
+      @include transform(translateX(-50%));
+      top: 1.5em;
+      display: none;
+      &::after {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border: 0px solid red;
+        border-width: 0 8px 0 8px;
+
+        // @include transform(rotate(45deg));
+        left: 50%;
+        top: 0;
+      }
+      .shipment__item {
+        padding-bottom: 5px;
+        border-bottom: 1px solid gray;
+      }
+    }
+    &:hover {
+      .shipment__info {
+        display: block;
+      }
+    }
+  }
 }

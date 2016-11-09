@@ -66,8 +66,23 @@
                       <% if order.payment_state == 'paid' %>
 
                         <p class="order-shipment-state"><%= Spree.t("shipment_states.#{order.shipment_state}").titleize if order.shipment_state %></p>
-                        <% if order.shipment_state != 'shipped' %>
-                          <p><a href="" class="btn">查看单号</a></p> <!-- TODO -->
+                        <% if order.shipment_state == 'shipped' %>
+                          <div class="show-shipment">
+                            <span>物流单号</span>
+                            <div class="shipment__info text-left">
+
+                              <% order.shipments.each do |shipment| %>
+                              <div class="shipment__item">
+                                <div>物流公司：<%= shipment.shipping_method.name %></div>
+                                <div>物流单号：<%= link_to_tracking(shipment) %></div>
+                                <div>物流查询：<a href="http://www.kuaidi100.com/">点击查询</a></div>
+                              </div>
+                              <% end %>
+
+
+                            </div>
+                          </div>
+
                         <% end %>
 
                       <% else  %>
