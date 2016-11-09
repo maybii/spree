@@ -38,8 +38,6 @@ module Spree
       alipay_payment = get_alipay_payment( order )
       if alipay_payment.payment_method.provider.verify?( request.request_parameters )
         complete_order( order, request.request_parameters.merge(params) )
-        payment = order.payments.last
-        payment.update_attributes({state: 'completed'}) if payment.state != 'completed'
         render text: "success"
       else
         render text: "fail"
@@ -59,17 +57,16 @@ module Spree
     end
 
     def complete_order( order, alipay_parameters )
+      alipay_payment = get_alipay_payment( order )
       unless order.complete?
-        alipay_payment = get_alipay_payment( order )
         # it require pending_payments to process_payments!
         order.next
-        alipay_payment.update_attributes(
-          {
-            response_code: "#{alipay_parameters['trade_no']},#{alipay_parameters['trade_status']}",
-            state: 'completed'
-          })
-
       end
+      alipay_payment.update_attributes(
+        {
+          response_code: "#{alipay_parameters['trade_no']},#{alipay_parameters['trade_status']}",
+          state: 'completed'
+        })
     end
   end
 end
