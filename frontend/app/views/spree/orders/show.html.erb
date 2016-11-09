@@ -4,7 +4,7 @@
 <%# end %>
 <%# end %>
 
-<% @is_payment_check = @order.payments.last.payment_method.type == Spree::PaymentMethod::Check.to_s rescue false%>
+<% @is_payment_check = @order.payments.last.payment_method.type == Spree::PaymentMethod::Check.to_s and @order.payment_state == 'balance_due' rescue false%>
 
 <div class="row" data-hook="checkout_header">
   <div class="checkout-progress-wrapper" data-hook="checkout_progress">
@@ -63,7 +63,7 @@
       <%= link_to Spree.t(:back_to_store), spree.root_path, class: "btn btn-red btn-130" %>
       <%# unless order_just_completed?(@order) %>
       <% if try_spree_current_user && respond_to?(:account_path) %>
-        <%= link_to Spree.t(:show_my_orders), account_path, class: "btn btn-default btn-130" %>
+        <%= link_to Spree.t(:show_my_orders), account_path, class: "btn btn-default btn-130", style: "margin-left: 15px" %>
       <% end %>
       <%# end %>
     </p>
