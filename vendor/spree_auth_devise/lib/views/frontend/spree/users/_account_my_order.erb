@@ -74,8 +74,6 @@
                         <p class="order-payment-state"><%= Spree.t("payment_states.#{order.payment_state}").titleize if order.payment_state %></p>
                       <% end %>
                       <p class="hidden"><%= Spree.t("order_state.#{order.state}").titleize %></p>
-
-
                       <p><%= link_to '订单详情', order_url(order) %></p>
                     </td>
                     <!-- <td class="order-operations text-center">取消订单</td> -->

@@ -20,7 +20,6 @@ module Spree
 
     def aplipay_full_service_url( order, alipay)
       product_names = order.products.pluck(:name)
-
       #service partner _input_charset out_trade_no subject payment_type logistics_type logistics_fee logistics_payment seller_email price quantity
       options = { #:_input_charset => "utf-8",
                   :out_trade_no => order.number,

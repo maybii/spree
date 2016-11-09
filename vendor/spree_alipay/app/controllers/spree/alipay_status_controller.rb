@@ -1,3 +1,4 @@
+# coding: utf-8
 #inspired by https://github.com/spree-contrib/spree_skrill
 module Spree
   class AlipayStatusController < StoreController
@@ -15,7 +16,7 @@ module Spree
         #  WAIT_BUYER_PAY→WAIT_SELLER_SEND_GOODS→WAIT_BUYER_CONFIRM_GOODS→TRADE_FINISHED。
         # 即时到账的交易状态变更顺序依次是:
         #  WAIT_BUYER_PAY→TRADE_FINISHED。
-        complete_order( order, request.request_parameters )
+        complete_order( order, request.request_parameters.merge(params) )
         if order.complete?
           #copy from spree/frontend/checkout_controller
           session[:order_id] = nil
@@ -35,8 +36,9 @@ module Spree
     def alipay_notify
       order = retrieve_order params["out_trade_no"]
       alipay_payment = get_alipay_payment( order )
+      byebug
       if alipay_payment.payment_method.provider.verify?( request.request_parameters )
-        complete_order( order, request.request_parameters )
+        complete_order( order, request.request_parameters.merge(params) )
         render text: "success"
       else
         render text: "fail"
@@ -58,9 +60,14 @@ module Spree
     def complete_order( order, alipay_parameters )
       unless order.complete?
         alipay_payment = get_alipay_payment( order )
-        alipay_payment.update_attribute :response_code, "#{alipay_parameters['trade_no']},#{alipay_parameters['trade_status']}"
         # it require pending_payments to process_payments!
         order.next
+        alipay_payment.update_attributes(
+          {
+            response_code: "#{alipay_parameters['trade_no']},#{alipay_parameters['trade_status']}",
+            state: 'completed'
+          })
+
       end
     end
   end

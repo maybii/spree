@@ -8,8 +8,8 @@ class Spree::UsersController < Spree::StoreController
   def show
     @orders = @user.orders.complete.order('created_at desc')
     @orders_category = {
-      unpaied: @orders.where(payment_state: nil),
-      shipping: @orders.where(payment_state: 'balance_due'),
+      unpaied: @orders.where.not(payment_state: 'paid'),
+      shipping: @orders.where(payment_state: 'paid'),
       all: @orders
     }
   end
