@@ -1231,7 +1231,7 @@ zh-CN:
       canceled: "已取消"
       partial: "部分"
       pending: "等待中"
-      ready: "就绪"
+      ready: "准备发货中"
       shipped: "已经发货"
     shipment_transfer_error:
     shipment_transfer_success:
@@ -1297,7 +1297,7 @@ zh-CN:
       payment: "支付"
       pending: "待决的"
       processing: "正在处理"
-      ready: "就绪"
+      ready: "准备发货中"
       reimbursed: ""
       resumed: "继续"
       returned: "已退回"

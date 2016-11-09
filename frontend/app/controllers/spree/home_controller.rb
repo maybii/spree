@@ -11,8 +11,8 @@ module Spree
       @header_show_all = true
       @is_home = true
       if spree_current_user
-        @order_unpaid_count = spree_current_user.orders.where(payment_state: 'balance_due').count
-        @order_shipping_count = spree_current_user.orders.where(shipment_state: 'shipped').count
+        @order_unpaid_count = spree_current_user.orders.where.not(payment_state: 'paid').count
+        @order_shipping_count = spree_current_user.orders.where(payment_state: 'paid').count
       end
     end
   end
