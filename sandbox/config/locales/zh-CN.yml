@@ -390,6 +390,8 @@ zh-CN:
       not_locked: "未冻结"
       not_saved: "由于以下%{count}个错误，导致%{resource}无法保存："
   spree:
+    canceled: "已取消"
+    number: "号码"
     order_category:
       all: "所有订单"
       unpaied: "待付款"
@@ -1164,7 +1166,7 @@ zh-CN:
     return_authorization_reasons: "退货审批原因"
     return_authorization_states:
       authorized: 已授权
-      canceled: 取消的
+      canceled: 已取消
     return_authorization_updated: "退货审批已更新"
     return_authorizations: "退货审批"
     return_item_inventory_unit_ineligible:

@@ -43,7 +43,7 @@
       <% end %>
     <% end %>
 
-    <% if can? :index, Spree::CustomerReturn %>
+    <% if (can? :index, Spree::CustomerReturn) && false %>
       <% if @order.completed? %>
         <li<%== ' class="active"' if current == :customer_returns %>>
           <%= link_to_with_icon 'transfer', Spree.t(:customer_returns), spree.admin_order_customer_returns_url(@order) %>
