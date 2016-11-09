@@ -66,6 +66,11 @@
   }
   .product-details-wrapper {
     padding: 0 40px;
+    .nutrient{
+      td{
+        min-width: 150px;
+      }
+    }
   }
   .product-details-data {
     margin-top: 36px;
