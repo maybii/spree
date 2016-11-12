@@ -425,6 +425,7 @@ zh-CN:
       save: "保存"
       update: "更新"
       authorize: "审核并通过"
+      create_return: "申请退货"
     activate: "激活"
     active: "激活"
     add: "添加"
@@ -609,7 +610,8 @@ zh-CN:
     coupon_code_not_eligible: "您的订单号码无法在您的订单上生效。"
     coupon_code_not_found: "您所输入的优惠券号码不存在。请重新输入。"
     coupon_code_unknown_error:
-    create: "同意协议并注册"
+    create: "创建"
+    create_return: "申请退货"
     already_exist_account: "已有账号？"
     create_a_new_account: "不是会员？<span class='go_register'>去注册</span>"
     create_new_order: "创建新订单"
@@ -843,7 +845,7 @@ zh-CN:
       none: "清空"
     max_items: "最大商品项??"
     member_since: "计算起始日期"
-    memo:
+    memo: "备注"
     meta_description: "元描述"
     meta_keywords: "关键字"
     meta_title: "标题"
@@ -1182,7 +1184,7 @@ zh-CN:
     return_quantity: "退货数量"
     returned: "已退回"
     returns: "退货"
-    review: Review
+    review: "检查"
     risk: "风险"
     risk_analysis: "风险分析"
     risky: "有风险的"
@@ -1190,7 +1192,7 @@ zh-CN:
     rma_number: "退货单号"
     rma_value: "退货价值"
     roles: "角色"
-    rules: Rules
+    rules: "规则"
     safe: "安全"
     sales_total: "销售总计"
     sales_total_description: "所有订单总销量"
@@ -1306,7 +1308,7 @@ zh-CN:
       reimbursed: ""
       resumed: "继续"
       returned: "已退回"
-      shipped: ""
+      shipped: "已发货"
       void: "空"
     states: "省份"
     states_required:
@@ -1411,7 +1413,7 @@ zh-CN:
     users: "用户详情"
     validation:
       cannot_be_less_than_shipped_units: "不能少于已配送的单位数。"
-      cannot_destroy_line_item_as_inventory_units_have_shipped:
+      cannot_destroy_line_item_as_inventory_units_have_shipped: "已经发货的订单无法删除"
       exceeds_available_stock: "超出可用的库存。请确认订单项拥有有效的数量。"
       is_too_large: "数量太多了 -- 现有库存无法满足您需要的数量!"
       must_be_int: "必须是整数"
