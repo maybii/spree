@@ -1,12 +1,31 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @return_authorization } %>
 <%= form_for [@order, @return_authorization] do |f| %>
   <fieldset class="no-border-top">
-    <%= render :partial => 'form', :locals => { :f => f } %>
+    <nav id="breadcrumbs">
+      <ol class="breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+        <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+          <span itemprop="item"><a itemprop="url" href="/"><span itemprop="name">首页</span></a>&nbsp;</span>
+        </li>
+        <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+          <span itemprop="item"><a itemprop="url" href="/account"><span itemprop="name">个人中心</span></a>&nbsp;</span>
+        </li>
+        <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+          <span itemprop="item"><a itemprop="url" href="/account#orders"><span itemprop="name">我的订单</span></a>&nbsp;</span>
+        </li>
+        <li class="active" itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+          <span itemprop="item"><span itemprop="name">退货</span></span>
+        </li>
+      </ol>
+    </nav>
 
-    <div class="form-buttons filter-actions actions" data-hook="buttons">
-      <%= button Spree.t(:create), 'ok' %>
-      <span class="or"><%= Spree.t(:or) %></span>
-      <%= button_link_to Spree.t('actions.cancel'), admin_order_return_authorizations_url(@order), :icon => 'remove' %>
+    <div id="return_authorization_form_fields">
+      <%= render :partial => 'form', :locals => { :f => f } %>
+
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= button Spree.t(:create_return), 'ok', 'submit', { class: "btn-light-gray btn-110" } %>
+        <span class="or">&nbsp;</span>
+        <%= button_link_to Spree.t('actions.cancel'), admin_order_return_authorizations_url(@order), :icon => 'remove', :class => "btn-red btn-65" %>
+      </div>
     </div>
   </fieldset>
 <% end %>

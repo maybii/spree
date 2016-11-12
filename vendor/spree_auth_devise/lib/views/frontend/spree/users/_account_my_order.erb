@@ -90,7 +90,7 @@
                       <p><%= link_to '订单详情', order_url(order) %></p>
                     </td>
                     <!-- <td class="order-operations text-center">取消订单</td> -->
-                    <td class="order-operations text-center" style="vertical-align: middle">
+                    <td class="order-operations text-center" style="vertical-align: top">
                       <% if order.eligible_for_return_authorization? %>
                         <% if order.return_authorizations.count == 0 %>
                           <%= link_to "申请退货", new_order_return_authorization_path(order) %>

@@ -16,4 +16,5 @@
 //= require spree/frontend/product
 //= require spree/frontend/product-details
 //= require spree/frontend/product-filters
+//= require spree/frontend/customer_return.js
 //= require spree/frontend/vendor/bootstrap-table.min.js

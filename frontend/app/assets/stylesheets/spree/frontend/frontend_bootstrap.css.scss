@@ -54,6 +54,16 @@ a {
     background-color: #f13c3c !important;
   }
 }
+.btn-light-gray {
+  background-color: #f0f0f0;
+  font-size: 12px;
+  width: 130px;
+  border-color: transparent;
+  color: #333;
+  &:hover, &:active, &:focus, &.active, &:visited {
+    background-color: #f0f0f0;
+  }
+}
 .btn-110 {
   font-size: 12px;
   width: 110px;
@@ -65,6 +75,11 @@ a {
 }
 .btn-180 {
   width: 180px;
+}
+
+.btn-65 {
+  width: 65px;
+  font-size: 12px;
 }
 
 .color-green {
