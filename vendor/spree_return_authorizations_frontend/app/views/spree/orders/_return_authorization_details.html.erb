@@ -1,7 +1,7 @@
-<% if order.shipments.any?(&:shipped?) && order.user.present? %>
+<% if false && order.shipments.any?(&:shipped?) && order.user.present? %>
   <hr />
-  <h2>Return requests</h2>
-  <table id='return-line-items' class="table" data-hook="return_order_details">
+  <h2 class="hidden">Return requests</h2>
+  <table id='return-line-items' class="table hidden" data-hook="return_order_details">
     <col width="15%" valign="middle" halign="center">
     <col width="70%" valign="middle">
     <col width="5%" valign="middle" halign="center">
