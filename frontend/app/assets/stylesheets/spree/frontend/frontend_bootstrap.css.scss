@@ -58,10 +58,12 @@ a {
   background-color: #f0f0f0;
   font-size: 12px;
   width: 130px;
-  border-color: transparent;
+  border-color: #ddd;
   color: #333;
   &:hover, &:active, &:focus, &.active, &:visited {
+    color: #333;
     background-color: #f0f0f0;
+    border-color: #ddd !important;
   }
 }
 .btn-110 {

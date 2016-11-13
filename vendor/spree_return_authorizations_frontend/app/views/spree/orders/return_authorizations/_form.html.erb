@@ -15,7 +15,7 @@
                   </label>
                 </div> -->
                 <label class="checkbox-inline js_return_select_all_label">
-                  <%= check_box_tag 'js_return_select_all' %>
+                  <%= check_box_tag 'select-all' %>
                   <span>全选</span>
                 </label>
                 <!-- <label class="checkbox-inline js_return_select_all_label"> -->
@@ -64,7 +64,7 @@
     <div class="col-md-12">
       <%= f.field_container :reason do %>
         <!-- <%= f.label :reason, Spree.t(:reason) %> -->
-        <%= f.select :return_authorization_reason_id, @reasons.collect{|r|[r.name, r.id]}, {include_blank: true}, {class: 'form-control select2', "data-placeholder" => Spree.t(:select_a_return_authorization_reason)} %>
+        <%= f.select :return_authorization_reason_id, @reasons.collect{ |r| [r.name, r.id] }, {:prompt => Spree.t(:select_a_return_authorization_reason), :selected => '1'}, {include_blank: true} %>
         <%= f.error_message_on :reason %>
       <% end %>
 

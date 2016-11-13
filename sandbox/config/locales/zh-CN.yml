@@ -1439,3 +1439,6 @@ zh-CN:
     zones: "销售区域"
     store_credit_categories: "积分分类"
     new_store_credit_category: "新建积分分类"
+    return_authorizations_frontend:
+      created: "退货申请提交成功"
+      not_eligibile: "不合格"

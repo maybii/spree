@@ -1,20 +1,35 @@
-(function() {
 
-  $('input').on('change', function() {
-    console.log(123)
-    debugger
-    // if($('.btn-select-all input[name=cartCheckAll]').prop('checked')) {
-    //   $('.btn-select-all input[name=cartCheckAll]').prop('checked', false);
-    //   $('#cart-detail .cart-item-checkbox input').prop('checked', false).closest('.line-item').removeClass('active');;
-    //   // $('#checkout-link').attr('disabled', 'true').removeClass('active');
-    // }else {
-    //   $('.btn-select-all input[name=cartCheckAll]').prop('checked', true);
-    //   $('#cart-detail .cart-item-checkbox input').prop('checked', true).closest('.line-item').addClass('active');
-    //   // $('#checkout-link').removeAttr('disabled').addClass('active');
-    // }
-    // var activeItems = _.map($('#cart-detail .line-item.active'), function(item) {
-    //   return $(item).attr('key');
-    // });
-    // $('#active_line_id').val(activeItems);
-  });
-})()
+$(document).ready(function() {
+  var formFields = $("[data-hook='return_authorization_form_fields']");
+
+  if(formFields.length > 0) {
+    function checkAddItemBox() {
+      $(this).closest('tr').find('input.add-item').attr('checked', 'checked');
+      updateSuggestedAmount();
+    }
+
+    function updateSuggestedAmount() {
+      var totalPretaxRefund = 0;
+      var checkedItems = formFields.find('input.add-item:checked');
+      $.each(checkedItems, function(i, checkbox) {
+        totalPretaxRefund += parseFloat($(checkbox).parents('tr').find('.refund-amount-input').val());
+      });
+
+      var displayTotal = isNaN(totalPretaxRefund) ? '' : totalPretaxRefund.toFixed(2);
+      formFields.find('span#total_pre_tax_refund').html(displayTotal);
+    }
+
+    updateSuggestedAmount();
+
+    formFields.find('input#select-all').on('change', function(ev) {
+      var checkBoxes = $(ev.currentTarget).parents('table:first').find('input.add-item');
+      checkBoxes.prop('checked', this.checked);
+      updateSuggestedAmount();
+    });
+
+    formFields.find('input.add-item').on('change', updateSuggestedAmount);
+    formFields.find('.refund-amount-input').on('keyup', updateSuggestedAmount);
+
+    formFields.find('input, select').not('.add-item').on('change', checkAddItemBox);
+  }
+});

@@ -197,4 +197,11 @@
   .return-tips {
     margin-top: 70px;
   }
+  .js_return_select_all_label > input[name='select-all'] {
+    margin-top: 2px;
+  }
+  .formError {
+    color: red;
+    font-size: 12px;
+  }
 }

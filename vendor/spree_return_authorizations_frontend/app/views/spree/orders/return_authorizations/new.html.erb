@@ -20,11 +20,10 @@
 
     <div id="return_authorization_form_fields">
       <%= render :partial => 'form', :locals => { :f => f } %>
-
-      <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <div class="form-buttons filter-actions actions" data-hook="buttons" style="padding-left: 15px;">
         <%= button Spree.t(:create_return), 'ok', 'submit', { class: "btn-light-gray btn-110" } %>
         <span class="or">&nbsp;</span>
-        <%= button_link_to Spree.t('actions.cancel'), admin_order_return_authorizations_url(@order), :icon => 'remove', :class => "btn-red btn-65" %>
+        <%= button_link_to Spree.t('actions.cancel'), '/account/', :icon => 'remove', :class => "btn-red btn-65" %>
       </div>
     </div>
   </fieldset>
