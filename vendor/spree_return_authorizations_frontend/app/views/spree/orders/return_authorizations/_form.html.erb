@@ -43,7 +43,7 @@
                 <div class="variant-name item-title"><%= inventory_unit.variant.name %></div>
                 <div class="variant-options item-description"><%= inventory_unit.variant.options_text %></div>
               </td>
-              <td class="align-center"><%= inventory_unit.state.humanize %></td>
+              <td class="align-center"><%= Spree.t(inventory_unit.state) %></td>
             </tr>
           <% end %>
         </tbody>
