@@ -14,6 +14,7 @@ module Spree
         @order_unpaid_count = spree_current_user.orders.where.not(payment_state: 'paid').count
         @order_shipping_count = spree_current_user.orders.where(payment_state: 'paid').count
       end
+      @notice = Spree::Notice.where('').order('created_at DESC')
     end
   end
 end

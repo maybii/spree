@@ -120,14 +120,14 @@
 
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="notice">
-                  <div> [公告]物流信息通知 </div>
-                  <div> [公告]巧克力产品保存须知</div>
-                  <div> [公告]五一春节放假通知</div>
+                  <% @notice.each do |notice| %>
+                    <div>[公告] <%= notice.title %> </div>
+                  <% end %>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="introduction">
-                  <div>  [公告]物流信息通知 </div>
-                  <div> [公告]巧克力产品保存须知</div>
-                  <div>[公告]五一春节放假通知</div>
+                  <div> [入门]物流信息通知 </div>
+                  <div> [入门]巧克力产品保存须知</div>
+                  <div> [入门]五一春节放假通知</div>
                 </div>
               </div>
             </div>
