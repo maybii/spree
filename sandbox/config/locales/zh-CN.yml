@@ -36,7 +36,7 @@ zh-CN:
         render_layout_as_partial: "渲染部分布局"
         show_in_header: "在网站头部中显示"
         show_in_sidebar: "在网站侧边栏显示"
-        slug: "url地址别名(Slug)"
+        slug: "url 地址别名(Slug)"
         title: "标题"
         visible: "是否可见"
       spree/address:
@@ -58,9 +58,9 @@ zh-CN:
       spree/country:
         iso: ISO
         iso3: ISO3
-        iso_name: ISO名称
+        iso_name: ISO 名称
         name: "名称"
-        numcode: ISO编号
+        numcode: ISO 编号
       spree/credit_card:
         base:
         cc_type: "信用卡类型"
@@ -84,7 +84,7 @@ zh-CN:
         coupon_code: "优惠券号码"
         created_at: "下单日期"
         email: "电子邮件"
-        ip_address: IP地址
+        ip_address: IP 地址
         item_total: "小记"
         number: "订单号"
         payment_state: "支付状态"
@@ -161,7 +161,7 @@ zh-CN:
         meta_description: "描述"
         meta_keywords: "关键字"
         name: "名称"
-        seo_title: "SEO标题"
+        seo_title: "SEO 标题"
         url: "链接"
       spree/tax_category:
         description: "描述"
@@ -492,17 +492,17 @@ zh-CN:
     all_adjustments_opened: "所有价格调整已被成功启用！"
     all_departments: "所有部门"
     all_items_have_been_returned:
-    allow_ssl_in_development_and_test: "允许在开发以及测试模式下使用SSL"
-    allow_ssl_in_production: "允许在生产模式下使用SSL"
-    allow_ssl_in_staging: "允许在演示模式下使用SSL"
-    already_signed_up_for_analytics: "您已注册Spree Analytics帐号"
+    allow_ssl_in_development_and_test: "允许在开发以及测试模式下使用 SSL"
+    allow_ssl_in_production: "允许在生产模式下使用 SSL"
+    allow_ssl_in_staging: "允许在演示模式下使用 SSL"
+    already_signed_up_for_analytics: "您已注册 Spree Analytics 帐号"
     alt_text: "其他文本"
     alternative_phone: "其他电话"
     amount: "金额(元)"
     analytics_desc_header_1: Spree Analytics
     analytics_desc_header_2:
     analytics_desc_list_1:
-    analytics_desc_list_2: "仅需要一个免费的Spree帐号用于激活"
+    analytics_desc_list_2: "仅需要一个免费的 Spree 帐号用于激活"
     analytics_desc_list_3:
     analytics_desc_list_4: "完全免费"
     analytics_trackers: "追踪分析"
@@ -560,7 +560,7 @@ zh-CN:
     categories: "分类"
     category: "分类"
     charged:
-    check_for_spree_alerts: "查收Spree的通知"
+    check_for_spree_alerts: "查收 Spree 的通知"
     checkout: "去结算"
     choose_a_customer: "选择用户"
     choose_a_taxon_to_sort_products_for:
@@ -587,7 +587,7 @@ zh-CN:
     continue_shopping: "< 返回继续购物"
     cost_currency: "成本币种"
     cost_price: "进货价"
-    could_not_connect_to_jirafe: "无法连接Jirafe。稍后将会自动重新连接。"
+    could_not_connect_to_jirafe: "无法连接 Jirafe。稍后将会自动重新连接。"
     could_not_create_customer_return:
     could_not_create_stock_movement:
     count_on_hand: "库存数量"
@@ -643,10 +643,10 @@ zh-CN:
         app_token: "添加口令"
         currently_unavailable:
         explanation:
-        header: Jirafe分析器设置
+        header: Jirafe 分析器设置
         site_id:
         token: "口令"
-      jirafe_settings_updated: Jirafe设置已更新。
+      jirafe_settings_updated: Jirafe 设置已更新。
     date: "日期"
     date_completed: "完成日期"
     date_picker:
@@ -706,7 +706,7 @@ zh-CN:
         no_payment_methods_available: "当前运行环境下没有配置好支付方式"
         no_shipping_methods_available: "选中的地址没有适合的运送方式，请修改您的地址后再次尝试"
     errors_prohibited_this_record_from_being_saved:
-      one: 1个错误导致此记录无法保存
+      one: 1 个错误导致此记录无法保存
       other: "%{count}个错误导致此记录无法保存"
     event: "事件"
     events:
@@ -796,7 +796,7 @@ zh-CN:
     inventory_error_flash_for_insufficient_quantity: "您的购物车中的一个商品已经不可购买。"
     inventory_state:
     is_not_available_to_shipment_address: "无法送达要求的配送地址"
-    iso_name: ISO名称
+    iso_name: ISO 名称
     item: "商品项"
     item_description: "商品项描述"
     item_total: "商品总计"
@@ -820,7 +820,7 @@ zh-CN:
     line_item_adjustments:
     list: "列表"
     loading: "加载"
-    locale_changed: Locale已变更
+    locale_changed: Locale 已变更
     location: "位置"
     lock: "锁住/冻结"
     log_entries:
@@ -859,7 +859,7 @@ zh-CN:
     show_my_orders: "查看我的订单"
     name: "名称"
     name_on_card: "卡上的名称"
-    name_or_sku: "名称或条形码（输入产品名称中的至少4个字母）"
+    name_or_sku: "名称或条形码（输入产品名称中的至少 4 个字母）"
     new: "新建"
     new_adjustment: "新建调整"
     new_country:
@@ -880,6 +880,7 @@ zh-CN:
     new_refund_reason: "退货原因"
     new_return_authorization: "新建返回授权"
     new_role: "新建角色"
+    new_notice: "新建公告"
     new_rma_reason: "新建退货原因"
     new_shipment_at_location:
     new_shipping_category: "新建配送分类"
@@ -915,7 +916,9 @@ zh-CN:
     not_available: N/A
     not_enough_stock: "库存不足"
     not_found: "未找到%{resource}"
-    note:
+    note: ''
+    notice_updated: "更新完成!"
+    notice_destroy: "成功删除!"
     notice_messages:
       product_cloned: "产品已经被复制"
       product_deleted: "产品已经被删除"
@@ -1128,7 +1131,7 @@ zh-CN:
     reception_status:
     reference: "提及"
     refund: "退款"
-    refund_amount_must_be_greater_than_zero: "退款金额必须大于0"
+    refund_amount_must_be_greater_than_zero: "退款金额必须大于 0"
     refund_reasons: "退货原因"
     refunded_amount: "退货数量"
     refunds: "退货"
@@ -1192,6 +1195,8 @@ zh-CN:
     rma_number: "退货单号"
     rma_value: "退货价值"
     roles: "角色"
+    notice: "咨询公告"
+    notices: "咨询公告"
     rules: "规则"
     safe: "安全"
     sales_total: "销售总计"
@@ -1406,7 +1411,7 @@ zh-CN:
     use_app_default: "使用默认设置"
     use_billing_address: "使用账单地址"
     use_new_cc: "使用一张新卡"
-    use_s3: "使用Amazon S3存储图片"
+    use_s3: "使用 Amazon S3 存储图片"
     user: "用户"
     user_rule:
       choose_users: "选择用户"
