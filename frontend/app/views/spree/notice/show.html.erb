@@ -1,0 +1,54 @@
+<%= content_for :another_header do %>
+  <div id="about" data-hook>
+    <div class="banner">
+      <div class="img" style="background: url('http://up.img.heidian.co/cmsres-20160308-bff-6-bb-16-356-c-4406-9-f-6-e-3-b-9-a-87-c-8-d-6-a-9.png?imageView2/2/w/1400/') no-repeat;width: 100%;padding-top: 30.25%;background-position: center;background-size: 100% 100%;">
+        <!-- <div class="img" style="background: url('http://up.img.heidian.co/cmsres-20160308-bff-6-bb-16-356-c-4406-9-f-6-e-3-b-9-a-87-c-8-d-6-a-9.png?imageView2/2/w/1400/') no-repeat;width: 100%;padding-top: 30.25%;background-position: center;background-size: 100% 100%;"> -->
+        <div class="about-btns-wrapper text-center ">
+          <div class="about-btns">
+            <a class="btn btn-primary btn-130 btn-defualt-size pull-left" href="#about-us">关于我们</a>
+            <a class="btn btn-white btn-130 btn-defualt-size pull-right" href="#contact-us">联系我们</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="about-us" class="container">
+      <h3 class="text-center">关于我们</h3>
+      <p>内蒙古二连浩特市真谛进出口有限公司是一家以专业经营世界各地休闲食品，化妆品，日用品，地毯，服饰，箱包，奢侈品为主的企业。凭借资深的业界背景，敏锐的捕捉到铺面而来的财富商机，2001年开创了“ 金帝洋行 ”进口食品，化妆品店。以及现在的 “ 宝岛精品店 ”旗舰店。将全新的进口商品销售理念带入了中国，收到了光大消费者的青睐。</p>
+      <p>内蒙古二连浩特市真谛进出口有限公司运用世界级的商业平台，通过全球采购，精心筛选，囊括了 英国，法国，德国，波兰，瑞士，意大利，捷克，西班牙，土耳其，泰国，马来西亚，日本，韩国，新加坡 等几十个国家，多个国际品牌。我们凭借自身行业优势广泛涉及世界各地的优秀商品，及时传递全球商品的最新动态。内蒙古二连海特市真谛进出口有限公司是进口商品引进资源丰富、种类齐全、产品集中的贸易公司。公司的产品库、科学的管理技术、先进的软硬件设施、独特的装饰风格、新颖的营销模式、完善的物流配送、强大的品牌效应，为每一位加盟商提供全方位一站式服务。</p>
+    </section>
+    <section class="container">
+      <div class="img img-about-map"></div>
+    </section>
+    <section>
+      <div class="about-images-wrapper clearfix">
+        <div class="img img-about-01 pull-left"></div>
+        <div class="img img-about-02 pull-left"></div>
+        <div class="img img-about-03 pull-left"></div>
+      </div>
+    </section>
+    <section id="contact-us" class="container">
+      <h3 class="text-center">联系我们</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <p>公司地址：</p>
+          <p>内蒙古锡林郭勒盟二连浩特市新华大街北吉祥府邸商铺4-5宝岛精品店</p>
+          <br/>
+          <p>上海市普陀区祁连山南路123号XX国际大厦2301室</p>
+        </div>
+        <div class="col-md-4">
+          <p>服务时间：</p>
+          <p>周一至周日 8:00-22:00</p>
+          <br/>
+          <p>联系方式：</p>
+          <p>电话  400-7286-899</p>
+          <p>邮箱  zhendifood@163.com</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <p>扫描二维码关注公众微信：</p>
+          <br/>
+          <%= image_tag 'home/qrcode/weixin.jpg', class: 'about-us-qrcode' %>
+        </div>
+      </div>
+    </section>
+  </div>
+<% end %>
