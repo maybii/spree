@@ -5,6 +5,8 @@ body{
   font-family: "Montserrat Light,PingFang SC,Hiragino Sans GB,Hiragino Sans GB W3,Source Han Sans Light,Source Han Sans SC Light,Noto Sans CJK Sc Thin,Microsoft YaHei Light,Microsoft YaHei,Microsoft Jhenghei,Avenir,Helvetica Neue,Arial,sans-serif"
 }
 
+// $font-pingfang: ",Montserrat Light,Hiragino Sans GB,Hiragino Sans GB W3,Source Han Sans Light,Source Han Sans SC Light,Noto Sans CJK Sc Thin,Microsoft YaHei Light,Microsoft YaHei,Microsoft Jhenghei,Avenir,Helvetica Neue,Arial,sans-serif"
+
 a {
   color: #444444;
   &:hover, &:active {
@@ -295,5 +297,44 @@ table {
   }
   >.first, >.last{
     display: none;
+  }
+}
+
+.page-content {
+  border: 1px solid #ddd;
+  min-height: 500px;
+  padding: 0px 40px;
+  font-family: "PingFang SC";
+  .page-header {
+    color: #333;
+    font-weight: 600;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+  }
+  .page-body {
+    section {
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-bottom: 50px;
+    }
+    .title {
+      color: #fa5930;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .description, .items {
+      color: #333;
+      font-weight: normal;
+      p {
+        margin: 0;
+        line-height: 2;
+      }
+      span {
+        color: #fa5930;
+      }
+    }
   }
 }
