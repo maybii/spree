@@ -9,6 +9,12 @@ module Spree
 
     respond_to :html
 
+    def new_products
+      @products = Spree::Product.where('')
+                  .active.limit(20)
+                  .order('created_at DESC')
+    end
+
     def index
       property_filters = [params[:brand], params[:location], params[:category]].delete_if(&:blank?).uniq
       order_filters = "#{params[:order]} #{(params[:sort] || 'ASC')}" if params[:order] and params[:order] != 'price'

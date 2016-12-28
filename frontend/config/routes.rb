@@ -33,4 +33,5 @@ Spree::Core::Engine.add_routes do
   get '/about', to: 'about#show'
   resources :notice, only: [:index, :show]
   get '/privacy', to: 'privacy#show'
+  get '/new_products', to: 'products#new_products'
 end
