@@ -19,6 +19,8 @@ plugins:
   - layer
   - table
   - insertdatetime
+  - textcolor
+  - colorpicker
   - preview
   - media
   - searchreplace
@@ -30,9 +32,10 @@ plugins:
   - visualchars
   - nonbreaking
   - template
+  - hr
 
 # Each line is a toolbar
 toolbar:
-  - cut copy paste pastetext pasteword | search replace | undo redo | link unlink anchor image cleanup code | insertdate inserttime preview bold italic underline strikethrough | justifyleft justifycenter justifyright justifyfull | sub sup | bullist numlist | outdent indent blockquote styleselect formatselect fontselect fontsizeselect | forecolor backcolor
+  - cut copy paste pastetext pasteword | search replace | undo redo | hr | link unlink anchor image cleanup code | preview bold italic underline strikethrough | justifyleft justifycenter justifyright justifyfull | sub sup | bullist numlist | outdent indent blockquote styleselect formatselect fontselect fontsizeselect | forecolor backcolor
   #- tablecontrols | hr removeformat visualaid
   #- fullscreen | charmap media | visualchars blockquote
