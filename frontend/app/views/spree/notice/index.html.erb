@@ -1,0 +1,38 @@
+<%= content_for :another_header do %>
+  <div id="notice" data-hook>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <nav id="breadcrumbs">
+            <ol class="breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><a itemprop="url" href="/"><span itemprop="name">首页</span></a>&nbsp;</span>
+              </li>
+              <li class="active" itemscope="itemscope" itemprop="itemListElement">
+                <span itemprop="item"><span itemprop="name">
+                  <a itemprop="url" href="/notice"> 咨询公告 </a>
+                </span></span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="">
+        <div class="col-sm-12 page-content">
+          <% @notices.each do |notice| %>
+            <%= link_to  notice, class: 'description' do %>
+              <div class="page-header"> <%= notice.title %> </div>
+              <div class="page-body">
+                <section>
+                  <%= (notice.description || '').html_safe.to_s[0..100] %>
+                </section>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

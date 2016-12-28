@@ -9,7 +9,7 @@
                   <span itemprop="item"><a itemprop="url" href="/"><span itemprop="name">首页</span></a>&nbsp;</span>
                 </li>
                 <li class="active" itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
-                  <span itemprop="item"><span itemprop="name">买家须知</span></span>
+                  <span itemprop="item"><span itemprop="name"> 咨询公告 </span></span>
                 </li>
               </ol>
             </nav>
@@ -19,27 +19,10 @@
     <div class="container">
       <div class="">
         <div class="col-sm-12 page-content">
-          <div class="page-header">买家须知</div>
+          <div class="page-header"> <%= @notice.title%> </div>
           <div class="page-body">
             <section>
-              <div class="title">买家签收须知</div>
-              <div class="description"><p>无论任何提货方式，您签字前请当面检查以下事项：</p></div>
-              <div class="items">
-                <p>1. 托运单货物件数与实物是否一致</p>
-                <p>2. 包装箱是否采用统一封箱胶打包</p>
-                <p>3. 包装是否完整，有无破损商品在运输中难免受到挤压，这是无法避免的，如<span>损坏需赔付时</span>，请<span>务必签收前当场在物流处找物流商索赔</span>，物流运输途中造成的损失，本公司不予承担。建议买家首选德邦等品牌物流，有保价，签字前发现有损坏等情况可直接找其索赔。如发一般物流出现损失，自行找物流公司协助解决，本司只协助处理。由别人签字，一律按本人签收同等视之。因非货物原因产生的买家拒收、退货、</p>
-              </div>
-            </section>
-            <section>
-              <div class="title">售后服务及保障</div>
-              <div class="description">
-                <p><span>错发货物处理：错发货物双方协商处理，如退货运费由本公司承担。</span></p>
-                <p><span>质量问题处理：</span></p>
-              </div>
-              <div class="items">
-                <p>1. 产品本身质量问题，自客户收到货后的 15 天内，本公司无条件退换，并承担运费</p>
-                <p>2. 因买家储存的原因，如买家储存不当，或产品受压、破损后出现的质量问题，本公司不予处理</p>
-              </div>
+              <%= (@notice.description || '').html_safe%>
             </section>
           </div>
         </div>

@@ -31,5 +31,6 @@ Spree::Core::Engine.add_routes do
   get '/cart_link', to: 'store#cart_link', as: :cart_link
 
   get '/about', to: 'about#show'
-  get '/notice', to: 'notice#show'
+  resources :notice, only: [:index, :show]
+  get '/privacy', to: 'privacy#show'
 end
