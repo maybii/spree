@@ -72,31 +72,19 @@
   <!-- <% sort = params["sort"] %> -->
   <div class="filter-orders__title pull-left">排序：</div>
   <div class="filter-orders__content pull-left">
-    <div class="btn--orders btn--order-default">
-      <%= link_to "综合".html_safe, params.merge({ order: "", sort: ""}), class: "order-class" %>
+    <div class="btn--orders btn--order-default <%= 'active' if params['order'] == nil || params['order'].empty? %>">
+      <%= link_to "综合", params.merge({ order: "", sort: ""}), class: "order-class" %>
     </div>
 
-    <% active = params["order"] == 'sales_amount' ? 'active' : '' %>
-    <% arrow = params["sort"] == 'ASC' ? "up" : "down" %>
-    <div class="btn--orders btn--order-sale-vol  <%=[arrow, active].join(' ') %>" >
-      <%= link_to "销量 #{arrow_up}".html_safe, params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class up" %>
-      <%= link_to "销量 #{arrow_down}".html_safe, params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class down" %>
-    </div>
+    <% {'sales_amount' => '销量', 'price' => '价格', 'available_on' => '上新时间' }.each do |key, text| %>
+      <% active = params["order"] == key ? 'active' : nil %>
+      <% arrow  = params["sort"] == 'ASC' ? "up" : "down" %>
+      <div class="btn--orders <%=["btn--#{key}", arrow, active].join(' ') %>" >
+        <%= link_to "#{text} #{active && arrow_up}".html_safe, params.merge({ order: key, sort: "DESC"}), class: "order-class up" %>
+        <%= link_to "#{text} #{active && arrow_down}".html_safe, params.merge({ order: key, sort: "ASC"}), class: "order-class down" %>
+      </div>
+    <% end %>
 
-    <% active = params["order"] == 'price' ? 'active' : '' %>
-    <% arrow = params["sort"] == 'ASC' ? "up" : "down" %>
-    <div class="btn--orders btn--sale-price  <%=[arrow, active].join(' ') %>" >
-      <%= link_to "价格 #{arrow_up}".html_safe, params.merge({ order: "price", sort: "DESC"}), class: "order-class up" %>
-      <%= link_to "价格 #{arrow_down}".html_safe, params.merge({ order: "price", sort: "ASC"}), class: "order-class down" %>
-    </div>
-
-
-    <% active = params["order"] == 'available_on' ? 'active' : '' %>
-    <% arrow = params["sort"] == 'ASC' ? "up" : "down" %>
-    <div class="btn--orders btn--sale-available  <%=[arrow, active].join(' ') %>">
-      <%= link_to "上新时间 #{arrow_up}".html_safe, params.merge({ order: "available_on", sort: "DESC"}), class: "order-class up" %>
-      <%= link_to "上新时间 #{arrow_down}".html_safe, params.merge({ order: "available_on", sort: "ASC"}), class: "order-class down" %>
-    </div>
   </div>
 </div>
 

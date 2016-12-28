@@ -38,6 +38,7 @@ module Spree
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
 
+    ########## Show ##########
     def show
       @useful_category = ["产品品牌", "生产商", "保质期"]
       @variants = @product.variants_including_master.
@@ -51,8 +52,8 @@ module Spree
       redirect_if_legacy_path
     end
 
-    private
 
+    private
       def accurate_title
         if @product
           @product.meta_title.blank? ? @product.name : @product.meta_title

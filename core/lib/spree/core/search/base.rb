@@ -12,8 +12,8 @@ module Spree
           prepare(params)
         end
 
-        def all_products()
-          products = get_base_scope
+        def all_products(with_group=true)
+          products = get_base_scope(with_group)
           unless Spree::Config.show_products_without_price
             products = products
                        .where("spree_prices.amount IS NOT NULL")
@@ -37,9 +37,15 @@ module Spree
         end
 
         protected
-          def get_base_scope
+          def get_base_scope(with_group=true)
             base_scope = Spree::Product.spree_base_scopes.active
-            base_scope = base_scope.in_taxon(taxon) unless taxon.blank?
+            unless taxon.blank?
+              if(with_group)
+                base_scope = base_scope.in_taxon(taxon)
+              else
+                base_scope = base_scope.in_taxon_without_group(taxon)
+              end
+            end
             base_scope = get_products_conditions_for(base_scope, keywords)
             base_scope = add_search_scopes(base_scope)
             base_scope = add_eagerload_scopes(base_scope)

@@ -75,6 +75,13 @@ module Spree
     #   vs.
     #
     #   SELECT COUNT(*) ...
+
+    add_search_scope :in_taxon_without_group do |taxon|
+      includes(:classifications).
+        where("spree_products_taxons.taxon_id" => taxon.self_and_descendants.pluck(:id))
+    end
+
+
     add_search_scope :in_taxon do |taxon|
       includes(:classifications).
       where("spree_products_taxons.taxon_id" => taxon.self_and_descendants.pluck(:id)).

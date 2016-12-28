@@ -65,6 +65,31 @@
   </div>
 <% end %>
 
+<div class="filter-orders clearfix">
+  <% arrow_up = '<small><i class="icon-arrow-up"></i></small>'  %>
+  <% arrow_down = '<small><i class="icon-arrow-down"></i></small>'  %>
+
+  <!-- <% sort = params["sort"] %> -->
+  <div class="filter-orders__title pull-left">排序：</div>
+  <div class="filter-orders__content pull-left">
+    <div class="btn--orders btn--order-default <%= 'active' if params['order'] == nil || params['order'].empty? %> ">
+      <%= link_to "综合", params.merge({ order: "", sort: ""}), class: "order-class" %>
+    </div>
+
+    <% {'sales_amount' => '销量', 'price' => '价格', 'available_on' => '上新时间' }.each do |key, text| %>
+      <% active = params["order"] == key ? 'active' : nil %>
+      <% arrow  = params["sort"] == 'ASC' ? "up" : "down" %>
+      <div class="btn--orders <%=["btn--#{key}", arrow, active].join(' ') %>" >
+        <%= link_to "#{text} #{active && arrow_up}".html_safe, params.merge({ order: key, sort: "DESC"}), class: "order-class up" %>
+        <%= link_to "#{text} #{active && arrow_down}".html_safe, params.merge({ order: key, sort: "ASC"}), class: "order-class down" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+
 <div data-hook="taxon_products">
   <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
 </div>
