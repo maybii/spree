@@ -68,7 +68,7 @@
   color: #262626;
   margin-top: 38px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
   font-size: 12px;
   .filter-orders__title {
     line-height: 40px;
@@ -91,6 +91,9 @@
 
     &.active {
       background-color: #fff;
+      a{
+        color: #fa5930;
+      }
     }
     &.down {
       .up {

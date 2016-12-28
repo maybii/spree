@@ -76,64 +76,40 @@
       <%= link_to "综合".html_safe, params.merge({ order: "", sort: ""}), class: "order-class" %>
     </div>
 
-    <% if params["order"] == 'sales_amount' %>
-      <% if params["sort"] == 'ASC' %>
-        <div class="btn--orders btn--order-sale-vol active up">
-      <% else %>
-        <div class="btn--orders btn--order-sale-vol active down">
-      <% end %>
-    <% else %>
-      <div class="btn--orders btn--order-sale-vol">
-    <% end %>
-    <%= link_to "销量 #{arrow_up}".html_safe, params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class up" %>
-    <%= link_to "销量 #{arrow_down}".html_safe, params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class down" %>
-      </div>
+    <% active = params["order"] == 'sales_amount' ? 'active' : '' %>
+    <% arrow = params["sort"] == 'ASC' ? "up" : "down" %>
+    <div class="btn--orders btn--order-sale-vol  <%=[arrow, active].join(' ') %>" >
+      <%= link_to "销量 #{arrow_up}".html_safe, params.merge({ order: "sales_amount", sort: "DESC"}), class: "order-class up" %>
+      <%= link_to "销量 #{arrow_down}".html_safe, params.merge({ order: "sales_amount", sort: "ASC"}), class: "order-class down" %>
+    </div>
 
-
-      <% if params["order"] == 'price' %>
-        <% if params["sort"] == 'ASC' %>
-          <div class="btn--orders btn--sale-price active up">
-        <% else %>
-          <div class="btn--orders btn--sale-price active down">
-        <% end %>
-      <% else %>
-        <div class="btn--orders btn--sale-price">
-      <% end %>
+    <% active = params["order"] == 'price' ? 'active' : '' %>
+    <% arrow = params["sort"] == 'ASC' ? "up" : "down" %>
+    <div class="btn--orders btn--sale-price  <%=[arrow, active].join(' ') %>" >
       <%= link_to "价格 #{arrow_up}".html_safe, params.merge({ order: "price", sort: "DESC"}), class: "order-class up" %>
       <%= link_to "价格 #{arrow_down}".html_safe, params.merge({ order: "price", sort: "ASC"}), class: "order-class down" %>
-        </div>
+    </div>
 
 
-        <% if params["order"] == 'available_on' %>
-          <% if params["sort"] == 'ASC' %>
-            <div class="btn--orders btn--sale-available active up">
-          <% else %>
-            <div class="btn--orders btn--sale-available active down">
-          <% end %>
-        <% else %>
-          <div class="btn--orders btn--sale-available">
-        <% end %>
-        <%= link_to "上新时间 #{arrow_up}".html_safe, params.merge({ order: "available_on", sort: "DESC"}), class: "order-class up" %>
-        <%= link_to "上新时间 #{arrow_down}".html_safe, params.merge({ order: "available_on", sort: "ASC"}), class: "order-class down" %>
-          </div>
-              </div>
+    <% active = params["order"] == 'available_on' ? 'active' : '' %>
+    <% arrow = params["sort"] == 'ASC' ? "up" : "down" %>
+    <div class="btn--orders btn--sale-available  <%=[arrow, active].join(' ') %>">
+      <%= link_to "上新时间 #{arrow_up}".html_safe, params.merge({ order: "available_on", sort: "DESC"}), class: "order-class up" %>
+      <%= link_to "上新时间 #{arrow_down}".html_safe, params.merge({ order: "available_on", sort: "ASC"}), class: "order-class down" %>
+    </div>
+  </div>
+</div>
 
-            </div>
-
-
-
-
-
-            <% if params[:keywords] %>
-              <div data-hook="search_results">
-                <% if not @products.empty? %>
-                  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
-                <% end %>
-              </div>
-            <% else %>
-              <div data-hook="homepage_products">
-                <% cache(cache_key_for_products) do %>
-                  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
-                <% end %>
-              </div>
-            <% end %>
+<% if params[:keywords] %>
+  <div data-hook="search_results">
+    <% if not @products.empty? %>
+      <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+    <% end %>
+  </div>
+<% else %>
+  <div data-hook="homepage_products">
+    <% cache(cache_key_for_products) do %>
+      <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+    <% end %>
+  </div>
+<% end %>
