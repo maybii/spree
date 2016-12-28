@@ -57,3 +57,5 @@ test_app
 .ruby-gemset
 sandbox/config/database.yml
 .byebug_history
+
+sandbox/db/schema.rb
