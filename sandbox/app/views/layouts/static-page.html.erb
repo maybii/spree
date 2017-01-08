@@ -25,7 +25,7 @@
               </li>
               <li class="active" itemscope="itemscope" itemprop="itemListElement">
                 <span itemprop="item"><span itemprop="name">
-                  <a itemprop="url" href="/notice"> 页面标题 </a>
+                  <a itemprop="url" href="<%= @page.slug %>"> <%= @page.title %> </a>
                 </span></span>
               </li>
             </ol>
@@ -36,7 +36,7 @@
 
         <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12 col-md-12" %>" data-hook>
           <div class="col-sm-12 page-content">
-            <div class="page-header"> 页面标题 </div>
+            <div class="page-header"> <%= @page.title %> </div>
             <div class="page-body">
               <section>
                 <%= yield %>
