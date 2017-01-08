@@ -57,10 +57,14 @@
         <th><%= Spree.t(:sku) %></th>
         <th><%= Spree.t(:status) %></th>
 
-        <th colspan="2"><%= sort_link @search,:name, Spree.t(:name), { default_order: "desc" }, {title: 'admin_products_listing_name_title'} %></th>
+        <th colspan="2"><%= sort_link @search,:name, Spree.t(:name), { }, {title: 'admin_products_listing_name_title'} %></th>
         <th class="text-center">
           <%= sort_link @search, :master_default_price_amount, Spree.t(:master_price), {}, {title: 'admin_products_listing_price_title'} %>
         </th>
+        <th class="text-center">
+          <%= sort_link @search, :created_at, '创建时间', {default_order: "desc"}, {title: 'admin_products_listing_created_title'} %>
+        </th>
+
         <th class="text-center"> 批发最小个数 </th>
         <th data-hook="admin_products_index_header_actions" class="actions"></th>
       </tr>
@@ -73,6 +77,7 @@
             <td class="image"><%= mini_image product %></td>
             <td><%= link_to product.try(:name), edit_admin_product_path(product) %></td>
             <td class="text-center"><%= product.display_price.to_html rescue '' %></td>
+            <td class="text-center"><%= product.created_at.localtime.to_s[0..-6] %></td>
             <td class="text-center"><%= product.wholesale_count rescue '' %></td>
             <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
               <%= link_to_edit product, no_text: true, class: 'edit' if can?(:edit, product) && !product.deleted? %>

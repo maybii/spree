@@ -10,9 +10,9 @@ module Spree
     respond_to :html
 
     def new_products
-      @products = Spree::Product.where('')
-                  .active.limit(20)
-                  .order('created_at DESC')
+      @searcher = build_searcher(params.merge(include_images: true))
+      all_products = @searcher.all_products.active.order('created_at DESC')
+      @products = @searcher.retrieve_products(all_products)
     end
 
     def index
