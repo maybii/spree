@@ -205,7 +205,6 @@ function VariantOptions(params) {
         // depends on modified version of product.js
       }
     } else {
-
       if (variants) {
         variants_ids = $.keys(variants);
         show_variant_images(variants_ids.slice(0, 1));
@@ -218,6 +217,12 @@ function VariantOptions(params) {
       variants = $("div.variant-options.index-0")
       if (variants.find("a.option-value.out-of-stock").length != variants.find("a.option-value").length)
         price.text(i18n.variant_options_select);
+    }
+
+    if( $('.option-value.selected').text().includes('批发')){
+      $('.min-count').removeClass('hidden')
+    }else{
+      $('.min-count').addClass('hidden')
     }
   }
 
