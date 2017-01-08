@@ -25,6 +25,7 @@
     </div>
 
     <div class="col-md-6" data-hook="admin_page_form_right">
+      <%= f.text_field :layout, class: 'form-control', value: "static-page", type: "hidden" %>
       <!-- <div class="form-group">
            <%= f.label :layout %>
            <%= f.text_field :layout, class: 'form-control' %>
@@ -73,7 +74,8 @@
         <% Spree::Store.all.each do |store| %>
           <div class="checkbox">
             <%= f.label store.name.downcase.to_sym do %>
-              <%= check_box_tag 'page[store_ids][]', store.id, @page.stores.include?(store) %>
+              <%#= check_box_tag 'page[store_ids][]', store.id, @page.stores.include?(store) %>
+              <%= check_box_tag 'page[store_ids][]', store.id, true %>
               <%= store.name %>
             <% end %>
           </div>

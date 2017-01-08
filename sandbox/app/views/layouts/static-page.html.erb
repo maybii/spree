@@ -17,13 +17,35 @@
       <div class="row" data-hook>
         <%= breadcrumbs(@taxon) %>
 
+        <div class="col-sm-12">
+          <nav id="breadcrumbs">
+            <ol class="breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><a itemprop="url" href="/"><span itemprop="name">首页</span></a>&nbsp;</span>
+              </li>
+              <li class="active" itemscope="itemscope" itemprop="itemListElement">
+                <span itemprop="item"><span itemprop="name">
+                  <a itemprop="url" href="/notice"> 页面标题 </a>
+                </span></span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
         <!-- <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %> -->
 
         <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12 col-md-12" %>" data-hook>
-          <%= yield %>
+          <div class="col-sm-12 page-content">
+            <div class="page-header"> 页面标题 </div>
+            <div class="page-body">
+              <section>
+                <%= yield %>
+              </section>
+            </div>
+          </div>
         </div>
 
-        <%= yield :templates %>
+        <!-- <%= yield :templates %> -->
       </div>
     </div>
     <%= render partial: 'spree/shared/footer' %>
