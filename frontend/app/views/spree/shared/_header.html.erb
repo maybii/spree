@@ -121,7 +121,9 @@
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="notice">
                   <% @notice.each do |notice| %>
-                    <div>[公告] <%= notice.title %> </div>
+                    <%= link_to  notice, class: 'description' do %>
+                      <div >[公告] <%= notice.title %> </div>
+                    <% end %>
                   <% end %>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="introduction">

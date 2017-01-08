@@ -9,8 +9,11 @@
               <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
                 <span itemprop="item"><a itemprop="url" href="/"><span itemprop="name">首页</span></a>&nbsp;</span>
               </li>
-              <li class="active" itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
-                <span itemprop="item"><span itemprop="name"> 咨询公告 </span></span>
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><span itemprop="name"> <a href="/notice"> 咨询公告 </a></span></span>
+              </li>
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><span itemprop="name"> <%= link_to @notice.title, @notice %> </span></span>
               </li>
             </ol>
           </nav>
@@ -25,7 +28,7 @@
             <div class="page-header"> <%= @notice.title%> </div>
             <div class="page-body">
               <section>
-                <%= (@notice.description || '').html_safe%>
+                <%= (@notice.body || '').html_safe%>
               </section>
             </div>
           </div>

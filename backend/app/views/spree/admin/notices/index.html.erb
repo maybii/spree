@@ -11,6 +11,7 @@
     <thead>
       <tr data-hook="admin_roles_index_headers">
         <th><%= Spree.t(:title) %></th>
+        <th><%= Spree.t(:body) %></th>
         <th class="actions"></th>
       </tr>
     </thead>
@@ -18,6 +19,9 @@
       <% @notices.each do |notice|%>
         <tr id="<%= spree_dom_id notice %>" data-hook="admin_notice_index_rows">
           <td><%= notice.title %></td>
+          <td>
+            <%= strip_tags(notice.body || '')[0..40] %>
+          </td>
           <td class="actions text-right">
             <%= link_to_edit(notice, no_text: true) if can? :edit, notice %>
             <%= link_to_delete(notice, no_text: true) if can? :destroy, notice %>

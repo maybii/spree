@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228151513) do
+ActiveRecord::Schema.define(version: 20170108094111) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -210,10 +210,10 @@ ActiveRecord::Schema.define(version: 20161228151513) do
   add_index "spree_log_entries", ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type", using: :btree
 
   create_table "spree_notices", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "description", limit: 255
+    t.string   "title",      limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "body",       limit: 65535
   end
 
   create_table "spree_option_type_prototypes", force: :cascade do |t|

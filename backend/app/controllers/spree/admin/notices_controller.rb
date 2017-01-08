@@ -33,7 +33,6 @@ module Spree
         else
           render :edit
         end
-
       end
 
       def destroy
@@ -49,7 +48,7 @@ module Spree
       private
 
       def notice_params
-        params.require(:notice).permit(:title)
+        params.require(:notice).permit(:title, :body)
       end
     end
   end

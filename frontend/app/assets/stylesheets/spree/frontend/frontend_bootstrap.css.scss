@@ -313,11 +313,21 @@ table {
     padding-bottom: 14px;
     border-bottom: 1px solid #ddd;
   }
+  .page-list-header{
+    padding: 30px 0px 18px 0px;
+    font-size: 16px;
+  }
+  .page-list-body{
+    border-bottom: 1px solid #ddd;
+    section{
+      padding-left: 0px !important;
+    }
+  }
   .page-body {
     section {
       padding-left: 30px;
       padding-right: 30px;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     .notice__title {
       color: #fa5930;
