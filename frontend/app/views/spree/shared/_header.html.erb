@@ -75,6 +75,7 @@
           <%= link_to "企业采购", "/caigou", class: "item section" %>
           <%= link_to "资讯公告", "/notice", class: "item" %>
           <%= link_to "买家须知", "/privacy", class: "item" %>
+          <%= link_to "买家入门", "/introduction", class: "item" %>
           <%= link_to "关于真谛", "/about", class: "item" %>
         </div>
         <% if @header_show_all %>
@@ -120,16 +121,18 @@
 
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="notice">
-                  <% @notice.each do |notice| %>
-                    <%= link_to  notice, class: 'description' do %>
+                  <% @notices.each do |notice| %>
+                    <%= link_to notice, class: 'description' do %>
                       <div >[公告] <%= notice.title %> </div>
                     <% end %>
                   <% end %>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="introduction">
-                  <div> [入门]物流信息通知 </div>
-                  <div> [入门]巧克力产品保存须知</div>
-                  <div> [入门]五一春节放假通知</div>
+                  <% @introductions.each do |introduction| %>
+                    <%= link_to introduction, class: 'description' do %>
+                      <div >[入门] <%= introduction.title %> </div>
+                    <% end %>
+                  <% end %>
                 </div>
               </div>
             </div>

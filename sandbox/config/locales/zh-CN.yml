@@ -881,6 +881,7 @@ zh-CN:
     new_return_authorization: "新建返回授权"
     new_role: "新建角色"
     new_notice: "新建公告"
+    new_introduction: "新建买家入门"
     new_rma_reason: "新建退货原因"
     new_shipment_at_location:
     new_shipping_category: "新建配送分类"
@@ -1197,6 +1198,8 @@ zh-CN:
     roles: "角色"
     notice: "咨询公告"
     notices: "咨询公告"
+    introduction: "买家入门"
+    introductions: "买家入门"
     rules: "规则"
     safe: "安全"
     sales_total: "销售总计"

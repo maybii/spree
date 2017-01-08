@@ -1,0 +1,40 @@
+<%= content_for :another_header do %>
+  <div id="notice" data-hook>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <nav id="breadcrumbs">
+            <ol class="breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><a itemprop="url" href="/"><span itemprop="name">首页</span></a>&nbsp;</span>
+              </li>
+              <li class="active" itemscope="itemscope" itemprop="itemListElement">
+                <span itemprop="item"><span itemprop="name">
+                  <a itemprop="url" href="/introduction"> 买家入门 </a>
+                </span></span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="">
+        <div class="col-sm-12 page-content">
+          <% @introductions.each do |introduction| %>
+            <%= link_to  introduction, class: 'list-description' do %>
+              <div class="page-list-header"> <%= introduction.title %> </div>
+              <div class="page-body page-list-body">
+                <section>
+                  <% text = strip_tags(introduction.body || '') %>
+                  <%= text[0..100] %>
+                  <%= '...' if text.length >= 100 %>
+                </section>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<%= content_for :another_header do %>
+  <div id="notice" data-hook>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <nav id="breadcrumbs">
+            <ol class="breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><a itemprop="url" href="/"><span itemprop="name">首页</span></a>&nbsp;</span>
+              </li>
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><span itemprop="name"> <a href="/introduction"> 买家入门 </a></span></span>
+              </li>
+              <li itemscope="itemscope" itemtype="https://schema.org/ListItem" itemprop="itemListElement">
+                <span itemprop="item"><span itemprop="name"> <%= link_to @introduction.title, @introduction %> </span></span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="page-content">
+            <div class="page-header"> <%= @introduction.title%> </div>
+            <div class="page-body">
+              <section>
+                <%= (@introduction.body || '').html_safe%>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -43,6 +43,8 @@ Spree::Core::Engine.add_routes do
 
     resources :notices
 
+    resources :introductions
+
     get '/variants/search', to: "variants#search", as: :search_variants
 
     resources :option_types do
