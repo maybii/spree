@@ -1,3 +1,25 @@
+var checkNumber = function() {
+  if( $('.option-value.selected').text().includes('批发')){
+    var minCount = parseInt($('.min-count-value').text())
+    var select = parseInt($('#quantity').val())
+    btns = $('#product-buy-btns button[type=submit]')
+    if (select < minCount){
+      btns.prop('disabled', true)
+      btns.css('opacity', 0.5, 'important')
+    }else{
+      btns.prop('disabled', false)
+      btns.css('opacity', 1, 'important')
+    }
+  }
+}
+
+
+$(document).ready(function(){
+  $('#quantity').change(checkNumber);
+  $('.input-up').click(checkNumber);
+  $('.input-down').click(checkNumber);
+})
+
 $.extend({
   keys: function(obj){
     var a = [];
@@ -84,6 +106,7 @@ function VariantOptions(params) {
   }
 
   function enable(btns) {
+
     bt = btns.not('.unavailable').removeClass('locked').unbind('click')
     if (!allow_select_outofstock && !allow_backorders)
       bt = bt.filter('.in-stock')
@@ -218,12 +241,6 @@ function VariantOptions(params) {
       if (variants.find("a.option-value.out-of-stock").length != variants.find("a.option-value").length)
         price.text(i18n.variant_options_select);
     }
-
-    if( $('.option-value.selected').text().includes('批发')){
-      $('.min-count').removeClass('hidden')
-    }else{
-      $('.min-count').addClass('hidden')
-    }
   }
 
   function clear(i) {
@@ -262,6 +279,12 @@ function VariantOptions(params) {
     handle_selected();
     variants = find_variant();
     toggle(variants);
+    if( $('.option-value.selected').text().includes('批发')){
+      $('.min-count').removeClass('hidden')
+      checkNumber()
+    }else{
+      $('.min-count').addClass('hidden')
+    }
   }
 
   function handle_selected() {

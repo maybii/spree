@@ -41,6 +41,9 @@
     font-size: 18px;
     color: white;
   }
+  .btn[disabled]{
+    opacity: 0.5 !important;
+  }
   #add-to-cart-button-directly{
     margin-right: 16px;
     background-color: #f13c3c;
@@ -67,7 +70,7 @@
     }
     .lead{
       color: #f72020;
-      font-size: 24px;
+      font-size: 20px;
     }
     .lead-currency{
       color: #f72020;
