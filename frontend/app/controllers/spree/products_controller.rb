@@ -15,6 +15,12 @@ module Spree
       @products = @searcher.retrieve_products(all_products)
     end
 
+    def on_sale
+      @searcher = build_searcher(params.merge(include_images: true))
+      all_products = @searcher.all_products.active.where(promotionable: true).order('created_at DESC')
+      @products = @searcher.retrieve_products(all_products)
+    end
+
     def index
       property_filters = [params[:brand], params[:location], params[:category]].delete_if(&:blank?).uniq
       order_filters = "#{params[:order]} #{(params[:sort] || 'ASC')}" if params[:order] and params[:order] != 'price'

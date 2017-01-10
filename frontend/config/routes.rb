@@ -34,4 +34,5 @@ Spree::Core::Engine.add_routes do
   resources :notice, only: [:index, :show]
   resources :introduction,  only: [:index, :show]
   get '/new_products', to: 'products#new_products'
+  get '/on_sale', to: 'products#on_sale'
 end
