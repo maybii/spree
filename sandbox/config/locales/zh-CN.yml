@@ -1110,7 +1110,7 @@ zh-CN:
         description: "只对已经登录的用户有效"
         name: "用户登录"
     promotion_uses: "促销使用频率"
-    promotionable:
+    promotionable: "是否促销"
     promotions: "促销"
     propagate_all_variants: "应用到所有子产品"
     properties: "属性"

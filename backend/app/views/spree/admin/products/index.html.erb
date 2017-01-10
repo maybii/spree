@@ -38,6 +38,13 @@
               <%= Spree.t(:show_discontinued ) %>
             </label>
           </div>
+          <div class="field checkbox">
+            <label>
+              <%= f.check_box :promotionable_true, {:checked => params[:q][:promotionable_true] == '0'}, '1', '' %>
+              <%= '显示促销中的' %>
+            </label>
+          </div>
+
         </div>
       </div>
       <div data-hook="admin_products_index_search_buttons" class="form-actions">
@@ -64,8 +71,8 @@
         <th class="text-center">
           <%= sort_link @search, :created_at, '创建时间', {default_order: "desc"}, {title: 'admin_products_listing_created_title'} %>
         </th>
-
-        <th class="text-center"> 批发最小个数 </th>
+        <th class="text-center"> 是否促销 </th>
+        <th class="text-center"> 起批量 </th>
         <th data-hook="admin_products_index_header_actions" class="actions"></th>
       </tr>
     </thead>
@@ -78,6 +85,7 @@
             <td><%= link_to product.try(:name), edit_admin_product_path(product) %></td>
             <td class="text-center"><%= product.display_price.to_html rescue '' %></td>
             <td class="text-center"><%= product.created_at.localtime.to_s[0..-6] %></td>
+            <td class="text-center"><%= product.promotionable ? '是' : '否' %></td>
             <td class="text-center"><%= product.wholesale_count rescue '' %></td>
             <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
               <%= link_to_edit product, no_text: true, class: 'edit' if can?(:edit, product) && !product.deleted? %>
