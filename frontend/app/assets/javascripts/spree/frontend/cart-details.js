@@ -70,9 +70,6 @@ $(document).ready(function(){
       }
     });
   });
-  //$('input-up').onClick(function(e){
-  //  alert('asdf');
-  //});
 
   $('#cart-detail .line_item_quantity').change( function(e) {
     e.preventDefault();

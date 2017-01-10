@@ -13,11 +13,10 @@ var checkNumber = function() {
   }
 }
 
-
 $(document).ready(function(){
   $('#quantity').change(checkNumber);
-  $('.input-up').click(checkNumber);
-  $('.input-down').click(checkNumber);
+  $('.input-group-btn.input-up').click(checkNumber);
+  $('.input-group-btn.input-down').click(checkNumber);
 })
 
 $.extend({
