@@ -180,6 +180,17 @@ a {
 
 .product-body {
   height: 170px;
+  position: relative;
+  overflow: hidden;
+  .promotion-badge{
+    @include transform(rotate(45deg));
+    width: 55px;
+    border-radius: 0px;
+    position: absolute;
+    right: -15px;
+    top: 5px;
+    background-color: #F04014;
+  }
 }
 
 h1 {

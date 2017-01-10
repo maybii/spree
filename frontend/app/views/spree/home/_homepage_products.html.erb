@@ -5,6 +5,9 @@
       <div id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
         <div class="panel panel-default">
           <div class="panel-body text-center product-body">
+            <% if product.promotionable %>
+              <div class="badge promotion-badge"> 促 </div>
+            <% end %>
             <%= link_to url, itemprop: "url" do %>
               <%= product_image(product, itemprop: "image", class: 'product-image') %><br/>
               <%= content_tag(:div, truncate(product.name, length: 50), class: 'info text-left', itemprop: "name", title: product.name) %>

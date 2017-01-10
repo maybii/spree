@@ -24,6 +24,9 @@
         <div class="panel panel-default">
           <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
             <div class="panel-body text-center product-body">
+              <% if product.promotionable %>
+                <div class="badge promotion-badge"> 促 </div>
+              <% end %>
               <%= link_to url, itemprop: "url" do %>
                 <%= product_image(product, itemprop: "image", class: 'product-image') %>
                 <br />
