@@ -240,6 +240,11 @@ zh-CN:
           attributes:
             base:
               cannot_destroy_default_store:
+        spree/shipping_method:
+          attributes:
+            base:
+              required_shipping_category: "请至少选择一个配送方式"
+
     models:
       spree/address:
         one: "地址"
@@ -454,7 +459,7 @@ zh-CN:
     adjustment_successfully_closed: "价格调整已被禁用！"
     adjustment_successfully_opened: "价格调整已被启用！"
     adjustment_total: "调整总数"
-    adjustments: "其他调整(如补差价)"
+    adjustments: "其他调整(如修改运费)"
     available: "可用的"
     new_shipping_address: "添加收货地址"
     admin:
