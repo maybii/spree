@@ -5,9 +5,9 @@ module Spree
 
     def index
       @searcher = build_searcher(params.merge(include_images: true))
-      @products = @searcher.retrieve_products.includes(:possible_promotions).limit(12)
+      @products = @searcher.retrieve_products.includes(:possible_promotions).order('id DESC').limit(12)
       # @random_products = Spree::Product.where('').sample(12)
-      @on_sale_products = @searcher.retrieve_products.where(promotionable: true).limit(12)
+      @on_sale_products = @searcher.retrieve_products.where(promotionable: true).order('id DESC').limit(12)
       @best_products = Spree::Product.order("sales_amount DESC").limit(12)
       @header_show_all = true
       @is_home = true

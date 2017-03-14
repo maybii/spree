@@ -11,13 +11,13 @@ module Spree
 
     def new_products
       @searcher = build_searcher(params.merge(include_images: true))
-      all_products = @searcher.all_products.active.order('created_at DESC')
+      all_products = @searcher.all_products.active.order('id DESC')
       @products = @searcher.retrieve_products(all_products)
     end
 
     def on_sale
       @searcher = build_searcher(params.merge(include_images: true))
-      all_products = @searcher.all_products.active.where(promotionable: true).order('created_at DESC')
+      all_products = @searcher.all_products.active.where(promotionable: true).order('id DESC')
       @products = @searcher.retrieve_products(all_products)
     end
 
