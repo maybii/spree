@@ -9,9 +9,7 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="new-in-store">
       <div data-hook="homepage_products">
-        <% cache(cache_key_for_products) do %>
-          <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
-        <% end %>
+        <%= render :partial => 'spree/home/homepage_products', :locals => { :products => @products } %>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="on-sale">
