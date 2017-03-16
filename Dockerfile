@@ -1,16 +1,13 @@
 FROM ruby:2.3
 MAINTAINER Hadwin Zheng(hadwinzhy@gmail.com)
 
-RUN mkdir /workspace
-WORKDIR /workspace
-
-COPY Gemfile /workspace/Gemfile
-COPY Gemfile.lock /workspace/Gemfile.lock
-COPY config/database.yml /workspace/config/database.yml
-
-RUN bundle install --jobs 20 --retry 5 --without development test
+RUN mkdir -p /workspace
 
 COPY . /workspace/
+
+WORKDIR /workspace/sandbox
+
+RUN bundle install --jobs 20 --retry 5 --without development test
 
 EXPOSE 3000
 
