@@ -23,3 +23,5 @@ Spree::ShippingMethod.destroy_all
 Spree::Calculator.destroy_all
 Spree::PaymentMethod.destroy_all
 Spree::ReturnAuthorizationReason.destroy_all
+
+p "Try to Run: `bundle exec rake db:seed` for country data  "
