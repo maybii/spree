@@ -104,7 +104,7 @@ module Spree
       validates :price, if: proc { Spree::Config[:require_master_price] }
     end
 
-    validates :slug, length: { minimum: 3 }, allow_blank: true, uniqueness: true
+    #validates :slug, length: { minimum: 3 }, allow_blank: true, uniqueness: true
 
     attr_accessor :option_values_hash
 
